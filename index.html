@@ -234,6 +234,8 @@
       gap: 20px;
     }
     .produkt {
+      display: block;
+      text-decoration: none;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 14px;
@@ -245,6 +247,13 @@
       border-color: rgba(129,140,248,0.28);
       transform: translateY(-3px);
     }
+    .produkt-arrow {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600;
+      color: var(--purple); margin-top: 16px;
+      transition: gap .2s;
+    }
+    .produkt:hover .produkt-arrow { gap: 10px; }
     .produkt-logo { height: 24px; display: block; margin-bottom: 22px; }
     .produkt-tag {
       display: inline-block;
@@ -470,30 +479,34 @@
       <h2 class="section-h2 section-h2-light">Software, die wir selbst<br>gebaut — und live betreiben.</h2>
       <p class="section-lead section-lead-light">Unsere Eigenprodukte sind der beste Beweis, wie wir arbeiten: fokussiert, praxistauglich und langfristig gepflegt.</p>
       <div class="produkte-grid">
-        <div class="produkt">
+        <a class="produkt" href="https://samorad.de" target="_blank" rel="noopener">
           <img src="./assets/samoRad-logo-dark.png" alt="samoRad." class="produkt-logo">
           <div class="produkt-tag">SaaS · Handel</div>
           <h3>Werkstattverwaltung</h3>
           <p>Komplettes Auftragsmanagement, Terminplanung, Kundenkommunikation und PWA für Mitarbeiter — mandantenfähig für Fahrradhändler.</p>
-        </div>
-        <div class="produkt">
+          <div class="produkt-arrow">samorad.de <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+        </a>
+        <a class="produkt" href="https://samochat.de" target="_blank" rel="noopener">
           <img src="./assets/samoChat-logo-dark.png" alt="samoChat." class="produkt-logo">
           <div class="produkt-tag">SaaS · KI-Ticketing</div>
           <h3>KI-gestützter Kundensupport</h3>
           <p>Ihr Kunde schreibt — die KI antwortet, priorisiert und löst. Alle relevanten Daten auf einen Blick, kein Callcenter, keine Wartezeiten.</p>
-        </div>
-        <div class="produkt">
+          <div class="produkt-arrow">samochat.de <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+        </a>
+        <a class="produkt" href="https://samoplan.de" target="_blank" rel="noopener">
           <img src="./assets/samoPlan-logo-dark.png" alt="samoPlan." class="produkt-logo">
           <div class="produkt-tag">SaaS · Planung</div>
           <h3>Ressourcenplanung</h3>
           <p>Projekt- und Kapazitätsplanung für Dienstleister. Übersicht statt Chaos — wer macht was, bis wann, mit wie viel Puffer.</p>
-        </div>
-        <div class="produkt">
+          <div class="produkt-arrow">samoplan.de <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+        </a>
+        <a class="produkt" href="https://samoterminal.de" target="_blank" rel="noopener">
           <img src="./assets/samoTerminal-logo-dark.png" alt="samoTerminal." class="produkt-logo">
           <div class="produkt-tag">Android · Betrieb</div>
           <h3>Digitale Zeiterfassung</h3>
           <p>NFC-basiertes Stempeluhr-System für Tablets. Mitarbeiter buchen sich per Chip ein — einfach, schnell, GoBD-konform.</p>
-        </div>
+          <div class="produkt-arrow">samoterminal.de <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+        </a>
       </div>
     </div>
   </section>
