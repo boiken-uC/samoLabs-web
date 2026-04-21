@@ -897,13 +897,13 @@
 
   <!-- Hero -->
   <section id="hero">
-    <video id="hero-video-a" class="hero-video active" src="./assets/video/tokyo-crossing.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
-    <video id="hero-video-b" class="hero-video" data-src="./assets/video/hamburg-port.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+    <video id="hero-video-a" class="hero-video active" src="./assets/video/sarajevo.webm" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <video id="hero-video-b" class="hero-video" muted loop playsinline preload="none" aria-hidden="true"></video>
     <div class="hero-overlay"></div>
     <div class="hero-dots"></div>
     <div class="hero-glow-1"></div>
     <div class="hero-glow-2"></div>
-    <audio id="hero-audio" src="./assets/audio/organ-toccata.ogg" loop preload="none"></audio>
+    <audio id="hero-audio" src="./assets/audio/bach-passacaglia.mp3" loop preload="none"></audio>
     <div class="hero-wrap">
       <div class="hero-content">
         <div class="eyebrow">
@@ -1204,7 +1204,7 @@
     // Year
     document.getElementById('fyear').textContent = new Date().getFullYear();
 
-    // Hero video rotator (lazy-load B, cross-fade every 12 s)
+    // Hero video rotator (6 city clips, cross-fade every 10 s)
     (() => {
       const a = document.getElementById('hero-video-a');
       const b = document.getElementById('hero-video-b');
@@ -1212,31 +1212,26 @@
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const isMobile = window.matchMedia('(max-width: 780px)').matches;
       if (reducedMotion || isMobile) return; // single clip on mobile / reduced-motion
-      let loaded = false;
-      const loadB = () => {
-        if (loaded) return;
-        loaded = true;
-        b.src = b.dataset.src;
-        b.load();
-      };
-      // Defer B until A is playing and idle callback available
-      const kickoff = () => {
-        if ('requestIdleCallback' in window) requestIdleCallback(loadB, { timeout: 4000 });
-        else setTimeout(loadB, 3000);
-      };
-      if (a.readyState >= 2) kickoff();
-      else a.addEventListener('playing', kickoff, { once: true });
-
+      const clips = [
+        './assets/video/sarajevo.webm',
+        './assets/video/mostar.webm',
+        './assets/video/belgrade.webm',
+        './assets/video/amsterdam.webm',
+        './assets/video/cologne.webm',
+        './assets/video/dusseldorf.webm'
+      ];
+      let idx = 0; // sarajevo is loaded in the <video src="..."> already
       let active = a, next = b;
       const swap = () => {
-        if (!loaded) return;
-        try { next.currentTime = 0; next.play().catch(() => {}); } catch (_) {}
+        idx = (idx + 1) % clips.length;
+        next.src = clips[idx];
+        try { next.load(); next.play().catch(() => {}); } catch (_) {}
         next.classList.add('active');
         active.classList.remove('active');
         setTimeout(() => { try { active.pause(); } catch (_) {} }, 1400);
         [active, next] = [next, active];
       };
-      setInterval(swap, 12000);
+      setInterval(swap, 10000);
     })();
 
     // Sound toggle (organ music)
