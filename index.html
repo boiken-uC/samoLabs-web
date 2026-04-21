@@ -120,6 +120,8 @@
       opacity: 0;
       transition: opacity 1.2s ease;
       pointer-events: none;
+      will-change: opacity;
+      transform: translateZ(0);
     }
     .hero-video.active { opacity: 0.45; }
     .hero-overlay {
@@ -134,6 +136,7 @@
       background-size: 36px 36px;
       opacity: 0.55;
     }
+    #hero .hero-dots, #hero .hero-glow-1, #hero .hero-glow-2 { display: none; }
     .hero-glow-1 {
       position: absolute; z-index: 0;
       width: 720px; height: 720px;
@@ -895,7 +898,7 @@
   <!-- Hero -->
   <section id="hero">
     <video id="hero-video-a" class="hero-video active" src="./assets/video/tokyo-crossing.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
-    <video id="hero-video-b" class="hero-video" src="./assets/video/hamburg-port.mp4" muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <video id="hero-video-b" class="hero-video" data-src="./assets/video/hamburg-port.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
     <div class="hero-overlay"></div>
     <div class="hero-dots"></div>
     <div class="hero-glow-1"></div>
@@ -1201,22 +1204,39 @@
     // Year
     document.getElementById('fyear').textContent = new Date().getFullYear();
 
-    // Hero video rotator (cross-fade between two clips)
+    // Hero video rotator (lazy-load B, cross-fade every 12 s)
     (() => {
       const a = document.getElementById('hero-video-a');
       const b = document.getElementById('hero-video-b');
       if (!a || !b) return;
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reducedMotion) { a.pause(); return; }
+      const isMobile = window.matchMedia('(max-width: 780px)').matches;
+      if (reducedMotion || isMobile) return; // single clip on mobile / reduced-motion
+      let loaded = false;
+      const loadB = () => {
+        if (loaded) return;
+        loaded = true;
+        b.src = b.dataset.src;
+        b.load();
+      };
+      // Defer B until A is playing and idle callback available
+      const kickoff = () => {
+        if ('requestIdleCallback' in window) requestIdleCallback(loadB, { timeout: 4000 });
+        else setTimeout(loadB, 3000);
+      };
+      if (a.readyState >= 2) kickoff();
+      else a.addEventListener('playing', kickoff, { once: true });
+
       let active = a, next = b;
       const swap = () => {
+        if (!loaded) return;
         try { next.currentTime = 0; next.play().catch(() => {}); } catch (_) {}
         next.classList.add('active');
         active.classList.remove('active');
         setTimeout(() => { try { active.pause(); } catch (_) {} }, 1400);
         [active, next] = [next, active];
       };
-      setInterval(swap, 9000);
+      setInterval(swap, 12000);
     })();
 
     // Sound toggle (organ music)
