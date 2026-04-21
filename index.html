@@ -897,7 +897,7 @@
 
   <!-- Hero -->
   <section id="hero">
-    <video id="hero-video-a" class="hero-video active" src="./assets/video/sarajevo.webm" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <video id="hero-video-a" class="hero-video active" src="./assets/video/sarajevo.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
     <video id="hero-video-b" class="hero-video" muted loop playsinline preload="none" aria-hidden="true"></video>
     <div class="hero-overlay"></div>
     <div class="hero-dots"></div>
@@ -1204,34 +1204,40 @@
     // Year
     document.getElementById('fyear').textContent = new Date().getFullYear();
 
-    // Hero video rotator (6 city clips, cross-fade every 10 s)
+    // Hero video rotator (6 city clips; preload next 3 s before cross-fade)
     (() => {
       const a = document.getElementById('hero-video-a');
       const b = document.getElementById('hero-video-b');
       if (!a || !b) return;
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const isMobile = window.matchMedia('(max-width: 780px)').matches;
-      if (reducedMotion || isMobile) return; // single clip on mobile / reduced-motion
+      if (reducedMotion || isMobile) return;
       const clips = [
-        './assets/video/sarajevo.webm',
-        './assets/video/mostar.webm',
-        './assets/video/belgrade.webm',
-        './assets/video/amsterdam.webm',
-        './assets/video/cologne.webm',
-        './assets/video/dusseldorf.webm'
+        './assets/video/sarajevo.mp4',
+        './assets/video/mostar.mp4',
+        './assets/video/belgrade.mp4',
+        './assets/video/amsterdam.mp4',
+        './assets/video/cologne.mp4',
+        './assets/video/dusseldorf.mp4'
       ];
-      let idx = 0; // sarajevo is loaded in the <video src="..."> already
+      const VIEW_MS = 10000;
+      const PRELOAD_MS = 3000;
+      let idx = 0;
       let active = a, next = b;
-      const swap = () => {
-        idx = (idx + 1) % clips.length;
-        next.src = clips[idx];
+      const cycle = () => {
+        const nextIdx = (idx + 1) % clips.length;
+        next.src = clips[nextIdx];
         try { next.load(); next.play().catch(() => {}); } catch (_) {}
-        next.classList.add('active');
-        active.classList.remove('active');
-        setTimeout(() => { try { active.pause(); } catch (_) {} }, 1400);
-        [active, next] = [next, active];
+        setTimeout(() => {
+          idx = nextIdx;
+          next.classList.add('active');
+          active.classList.remove('active');
+          setTimeout(() => { try { active.pause(); } catch (_) {} }, 1400);
+          [active, next] = [next, active];
+          setTimeout(cycle, VIEW_MS - PRELOAD_MS);
+        }, PRELOAD_MS);
       };
-      setInterval(swap, 10000);
+      setTimeout(cycle, VIEW_MS - PRELOAD_MS);
     })();
 
     // Sound toggle (organ music)
