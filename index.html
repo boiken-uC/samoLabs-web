@@ -10,22 +10,28 @@
   <title>samoLabs. – Software, die wirkt.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --navy:         #0F172A;
       --navy-mid:     #1E293B;
+      --navy-deep:    #020617;
       --purple:       #818CF8;
       --purple-2:     #6366F1;
       --purple-3:     #4F46E5;
       --purple-light: #EEF2FF;
+      --pink:         #F472B6;
+      --pink-2:       #EC4899;
       --white:        #FFFFFF;
       --gray:         #64748B;
       --gray-light:   #F8FAFC;
+      --slate-100:    #F1F5F9;
+      --slate-200:    #E2E8F0;
       --border:       #E2E8F0;
-      --text:         #1E293B;
+      --text:         #0F172A;
+      --text-muted:   #475569;
       --font-head:    'Outfit', sans-serif;
       --font-body:    'Inter', system-ui, sans-serif;
     }
@@ -42,18 +48,24 @@
     /* ── Nav ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(15, 23, 42, 0.94);
+      background: rgba(15, 23, 42, 0.55);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(129, 140, 248, 0.12);
-      height: 64px;
+      border-bottom: 1px solid transparent;
+      height: 68px;
       padding: 0 6%;
       display: flex; align-items: center; justify-content: space-between;
+      transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+    nav.scrolled {
+      background: rgba(15, 23, 42, 0.96);
+      border-bottom-color: rgba(129, 140, 248, 0.12);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.18);
     }
     .nav-logo img { height: 26px; display: block; }
     .nav-links { list-style: none; display: flex; align-items: center; gap: 36px; }
     .nav-links a {
-      color: rgba(255,255,255,0.65);
+      color: rgba(255,255,255,0.72);
       text-decoration: none;
       font-size: 14px;
       font-weight: 500;
@@ -61,22 +73,28 @@
     }
     .nav-links a:hover { color: var(--purple); }
     .nav-cta {
-      background: var(--purple) !important;
+      background: var(--pink) !important;
       color: var(--navy) !important;
       font-weight: 700 !important;
-      padding: 8px 20px;
-      border-radius: 7px;
-      transition: background .2s, transform .1s !important;
+      padding: 9px 20px;
+      border-radius: 8px;
+      transition: background .2s, transform .1s, box-shadow .2s !important;
+      box-shadow: 0 4px 14px rgba(244, 114, 182, 0.35);
     }
-    .nav-cta:hover { background: var(--purple-2) !important; color: #fff !important; transform: translateY(-1px); }
+    .nav-cta:hover {
+      background: var(--pink-2) !important;
+      color: #fff !important;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(236, 72, 153, 0.45);
+    }
 
     /* ── Hero ── */
     #hero {
       min-height: 100vh;
       background: var(--navy);
-      display: flex; align-items: center;
-      padding: 120px 6% 100px;
+      padding: 140px 6% 100px;
       position: relative; overflow: hidden;
+      display: flex; align-items: center;
     }
     .hero-dots {
       position: absolute; inset: 0; z-index: 0;
@@ -85,315 +103,745 @@
     }
     .hero-glow-1 {
       position: absolute; z-index: 0;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(129,140,248,0.09) 0%, transparent 65%);
-      top: -150px; right: -150px;
+      width: 720px; height: 720px;
+      background: radial-gradient(circle, rgba(129,140,248,0.12) 0%, transparent 65%);
+      top: -180px; right: -180px;
     }
     .hero-glow-2 {
       position: absolute; z-index: 0;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(99,102,241,0.07) 0%, transparent 65%);
-      bottom: -100px; left: 10%;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(244,114,182,0.09) 0%, transparent 65%);
+      bottom: -160px; left: 5%;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 780px; }
+    .hero-wrap {
+      position: relative; z-index: 1;
+      max-width: 1240px; width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-content { max-width: 680px; }
 
     .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
+      display: inline-flex; align-items: center; gap: 10px;
       background: rgba(129,140,248,0.1);
-      border: 1px solid rgba(129,140,248,0.22);
+      border: 1px solid rgba(129,140,248,0.24);
       border-radius: 99px;
-      padding: 5px 16px;
+      padding: 6px 18px;
       font-size: 12px; font-weight: 700;
       color: var(--purple);
-      letter-spacing: .08em;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
-    .eyebrow-dot { width: 6px; height: 6px; background: var(--purple); border-radius: 50%; }
+    .eyebrow-dot {
+      width: 6px; height: 6px;
+      background: var(--pink);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(244,114,182,0.2);
+    }
 
     .hero-h1 {
       font-family: var(--font-head);
-      font-weight: 800;
-      font-size: clamp(38px, 5.5vw, 68px);
+      font-weight: 900;
+      font-size: clamp(44px, 6.5vw, 84px);
       color: var(--white);
-      line-height: 1.07;
-      letter-spacing: -0.03em;
-      margin-bottom: 26px;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      margin-bottom: 28px;
+    }
+    .hero-h1 .accent {
+      position: relative;
+      color: var(--white);
+      white-space: nowrap;
+    }
+    .hero-h1 .accent::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0;
+      bottom: 0.06em;
+      height: 0.24em;
+      background: var(--pink);
+      border-radius: 2px;
+      z-index: -1;
+      opacity: .85;
     }
     .hero-h1 em { font-style: normal; color: var(--purple); }
 
     .hero-sub {
-      font-size: clamp(16px, 1.8vw, 19px);
-      color: rgba(255,255,255,0.6);
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: clamp(17px, 1.55vw, 20px);
+      color: rgba(255,255,255,0.68);
       max-width: 580px;
-      line-height: 1.75;
+      line-height: 1.7;
       margin-bottom: 44px;
     }
 
     .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--purple);
+      background: var(--pink);
       color: var(--navy);
       font-family: var(--font-body);
       font-weight: 700; font-size: 15px;
-      padding: 14px 28px;
+      padding: 15px 30px;
       border-radius: 8px;
       text-decoration: none;
-      transition: background .2s, transform .15s;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 8px 24px rgba(244,114,182,0.3);
     }
-    .btn-primary:hover { background: var(--purple-2); transform: translateY(-2px); }
+    .btn-primary:hover { background: var(--pink-2); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(236,72,153,0.45); }
     .btn-outline {
       display: inline-flex; align-items: center; gap: 8px;
       background: transparent;
-      color: rgba(255,255,255,0.75);
+      color: rgba(255,255,255,0.82);
       font-family: var(--font-body);
       font-weight: 600; font-size: 15px;
-      padding: 14px 28px;
+      padding: 15px 30px;
       border-radius: 8px;
       text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.18);
-      transition: border-color .2s, color .2s;
+      border: 1px solid rgba(255,255,255,0.22);
+      transition: border-color .2s, color .2s, background .2s;
     }
-    .btn-outline:hover { border-color: var(--purple); color: var(--purple); }
+    .btn-outline:hover { border-color: var(--purple); color: var(--purple); background: rgba(129,140,248,0.06); }
+
+    /* Hero-Visual: Produkt-Collage */
+    .hero-visual {
+      position: relative;
+      height: 440px;
+      perspective: 1200px;
+    }
+    .tile {
+      position: absolute;
+      border-radius: 18px;
+      padding: 20px 22px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      width: 240px;
+      display: flex; flex-direction: column;
+      animation: float 7s ease-in-out infinite;
+    }
+    .tile-head {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .tile-logo { height: 18px; }
+    .tile-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.18);
+    }
+    .tile-body { display: flex; flex-direction: column; gap: 7px; }
+    .tile-bar {
+      height: 7px; border-radius: 3px;
+      background: linear-gradient(90deg, var(--purple) 0%, transparent 100%);
+      opacity: .55;
+    }
+    .tile-bar:nth-child(2) { width: 78%; opacity: .4; }
+    .tile-bar:nth-child(3) { width: 60%; opacity: .3; }
+    .tile-pill {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(244,114,182,0.16);
+      color: var(--pink);
+      font-size: 10px; font-weight: 700;
+      border-radius: 99px;
+      letter-spacing: .06em; text-transform: uppercase;
+      margin-top: 10px; width: fit-content;
+    }
+    .tile-1 { top: 0; left: 4%; animation-delay: 0s; transform: rotate(-3deg); }
+    .tile-2 { top: 80px; right: 0; animation-delay: 1.3s; transform: rotate(2deg); }
+    .tile-3 { bottom: 60px; left: 12%; animation-delay: 2.5s; transform: rotate(1deg); }
+    .tile-4 { bottom: 0; right: 8%; animation-delay: 3.7s; transform: rotate(-2deg); }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+      50%      { transform: translateY(-8px) rotate(var(--r, 0deg)); }
+    }
+    .tile-1 { --r: -3deg; }
+    .tile-2 { --r: 2deg; }
+    .tile-3 { --r: 1deg; }
+    .tile-4 { --r: -2deg; }
+
+    /* ── Trust-Bar ── */
+    #trust {
+      background: var(--navy-deep);
+      padding: 32px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+      position: relative;
+    }
+    .trust-label {
+      text-align: center;
+      font-size: 11px; font-weight: 700;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: .18em; text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
+    }
+    .marquee-track {
+      display: flex; flex-shrink: 0;
+      animation: scroll 38s linear infinite;
+      gap: 64px;
+      padding-right: 64px;
+      align-items: center;
+    }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 22px;
+      color: rgba(255,255,255,0.42);
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      display: flex; align-items: center; gap: 14px;
+      transition: color .2s;
+    }
+    .marquee-item:hover { color: rgba(255,255,255,0.85); }
+    .marquee-item svg { opacity: .55; }
 
     /* ── Sections shared ── */
-    .section { padding: 100px 6%; }
-    .section-inner { max-width: 1160px; margin: 0 auto; }
+    .section { padding: 110px 6%; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
     .label {
       font-size: 12px; font-weight: 700;
-      letter-spacing: .1em; text-transform: uppercase;
+      letter-spacing: .14em; text-transform: uppercase;
       color: var(--purple-2);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .label::before {
+      content: ""; display: inline-block;
+      width: 28px; height: 1px; background: var(--purple-2);
     }
     .label-light { color: var(--purple); }
+    .label-light::before { background: var(--purple); }
     .section-h2 {
       font-family: var(--font-head);
-      font-weight: 800;
-      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 900;
+      font-size: clamp(32px, 4vw, 52px);
       color: var(--navy);
-      line-height: 1.12;
-      letter-spacing: -0.025em;
-      margin-bottom: 18px;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
     }
     .section-h2-light { color: #fff; }
     .section-lead {
-      font-size: 17px;
-      color: var(--gray);
-      max-width: 580px;
-      line-height: 1.75;
-      margin-bottom: 60px;
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 620px;
+      line-height: 1.7;
+      margin-bottom: 68px;
     }
-    .section-lead-light { color: rgba(255,255,255,0.55); }
+    .section-lead-light { color: rgba(255,255,255,0.65); }
 
-    /* ── Leistungen ── */
+    /* ── Leistungen (Prozess-Linie) ── */
     #leistungen { background: var(--white); }
-    .leistungen-grid {
+    .prozess {
+      position: relative;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 32px;
     }
-    .leistung {
-      background: var(--gray-light);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 36px 32px;
-      transition: border-color .25s, box-shadow .25s, transform .2s;
+    .prozess::before {
+      content: "";
+      position: absolute;
+      top: 40px; left: 8%; right: 8%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--slate-200) 15%, var(--slate-200) 85%, transparent 100%);
+      z-index: 0;
     }
-    .leistung:hover {
-      border-color: var(--purple);
-      box-shadow: 0 8px 32px rgba(99,102,241,0.1);
-      transform: translateY(-3px);
+    .schritt {
+      position: relative; z-index: 1;
+      text-align: left;
+      padding: 0 8px;
     }
-    .leistung-icon {
-      width: 52px; height: 52px;
-      background: var(--purple-light);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 22px;
-      color: var(--purple-2);
-    }
-    .leistung h3 {
+    .schritt-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 64px; height: 64px;
+      background: var(--white);
+      border: 1.5px solid var(--slate-200);
+      border-radius: 16px;
       font-family: var(--font-head);
-      font-weight: 800; font-size: 21px;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--navy);
+      margin-bottom: 26px;
+      letter-spacing: -0.02em;
+      transition: border-color .25s, color .25s, background .25s, transform .25s;
+    }
+    .schritt:hover .schritt-num {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--pink);
+      transform: translateY(-2px);
+    }
+    .schritt h3 {
+      font-family: var(--font-head);
+      font-weight: 800; font-size: 22px;
       color: var(--navy);
       letter-spacing: -0.02em;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
-    .leistung p { font-size: 14px; color: var(--gray); line-height: 1.75; }
+    .schritt p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
 
     /* ── Produkte ── */
     #produkte {
       background: var(--navy);
       position: relative; overflow: hidden;
     }
-    #produkte .hero-dots { opacity: .6; }
     .produkte-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
     }
     .produkt {
       display: block;
       text-decoration: none;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 14px;
-      padding: 30px 26px 34px;
-      transition: background .25s, border-color .25s, transform .2s;
+      position: relative;
+      background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 34px 32px 32px;
+      transition: background .3s, border-color .3s, transform .25s, box-shadow .3s;
+      overflow: hidden;
+      min-height: 260px;
     }
+    .produkt::before {
+      content: "";
+      position: absolute; inset: 0;
+      opacity: .06;
+      transition: opacity .35s;
+      background-repeat: no-repeat;
+      background-position: right -40px bottom -40px;
+      background-size: 320px 320px;
+    }
+    .produkt-samorad::before { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160' fill='none' stroke='%23ffffff' stroke-width='1.5'><rect x='15' y='25' width='130' height='115' rx='6'/><line x1='15' y1='50' x2='145' y2='50'/><line x1='50' y1='25' x2='50' y2='140'/><line x1='85' y1='50' x2='85' y2='140'/><line x1='120' y1='50' x2='120' y2='140'/><line x1='15' y1='75' x2='145' y2='75'/><line x1='15' y1='100' x2='145' y2='100'/><line x1='15' y1='125' x2='145' y2='125'/><rect x='55' y='80' width='25' height='15' rx='2' fill='%23F472B6' stroke='none' opacity='0.6'/><rect x='90' y='105' width='25' height='15' rx='2' fill='%236366F1' stroke='none' opacity='0.6'/></svg>"); }
+    .produkt-samochat::before { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160' fill='none' stroke='%23ffffff' stroke-width='1.5'><rect x='20' y='35' width='85' height='45' rx='10'/><rect x='55' y='95' width='85' height='45' rx='10'/><circle cx='40' cy='57' r='2.5' fill='%23ffffff' stroke='none'/><circle cx='55' cy='57' r='2.5' fill='%23ffffff' stroke='none'/><circle cx='70' cy='57' r='2.5' fill='%23ffffff' stroke='none'/><path d='M75 117 L100 117 M75 123 L115 123' stroke-linecap='round'/><circle cx='135' cy='50' r='10' fill='%23F472B6' stroke='none' opacity='0.8'/><text x='135' y='54' text-anchor='middle' font-size='11' fill='%23020617' stroke='none' font-family='sans-serif' font-weight='700'>AI</text></svg>"); }
+    .produkt-samoplan::before { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160' fill='none' stroke='%23ffffff' stroke-width='1.5'><rect x='15' y='25' width='130' height='115' rx='6'/><rect x='30' y='45' width='60' height='10' rx='2' fill='%236366F1' stroke='none' opacity='0.7'/><rect x='30' y='62' width='95' height='10' rx='2' fill='%23818CF8' stroke='none' opacity='0.55'/><rect x='30' y='79' width='40' height='10' rx='2' fill='%23F472B6' stroke='none' opacity='0.7'/><rect x='30' y='96' width='80' height='10' rx='2' fill='%23818CF8' stroke='none' opacity='0.45'/><rect x='30' y='113' width='55' height='10' rx='2' fill='%236366F1' stroke='none' opacity='0.5'/><line x1='25' y1='25' x2='25' y2='140' stroke-width='2'/></svg>"); }
+    .produkt-samoterminal::before { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160' fill='none' stroke='%23ffffff' stroke-width='1.5'><rect x='30' y='20' width='100' height='130' rx='12'/><circle cx='80' cy='78' r='28' stroke-width='2'/><circle cx='80' cy='78' r='18' stroke-width='1.5' opacity='0.6'/><circle cx='80' cy='78' r='5' fill='%23F472B6' stroke='none'/><path d='M80 50 L80 58 M80 98 L80 106 M52 78 L60 78 M100 78 L108 78' stroke-width='2'/><rect x='50' y='125' width='60' height='6' rx='3' fill='%23ffffff' stroke='none' opacity='0.5'/></svg>"); }
     .produkt:hover {
-      background: rgba(129,140,248,0.07);
-      border-color: rgba(129,140,248,0.28);
-      transform: translateY(-3px);
+      background: linear-gradient(160deg, rgba(129,140,248,0.08) 0%, rgba(244,114,182,0.02) 100%);
+      border-color: rgba(129,140,248,0.36);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     }
-    .produkt-arrow {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 13px; font-weight: 600;
-      color: var(--purple); margin-top: 16px;
-      transition: gap .2s;
+    .produkt:hover::before { opacity: .13; }
+
+    .produkt-logo { height: 26px; display: block; margin-bottom: 22px; position: relative; z-index: 1; }
+    .produkt-head {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 16px;
+      position: relative; z-index: 1;
     }
-    .produkt:hover .produkt-arrow { gap: 10px; }
-    .produkt-logo { height: 24px; display: block; margin-bottom: 22px; }
     .produkt-tag {
       display: inline-block;
-      background: rgba(129,140,248,0.12);
+      background: rgba(129,140,248,0.14);
       color: var(--purple);
       font-size: 11px; font-weight: 700;
-      letter-spacing: .07em; text-transform: uppercase;
-      padding: 3px 10px; border-radius: 99px;
-      margin-bottom: 14px;
+      letter-spacing: .08em; text-transform: uppercase;
+      padding: 4px 11px; border-radius: 99px;
+    }
+    .produkt-outcome {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(244,114,182,0.12);
+      color: var(--pink);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .04em;
+      padding: 4px 11px; border-radius: 99px;
     }
     .produkt h3 {
       font-family: var(--font-head);
-      font-weight: 800; font-size: 18px;
+      font-weight: 800; font-size: 22px;
       color: #fff;
       letter-spacing: -0.02em;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      position: relative; z-index: 1;
     }
-    .produkt p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.75; }
+    .produkt p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.7;
+      position: relative; z-index: 1;
+      max-width: 480px;
+    }
+    .produkt-arrow {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 13px; font-weight: 600;
+      color: var(--pink);
+      margin-top: 20px;
+      transition: gap .2s;
+      position: relative; z-index: 1;
+    }
+    .produkt:hover .produkt-arrow { gap: 11px; }
+
+    /* ── Stats ── */
+    #stats {
+      background: var(--slate-100);
+      padding: 90px 6%;
+      border-top: 1px solid var(--slate-200);
+      border-bottom: 1px solid var(--slate-200);
+    }
+    .stats-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .kpi {
+      padding: 28px 24px;
+      text-align: left;
+      border-left: 2px solid var(--slate-200);
+      transition: border-color .25s;
+    }
+    .kpi:hover { border-left-color: var(--pink); }
+    .kpi-num {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(44px, 5vw, 68px);
+      color: var(--navy);
+      letter-spacing: -0.045em;
+      line-height: 1;
+      margin-bottom: 12px;
+      display: flex; align-items: flex-start;
+    }
+    .kpi-num .unit {
+      font-size: 0.45em;
+      color: var(--purple-2);
+      margin-left: 4px;
+      font-weight: 800;
+      margin-top: 0.15em;
+    }
+    .kpi-lbl {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+      line-height: 1.5;
+      max-width: 200px;
+    }
+
+    /* ── Case Study ── */
+    #case {
+      background: var(--white);
+      padding: 110px 6%;
+    }
+    .case-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .case-text h2 {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(28px, 3vw, 40px);
+      color: var(--navy);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+    .case-text h2 em { font-style: normal; color: var(--purple-2); }
+    .case-text p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .case-metric {
+      background: var(--navy);
+      border-radius: 18px;
+      padding: 40px 36px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .case-metric::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 85% 20%, rgba(244,114,182,0.18) 0%, transparent 55%);
+    }
+    .case-metric-label {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .case-metric-row {
+      display: flex; align-items: baseline; gap: 14px;
+      font-family: var(--font-head);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .case-metric-from {
+      font-size: 38px;
+      color: rgba(255,255,255,0.35);
+      text-decoration: line-through;
+      text-decoration-thickness: 2px;
+    }
+    .case-metric-arrow {
+      color: var(--purple);
+      font-size: 28px;
+    }
+    .case-metric-to {
+      font-size: 58px;
+      color: #fff;
+    }
+    .case-metric-desc {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      position: relative;
+      font-weight: 300;
+    }
+
+    /* ── Zitat ── */
+    #zitat {
+      background: var(--slate-100);
+      padding: 80px 6%;
+      text-align: center;
+      border-top: 1px solid var(--slate-200);
+      border-bottom: 1px solid var(--slate-200);
+    }
+    #zitat blockquote {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(22px, 2.8vw, 36px);
+      color: var(--navy);
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    #zitat blockquote em { font-style: normal; color: var(--pink-2); }
+    #zitat .quote-mark {
+      font-family: var(--font-head);
+      font-size: 64px;
+      color: var(--purple);
+      line-height: 0;
+      display: block;
+      margin-bottom: 22px;
+      opacity: .5;
+    }
 
     /* ── Über uns ── */
-    #ueber-uns { background: var(--white); }
+    #ueber-uns { background: var(--white); padding: 120px 6%; }
     .ueber-grid {
+      max-width: 1120px; margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: center;
     }
+    .ueber-text h2 em { font-style: normal; color: var(--purple-2); }
     .ueber-text p {
       font-size: 16px;
-      color: var(--gray);
+      color: var(--text-muted);
       line-height: 1.85;
       margin-bottom: 18px;
     }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+    .ueber-badges {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 26px;
     }
-    .stat {
-      background: var(--gray-light);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px 24px;
-      text-align: center;
-      transition: border-color .2s;
-    }
-    .stat:hover { border-color: var(--purple); }
-    .stat-num {
-      font-family: var(--font-head);
-      font-weight: 800;
-      font-size: 40px;
+    .ueber-badge {
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 8px 14px;
+      border-radius: 99px;
+      font-size: 13px; font-weight: 600;
       color: var(--navy);
-      letter-spacing: -0.04em;
-      line-height: 1;
-      margin-bottom: 8px;
+      display: inline-flex; align-items: center; gap: 8px;
     }
-    .stat-num sup { color: var(--purple); font-size: 24px; }
-    .stat-lbl { font-size: 13px; color: var(--gray); font-weight: 500; }
+    .ueber-badge svg { color: var(--pink-2); }
 
-    /* ── Zitat ── */
-    #zitat {
-      background: var(--gray-light);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 72px 6%;
-      text-align: center;
+    .ueber-visual {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      padding: 40px;
     }
-    #zitat blockquote {
-      font-family: var(--font-head);
-      font-weight: 800;
-      font-size: clamp(22px, 3vw, 34px);
-      color: var(--navy);
-      letter-spacing: -0.025em;
-      line-height: 1.35;
-      max-width: 800px;
-      margin: 0 auto;
+    .ueber-visual::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(129,140,248,0.18) 1px, transparent 0);
+      background-size: 26px 26px;
+      opacity: .7;
     }
-    #zitat blockquote em { font-style: normal; color: var(--purple-2); }
+    .ueber-visual-glow {
+      position: absolute;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(244,114,182,0.22) 0%, transparent 60%);
+      top: -60px; right: -60px;
+    }
+    .ueber-code {
+      position: relative; z-index: 1;
+      background: rgba(15,23,42,0.7);
+      border: 1px solid rgba(129,140,248,0.2);
+      border-radius: 12px;
+      padding: 24px 26px;
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.85);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+      width: 100%;
+      max-width: 360px;
+    }
+    .ueber-code-head {
+      display: flex; gap: 6px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .ueber-code-head span {
+      width: 10px; height: 10px; border-radius: 50%;
+    }
+    .ueber-code-head span:nth-child(1) { background: #f87171; }
+    .ueber-code-head span:nth-child(2) { background: #fbbf24; }
+    .ueber-code-head span:nth-child(3) { background: #4ade80; }
+    .code-k { color: var(--pink); }
+    .code-s { color: #a5f3fc; }
+    .code-c { color: rgba(255,255,255,0.38); font-style: italic; }
+    .code-v { color: var(--purple); }
 
     /* ── Kontakt ── */
     #kontakt {
-      background: linear-gradient(140deg, var(--purple-3) 0%, #7C3AED 100%);
-      padding: 96px 6%;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(244,114,182,0.55) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(99,102,241,0.5) 0%, transparent 50%),
+        linear-gradient(135deg, var(--navy-deep) 0%, var(--purple-3) 100%);
+      padding: 110px 6%;
       text-align: center;
+      position: relative; overflow: hidden;
     }
+    #kontakt .hero-dots {
+      opacity: .45;
+    }
+    #kontakt-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+    #kontakt .label { color: rgba(255,255,255,0.8); margin-bottom: 18px; }
+    #kontakt .label::before { background: rgba(255,255,255,0.4); }
     #kontakt h2 {
       font-family: var(--font-head);
-      font-weight: 800;
-      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 900;
+      font-size: clamp(32px, 4vw, 52px);
       color: #fff;
-      letter-spacing: -0.025em;
-      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 20px;
     }
-    #kontakt p { font-size: 18px; color: rgba(255,255,255,0.75); margin-bottom: 40px; }
+    #kontakt p { font-size: 18px; color: rgba(255,255,255,0.82); margin-bottom: 40px; font-weight: 300; }
     .btn-white {
       display: inline-flex; align-items: center; gap: 10px;
       background: #fff;
-      color: var(--purple-3);
+      color: var(--navy);
       font-family: var(--font-body);
-      font-weight: 700; font-size: 15px;
-      padding: 15px 32px;
-      border-radius: 8px;
+      font-weight: 700; font-size: 16px;
+      padding: 16px 34px;
+      border-radius: 9px;
       text-decoration: none;
       transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.22);
     }
-    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(0,0,0,0.2); }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 18px 44px rgba(0,0,0,0.3); }
 
     /* ── Footer ── */
     footer {
-      background: var(--navy);
+      background: var(--navy-deep);
       border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 36px 6%;
+      padding: 40px 6%;
     }
     .footer-inner {
-      max-width: 1160px; margin: 0 auto;
+      max-width: 1200px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
       flex-wrap: wrap; gap: 16px;
     }
     footer img { height: 22px; }
     .footer-links { display: flex; gap: 28px; }
-    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color .2s; }
-    .footer-links a:hover { color: var(--purple); }
-    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.22); }
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color .2s;
+      position: relative;
+    }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.28); }
+
+    /* ── Reveal-Animationen ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ── Responsive ── */
     @media (max-width: 1024px) {
-      .produkte-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-wrap { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { height: 360px; max-width: 520px; }
+      .produkte-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .prozess { grid-template-columns: 1fr; gap: 48px; }
+      .prozess::before { display: none; }
+      .case-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .ueber-grid { grid-template-columns: 1fr; gap: 48px; }
     }
     @media (max-width: 768px) {
-      nav .nav-links { display: none; }
-      .leistungen-grid { grid-template-columns: 1fr; }
-      .produkte-grid { grid-template-columns: 1fr; }
-      .ueber-grid { grid-template-columns: 1fr; gap: 48px; }
+      nav .nav-links li:not(:last-child) { display: none; }
+      .section { padding: 80px 6%; }
+      #hero { padding: 120px 6% 80px; min-height: auto; }
+      .tile { width: 200px; }
+      .hero-visual { height: 320px; }
+      .stats-inner { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .kpi { padding: 20px 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+      .marquee-track { animation: none; }
     }
   </style>
 </head>
 <body>
 
   <!-- Nav -->
-  <nav>
+  <nav id="nav">
     <a href="/" class="nav-logo">
       <img src="./assets/samolabs-logo-dark.png" alt="samoLabs.">
     </a>
@@ -410,60 +858,129 @@
     <div class="hero-dots"></div>
     <div class="hero-glow-1"></div>
     <div class="hero-glow-2"></div>
-    <div class="hero-content">
-      <div class="eyebrow">
-        <span class="eyebrow-dot"></span>
-        Software-Entwicklung &amp; Prozessoptimierung
+    <div class="hero-wrap">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Software-Entwicklung &amp; Prozessoptimierung
+        </div>
+        <h1 class="hero-h1">
+          Wir digitalisieren,<br>
+          was <span class="accent">Ihr Unternehmen</span><br>
+          wirklich braucht.
+        </h1>
+        <p class="hero-sub">
+          Als junges, technologiegetriebenes Team entwickeln wir maßgeschneiderte Softwarelösungen, die in Ihrem Alltag tatsächlich funktionieren — ohne Consulting-Overhead, ohne Buzzwords, nur echte Ergebnisse.
+        </p>
+        <div class="btn-row">
+          <a href="#kontakt" class="btn-primary">
+            Gespräch vereinbaren
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#produkte" class="btn-outline">Unsere Produkte ansehen</a>
+        </div>
       </div>
-      <h1 class="hero-h1">
-        Wir digitalisieren,<br>
-        was <em>Ihr Unternehmen</em><br>
-        wirklich braucht.
-      </h1>
-      <p class="hero-sub">
-        Als junges, technologiegetriebenes Team entwickeln wir maßgeschneiderte Softwarelösungen, die in Ihrem Alltag tatsächlich funktionieren — ohne Consulting-Overhead, ohne Buzzwords, nur mit echten Ergebnissen.
-      </p>
-      <div class="btn-row">
-        <a href="#kontakt" class="btn-primary">
-          Gespräch vereinbaren
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-        <a href="#produkte" class="btn-outline">Unsere Produkte ansehen</a>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="tile tile-1">
+          <div class="tile-head">
+            <img src="./assets/samoRad-logo-dark.png" alt="" class="tile-logo">
+            <span class="tile-dot"></span>
+          </div>
+          <div class="tile-body">
+            <div class="tile-bar"></div>
+            <div class="tile-bar"></div>
+            <div class="tile-bar"></div>
+          </div>
+          <div class="tile-pill">Werkstatt</div>
+        </div>
+        <div class="tile tile-2">
+          <div class="tile-head">
+            <img src="./assets/samoChat-logo-dark.png" alt="" class="tile-logo">
+            <span class="tile-dot"></span>
+          </div>
+          <div class="tile-body">
+            <div class="tile-bar"></div>
+            <div class="tile-bar"></div>
+            <div class="tile-bar"></div>
+          </div>
+          <div class="tile-pill">KI-Ticketing</div>
+        </div>
+        <div class="tile tile-3">
+          <div class="tile-head">
+            <img src="./assets/samoPlan-logo-dark.png" alt="" class="tile-logo">
+            <span class="tile-dot"></span>
+          </div>
+          <div class="tile-body">
+            <div class="tile-bar"></div>
+            <div class="tile-bar"></div>
+            <div class="tile-bar"></div>
+          </div>
+          <div class="tile-pill">Planung</div>
+        </div>
+        <div class="tile tile-4">
+          <div class="tile-head">
+            <img src="./assets/samoTerminal-logo-dark.png" alt="" class="tile-logo">
+            <span class="tile-dot"></span>
+          </div>
+          <div class="tile-body">
+            <div class="tile-bar"></div>
+            <div class="tile-bar"></div>
+            <div class="tile-bar"></div>
+          </div>
+          <div class="tile-pill">NFC-Zeit</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Leistungen -->
+  <!-- Trust-Bar -->
+  <section id="trust">
+    <div class="trust-label">Wir bauen Software für</div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item">Fahrradhandel <span>·</span></div>
+        <div class="marquee-item">Autoteilehandel <span>·</span></div>
+        <div class="marquee-item">Handwerk <span>·</span></div>
+        <div class="marquee-item">Werkstätten <span>·</span></div>
+        <div class="marquee-item">Dienstleister <span>·</span></div>
+        <div class="marquee-item">Einzelhandel <span>·</span></div>
+        <div class="marquee-item">Großhandel <span>·</span></div>
+        <div class="marquee-item">Hausverwaltung <span>·</span></div>
+        <!-- duplicate for infinite scroll -->
+        <div class="marquee-item">Fahrradhandel <span>·</span></div>
+        <div class="marquee-item">Autoteilehandel <span>·</span></div>
+        <div class="marquee-item">Handwerk <span>·</span></div>
+        <div class="marquee-item">Werkstätten <span>·</span></div>
+        <div class="marquee-item">Dienstleister <span>·</span></div>
+        <div class="marquee-item">Einzelhandel <span>·</span></div>
+        <div class="marquee-item">Großhandel <span>·</span></div>
+        <div class="marquee-item">Hausverwaltung <span>·</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungen: Prozess-Linie -->
   <section id="leistungen" class="section">
     <div class="section-inner">
-      <div class="label">Was wir tun</div>
-      <h2 class="section-h2">Vom Prozess zur Lösung —<br>ohne Umwege.</h2>
-      <p class="section-lead">Wir analysieren Ihre Abläufe, entwickeln passende Software und bleiben langfristig dabei. Nicht wie klassische Berater, die nach dem Abschlussbericht verschwinden.</p>
-      <div class="leistungen-grid">
-        <div class="leistung">
-          <div class="leistung-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-            </svg>
-          </div>
+      <div class="reveal">
+        <div class="label">Was wir tun</div>
+        <h2 class="section-h2">Vom Prozess zur Lösung —<br>ohne Umwege.</h2>
+        <p class="section-lead">Wir analysieren Ihre Abläufe, entwickeln passende Software und bleiben langfristig dabei. Nicht wie klassische Berater, die nach dem Abschlussbericht verschwinden.</p>
+      </div>
+      <div class="prozess">
+        <div class="schritt reveal">
+          <div class="schritt-num">01</div>
           <h3>Prozess-Analyse</h3>
           <p>Wir schauen uns Ihre bestehenden Abläufe genau an — vor Ort, praxisnah. Wo liegt Potenzial? Was kostet unnötig Zeit? Was lässt sich automatisieren? Wir finden es heraus, bevor wir eine einzige Zeile Code schreiben.</p>
         </div>
-        <div class="leistung">
-          <div class="leistung-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-            </svg>
-          </div>
+        <div class="schritt reveal">
+          <div class="schritt-num">02</div>
           <h3>Individuelle Entwicklung</h3>
           <p>Wir bauen robuste, wartbare Software, die exakt zu Ihren Anforderungen passt. Keine überengineerte Lösung von der Stange, keine unnötigen Features — nur was wirklich gebraucht wird.</p>
         </div>
-        <div class="leistung">
-          <div class="leistung-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
+        <div class="schritt reveal">
+          <div class="schritt-num">03</div>
           <h3>Betrieb &amp; Weiterentwicklung</h3>
           <p>Wir deployen, überwachen und pflegen Ihre Lösung dauerhaft. Updates, neue Anforderungen, schnelle Reaktion bei Problemen — wir sind auch nach dem Go-Live für Sie da.</p>
         </div>
@@ -472,37 +989,51 @@
   </section>
 
   <!-- Produkte -->
-  <section id="produkte" class="section" style="position:relative">
+  <section id="produkte" class="section">
     <div class="hero-dots" style="opacity:.5"></div>
     <div class="section-inner" style="position:relative;z-index:1">
-      <div class="label label-light">Unsere Produkte</div>
-      <h2 class="section-h2 section-h2-light">Software, die wir selbst<br>gebaut — und live betreiben.</h2>
-      <p class="section-lead section-lead-light">Unsere Eigenprodukte sind der beste Beweis, wie wir arbeiten: fokussiert, praxistauglich und langfristig gepflegt.</p>
+      <div class="reveal">
+        <div class="label label-light">Unsere Produkte</div>
+        <h2 class="section-h2 section-h2-light">Software, die wir selbst<br>gebaut — und live betreiben.</h2>
+        <p class="section-lead section-lead-light">Unsere Eigenprodukte sind der beste Beweis, wie wir arbeiten: fokussiert, praxistauglich und langfristig gepflegt.</p>
+      </div>
       <div class="produkte-grid">
-        <a class="produkt" href="https://samorad.de" target="_blank" rel="noopener">
+        <a class="produkt produkt-samorad reveal" href="https://samorad.de" target="_blank" rel="noopener">
           <img src="./assets/samoRad-logo-dark.png" alt="samoRad." class="produkt-logo">
-          <div class="produkt-tag">SaaS · Handel</div>
+          <div class="produkt-head">
+            <span class="produkt-tag">SaaS · Handel</span>
+            <span class="produkt-outcome">Spart 4 h / Woche</span>
+          </div>
           <h3>Werkstattverwaltung</h3>
           <p>Komplettes Auftragsmanagement, Terminplanung, Kundenkommunikation und PWA für Mitarbeiter — mandantenfähig für Fahrradhändler.</p>
           <div class="produkt-arrow">samorad.de <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
         </a>
-        <a class="produkt" href="https://samochat.de" target="_blank" rel="noopener">
+        <a class="produkt produkt-samochat reveal" href="https://samochat.de" target="_blank" rel="noopener">
           <img src="./assets/samoChat-logo-dark.png" alt="samoChat." class="produkt-logo">
-          <div class="produkt-tag">SaaS · KI-Ticketing</div>
+          <div class="produkt-head">
+            <span class="produkt-tag">SaaS · KI-Ticketing</span>
+            <span class="produkt-outcome">24/7 Antworten</span>
+          </div>
           <h3>KI-gestützter Kundensupport</h3>
           <p>Ihr Kunde schreibt — die KI antwortet, priorisiert und löst. Alle relevanten Daten auf einen Blick, kein Callcenter, keine Wartezeiten.</p>
           <div class="produkt-arrow">samochat.de <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
         </a>
-        <a class="produkt" href="https://samoplan.de" target="_blank" rel="noopener">
+        <a class="produkt produkt-samoplan reveal" href="https://samoplan.de" target="_blank" rel="noopener">
           <img src="./assets/samoPlan-logo-dark.png" alt="samoPlan." class="produkt-logo">
-          <div class="produkt-tag">SaaS · Planung</div>
+          <div class="produkt-head">
+            <span class="produkt-tag">SaaS · Planung</span>
+            <span class="produkt-outcome">Übersicht statt Chaos</span>
+          </div>
           <h3>Ressourcenplanung</h3>
           <p>Projekt- und Kapazitätsplanung für Dienstleister. Übersicht statt Chaos — wer macht was, bis wann, mit wie viel Puffer.</p>
           <div class="produkt-arrow">samoplan.de <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
         </a>
-        <a class="produkt" href="https://samoterminal.de" target="_blank" rel="noopener">
+        <a class="produkt produkt-samoterminal reveal" href="https://samoterminal.de" target="_blank" rel="noopener">
           <img src="./assets/samoTerminal-logo-dark.png" alt="samoTerminal." class="produkt-logo">
-          <div class="produkt-tag">Android · Betrieb</div>
+          <div class="produkt-head">
+            <span class="produkt-tag">Android · Betrieb</span>
+            <span class="produkt-outcome">GoBD-konform</span>
+          </div>
           <h3>Digitale Zeiterfassung</h3>
           <p>NFC-basiertes Stempeluhr-System für Tablets. Mitarbeiter buchen sich per Chip ein — einfach, schnell, GoBD-konform.</p>
           <div class="produkt-arrow">samoterminal.de <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
@@ -511,42 +1042,87 @@
     </div>
   </section>
 
+  <!-- Stats / KPI -->
+  <section id="stats">
+    <div class="stats-inner">
+      <div class="kpi reveal">
+        <div class="kpi-num"><span data-counter="4">0</span><span class="unit">+</span></div>
+        <div class="kpi-lbl">Live-Produkte im produktiven Einsatz</div>
+      </div>
+      <div class="kpi reveal">
+        <div class="kpi-num"><span data-counter="100">0</span><span class="unit">%</span></div>
+        <div class="kpi-lbl">Eigenentwicklung — kein Outsourcing</div>
+      </div>
+      <div class="kpi reveal">
+        <div class="kpi-num">&lt;&nbsp;<span data-counter="24">0</span><span class="unit">h</span></div>
+        <div class="kpi-lbl">Reaktionszeit bei kritischen Anfragen</div>
+      </div>
+      <div class="kpi reveal">
+        <div class="kpi-num"><span data-counter="3">0</span><span class="unit">+ Jahre</span></div>
+        <div class="kpi-lbl">Erfahrung mit Enterprise-Software</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study -->
+  <section id="case">
+    <div class="case-wrap">
+      <div class="case-text reveal">
+        <div class="label">Ein Beispiel</div>
+        <h2>Werkstatt-Check-in<br>von <em>8 Minuten</em><br>auf <em>90 Sekunden</em>.</h2>
+        <p>Ein Fahrradhändler aus dem Rheinland hat jeden eingehenden Werkstattauftrag handschriftlich auf Papierzettel notiert — Kundendaten, Fahrrad, Problem, Termin. Jeder Check-in: ~8 Minuten. Pro Tag 30+ Aufträge.</p>
+        <p>Mit samoRad dauert der komplette Check-in heute durchschnittlich 90 Sekunden — inklusive Kundenzuordnung, Fotodokumentation, Terminvergabe und automatischer Mail-Bestätigung.</p>
+      </div>
+      <div class="case-metric reveal">
+        <div class="case-metric-label">Check-in-Dauer</div>
+        <div class="case-metric-row">
+          <span class="case-metric-from">8 min</span>
+          <span class="case-metric-arrow">→</span>
+          <span class="case-metric-to">90 s</span>
+        </div>
+        <p class="case-metric-desc">Pro Werkstatt-Auftrag. Bei 30 Aufträgen täglich sind das über <strong style="color:#fff">3 Stunden</strong> gewonnene Arbeitszeit — jeden Tag.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Zitat -->
   <section id="zitat">
+    <span class="quote-mark">&ldquo;</span>
     <blockquote>
-      „Kein Unternehmen braucht mehr Theorie.<br>
-      Es braucht <em>Software, die morgen früh funktioniert.</em>"
+      Kein Unternehmen braucht mehr Theorie.<br>
+      Es braucht <em>Software, die morgen früh funktioniert.</em>
     </blockquote>
   </section>
 
   <!-- Über uns -->
-  <section id="ueber-uns" class="section">
-    <div class="section-inner">
-      <div class="ueber-grid">
-        <div class="ueber-text">
-          <div class="label">Über uns</div>
-          <h2 class="section-h2">Jung, direkt<br>und nah am Betrieb.</h2>
-          <p>Wir sind samoLabs — ein kleines, schlagkräftiges Entwicklerteam mit einer klaren Mission: Unternehmen durch maßgeschneiderte Software wirklich weiterzubringen, nicht durch Präsentationen.</p>
-          <p>Unsere Wurzeln liegen in der Unternehmenssoftware: Bevor wir samoLabs gegründet haben, haben wir als Subunternehmer für einen der größten Telekommunikationskonzerne Europas entwickelt. Diese Erfahrung — Enterprise-Qualität, Prozessdisziplin, skalierbare Architekturen — bringen wir heute in jedes unserer Projekte mit.</p>
-          <p>Was uns von klassischen IT-Beratern unterscheidet: Wir liefern fertige, laufende Systeme. Ob Einzelhändler, Handwerksbetrieb oder Dienstleister — wenn ein Prozess noch auf Papier, in Excel oder im Kopf stattfindet, können wir helfen.</p>
+  <section id="ueber-uns">
+    <div class="ueber-grid">
+      <div class="ueber-text reveal">
+        <div class="label">Über uns</div>
+        <h2 class="section-h2">Jung, direkt<br>und nah am <em>Betrieb</em>.</h2>
+        <p>Wir sind samoLabs — ein kleines, schlagkräftiges Entwicklerteam mit einer klaren Mission: Unternehmen durch maßgeschneiderte Software wirklich weiterzubringen, nicht durch Präsentationen.</p>
+        <p>Unsere Wurzeln liegen in der Unternehmenssoftware: Bevor wir samoLabs gegründet haben, haben wir als Subunternehmer für einen der größten Telekommunikationskonzerne Europas entwickelt. Diese Erfahrung — Enterprise-Qualität, Prozessdisziplin, skalierbare Architekturen — bringen wir heute in jedes unserer Projekte mit.</p>
+        <p>Was uns von klassischen IT-Beratern unterscheidet: Wir liefern fertige, laufende Systeme.</p>
+        <div class="ueber-badges">
+          <span class="ueber-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Enterprise-Erfahrung</span>
+          <span class="ueber-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>DSGVO-konform</span>
+          <span class="ueber-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>In Deutschland gehostet</span>
+          <span class="ueber-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Langfristige Pflege</span>
         </div>
-        <div class="stats-grid">
-          <div class="stat">
-            <div class="stat-num">4<sup>+</sup></div>
-            <div class="stat-lbl">Live-Produkte</div>
+      </div>
+      <div class="ueber-visual reveal" aria-hidden="true">
+        <div class="ueber-visual-glow"></div>
+        <div class="ueber-code">
+          <div class="ueber-code-head">
+            <span></span><span></span><span></span>
           </div>
-          <div class="stat">
-            <div class="stat-num">100<sup>%</sup></div>
-            <div class="stat-lbl">Eigenentwicklung</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">0</div>
-            <div class="stat-lbl">Buzzwords —<br>nur echte Lösungen</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">24<sup>/7</sup></div>
-            <div class="stat-lbl">Betrieb &amp; Support</div>
-          </div>
+          <span class="code-c">// samoLabs — how we work</span><br>
+          <span class="code-k">function</span> <span class="code-v">digitalisieren</span>(prozess) {<br>
+          &nbsp;&nbsp;<span class="code-k">const</span> analyse = <span class="code-v">verstehen</span>(prozess);<br>
+          &nbsp;&nbsp;<span class="code-k">const</span> lösung = <span class="code-v">bauen</span>(analyse);<br>
+          &nbsp;&nbsp;<span class="code-k">return</span> <span class="code-v">betreuen</span>(lösung);<br>
+          }<br><br>
+          <span class="code-c">// immer. langfristig.</span>
         </div>
       </div>
     </div>
@@ -554,12 +1130,16 @@
 
   <!-- Kontakt CTA -->
   <section id="kontakt">
-    <h2>Bereit, einen Prozess zu digitalisieren?</h2>
-    <p>Wir kümmern uns um Ihre Prozesse — damit Sie sich auf das konzentrieren können, was Ihr Unternehmen wirklich voranbringt.</p>
-    <a href="mailto:info@samolabs.de" class="btn-white">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      info@samolabs.de
-    </a>
+    <div class="hero-dots"></div>
+    <div id="kontakt-inner">
+      <div class="label">Los geht's</div>
+      <h2>Bereit, einen Prozess<br>zu digitalisieren?</h2>
+      <p>Wir kümmern uns um Ihre Prozesse — damit Sie sich auf das konzentrieren können, was Ihr Unternehmen wirklich voranbringt.</p>
+      <a href="mailto:info@samolabs.de" class="btn-white">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        info@samolabs.de
+      </a>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -575,7 +1155,60 @@
   </footer>
 
   <script>
+    // Year
     document.getElementById('fyear').textContent = new Date().getFullYear();
+
+    // Nav scroll-transition
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      if (window.scrollY > 8) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Respect reduced motion
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Reveal on scroll
+    if (!reduced && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+
+    // Counter animation on view
+    const counters = document.querySelectorAll('[data-counter]');
+    if (!reduced && counters.length && 'IntersectionObserver' in window) {
+      const cio = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const el = e.target;
+          const target = parseInt(el.dataset.counter, 10);
+          const duration = 1200;
+          const start = performance.now();
+          const tick = (now) => {
+            const p = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(target * eased).toString();
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          cio.unobserve(el);
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(c => cio.observe(c));
+    } else {
+      counters.forEach(c => c.textContent = c.dataset.counter);
+    }
   </script>
 </body>
 </html>
