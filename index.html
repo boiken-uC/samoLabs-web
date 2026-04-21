@@ -87,6 +87,23 @@
       transform: translateY(-1px);
       box-shadow: 0 6px 20px rgba(236, 72, 153, 0.45);
     }
+    .sound-toggle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(129,140,248,0.12);
+      border: 1px solid rgba(129,140,248,0.3);
+      color: rgba(255,255,255,0.82);
+      cursor: pointer;
+      transition: background .2s, border-color .2s, color .2s, transform .15s;
+      padding: 0;
+    }
+    .sound-toggle:hover { background: rgba(244,114,182,0.18); border-color: var(--pink); color: var(--pink); transform: translateY(-1px); }
+    .sound-toggle.playing { background: rgba(244,114,182,0.22); border-color: var(--pink); color: var(--pink); }
+    .sound-toggle svg { width: 16px; height: 16px; }
+    .sound-toggle .icon-on { display: none; }
+    .sound-toggle.playing .icon-off { display: none; }
+    .sound-toggle.playing .icon-on { display: block; }
 
     /* ── Hero ── */
     #hero {
@@ -96,10 +113,26 @@
       position: relative; overflow: hidden;
       display: flex; align-items: center;
     }
+    .hero-video {
+      position: absolute; inset: 0; z-index: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+      pointer-events: none;
+    }
+    .hero-video.active { opacity: 0.45; }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        linear-gradient(180deg, rgba(15,23,42,0.55) 0%, rgba(15,23,42,0.75) 60%, rgba(15,23,42,0.92) 100%),
+        linear-gradient(90deg, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.35) 60%, rgba(15,23,42,0.55) 100%);
+    }
     .hero-dots {
       position: absolute; inset: 0; z-index: 0;
       background-image: radial-gradient(circle at 1px 1px, rgba(129,140,248,0.14) 1px, transparent 0);
       background-size: 36px 36px;
+      opacity: 0.55;
     }
     .hero-glow-1 {
       position: absolute; z-index: 0;
@@ -850,14 +883,24 @@
       <li><a href="#produkte">Produkte</a></li>
       <li><a href="#ueber-uns">Über uns</a></li>
       <li><a href="#kontakt" class="nav-cta">Kontakt aufnehmen</a></li>
+      <li>
+        <button id="sound-toggle" class="sound-toggle" type="button" aria-label="Musik abspielen" aria-pressed="false" title="Orgelmusik an/aus">
+          <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
+          <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        </button>
+      </li>
     </ul>
   </nav>
 
   <!-- Hero -->
   <section id="hero">
+    <video id="hero-video-a" class="hero-video active" src="./assets/video/tokyo-crossing.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <video id="hero-video-b" class="hero-video" src="./assets/video/hamburg-port.mp4" muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <div class="hero-overlay"></div>
     <div class="hero-dots"></div>
     <div class="hero-glow-1"></div>
     <div class="hero-glow-2"></div>
+    <audio id="hero-audio" src="./assets/audio/organ-toccata.ogg" loop preload="none"></audio>
     <div class="hero-wrap">
       <div class="hero-content">
         <div class="eyebrow">
@@ -1157,6 +1200,46 @@
   <script>
     // Year
     document.getElementById('fyear').textContent = new Date().getFullYear();
+
+    // Hero video rotator (cross-fade between two clips)
+    (() => {
+      const a = document.getElementById('hero-video-a');
+      const b = document.getElementById('hero-video-b');
+      if (!a || !b) return;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reducedMotion) { a.pause(); return; }
+      let active = a, next = b;
+      const swap = () => {
+        try { next.currentTime = 0; next.play().catch(() => {}); } catch (_) {}
+        next.classList.add('active');
+        active.classList.remove('active');
+        setTimeout(() => { try { active.pause(); } catch (_) {} }, 1400);
+        [active, next] = [next, active];
+      };
+      setInterval(swap, 9000);
+    })();
+
+    // Sound toggle (organ music)
+    (() => {
+      const btn = document.getElementById('sound-toggle');
+      const audio = document.getElementById('hero-audio');
+      if (!btn || !audio) return;
+      audio.volume = 0.55;
+      btn.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play().then(() => {
+            btn.classList.add('playing');
+            btn.setAttribute('aria-pressed', 'true');
+            btn.setAttribute('aria-label', 'Musik stoppen');
+          }).catch(() => {});
+        } else {
+          audio.pause();
+          btn.classList.remove('playing');
+          btn.setAttribute('aria-pressed', 'false');
+          btn.setAttribute('aria-label', 'Musik abspielen');
+        }
+      });
+    })();
 
     // Nav scroll-transition
     const nav = document.getElementById('nav');
