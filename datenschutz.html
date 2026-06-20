@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutzerklärung – samoLabs.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:       #0F172A;
+      --navy-deep:  #020617;
+      --purple:     #818CF8;
+      --purple-2:   #6366F1;
+      --pink:       #F472B6;
+      --white:      #FFFFFF;
+      --slate-100:  #F1F5F9;
+      --slate-200:  #E2E8F0;
+      --text:       #0F172A;
+      --text-muted: #475569;
+      --font-head:  'Outfit', sans-serif;
+      --font-body:  'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15, 23, 42, 0.96);
+      border-bottom: 1px solid rgba(129, 140, 248, 0.12);
+      height: 68px;
+      padding: 0 6%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo img { height: 26px; display: block; }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 14px; font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--purple); }
+    .nav-back svg { flex-shrink: 0; }
+
+    /* Content */
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 120px 6% 80px;
+    }
+    .page-label {
+      font-size: 12px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--purple-2);
+      margin-bottom: 14px;
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .page-label::before {
+      content: ""; display: inline-block;
+      width: 28px; height: 1px; background: var(--purple-2);
+    }
+    h1 {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(32px, 5vw, 52px);
+      color: var(--navy);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--navy);
+      letter-spacing: -0.015em;
+      margin: 40px 0 12px;
+    }
+    h3 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--navy);
+      margin: 24px 0 8px;
+    }
+    p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    ul {
+      margin: 0 0 12px 20px;
+    }
+    ul li {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 6px;
+    }
+    a { color: var(--purple-2); text-decoration: none; }
+    a:hover { color: var(--purple); text-decoration: underline; }
+
+    .divider {
+      width: 40px; height: 2px;
+      background: var(--purple-2);
+      margin: 48px 0;
+      border-radius: 2px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy-deep);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 40px 6%;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    footer img { height: 22px; }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.28); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="./assets/samolabs-logo-dark.png" alt="samoLabs.">
+    </a>
+    <a href="/" class="nav-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+      Zur Startseite
+    </a>
+  </nav>
+
+  <main class="page-wrap">
+    <div class="page-label">Rechtliches</div>
+    <h1>Datenschutz&shy;erklärung</h1>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>
+      Armin Imamovic<br>
+      Kölner Landstraße 36<br>
+      52428 Jülich<br>
+      E-Mail: <a href="mailto:info@samolabs.de">info@samolabs.de</a>
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>2. Welche Daten wir erheben</h2>
+    <p>
+      Beim Besuch dieser Website werden durch den Webserver automatisch folgende Daten erfasst und temporär in Server-Logfiles gespeichert:
+    </p>
+    <ul>
+      <li>IP-Adresse des anfragenden Rechners (anonymisiert)</li>
+      <li>Datum und Uhrzeit des Zugriffs</li>
+      <li>Name und URL der abgerufenen Datei</li>
+      <li>Übertragene Datenmenge</li>
+      <li>Meldung, ob der Abruf erfolgreich war (HTTP-Statuscode)</li>
+      <li>Browsertyp und -version, Betriebssystem</li>
+      <li>Referrer-URL (die zuvor besuchte Seite)</li>
+    </ul>
+    <p>
+      Diese Daten werden ausschließlich zur Sicherstellung eines störungsfreien Betriebs der Website und zur Verbesserung unseres Angebots ausgewertet. Eine Zusammenführung mit anderen Datenquellen findet nicht statt.
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>3. Rechtsgrundlage</h2>
+    <p>
+      Die vorübergehende Speicherung der IP-Adresse durch das System ist zur Auslieferung der Website an Ihren Rechner technisch notwendig. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer technisch fehlerfreien Darstellung und Optimierung unserer Website).
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>4. Hosting</h2>
+    <p>
+      Diese Website wird auf Servern der <strong>Hetzner Online GmbH</strong>, Industriestr. 25, 91710 Gunzenhausen, Deutschland gehostet. Die Server befinden sich in Deutschland. Hetzner ist als Auftragsverarbeiter gemäß Art. 28 DSGVO mit uns vertraglich gebunden.
+    </p>
+    <p>
+      Weitere Informationen zum Datenschutz bei Hetzner finden Sie unter: <a href="https://www.hetzner.com/de/legal/privacy-policy" target="_blank" rel="noopener">hetzner.com/de/legal/privacy-policy</a>
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>5. Kontaktaufnahme per E-Mail</h2>
+    <p>
+      Wenn Sie uns per E-Mail kontaktieren, werden die übermittelten Daten (Ihre E-Mail-Adresse, Name und Nachrichteninhalt) zum Zweck der Bearbeitung der Anfrage und für mögliche Anschlussfragen bei uns gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).
+    </p>
+    <p>
+      Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Sie können der Verarbeitung jederzeit widersprechen; die Korrespondenz wird dann gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>6. Ihre Rechte</h2>
+    <p>Sie haben gegenüber uns folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:</p>
+    <ul>
+      <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+      <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+      <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+      <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+    </ul>
+    <p>
+      Zur Ausübung Ihrer Rechte wenden Sie sich per E-Mail an: <a href="mailto:info@samolabs.de">info@samolabs.de</a>
+    </p>
+    <p>
+      Sie haben außerdem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständige Aufsichtsbehörde für Nordrhein-Westfalen ist die Landesbeauftragte für Datenschutz und Informationsfreiheit NRW, <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">www.ldi.nrw.de</a>.
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>7. Keine Cookies, kein Tracking</h2>
+    <p>
+      Diese Website setzt keine Cookies und verwendet kein Tracking durch Drittanbieter. Es werden keine Nutzungsprofile erstellt.
+    </p>
+    <p>
+      Wir verwenden Google Fonts (eingebunden über Google Fonts API). Dabei kann Ihre IP-Adresse an Google übermittelt werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>8. Aktualität dieser Erklärung</h2>
+    <p>
+      Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Juni 2026. Durch Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.
+    </p>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <img src="./assets/samolabs-logo-dark.png" alt="samoLabs.">
+      <div class="footer-links">
+        <a href="./impressum.html">Impressum</a>
+        <a href="./datenschutz.html">Datenschutz</a>
+        <a href="./credits.html">Credits</a>
+      </div>
+      <div class="footer-copy">© <span id="fyear"></span> samoLabs</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('fyear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
