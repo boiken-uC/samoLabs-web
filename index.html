@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="samoLabs – Wir digitalisieren Ihre Geschäftsprozesse. Maßgeschneiderte Softwarelösungen für Unternehmen, die mehr wollen als Papier und Excel.">
+  <meta name="description" content="samoLabs – wir bauen und betreiben eigene Software-Produkte für den Mittelstand. Fertige, laufende Systeme für Betriebe, die mehr wollen als Papier und Excel.">
   <meta property="og:title" content="samoLabs. – Software, die wirkt.">
   <meta property="og:description" content="Wir entwickeln maßgeschneiderte Software, die Ihre Prozesse wirklich optimiert.">
   <meta property="og:type" content="website">
@@ -878,6 +878,37 @@
       .reveal { opacity: 1; transform: none; }
       .marquee-track { animation: none; }
     }
+    /* ── Team & Netzwerk ── */
+    #team { background: var(--slate-100); padding: 110px 6%; }
+    .team-wrap { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .team-wrap .label { justify-content: center; }
+    .team-wrap h2 { margin: 14px 0 18px; }
+    .team-intro {
+      max-width: 620px; margin: 0 auto 56px;
+      color: var(--text-muted); font-size: 17px; line-height: 1.7; font-weight: 300;
+    }
+    .team-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 36px 44px; }
+    .team-member { width: 150px; }
+    .team-photo {
+      width: 110px; height: 110px; margin: 0 auto 16px;
+      border-radius: 50%;
+      background: linear-gradient(160deg, var(--navy) 0%, var(--purple-3) 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.9); overflow: hidden;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.10);
+      border: 3px solid var(--white);
+    }
+    .team-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .team-photo .initial { font-family: 'Outfit'; font-weight: 800; font-size: 34px; }
+    .team-photo svg { width: 40px; height: 40px; opacity: .5; }
+    .team-name { font-family: 'Outfit'; font-weight: 700; font-size: 17px; color: var(--navy); }
+    .team-role { font-size: 13px; font-weight: 500; color: var(--text-muted); margin-top: 3px; }
+    .team-note { margin-top: 48px; font-size: 13px; color: var(--gray); }
+    @media (max-width: 640px) {
+      #team { padding: 80px 6%; }
+      .team-row { gap: 28px 24px; }
+      .team-member { width: 42%; max-width: 150px; }
+    }
   </style>
 </head>
 <body>
@@ -922,7 +953,7 @@
           wirklich braucht.
         </h1>
         <p class="hero-sub">
-          Als junges, technologiegetriebenes Team entwickeln wir maßgeschneiderte Softwarelösungen, die in Ihrem Alltag tatsächlich funktionieren — ohne Consulting-Overhead, ohne Buzzwords, nur echte Ergebnisse.
+          Ein kleines, technologiegetriebenes Team, das eigene Software-Produkte baut — und selbst betreibt. Fertige, laufende Systeme für Ihren Alltag: ohne Consulting-Overhead, ohne Buzzwords, nur echte Ergebnisse.
         </p>
         <div class="btn-row">
           <a href="#kontakt" class="btn-primary">
@@ -1192,9 +1223,9 @@
       <div class="ueber-text reveal">
         <div class="label">Über uns</div>
         <h2 class="section-h2">Jung, direkt<br>und nah am <em>Betrieb</em>.</h2>
-        <p>Wir sind samoLabs — ein kleines, schlagkräftiges Entwicklerteam mit einer klaren Mission: Unternehmen durch maßgeschneiderte Software wirklich weiterzubringen, nicht durch Präsentationen.</p>
+        <p>Wir sind samoLabs — ein kleines Software-Studio, das eigene Branchen-Software baut und selbst betreibt. Keine Agentur, die abliefert und verschwindet; kein Berater, der Folien hält — sondern Produkte, die täglich in echten Betrieben laufen.</p>
         <p>Unsere Wurzeln liegen in der Unternehmenssoftware: Bevor wir samoLabs gegründet haben, haben wir als Subunternehmer für einen der größten Telekommunikationskonzerne Europas entwickelt. Diese Erfahrung — Enterprise-Qualität, Prozessdisziplin, skalierbare Architekturen — bringen wir heute in jedes unserer Projekte mit.</p>
-        <p>Was uns von klassischen IT-Beratern unterscheidet: Wir liefern fertige, laufende Systeme.</p>
+        <p>Was uns von Agenturen und Beratern unterscheidet: Wir liefern keine Projekte, wir betreiben Produkte — mit Updates, Support und Servern aus einer Hand, jahrelang.</p>
         <div class="ueber-badges">
           <span class="ueber-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Enterprise-Erfahrung</span>
           <span class="ueber-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>DSGVO-konform</span>
@@ -1217,6 +1248,55 @@
           <span class="code-c">// immer. langfristig.</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Team & Netzwerk — AUSGEBLENDET bis echte Fotos vorliegen.
+       Einblenden: style="display:none" entfernen UND Nav-Link <a href="#team">Team</a> ergaenzen. -->
+  <section id="team" style="display:none" data-status="pending-fotos">
+    <div class="team-wrap">
+      <div class="label reveal">Team &amp; Netzwerk</div>
+      <h2 class="section-h2 reveal">Klein im Kern.<br>Stark im <em>Netzwerk</em>.</h2>
+      <p class="team-intro reveal">
+        Ein fester Kern, ergänzt durch ein Netzwerk aus Entwicklern, Designern und Partnern, die wir
+        projektweise dazuholen. So liefern wir Enterprise-Qualität mit der Direktheit eines kleinen Teams.
+      </p>
+
+      <!--
+        FOTOS EINBAUEN: In einer .team-photo den <span class="initial">…</span> bzw. das <svg> ersetzen durch
+          <img src="./assets/team/<name>.jpg" alt="<Vorname>">
+        Ehrlich bleiben: Vorname + WAHRE Rolle/Beziehung ("Netzwerk & Umsetzung", "Design-Partner").
+        Keine erfundenen Jobtitel fuer Leute, die nicht hier arbeiten — "Netzwerk"/"Partner" ist der ehrliche Rahmen.
+      -->
+      <div class="team-row reveal">
+        <div class="team-member">
+          <div class="team-photo"><span class="initial">A</span></div>
+          <div class="team-name">Armin</div>
+          <div class="team-role">Gründung &amp; Entwicklung</div>
+        </div>
+        <div class="team-member">
+          <div class="team-photo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="team-name">Foto folgt</div>
+          <div class="team-role">Entwicklung</div>
+        </div>
+        <div class="team-member">
+          <div class="team-photo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="team-name">Foto folgt</div>
+          <div class="team-role">Design</div>
+        </div>
+        <div class="team-member">
+          <div class="team-photo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="team-name">Foto folgt</div>
+          <div class="team-role">Netzwerk &amp; Umsetzung</div>
+        </div>
+        <div class="team-member">
+          <div class="team-photo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="team-name">Foto folgt</div>
+          <div class="team-role">Partner</div>
+        </div>
+      </div>
+
+      <p class="team-note reveal">Fester Kern, wachsendes Netzwerk — bewusst klein gehalten, damit ihr direkt mit den Machern sprecht.</p>
     </div>
   </section>
 
