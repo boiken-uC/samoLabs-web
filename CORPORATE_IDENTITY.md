@@ -4,13 +4,13 @@
 >
 > **Canonical reference:** `samoLabs-web/index.html` (live: https://samolabs.de). If this file disagrees with the live site, the live site wins — update this document.
 >
-> **Stand:** 2026-04-21. Nach dem "Top-20-EU-IT-Benchmark-Refresh". Branche: Software-Agentur, junges Team, direkter Ton.
+> **Stand:** 2026-07-24. Positionierung: **produktgetriebenes Software-Studio** — wir bauen UND betreiben eigene Branchen-Software (keine Agentur, keine Beratung). Junges Team, direkter Ton.
 
 ---
 
 ## 1. Brand in one paragraph
 
-samoLabs ist eine kleine, direkte Software-Schmiede, die Geschäftsprozesse für mittelständische Betriebe digitalisiert — ohne Consulting-Overhead, ohne Buzzwords. Auftritt: enterprise-seriös in Struktur und Typografie (wie SAP/Atos/Capgemini), aber mit einem lauten Hot-Pink-Akzent, der den Small-Team-Charakter signalisiert. Dark-dominant (Navy) für Hero/Footer, Weiß und Slate-100 für Inhalte — Rhythmuswechsel dark↔light ist konstitutiv, nicht kosmetisch.
+samoLabs ist ein kleines, direktes Software-Studio, das eigene Branchen-Software für mittelständische Betriebe baut UND selbst betreibt — keine Agentur, die abliefert und verschwindet, kein Berater, der Folien hält, sondern Produkte, die täglich laufen. Ohne Consulting-Overhead, ohne Buzzwords. Auftritt: enterprise-seriös in Struktur und Typografie (wie SAP/Atos/Capgemini), aber mit einem lauten Hot-Pink-Akzent, der den Small-Team-Charakter signalisiert. Dark-dominant (Navy) für Hero/Footer, Weiß und Slate-100 für Inhalte — Rhythmuswechsel dark↔light ist konstitutiv, nicht kosmetisch.
 
 ---
 
@@ -333,3 +333,4 @@ Wenn du diese 8 Punkte hast, sieht die Seite "wie samoLabs" aus. Alles Darüberh
 ## Changelog
 
 - **2026-04-21** — Initial nach dem Top-20-EU-IT-Benchmark-Refresh. Pink als Hot-Accent neu. Outfit 900 Hero-H1 statt 800. Slate-100 als Light-Variante etabliert.
+- **2026-07-24** — Positionierung von "Software-Agentur" auf **produktgetriebenes Software-Studio** geschärft (baut UND betreibt eigene Produkte). Website-Copy (Meta, Hero-Sub, Über-uns) nachgezogen + neue Sektion "Team & Netzwerk" (vorerst ausgeblendet bis echte Fotos). Voice bleibt: Small-Team-ehrlich, keine erfundenen Jobtitel.
