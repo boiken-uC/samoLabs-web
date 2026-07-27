@@ -22,11 +22,11 @@
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
       </button>
       <span class="land-liste" id="land-liste" role="menu">
-        <button type="button" class="aktiv" role="menuitem">Deutschland <small>Deutsch</small></button>
-        <button type="button" role="menuitem">Österreich <small>Deutsch</small></button>
-        <button type="button" role="menuitem">Polen <small>Polski</small></button>
-        <button type="button" role="menuitem">Bosna i Hercegovina <small>Bosanski</small></button>
-        <button type="button" role="menuitem">Suomi <small>Suomeksi</small></button>
+        <button type="button" class="aktiv" role="menuitem" data-land="de">Deutschland <small>Deutsch</small></button>
+        <button type="button" role="menuitem" data-land="at">Österreich <small>Deutsch</small></button>
+        <button type="button" role="menuitem" data-land="pl">Polen <small>Polski</small></button>
+        <button type="button" role="menuitem" data-land="ba">Bosna i Hercegovina <small>Bosanski</small></button>
+        <button type="button" role="menuitem" data-land="fi">Suomi <small>Suomeksi</small></button>
       </span>
     </span>
     <span class="util-r">
@@ -148,7 +148,7 @@
 <!-- ══════════════════════════════════════════════════════════
      SEITE 1 · START
      ══════════════════════════════════════════════════════════ -->
-<main class="page on" data-page="start">
+<main class="page on" data-page="start" id="start">
 
   <header class="hero">
     <div class="hero-in">
@@ -400,7 +400,7 @@
 </main>
 
 <!-- ══════════════ SEITE 2 · ÜBER UNS ══════════════ -->
-<main class="page" data-page="ueber">
+<main class="page" data-page="ueber" id="ueber">
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Über uns</b></div></nav>
   <header class="phead">
     <div class="w">
@@ -564,7 +564,7 @@
 </main>
 
 <!-- ══════════════ SEITE 3 · LÖSUNGEN ══════════════ -->
-<main class="page" data-page="loesungen">
+<main class="page" data-page="loesungen" id="loesungen">
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Lösungen</b></div></nav>
   <header class="phead">
     <div class="w">
@@ -639,7 +639,7 @@
 </main>
 
 <!-- ══════════════ SEITE 4 · PRODUKTE ══════════════ -->
-<main class="page" data-page="produkte">
+<main class="page" data-page="produkte" id="produkte">
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Produkte</b></div></nav>
   <header class="phead">
     <div class="w">
@@ -671,7 +671,7 @@
 </main>
 
 <!-- ══════════════ SEITE 5 · PRAXIS ══════════════ -->
-<main class="page" data-page="praxis">
+<main class="page" data-page="praxis" id="praxis">
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Praxis</b></div></nav>
   <header class="phead">
     <div class="w">
@@ -727,7 +727,7 @@
 </main>
 
 <!-- ══════════════ SEITE 6 · NEUES ══════════════ -->
-<main class="page" data-page="neues">
+<main class="page" data-page="neues" id="neues">
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Presse</b></div></nav>
   <header class="phead">
     <div class="w">
@@ -781,7 +781,7 @@
 </main>
 
 <!-- ══════════════ SEITE 7 · KONTAKT ══════════════ -->
-<main class="page" data-page="kontakt">
+<main class="page" data-page="kontakt" id="kontakt">
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Kontakt</b></div></nav>
   <header class="phead">
     <div class="w">
@@ -875,7 +875,7 @@
 
 
 <!-- ══════════════ DETAILSEITE (Vorlage fuer alle Unterkategorien) ══════════════ -->
-<main class="page" data-page="detail">
+<main class="page" data-page="detail" id="detail">
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <a href="#" id="d-up">Produkte</a> › <b id="d-crumb">—</b></div></nav>
   <header class="phead">
     <div class="w">
@@ -921,7 +921,7 @@
 
 
 <!-- ══════════════ PARTNER ══════════════ -->
-<main class="page" data-page="partner">
+<main class="page" data-page="partner" id="partner">
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Partner</b></div></nav>
   <header class="phead">
     <div class="w">
@@ -992,7 +992,7 @@
 </main>
 
 <!-- ══════════════ KARRIERE ══════════════ -->
-<main class="page" data-page="karriere">
+<main class="page" data-page="karriere" id="karriere">
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Karriere</b></div></nav>
   <header class="phead">
     <div class="w">
@@ -1054,7 +1054,7 @@
 </main>
 
 <!-- ══════════════ ENTWICKLER ══════════════ -->
-<main class="page" data-page="entwickler">
+<main class="page" data-page="entwickler" id="entwickler">
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Entwickler</b></div></nav>
   <header class="phead">
     <div class="w">
@@ -1102,7 +1102,7 @@
 </main>
 
 <!-- ══════════════ SUPPORT ══════════════ -->
-<main class="page" data-page="support">
+<main class="page" data-page="support" id="support">
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Support</b></div></nav>
   <header class="phead">
     <div class="w">
@@ -1150,7 +1150,7 @@
 </main>
 
 <!-- ══════════════ LOGIN ══════════════ -->
-<main class="page" data-page="login">
+<main class="page" data-page="login" id="login">
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Login</b></div></nav>
   <header class="phead">
     <div class="w">

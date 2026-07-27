@@ -41,8 +41,7 @@
      daher dort 380 statt 250 — beide Varianten sehen gleich kraeftig aus. */
   .lg span{font-weight:380;color:var(--ln,var(--lb,var(--navy)))}
   .lg.hell span,.foot .lg span,.ch .lg span{font-weight:250}
-  .lg em{font-style:normal;align-self:flex-start;width:.14em;height:.14em;margin-left:.13em;
-    border-radius:.035em;background:var(--la,var(--accent))}
+  .lg em{display:none}
 
   /* ── Servicezeile ── */
   .util{background:var(--navy);color:rgba(255,255,255,.7);font-size:12.5px}
@@ -170,6 +169,15 @@
   .portal .btn{flex:none;min-height:44px;padding:11px 22px;font-size:14px}
   .portal-leer{padding:34px 0;color:var(--mid)}
   .einwilligung{margin-top:4px}
+
+  /* ── Hinweis bei anderer Sprachwahl ── */
+  .sprach-hinweis{background:var(--mint-bg);border-bottom:1px solid var(--hair);
+    display:flex;align-items:center;justify-content:center;gap:18px;
+    padding:13px 24px;font-size:14.5px;color:var(--ink);text-align:center}
+  .sprach-hinweis button{background:none;border:0;cursor:pointer;font-size:20px;
+    line-height:1;color:var(--mid);padding:0 4px;flex:none}
+  .sprach-hinweis button:hover{color:var(--ink)}
+  @media(max-width:700px){.sprach-hinweis{font-size:13.5px;padding:11px 16px;gap:12px}}
 
   /* ── Nachrichtenseite ── */
   .n-filter{display:flex;flex-wrap:wrap;gap:9px}
@@ -404,3 +412,103 @@
   .flag b{color:#8A2A1C}
 
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Mobilgeräte
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Bedienelemente auf Fingergröße bringen (Empfehlung: mindestens 44 px) */
+@media (pointer: coarse) {
+  .chip, .l-chip { min-height: 44px; padding: 11px 16px; }
+  .burger { min-width: 46px; min-height: 46px; display: grid; place-items: center; }
+  .land-knopf { min-height: 44px; padding: 4px 0; }
+  .land-liste button { min-height: 48px; }
+  .more, .foot a, .menu a, .util a { padding: 4px 0; display: inline-block; }
+  .tab { min-height: 46px; }
+  .acc summary { padding: 18px 0; }
+  .n-filter .l-chip, #p-filter .l-chip { min-height: 44px; }
+}
+
+@media (max-width: 1080px) {
+  /* Aufklappmenü darf die Bildschirmbreite nie überschreiten */
+  .menu.mob .mega { min-width: 0 !important; width: 100%; }
+}
+
+@media (max-width: 700px) {
+  :root { --pad: 20px; }
+
+  /* Etwas größere Grundschrift, kleine Beschriftungen anheben */
+  body { font-size: 16.5px; }
+  .mono, .n-kat, .tag, .util, .land-knopf, .chip { font-size: 13px; }
+  .sub, .cell p, .card p, .rc p { font-size: 15.5px; }
+
+  /* Überschriften enger führen, damit nichts überläuft */
+  h1, h2, h3 { letter-spacing: -.02em; hyphens: auto; }
+  .phead { padding: 44px 0 46px; }
+  .phead h1 { font-size: clamp(26px, 7vw, 34px); }
+  .hero h1 { font-size: clamp(28px, 8vw, 38px); }
+  .sec { padding: 52px 0; }
+
+  /* Servicezeile umbrechen statt abschneiden */
+  .util { display: block; }
+  .util .w { flex-wrap: wrap; gap: 10px 18px; padding-top: 10px; padding-bottom: 10px; }
+  .util-r { gap: 14px 18px; }
+
+  /* Bildkomposition: Farbflächen kleiner, damit das Foto Hauptsache bleibt */
+  .imgset { padding-top: 72%; }
+  .imgset .sq-1 { width: 14%; padding-bottom: 14%; }
+  .imgset .sq-2 { width: 26%; padding-bottom: 26%; }
+
+  /* Hero-Bild bündig statt eingerückt */
+  .hero .ph { margin: 0; border-radius: 0; min-height: 220px; }
+
+  /* Kennzahlen und Zugangsliste untereinander */
+  .kpis { grid-template-columns: 1fr 1fr; }
+  .portal { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .portal .btn { width: 100%; justify-content: center; }
+
+  /* Formular: volle Breite, keine zwei Spalten */
+  .form { grid-template-columns: 1fr; }
+
+  /* Karussell mit Wischabstand am Rand */
+  .rail { scroll-padding-left: 20px; }
+  .rc { flex: 0 0 82%; }
+
+  /* Kundenbericht-Zitat kleiner */
+  blockquote { font-size: 16.5px; }
+  .ref-quote blockquote { font-size: 19px; }
+}
+
+@media (max-width: 480px) {
+  .kpis { grid-template-columns: 1fr; }
+  .weg { grid-template-columns: 1fr; }
+  .partner { grid-template-columns: 1fr; }
+
+  /* Schaltflächen füllen die Breite, damit sie sicher zu treffen sind */
+  .btn, .btn-o, .btn-w, .btn-t { width: 100%; justify-content: center; }
+  .row { flex-direction: column; align-items: stretch; }
+  .navbtn { width: auto; }
+
+  /* Chatfenster nutzt die volle Breite */
+  .chat { right: 12px; left: 12px; width: auto; bottom: 84px; }
+  .fab { right: 16px; bottom: 16px; width: 52px; height: 52px; }
+  .teas { display: none; }
+
+  .nav .w { height: 62px; }
+  .crumb .w { font-size: 12.5px; }
+}
+
+/* Sehr schmale Geräte */
+@media (max-width: 360px) {
+  :root { --pad: 16px; }
+  .hero h1 { font-size: 26px; }
+  .phead h1 { font-size: 24px; }
+  .rc { flex: 0 0 88%; }
+}
+
+/* Querformat auf niedrigen Geräten: Chat darf den Inhalt nicht verdecken */
+@media (max-height: 480px) and (orientation: landscape) {
+  .chat { max-height: 82vh; overflow-y: auto; }
+  .clog { max-height: 40vh; }
+}

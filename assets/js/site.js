@@ -322,7 +322,7 @@
       var c = e.target.closest('.l-chip');
       if (!c) return;
       kat = c.getAttribute('data-kat'); gezeigt = 9;
-      document.querySelectorAll('#n-filter.l-chip').forEach(function(x){ x.classList.toggle('an', x === c); });
+      document.querySelectorAll('#n-filter .l-chip').forEach(function(x){ x.classList.toggle('an', x === c); });
       zeichne();
     });
     knopf.addEventListener('click', function(){ gezeigt += 9; zeichne(); });
@@ -361,7 +361,7 @@
       var c = e.target.closest('.l-chip');
       if (!c) return;
       bereich = c.getAttribute('data-bereich');
-      document.querySelectorAll('#p-filter.l-chip').forEach(function(x){ x.classList.toggle('an', x === c); });
+      document.querySelectorAll('#p-filter .l-chip').forEach(function(x){ x.classList.toggle('an', x === c); });
       zeichne();
     });
     document.getElementById('p-suche').addEventListener('input', function(e){
@@ -399,22 +399,71 @@
   })();
 
   // ── Länderwähler ──
+  var LAENDER_WAHL = {
+    de: ['Deutschland', 'Deutsch', 'de'],
+    at: ['Österreich', 'Deutsch', 'de'],
+    pl: ['Polen', 'Polski', 'pl'],
+    ba: ['Bosna i Hercegovina', 'Bosanski', 'bs'],
+    fi: ['Suomi', 'Suomeksi', 'fi']
+  };
+  var HINWEIS = {
+    pl: 'Ta strona jest obecnie dostępna tylko w języku niemieckim. Chętnie odpowiemy po polsku — napisz do nas.',
+    bs: 'Ova stranica trenutno je dostupna samo na njemačkom. Rado odgovaramo i na bosanskom — pišite nam.',
+    fi: 'Tämä sivusto on toistaiseksi saatavilla vain saksaksi. Vastaamme mielellämme myös englanniksi.'
+  };
   (function(){
     var w = document.getElementById('land-waehler');
     if (!w) return;
     var k = document.getElementById('land-knopf');
+    var liste = document.getElementById('land-liste');
+    var beschriftung = k.childNodes;
+
+    function anzeigen(schluessel){
+      var l = LAENDER_WAHL[schluessel];
+      if (!l) return;
+      // Text im Knopf zwischen den beiden Symbolen austauschen
+      for (var i = 0; i < k.childNodes.length; i++) {
+        if (k.childNodes[i].nodeType === 3 && k.childNodes[i].textContent.trim()) {
+          k.childNodes[i].textContent = ' ' + l[0] + ' · ' + l[1] + ' ';
+          break;
+        }
+      }
+      liste.querySelectorAll('button').forEach(function(b){
+        b.classList.toggle('aktiv', b.getAttribute('data-land') === schluessel);
+      });
+      document.documentElement.setAttribute('lang', l[2]);
+      var alterHinweis = document.getElementById('sprach-hinweis');
+      if (alterHinweis) alterHinweis.remove();
+      if (HINWEIS[l[2]]) {
+        var box = document.createElement('div');
+        box.id = 'sprach-hinweis';
+        box.className = 'sprach-hinweis';
+        box.innerHTML = '<span>' + HINWEIS[l[2]] + '</span>' +
+          '<button type=button aria-label=Schließen>&times;</button>';
+        document.querySelector('.nav').insertAdjacentElement('afterend', box);
+        box.querySelector('button').addEventListener('click', function(){ box.remove(); });
+      }
+      try { localStorage.setItem('sl-land', schluessel); } catch(e){}
+    }
+
     k.addEventListener('click', function(e){
       e.stopPropagation();
       var auf = w.classList.toggle('auf');
-      k.setAttribute('aria-expanded', auf? 'true': 'false');
+      k.setAttribute('aria-expanded', auf ? 'true' : 'false');
     });
-    document.getElementById('land-liste').addEventListener('click', function(e){
+    liste.addEventListener('click', function(e){
       var b = e.target.closest('button');
       if (!b) return;
+      anzeigen(b.getAttribute('data-land'));
       w.classList.remove('auf');
       k.setAttribute('aria-expanded','false');
     });
     document.addEventListener('click', function(){ w.classList.remove('auf'); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') w.classList.remove('auf'); });
+
+    var gemerkt = null;
+    try { gemerkt = localStorage.getItem('sl-land'); } catch(e){}
+    if (gemerkt && LAENDER_WAHL[gemerkt]) anzeigen(gemerkt);
   })();
 
   // ── Seitenwechsel ──
@@ -464,10 +513,24 @@
     e.preventDefault();
     var wohin = ziel.getAttribute('data-go');
     if (wohin.indexOf('detail:') === 0) {
-      if (fuelleDetail(wohin.slice(7))) { zeige('detail'); return; }
+      if (fuelleDetail(wohin.slice(7))) { zeige('detail'); history.replaceState(null, '', '#' + wohin); return; }
     }
     zeige(wohin);
+    history.replaceState(null, '', wohin === 'start' ? location.pathname : '#' + wohin);
   });
+
+  // Adresszeile auswerten, damit Verweise von den Rechtsseiten ankommen
+  function ausHash(){
+    var wohin = (location.hash || '').replace(/^#/, '');
+    if (!wohin) return;
+    if (wohin.indexOf('detail:') === 0) {
+      if (fuelleDetail(wohin.slice(7))) zeige('detail');
+      return;
+    }
+    zeige(wohin);
+  }
+  window.addEventListener('hashchange', ausHash);
+  ausHash();
 
   // ── Mega-Menü ──
   var punkte = Array.prototype.slice.call(document.querySelectorAll('.mi'));
@@ -569,7 +632,7 @@
   function verdrahteKarte(){
     var info = document.getElementById('l-info');
     if (!info) return;
-    var chips = document.querySelectorAll('.l-chip');
+    var chips = document.querySelectorAll('#l-liste .l-chip');
     var pfade = document.querySelectorAll('.k-aktiv path');
     function waehle(schluessel){
       var l = LAENDER[schluessel];
