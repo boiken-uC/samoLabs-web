@@ -8,7 +8,7 @@
 <meta property="og:title" content="samoLabs. Software für den Mittelstand">
 <meta property="og:description" content="Mehr erreichen durch Innovation und Wachstum. Systeme, die im Betrieb laufen.">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="assets/css/site.css?v=102bdff5">
+<link rel="stylesheet" href="assets/css/site.css?v=00fdb5f6">
 </head>
 <body>
 
@@ -47,7 +47,7 @@
 <nav class="nav">
   <div class="w">
     <a href="#" data-go="start" aria-label="samoLabs Startseite">
-      <span class="lg" style="--s:25px; --ln:var(--labs); --la:var(--labs)"><b>samo</b><span>Labs</span><em></em></span>
+      <span class="lg" style="--s:25px; --ln:var(--labs); --la:var(--labs)"><i class="bm"><svg viewBox="0 0 26 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 29 7.6 17.6 1.8 15C4.4 10.6 7.6 9.3 10.2 9.2L10.6 8.4C10.6 4.9 15.4 4.9 15.4 8.4L15.8 9.2C18.4 9.3 21.6 10.6 24.2 15L18.4 17.6 18 29"/><path d="M13 3.6V1.2"/></svg></i><b>samo</b><span>Labs</span><em></em></span>
     </a>
 
     <div class="menu" id="menu">
@@ -60,7 +60,7 @@
               <li><a href="#" data-go="ueber">Wer wir sind</a></li>
               <li><a href="#" data-go="ueber">Unser Weg</a></li>
               <li><a href="#" data-go="ueber">Technologiepartner</a></li>
-              <li><a href="#" data-go="start">Einsatzländer</a></li>
+              <li><a href="#" data-go="start" data-scroll="laender">Einsatzländer</a></li>
               <li><a href="#" data-go="ueber">Wie wir arbeiten</a></li>
               <li><a href="#" data-go="praxis">Kundenberichte</a></li>
             </ul>
@@ -130,15 +130,39 @@
           <div>
             <h5>Aus dem Betrieb</h5>
             <ul>
-              <li><a href="#" data-go="praxis">Alle Kundenberichte</a></li>
-              <li><a href="#" data-go="praxis">Tom's Bike Center</a></li>
+              <li><a href="#" data-go="praxis">Kundenbericht Tom's Bike Center</a></li>
               <li><a href="#" data-go="neues">Presse und Neuigkeiten</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mi">
+        <button type="button" aria-expanded="false" data-t="menu.wissen">Wissen</button>
+        <div class="mega" style="min-width:440px">
+          <div>
+            <h5>Verstehen</h5>
+            <ul>
+              <li><a href="#" data-go="wissen">Alle Leitfäden</a></li>
+              <li><a href="#" data-go="wissen">Kassensicherung</a></li>
+              <li><a href="#" data-go="wissen">E-Rechnung</a></li>
+              <li><a href="#" data-go="wissen">Digitale Belege</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Hilfe</h5>
+            <ul>
+              <li><a href="#" data-go="support">Support</a></li>
+              <li><a href="#" data-go="support">Häufige Fälle</a></li>
+              <li><a href="#" data-go="support">Datenübernahme</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
+    <button class="suche-knopf" id="suche-knopf" type="button" aria-label="Suche öffnen">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </button>
     <a href="#" data-go="kontakt" class="navbtn" data-t="menu.gespraech">Gespräch vereinbaren</a>
     <button class="burger" id="burger" aria-label="Menü">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -150,6 +174,7 @@
      SEITE 1 · START
      ══════════════════════════════════════════════════════════ -->
 <main class="page on" data-page="start" id="start">
+  <div class="aktuell" id="aktuell-band" hidden></div>
 
   <header class="hero">
     <div class="hero-in">
@@ -616,25 +641,25 @@
           <div class="ph i-werk"></div>
           <div class="cb"><h3>Werkstatt und Handel</h3>
             <p>Auftragsannahme am Tresen statt im Büro, Werkstattplanung mit Auslastung, zertifizierte Kasse und Ersatzteillager, das sich beim Verbauen selbst abbucht. Für Betriebe, die mehr reparieren als verkaufen.</p>
-            <span class="more">samoRad ansehen →</span></div>
+            <span class="more">Zur Lösung →</span></div>
         </a>
         <a class="card" href="#" data-go="detail:gastro">
           <div class="ph i-gastro"></div>
           <div class="cb"><h3>Gastronomie</h3>
             <p>Gäste scannen den QR-Code am Tisch und bestellen selbst, die Theke sieht jede Bestellung sofort. Keine App-Installation, keine Wartezeit, kein Zettel, der verloren geht.</p>
-            <span class="more">samoOrder ansehen →</span></div>
+            <span class="more">Zur Lösung →</span></div>
         </a>
         <a class="card" href="#" data-go="detail:logistik">
           <div class="ph i-trans"></div>
           <div class="cb"><h3>Transport und Logistik</h3>
             <p>Frachtaufträge finden, Touren planen, Sendungen bis zur Übergabe verfolgen. Gebaut für Strecken, die bisher kaum digitalisiert sind, und für Fahrer, die unterwegs keine Zeit für Formulare haben.</p>
-            <span class="more">samoTransport ansehen →</span></div>
+            <span class="more">Zur Lösung →</span></div>
         </a>
         <a class="card" href="#" data-go="detail:aussendienst">
           <div class="ph i-talk"></div>
           <div class="cb"><h3>Außendienst</h3>
             <p>Besuche planen, Routen optimieren, Berichte unterwegs diktieren statt abends tippen. Für Teams, die beim Kunden sind und nicht am Schreibtisch.</p>
-            <span class="more">samoVertrieb ansehen →</span></div>
+            <span class="more">Zur Lösung →</span></div>
         </a>
       </div>
     </div>
@@ -738,6 +763,32 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="w beitrag-lauf">
+      <h2 style="margin-bottom:22px">Der Weg dorthin</h2>
+      <h3 style="font-size:20px;margin:26px 0 10px">Ausgangslage</h3>
+      <p style="font-size:16.5px;line-height:1.75;color:#3D4147">
+        Ein Fahrradfachhandel mit eigener Werkstatt und sieben Mitarbeitenden. Die Annahme
+        lief über ein Programm, die Kasse über ein zweites, die Kundendaten über ein drittes —
+        und was dazwischen passierte, stand in einer Ablage aus Papier. Wer wissen wollte,
+        ob ein Rad fertig ist, fragte in der Werkstatt nach. Oder der Kunde rief an.
+      </p>
+      <h3 style="font-size:20px;margin:26px 0 10px">Die Umstellung</h3>
+      <p style="font-size:16.5px;line-height:1.75;color:#3D4147">
+        Kundenstamm und offene Vorgänge wurden übernommen, dann kam die Schulung: ein Tag
+        vor Ort, alle sieben Mitarbeitenden, vom Tresen bis zur Werkstattbank. Kein Umstieg
+        über Nacht — das alte System blieb lesbar, bis alles stand.
+      </p>
+      <h3 style="font-size:20px;margin:26px 0 10px">Heute</h3>
+      <p style="font-size:16.5px;line-height:1.75;color:#3D4147">
+        Der Auftrag entsteht am Tresen, mit Foto und gedrucktem Etikett. Was die Werkstatt
+        verbaut, bucht sich vom Lager ab und steht auf der Rechnung. Und sobald ein Auftrag
+        geschlossen wird, geht die Nachricht an den Kunden hinaus — die Frage „Ist mein Rad
+        fertig?" beantwortet das System, bevor sie gestellt wird.
+      </p>
     </div>
   </section>
 
@@ -1363,12 +1414,62 @@
   </section>
 </main>
 
+
+<main class="page" data-page="wissen" id="wissen">
+  <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Wissen</b></div></nav>
+  <header class="phead">
+    <div class="w">
+      <h1>Wissen für Ihren Betrieb</h1>
+      <p>Was Betriebe zu Kassenrecht, elektronischer Rechnung und digitalen Abläufen wissen sollten — verständlich erklärt, ohne Verkaufston.</p>
+    </div>
+  </header>
+
+  <section class="sec">
+    <div class="w">
+      <div class="lead rv" style="margin-bottom:34px">
+        <h2>Die drei wichtigsten Leitfäden</h2>
+        <p class="sub">Damit sind die häufigsten Fragen aus Erstgesprächen beantwortet.</p>
+      </div>
+      <div class="g3 rv" id="w-leitfaeden"></div>
+    </div>
+  </section>
+
+  <section class="sec sec-soft">
+    <div class="w">
+      <div class="lead rv" style="margin-bottom:26px"><h2>Alle Beiträge</h2></div>
+      <div class="n-filter" id="w-filter">
+        <button class="l-chip an" type="button" data-kat="alle">Alle Themen</button>
+        <button class="l-chip" type="button" data-kat="fach">Fachbeiträge</button>
+        <button class="l-chip" type="button" data-kat="branche">Aus der Branche</button>
+        <button class="l-chip" type="button" data-kat="produkt">Neue Funktion</button>
+      </div>
+      <div class="g3" id="w-liste" style="margin-top:30px"></div>
+      <div class="n-mehr"><button class="btn btn-o" id="w-mehr" type="button">Weitere Beiträge anzeigen</button></div>
+    </div>
+  </section>
+</main>
+
+
+<section class="nl-band">
+  <div class="w nl-in">
+    <div>
+      <h3>Auf dem Laufenden bleiben</h3>
+      <p>Gelegentliche Neuigkeiten zu Kassenrecht, E-Rechnung und unseren Systemen. Kein wöchentlicher Werbebrief.</p>
+    </div>
+    <form class="nl-form" id="nl-form">
+      <input type="email" id="nl-mail" placeholder="Ihre E-Mail-Adresse" aria-label="E-Mail-Adresse" required>
+      <button class="btn" type="submit">Eintragen</button>
+    </form>
+  </div>
+  <p class="nl-hinweis w">Es öffnet sich Ihre Mail-Anwendung — wir tragen Sie von Hand ein, und Sie können jederzeit widerrufen. <a href="datenschutz.html">Datenschutz</a></p>
+</section>
+
 <!-- ════════ FOOTER ════════ -->
 <footer class="foot">
   <div class="w">
     <div class="foot-g">
       <div>
-        <span class="lg hell" style="--s:23px; --lb:#fff; --ln:var(--labs); --la:var(--labs)"><b>samo</b><span>Labs</span><em></em></span>
+        <span class="lg hell" style="--s:23px; --lb:#fff; --ln:var(--labs); --la:var(--labs)"><i class="bm"><svg viewBox="0 0 26 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 29 7.6 17.6 1.8 15C4.4 10.6 7.6 9.3 10.2 9.2L10.6 8.4C10.6 4.9 15.4 4.9 15.4 8.4L15.8 9.2C18.4 9.3 21.6 10.6 24.2 15L18.4 17.6 18 29"/><path d="M13 3.6V1.2"/></svg></i><b>samo</b><span>Labs</span><em></em></span>
         <p style="margin:16px 0 0;max-width:28em">Softwareentwicklung aus Jülich. Wir bauen Software für den Mittelstand.</p>
       </div>
       <div><h4 data-t="menu.produkte">Produkte</h4><ul>
@@ -1430,7 +1531,7 @@
 <div class="chat" id="chat" role="dialog" aria-label="Chat mit samoLabs">
   <div class="ch">
     <div>
-      <span class="lg hell" style="--s:17px; --lb:#fff; --ln:var(--labs); --la:var(--labs)"><b>samo</b><span>Labs</span><em></em></span>
+      <span class="lg hell" style="--s:17px; --lb:#fff; --ln:var(--labs); --la:var(--labs)"><i class="bm"><svg viewBox="0 0 26 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 29 7.6 17.6 1.8 15C4.4 10.6 7.6 9.3 10.2 9.2L10.6 8.4C10.6 4.9 15.4 4.9 15.4 8.4L15.8 9.2C18.4 9.3 21.6 10.6 24.2 15L18.4 17.6 18 29"/><path d="M13 3.6V1.2"/></svg></i><b>samo</b><span>Labs</span><em></em></span>
       <small>Jasko aus der Beratung · meldet sich meist sofort</small>
     </div>
     <button class="cx" id="cx" aria-label="Chat schließen">
@@ -1452,6 +1553,6 @@
   </div>
 </div>
 
-<script src="assets/js/site.js?v=780396e4"></script>
+<script src="assets/js/site.js?v=b7960a2d"></script>
 </body>
 </html>

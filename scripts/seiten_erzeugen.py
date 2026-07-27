@@ -38,6 +38,8 @@ SEITEN = {
                    'Anbindung an Warenwirtschaft, Zahlung, Fiskalisierung, Nachrichtenversand und Auswertung.'),
     'support':    ('support.html', 'Support',
                    'Hilfe für Bestandskunden: Telefon, Nachricht, E-Mail und Antworten auf häufige Fälle.'),
+    'wissen':     ('wissen.html', 'Wissen',
+                   'Leitfäden zu Kassensicherung, E-Rechnung und digitalen Belegen — verständlich erklärt für Betriebe im Mittelstand.'),
     'login':      ('anmelden.html', 'Anmeldebereich',
                    'Zugänge zu den samoLabs-Systemen für Betriebe, Mitarbeitende und Partner.'),
 }

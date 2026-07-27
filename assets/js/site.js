@@ -132,7 +132,7 @@
               ['Weniger Streit','Die Zeiten stehen fest, nachvollziehbar für beide Seiten.'],
               ['Kein privates Handy nötig','Das nimmt der Belegschaft eine berechtigte Sorge.']] },
 
-    werkstatt: { ober:'Lösungen', oberZiel:'loesungen', bild:'i-werk',
+    werkstatt: { ober:'Lösungen', oberZiel:'loesungen', produkt:'rad', bild:'i-werk',
       titel:'Werkstatt und Handel',
       intro:'Ein System für Annahme, Werkstatt, Kasse und Lager, statt drei Programme, die nichts voneinander wissen.',
       h2:'Gebaut für Betriebe, die reparieren',
@@ -145,7 +145,7 @@
               ['Der Tresen wird schneller','Annahme in zwei Minuten statt zehn.'],
               ['Der Arbeitstag endet früher','Der Kassenabschluss entsteht nebenbei.']] },
 
-    gastro: { ober:'Lösungen', oberZiel:'loesungen', bild:'i-gastro',
+    gastro: { ober:'Lösungen', oberZiel:'loesungen', produkt:'order', bild:'i-gastro',
       titel:'Gastronomie',
       intro:'Bestellung am Tisch per QR-Code, Übersicht an der Theke, Abrechnung ohne Papierablage.',
       h2:'Weniger laufen, mehr servieren',
@@ -158,7 +158,7 @@
               ['Höherer Bon','Wer in Ruhe liest, bestellt eher nach.'],
               ['Weniger Fehler','Was der Gast tippt, muss niemand verstehen.']] },
 
-    logistik: { ober:'Lösungen', oberZiel:'loesungen', bild:'i-trans',
+    logistik: { ober:'Lösungen', oberZiel:'loesungen', produkt:'transport', bild:'i-trans',
       titel:'Transport und Logistik',
       intro:'Frachtaufträge finden, Touren planen, Sendungen bis zur Übergabe verfolgen.',
       h2:'Für Strecken, die bisher kaum digitalisiert sind',
@@ -171,7 +171,7 @@
               ['Weniger Telefonate','Statusfragen beantwortet das System.'],
               ['Sicherer Nachweis','Auch Wochen später noch nachvollziehbar.']] },
 
-    aussendienst: { ober:'Lösungen', oberZiel:'loesungen', bild:'i-talk',
+    aussendienst: { ober:'Lösungen', oberZiel:'loesungen', produkt:'vertrieb', bild:'i-talk',
       titel:'Außendienst',
       intro:'Besuche planen, Routen optimieren, Berichte diktieren statt tippen.',
       h2:'Die Arbeit passiert beim Kunden, nicht danach',
@@ -792,6 +792,7 @@
     var verwandt = Object.keys(DETAIL).filter(function(k){
       return k !== schluessel && DETAIL[k].ober === d.ober;
     }).slice(0, 4);
+    if (d.produkt) verwandt = [d.produkt].concat(verwandt.filter(function(k){ return k !== d.produkt; })).slice(0, 4);
     if (verwandt.length < 4) {
       verwandt = verwandt.concat(Object.keys(DETAIL).filter(function(k){
         return k !== schluessel && verwandt.indexOf(k) === -1;
@@ -831,6 +832,11 @@
     }
     zeige(wohin);
     history.replaceState(null, '', wohin === 'start' ? location.pathname : '#' + wohin);
+    var abschnitt = ziel.getAttribute('data-scroll');
+    if (abschnitt) setTimeout(function(){
+      var el = document.getElementById(abschnitt);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 80);
   });
 
   // Adresszeile auswerten, damit Verweise von den Rechtsseiten ankommen
@@ -1028,4 +1034,83 @@
   document.getElementById('chips').addEventListener('click', function(e){
     var c = e.target.closest('.chip'); if (c) senden(c.textContent);
   });
+
+  // ── Wissen: Leitfäden und gefilterte Beitragsliste ──
+  (function(){
+    var liste = document.getElementById('w-liste');
+    if (!liste) return;
+    var LEIT = ['Was die Kassensicherungsverordnung', 'E-Rechnung: Was jetzt', 'Warum Thermopapier'];
+    var kacheln = LEIT.map(function(anfang){
+      var i = -1;
+      BEITRAEGE.some(function(b, n){ if (b[2].indexOf(anfang) === 0) { i = n; return true; } return false; });
+      return i >= 0 ? beitragKarte(BEITRAEGE[i]) : '';
+    }).join('');
+    document.getElementById('w-leitfaeden').innerHTML = kacheln;
+
+    var kat = 'alle', gezeigt = 9;
+    var knopf = document.getElementById('w-mehr');
+    function zeichneW(){
+      var treffer = BEITRAEGE.filter(function(b){ return b[1] !== 'meldung' && (kat === 'alle' || b[1] === kat); });
+      liste.innerHTML = treffer.slice(0, gezeigt).map(beitragKarte).join('');
+      knopf.style.display = treffer.length > gezeigt ? '' : 'none';
+    }
+    document.getElementById('w-filter').addEventListener('click', function(e){
+      var c = e.target.closest('.l-chip');
+      if (!c) return;
+      kat = c.getAttribute('data-kat'); gezeigt = 9;
+      document.querySelectorAll('#w-filter .l-chip').forEach(function(x){ x.classList.toggle('an', x === c); });
+      zeichneW();
+    });
+    knopf.addEventListener('click', function(){ gezeigt += 9; zeichneW(); });
+    zeichneW();
+  })();
+
+  // ── Aktualitätsband: jüngste Meldung über der Bühne ──
+  (function(){
+    var band = document.getElementById('aktuell-band');
+    if (!band || !BEITRAEGE.length) return;
+    var b = BEITRAEGE[0];
+    band.innerHTML = '<a href="#" data-go="beitrag:0">' +
+      '<span class="chip-neu">Aktuell</span>' +
+      '<span class="a-datum">' + b[0] + '</span>' +
+      '<span class="a-titel">' + b[2] + '</span>' +
+      '<span aria-hidden="true">→</span></a>';
+    band.hidden = false;
+  })();
+
+  // ── Formulare: öffnen die Mail-Anwendung mit fertigem Text ──
+  // Die Seite hat keinen eigenen Server; so kommt die Anfrage trotzdem an.
+  (function(){
+    function feldwerte(form){
+      var teile = [];
+      form.querySelectorAll('input, select, textarea').forEach(function(f){
+        if (f.type === 'checkbox') {
+          if (f.checked) teile.push('Einwilligung Neuigkeiten: ja');
+          return;
+        }
+        var label = form.querySelector('label[for="' + f.id + '"]');
+        var name = label ? label.textContent.replace('*', '').trim() : (f.placeholder || f.id);
+        if (f.value && f.value.trim()) teile.push(name + ': ' + f.value.trim());
+      });
+      return teile.join('\n');
+    }
+    document.querySelectorAll('form.form').forEach(function(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var betreff = 'Anfrage über samolabs.de';
+        var vor = document.getElementById('d-vorbelegt');
+        if (form.closest('[data-page="detail"]') && vor) betreff = 'Anfrage zu ' + vor.textContent;
+        location.href = 'mailto:info@samolabs.de?subject=' + encodeURIComponent(betreff) +
+          '&body=' + encodeURIComponent(feldwerte(form) + '\n\nGesendet über samolabs.de');
+      });
+    });
+    var nl = document.getElementById('nl-form');
+    if (nl) nl.addEventListener('submit', function(e){
+      e.preventDefault();
+      var mail = document.getElementById('nl-mail').value.trim();
+      if (!mail) return;
+      location.href = 'mailto:info@samolabs.de?subject=' + encodeURIComponent('Aufnahme in den Verteiler') +
+        '&body=' + encodeURIComponent('Bitte nehmen Sie mich in den Verteiler auf.\n' + mail);
+    });
+  })();
 })();
