@@ -10,6 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Der Server speichert CSS und JS 30 Tage zwischen. Ohne wechselnde
+      # Kennung im Verweis sehen Besucher nach einer Änderung weiterhin
+      # die alte Fassung.
+      - name: Versionskennung setzen
+        run: python3 scripts/versionieren.py
+
       - name: Deploy via rsync
         env:
           SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
