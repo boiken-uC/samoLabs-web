@@ -287,6 +287,26 @@
     color:var(--accent);text-decoration:none}
   .mega-fuss a:hover{text-decoration:underline}
 
+
+  /* ── Vollflächige Bühne, wie im Vorbild ── */
+  .hero-voll{position:relative;overflow:hidden;background:var(--navy);border-bottom:0}
+  .hero-voll::before{content:"";position:absolute;inset:0;
+    background-image:url(../img/site/hero.jpg);background-size:cover;
+    background-position:center 30%;opacity:.42}
+  .hero-voll::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(100deg,rgba(27,28,30,.92) 18%,rgba(27,28,30,.55) 58%,rgba(27,28,30,.18) 100%)}
+  .hero-inhalt{position:relative;z-index:2;padding-top:108px;padding-bottom:116px;max-width:var(--w)}
+  .hero-voll h1{color:#fff;font-size:clamp(34px,4.6vw,58px);max-width:19ch}
+  .hero-voll .sub2{color:var(--mint);font-size:19px;font-weight:600;margin:16px 0 0}
+  .hero-voll .hero-text{color:rgba(255,255,255,.82);font-size:18px;max-width:44ch;margin:18px 0 32px}
+  .hero-voll .btn-o{color:#fff;border-color:rgba(255,255,255,.5)}
+  .hero-voll .btn-o:hover{background:#fff;border-color:#fff;color:var(--ink)}
+  .js-an .hero-voll .hero-text{animation:von-rechts .7s cubic-bezier(.22,.61,.36,1) .2s both}
+  @media(max-width:700px){.hero-inhalt{padding-top:64px;padding-bottom:72px}}
+
+  /* Gespiegelter Split: Bild rechts trotz gleicher Reihenfolge im Markup */
+  .split-rechtsbild > .ph,.split-rechtsbild > .imgset{order:2}
+
   /* ── Nachrichtenseite ── */
   .n-filter{display:flex;flex-wrap:wrap;gap:9px}
   .n-filter .l-chip{color:var(--ink);border-color:#C4C8C8}
@@ -401,7 +421,8 @@
   .quad{display:grid;grid-template-columns:1fr 1fr;gap:22px}
   .q{border-top:2px solid var(--mint);padding-top:15px}
   .q h4{font-size:17px;margin-bottom:6px}
-  .q p{margin:0 0 9px;font-size:14.5px;color:rgba(255,255,255,.7)}
+  .q p{margin:0 0 9px;font-size:14.5px;color:var(--mid)}
+  .sec-navy .q p{color:rgba(255,255,255,.7)}
   .sec-navy .more{color:var(--mint)}
   @media(max-width:900px){.split{grid-template-columns:1fr;gap:32px}.quad{grid-template-columns:1fr}.split .ph{min-height:220px}}
 
