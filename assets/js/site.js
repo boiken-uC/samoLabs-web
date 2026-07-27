@@ -27,8 +27,8 @@
            '<b>' + a + '</b><span>' + b + '</span><em></em></span>';
   }
   function produktKarte(p, alsKachel) {
-    return '<a class="' + (alsKachel ? 'card' : 'rc') + '" href="#" data-go="detail:' + p[6] + '">' +
-      '<div class="ph ' + p[3] + '"></div><div class="' + (alsKachel ? 'cb' : 'rcb') + '">' +
+    return '<a class="' + (alsKachel? 'card': 'rc') + '" href="#" data-go="detail:' + p[6] + '">' +
+      '<div class="ph ' + p[3] + '"></div><div class="' + (alsKachel? 'cb': 'rcb') + '">' +
       marke(p[0], p[1], p[2], 19) +
       '<span class="tag">' + p[4] + '</span><p>' + p[5] + '</p>' +
       '<span class="more">Mehr erfahren →</span></div></a>';
@@ -314,15 +314,15 @@
     function zeichne(){
       var liste = BEITRAEGE.filter(function(b){ return kat === 'alle' || b[1] === kat; });
       ziel.innerHTML = liste.length
-        ? liste.slice(0, gezeigt).map(beitragKarte).join('')
-        : '<p class="n-leer">Zu diesem Bereich gibt es noch keine Beiträge.</p>';
-      knopf.style.display = liste.length > gezeigt ? '' : 'none';
+? liste.slice(0, gezeigt).map(beitragKarte).join('')
+: '<p class="n-leer">Zu diesem Bereich gibt es noch keine Beiträge.</p>';
+      knopf.style.display = liste.length > gezeigt? '': 'none';
     }
     document.getElementById('n-filter').addEventListener('click', function(e){
       var c = e.target.closest('.l-chip');
       if (!c) return;
       kat = c.getAttribute('data-kat'); gezeigt = 9;
-      document.querySelectorAll('#n-filter .l-chip').forEach(function(x){ x.classList.toggle('an', x === c); });
+      document.querySelectorAll('#n-filter.l-chip').forEach(function(x){ x.classList.toggle('an', x === c); });
       zeichne();
     });
     knopf.addEventListener('click', function(){ gezeigt += 9; zeichne(); });
@@ -350,18 +350,18 @@
       var treffer = PORTALE.filter(function(p){
         var passt = (bereich === 'alle' || p[0] === bereich);
         var text = (p[1] + ' ' + p[2]).toLowerCase();
-        return passt && (!suche || text.indexOf(suche) !== -1);
+        return passt && (!suche || text.indexOf(suche)!== -1);
       });
-      liste.innerHTML = treffer.length ? treffer.map(function(p){
+      liste.innerHTML = treffer.length? treffer.map(function(p){
         return '<div class="portal"><div class="portal-tx"><h3>' + p[1] + '</h3><p>' + p[2] + '</p></div>' +
                '<a href="#" data-go="kontakt" class="btn">' + SCHLOSS + ' ' + p[3] + '</a></div>';
-      }).join('') : '<p class="portal-leer">Kein Zugang gefunden. Der Support hilft weiter.</p>';
+      }).join(''): '<p class="portal-leer">Kein Zugang gefunden. Der Support hilft weiter.</p>';
     }
     document.getElementById('p-filter').addEventListener('click', function(e){
       var c = e.target.closest('.l-chip');
       if (!c) return;
       bereich = c.getAttribute('data-bereich');
-      document.querySelectorAll('#p-filter .l-chip').forEach(function(x){ x.classList.toggle('an', x === c); });
+      document.querySelectorAll('#p-filter.l-chip').forEach(function(x){ x.classList.toggle('an', x === c); });
       zeichne();
     });
     document.getElementById('p-suche').addEventListener('input', function(e){
@@ -406,7 +406,7 @@
     k.addEventListener('click', function(e){
       e.stopPropagation();
       var auf = w.classList.toggle('auf');
-      k.setAttribute('aria-expanded', auf ? 'true' : 'false');
+      k.setAttribute('aria-expanded', auf? 'true': 'false');
     });
     document.getElementById('land-liste').addEventListener('click', function(e){
       var b = e.target.closest('button');
@@ -427,20 +427,20 @@
       if (an) treffer = true;
     });
     if (!treffer) return;
-    window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+    window.scrollTo({ top: 0, behavior: reduced? 'auto': 'smooth' });
     schliesseMenues();
     beobachte();
   }
   function fuelleDetail(schluessel){
     var d = DETAIL[schluessel];
     if (!d) return false;
-    document.getElementById('d-crumb').textContent = d.titel.length > 42 ? d.titel.slice(0,40) + '\u2026' : d.titel;
+    document.getElementById('d-crumb').textContent = d.titel.length > 42? d.titel.slice(0,40) + '\u2026': d.titel;
     var up = document.getElementById('d-up');
     up.textContent = d.ober;
     up.setAttribute('data-go', d.oberZiel);
     document.getElementById('d-marke').innerHTML = d.marke
-      ? '<span class="lg hell" style="--s:27px; --lb:#fff; --ln:var(' + d.marke[2] + '-h); --la:var(' + d.marke[2] + '-h)"><b>' +
-        d.marke[0] + '</b><span>' + d.marke[1] + '</span><em></em></span>' : '';
+? '<span class="lg hell" style="--s:27px; --lb:#fff; --ln:var(' + d.marke[2] + '-h); --la:var(' + d.marke[2] + '-h)"><b>' +
+        d.marke[0] + '</b><span>' + d.marke[1] + '</span><em></em></span>': '';
     document.getElementById('d-titel').textContent = d.titel;
     document.getElementById('d-intro').textContent = d.intro;
     document.getElementById('d-h2').textContent = d.h2;
@@ -454,7 +454,7 @@
       return '<div class="card"><div class="cb"><h3>' + x[0] + '</h3><p>' + x[1] + '</p></div></div>';
     }).join('');
     document.getElementById('d-cta').textContent =
-      'Passt ' + (d.marke ? d.marke[0] + d.marke[1] : 'das') + ' zu Ihrem Betrieb?';
+      'Passt ' + (d.marke? d.marke[0] + d.marke[1]: 'das') + ' zu Ihrem Betrieb?';
     return true;
   }
 
@@ -512,14 +512,14 @@
     if (!sichtbar) return;
     var rv = sichtbar.querySelectorAll('.rv');
     var nums = sichtbar.querySelectorAll('[data-n]');
-    if (reduced || !('IntersectionObserver' in window)) {
+    if (reduced ||!('IntersectionObserver' in window)) {
       rv.forEach(function(e){ e.classList.add('in'); });
       nums.forEach(function(e){ e.textContent = e.getAttribute('data-n'); });
       return;
     }
     io = new IntersectionObserver(function(es){
       es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: .1 });
+    }, { threshold:.1 });
     rv.forEach(function(e){ e.classList.remove('in'); io.observe(e); });
 
     co = new IntersectionObserver(function(es){
@@ -533,7 +533,7 @@
           if (p < 1) requestAnimationFrame(s);
         })(t0);
       });
-    }, { threshold: .5 });
+    }, { threshold:.5 });
     nums.forEach(function(e){ co.observe(e); });
   }
   beobachte();
@@ -544,12 +544,12 @@
     var halter = document.getElementById('karte-halter');
     if (!halter) { verdrahteKarte(); return; }
     fetch(halter.getAttribute('data-quelle'))
-      .then(function(r){ return r.text(); })
-      .then(function(svg){
+.then(function(r){ return r.text(); })
+.then(function(svg){
         halter.innerHTML = svg.replace(/<\?xml[^>]*\?>/, '');
         verdrahteKarte();
       })
-      .catch(function(){ halter.style.display = 'none'; });
+.catch(function(){ halter.style.display = 'none'; });
   })();
 
   // ── Europakarte: Land waehlen ──
@@ -593,11 +593,11 @@
       inp=document.getElementById('cinp'), zu=false;
   function setzeChat(auf){
     chat.classList.toggle('on', auf);
-    fab.setAttribute('aria-expanded', auf ? 'true' : 'false');
+    fab.setAttribute('aria-expanded', auf? 'true': 'false');
     if (auf) { teas.classList.remove('on'); inp.focus(); }
   }
   fab.addEventListener('click', function(){
-    var auf = !chat.classList.contains('on');
+    var auf =!chat.classList.contains('on');
     if (!auf) zu = true;
     setzeChat(auf);
   });
@@ -612,7 +612,7 @@
   try { zuletzt = parseInt(localStorage.getItem('sl-chat-zuletzt') || '0', 10) || 0; } catch(e){}
   var jetzt = Date.now();
   if (jetzt - zuletzt > SPERRE_MS) {
-    setTimeout(function(){ if(!zu && !chat.classList.contains('on')) teas.classList.add('on'); }, 3500);
+    setTimeout(function(){ if(!zu &&!chat.classList.contains('on')) teas.classList.add('on'); }, 3500);
     setTimeout(function(){
       if (zu || chat.classList.contains('on')) return;
       setzeChat(true);
@@ -639,7 +639,7 @@
     setTimeout(function(){
       var b=document.createElement('div'); b.className='m mb'; b.textContent=antwort(t);
       clog.appendChild(b); clog.scrollTop=clog.scrollHeight;
-    }, reduced ? 0 : 470);
+    }, reduced? 0: 470);
   }
   document.getElementById('cgo').addEventListener('click', function(){ senden(inp.value); inp.value=''; });
   inp.addEventListener('keydown', function(e){ if(e.key==='Enter'){ senden(inp.value); inp.value=''; } });
