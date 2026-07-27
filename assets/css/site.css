@@ -120,6 +120,15 @@
   .i-p-trans{background-image:url(../img/site/p-trans.jpg)}
   .i-p-plan{background-image:url(../img/site/p-plan.jpg)}
   .i-annahme{background-image:url(../img/site/annahme.jpg)}
+  .i-beleg{background-image:url(../img/site/beleg.jpg)}
+  .i-formular{background-image:url(../img/site/formular.jpg)}
+  .i-papier{background-image:url(../img/site/papier.jpg)}
+  .i-buero{background-image:url(../img/site/buero.jpg)}
+  .i-doku{background-image:url(../img/site/doku.jpg)}
+  .i-schulung{background-image:url(../img/site/schulung.jpg)}
+  .i-runde{background-image:url(../img/site/runde.jpg)}
+  .i-tisch{background-image:url(../img/site/tisch.jpg)}
+  .i-laptops{background-image:url(../img/site/laptops.jpg)}
   .i-werk{background-image:url(../img/site/werk.jpg)}
   .i-gastro{background-image:url(../img/site/gastro.jpg)}
   .i-trans{background-image:url(../img/site/trans.jpg)}
@@ -335,7 +344,6 @@
   .kpi b{display:block;font-family:var(--head);font-weight:800;font-size:clamp(32px,4.2vw,48px);
     letter-spacing:-.04em;color:var(--accent);line-height:1}
   .kpi span{display:block;margin-top:10px;font-size:14.5px;color:var(--mid)}
-  .tbd{border-bottom:2px dashed #C2452F;cursor:help}
   @media(max-width:820px){.kpis{grid-template-columns:1fr 1fr}}
 
   /* ── Listen / Akkordeon ── */
@@ -408,8 +416,6 @@
   .rv{opacity:1;transform:none}
   .js-an .rv{opacity:0;transform:translateY(14px);transition:opacity .55s ease-out,transform .55s ease-out}
   .js-an .rv.in{opacity:1;transform:none}
-  .flag{background:#FDF3F1;border-left:4px solid #C2452F;border-radius:0 8px 8px 0;padding:18px 24px;font-size:14.5px;color:#5A3230}
-  .flag b{color:#8A2A1C}
 
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 
