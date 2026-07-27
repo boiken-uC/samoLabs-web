@@ -240,6 +240,16 @@
   .foot-anschrift a{color:rgba(255,255,255,.64)}
   @media(max-width:700px){.suche-flaeche{padding:60px 14px}}
 
+
+  /* ── Kundenleiste: Graustufen, beim Überfahren voll ── */
+  .kunden-logos{display:flex;align-items:center;gap:38px;flex-wrap:wrap}
+  .kunden-logos img{display:block;height:34px;width:auto;
+    filter:grayscale(1);opacity:.72;transition:opacity .2s,filter .2s}
+  .kunden-logos a:hover img{filter:none;opacity:1}
+  .partner-klein{margin-left:auto;display:inline-flex;align-items:baseline;gap:14px}
+  .partner-klein b{color:var(--ink);font-weight:700;font-size:14px}
+  @media(max-width:820px){.partner-klein{margin-left:0}}
+
   /* ── Nachrichtenseite ── */
   .n-filter{display:flex;flex-wrap:wrap;gap:9px}
   .n-filter .l-chip{color:var(--ink);border-color:#C4C8C8}
