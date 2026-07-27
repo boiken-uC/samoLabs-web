@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Credits – samoLabs</title>
 <meta name="robots" content="index,follow">
-<link rel="stylesheet" href="assets/css/site.css?v=00fdb5f6">
+<link rel="stylesheet" href="assets/css/site.css?v=86e4dcaf">
 <style>
 .recht{max-width:800px;margin:0 auto;padding:64px 28px 84px}
 .recht h2{font-size:22px;color:var(--ink);margin:38px 0 12px}
@@ -22,15 +22,30 @@
 
 <div class="util">
   <div class="w">
-    <span>Deutschland · Deutsch</span>
+    <span class="land-waehler" id="land-waehler">
+      <button class="land-knopf" type="button" id="land-knopf" aria-expanded="false" aria-haspopup="true">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg>
+        Deutschland · Deutsch
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <span class="land-liste" id="land-liste" role="menu">
+        <button type="button" class="aktiv" role="menuitem" data-land="de">Deutschland <small>Deutsch</small></button>
+        <button type="button" role="menuitem" data-land="at">Österreich <small>Deutsch</small></button>
+        <button type="button" role="menuitem" data-land="pl">Polen <small>Polski</small></button>
+        <button type="button" role="menuitem" data-land="ba">Bosnien und Herzegowina <small>Bosanski</small></button>
+        <button type="button" role="menuitem" data-land="fi">Finnland <small>Suomi</small></button>
+        <button type="button" role="menuitem" data-land="en">International <small>English</small></button>
+      </span>
+    </span>
     <span class="util-r">
-      <a href="index.html#kontakt">Partner</a>
-      <a href="index.html#kontakt">Karriere</a>
-      <a href="index.html#kontakt">Entwickler</a>
-      <a href="index.html#ueber">Über samoLabs</a>
-      <a href="index.html#neues">Pressebereich</a>
-      <a href="index.html#kontakt">Support</a>
-      <a href="index.html#kontakt">Login</a>
+      <a href="index.html#partner" data-t="nav.partner">Partner</a>
+      <a href="index.html#karriere" data-t="nav.karriere">Karriere</a>
+      <a href="index.html#entwickler" data-t="nav.entwickler">Entwickler</a>
+      <a href="index.html#ueber" data-t="nav.ueberuns">Über samoLabs</a>
+      <a href="index.html#neues" data-t="nav.presse">Pressebereich</a>
+      <a href="index.html#support" data-t="nav.support">Support</a>
+      <a href="tel:+4915212419807">+49 1521 2419807</a>
+      <a href="index.html#login" data-t="nav.login">Login</a>
     </span>
   </div>
 </div>
@@ -42,7 +57,7 @@
 
     <div class="menu" id="menu">
       <div class="mi">
-        <button type="button" aria-expanded="false">Über uns</button>
+        <button type="button" aria-expanded="false" data-t="menu.ueber">Über uns</button>
         <div class="mega">
           <div>
             <h5>Unternehmen</h5>
@@ -50,7 +65,7 @@
               <li><a href="index.html#ueber">Wer wir sind</a></li>
               <li><a href="index.html#ueber">Unser Weg</a></li>
               <li><a href="index.html#ueber">Technologiepartner</a></li>
-              <li><a href="index.html#start">Einsatzländer</a></li>
+              <li><a href="index.html#start" data-scroll="laender">Einsatzländer</a></li>
               <li><a href="index.html#ueber">Wie wir arbeiten</a></li>
               <li><a href="index.html#praxis">Kundenberichte</a></li>
             </ul>
@@ -58,16 +73,20 @@
           <div>
             <h5>Kontakt</h5>
             <ul>
-              <li><a href="index.html#kontakt">Gespräch vereinbaren</a></li>
-              <li><a href="index.html#kontakt">Support</a></li>
+              <li><a href="index.html#kontakt" data-t="menu.gespraech">Gespräch vereinbaren</a></li>
+              <li><a href="index.html#support" data-t="nav.support">Support</a></li>
               <li><a href="index.html#neues">Presse und Neuigkeiten</a></li>
             </ul>
+          </div>
+          <div class="mega-fuss">
+            <p>Unabhängig von der Größe und dem Umfang Ihres Unternehmens, lassen Sie uns gemeinsam wachsen.</p>
+            <a href="#" >Haben Sie nicht gefunden, wonach Sie suchen?</a>
           </div>
         </div>
       </div>
 
       <div class="mi">
-        <button type="button" aria-expanded="false">Lösungen</button>
+        <button type="button" aria-expanded="false" data-t="menu.loesungen">Lösungen</button>
         <div class="mega">
           <div>
             <h5>Nach Betrieb</h5>
@@ -87,49 +106,86 @@
               <li><a href="index.html#detail:auswertung">Auswertung</a></li>
             </ul>
           </div>
+          <div class="mega-fuss">
+            <p>Unabhängig von der Größe und dem Umfang Ihres Unternehmens, lassen Sie uns gemeinsam wachsen.</p>
+            <a href="#" >Haben Sie nicht gefunden, wonach Sie suchen?</a>
+          </div>
         </div>
       </div>
 
       <div class="mi">
-        <button type="button" aria-expanded="false">Produkte</button>
+        <button type="button" aria-expanded="false" data-t="menu.produkte">Produkte</button>
         <div class="mega">
           <div>
             <h5>Im Einsatz</h5>
             <ul>
-              <li><a href="index.html#detail:rad">samoRad — Werkstatt</a></li>
-              <li><a href="index.html#detail:order">samoOrder — Gastronomie</a></li>
-              <li><a href="index.html#detail:transport">samoTransport — Fracht</a></li>
-              <li><a href="index.html#detail:vertrieb">samoVertrieb — Außendienst</a></li>
+              <li><a href="index.html#detail:rad">samoRad. Werkstatt</a></li>
+              <li><a href="index.html#detail:order">samoOrder. Gastronomie</a></li>
+              <li><a href="index.html#detail:transport">samoTransport. Fracht</a></li>
+              <li><a href="index.html#detail:vertrieb">samoVertrieb. Außendienst</a></li>
             </ul>
           </div>
           <div>
             <h5>Ergänzend</h5>
             <ul>
-              <li><a href="index.html#detail:chat">samoChat — Kundenkontakt</a></li>
-              <li><a href="index.html#detail:plan">samoPlan — Gebäudetechnik</a></li>
-              <li><a href="index.html#detail:terminal">samoTerminal — Zeiterfassung</a></li>
+              <li><a href="index.html#detail:chat">samoChat. Kundenkontakt</a></li>
+              <li><a href="index.html#detail:plan">samoPlan. Gebäudetechnik</a></li>
+              <li><a href="index.html#detail:terminal">samoTerminal. Zeiterfassung</a></li>
               <li><a href="index.html#kontakt">Individuelle Entwicklung</a></li>
             </ul>
+          </div>
+          <div class="mega-fuss">
+            <p>Unabhängig von der Größe und dem Umfang Ihres Unternehmens, lassen Sie uns gemeinsam wachsen.</p>
+            <a href="#" >Haben Sie nicht gefunden, wonach Sie suchen?</a>
           </div>
         </div>
       </div>
 
       <div class="mi">
-        <button type="button" aria-expanded="false">Praxis</button>
+        <button type="button" aria-expanded="false" data-t="menu.praxis">Praxis</button>
         <div class="mega" style="min-width:380px;grid-template-columns:1fr">
           <div>
             <h5>Aus dem Betrieb</h5>
             <ul>
-              <li><a href="index.html#praxis">Alle Kundenberichte</a></li>
-              <li><a href="index.html#praxis">Tom's Bike Center</a></li>
+              <li><a href="index.html#praxis">Kundenbericht Tom's Bike Center</a></li>
               <li><a href="index.html#neues">Presse und Neuigkeiten</a></li>
             </ul>
+          </div>
+          <div class="mega-fuss">
+            <p>Unabhängig von der Größe und dem Umfang Ihres Unternehmens, lassen Sie uns gemeinsam wachsen.</p>
+            <a href="#" >Haben Sie nicht gefunden, wonach Sie suchen?</a>
+          </div>
+        </div>
+      </div>
+      <div class="mi">
+        <button type="button" aria-expanded="false" data-t="menu.wissen">Wissen</button>
+        <div class="mega" style="min-width:440px">
+          <div>
+            <h5>Verstehen</h5>
+            <ul>
+              <li><a href="index.html#wissen">Alle Leitfäden</a></li>
+              <li><a href="index.html#wissen">Kassensicherung</a></li>
+              <li><a href="index.html#wissen">E-Rechnung</a></li>
+              <li><a href="index.html#wissen">Digitale Belege</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Hilfe</h5>
+            <ul>
+              <li><a href="index.html#support">Support</a></li>
+              <li><a href="index.html#support">Häufige Fälle</a></li>
+              <li><a href="index.html#support">Datenübernahme</a></li>
+            </ul>
+          </div>
+          <div class="mega-fuss">
+            <p>Unabhängig von der Größe und dem Umfang Ihres Unternehmens, lassen Sie uns gemeinsam wachsen.</p>
+            <a href="#" >Haben Sie nicht gefunden, wonach Sie suchen?</a>
           </div>
         </div>
       </div>
     </div>
 
-    <a href="index.html#kontakt" class="navbtn">Gespräch vereinbaren</a>
+    <a href="index.html#kontakt" class="navbtn" data-t="menu.gespraech">Gespräch vereinbaren</a>
     <button class="burger" id="burger" aria-label="Menü">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>

@@ -720,6 +720,9 @@
     function zu(){ flaeche.classList.remove('auf'); }
 
     knopf.addEventListener('click', auf);
+    document.querySelectorAll('.mega-suche').forEach(function(a){
+      a.addEventListener('click', function(e){ e.preventDefault(); auf(); });
+    });
     document.getElementById('suche-zu').addEventListener('click', zu);
     feld.addEventListener('input', function(){ suchen(feld.value); });
     flaeche.addEventListener('click', function(e){ if (e.target === flaeche) zu(); });

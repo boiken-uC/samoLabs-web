@@ -278,6 +278,15 @@
   .nl-hinweis a{color:var(--accent)}
   @media(max-width:700px){.nl-form{width:100%}.nl-form input{flex:1;min-width:0}}
 
+
+  /* ── Abschlusszeile der Aufklappmenüs ── */
+  .mega-fuss{grid-column:1/-1;border-top:1px solid var(--hair);
+    margin-top:8px;padding-top:16px}
+  .mega-fuss p{margin:0 0 8px;font-size:13.5px;color:var(--mid);max-width:52ch}
+  .mega-fuss a{display:inline-block;font-size:14px;font-weight:600;
+    color:var(--accent);text-decoration:none}
+  .mega-fuss a:hover{text-decoration:underline}
+
   /* ── Nachrichtenseite ── */
   .n-filter{display:flex;flex-wrap:wrap;gap:9px}
   .n-filter .l-chip{color:var(--ink);border-color:#C4C8C8}
