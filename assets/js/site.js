@@ -832,6 +832,13 @@
     });
   })();
 
+  // ── Reichweitenmessung: jeder Bereich zaehlt als eigene Seite ──
+  function messe(pfad){
+    try {
+      if (window.plausible) window.plausible('pageview', { u: location.origin + '/' + pfad, props: {} });
+    } catch(e){}
+  }
+
   // ── Seitenwechsel ──
   var seiten = document.querySelectorAll('.page');
   function zeige(name) {
@@ -927,13 +934,14 @@
     e.preventDefault();
     var wohin = ziel.getAttribute('data-go');
     if (wohin.indexOf('detail:') === 0) {
-      if (fuelleDetail(wohin.slice(7))) { zeige('detail'); history.replaceState(null, '', '#' + wohin); return; }
+      if (fuelleDetail(wohin.slice(7))) { zeige('detail'); history.replaceState(null, '', '#' + wohin); messe('detail/' + wohin.slice(7)); return; }
     }
     if (wohin.indexOf('beitrag:') === 0) {
-      if (fuelleBeitrag(wohin.slice(8))) { zeige('beitrag'); history.replaceState(null, '', '#' + wohin); return; }
+      if (fuelleBeitrag(wohin.slice(8))) { zeige('beitrag'); history.replaceState(null, '', '#' + wohin); messe('beitrag/' + wohin.slice(8)); return; }
     }
     zeige(wohin);
     history.replaceState(null, '', wohin === 'start' ? location.pathname : '#' + wohin);
+    messe(wohin === 'start' ? '' : wohin);
     var abschnitt = ziel.getAttribute('data-scroll');
     if (abschnitt) setTimeout(function(){
       var el = document.getElementById(abschnitt);
@@ -957,6 +965,7 @@
   }
   window.addEventListener('hashchange', ausHash);
   ausHash();
+  messe((location.hash || '').replace(/^#/, '').replace(':', '/'));
 
   // ── Mega-Menü ──
   var punkte = Array.prototype.slice.call(document.querySelectorAll('.mi'));
