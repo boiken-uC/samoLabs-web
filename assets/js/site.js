@@ -671,6 +671,65 @@
     pruefe();
   })();
 
+  // ── Suche über alle Inhalte ──
+  (function(){
+    var knopf = document.getElementById('suche-knopf');
+    var flaeche = document.getElementById('suche-flaeche');
+    if (!knopf || !flaeche) return;
+    var feld = document.getElementById('suche-feld');
+    var trefferliste = document.getElementById('suche-treffer');
+
+    function bestand(){
+      var alles = [];
+      Object.keys(DETAIL).forEach(function(k){
+        var d = DETAIL[k];
+        alles.push({ rubrik: d.ober, titel: d.titel, text: d.intro, ziel: 'detail:' + k });
+      });
+      BEITRAEGE.forEach(function(b, i){
+        alles.push({ rubrik: KAT_NAME[b[1]] || 'Beitrag', titel: b[2], text: b[3], ziel: 'beitrag:' + i });
+      });
+      [['Über uns','ueber'],['Lösungen','loesungen'],['Produkte','produkte'],
+       ['Praxis','praxis'],['Presse und Neuigkeiten','neues'],['Kontakt','kontakt'],
+       ['Partner','partner'],['Karriere','karriere'],['Schnittstellen','entwickler'],
+       ['Support','support'],['Anmeldebereich','login']].forEach(function(s){
+        alles.push({ rubrik: 'Seite', titel: s[0], text: '', ziel: s[1] });
+      });
+      return alles;
+    }
+    var ALLES = null;
+
+    function suchen(wort){
+      if (!ALLES) ALLES = bestand();
+      wort = wort.toLowerCase().trim();
+      if (wort.length < 2) { trefferliste.innerHTML = ''; return; }
+      var treffer = ALLES.filter(function(e){
+        return (e.titel + ' ' + e.text + ' ' + e.rubrik).toLowerCase().indexOf(wort) !== -1;
+      }).slice(0, 12);
+      trefferliste.innerHTML = treffer.length
+        ? treffer.map(function(e){
+            return '<a href="#" data-go="' + e.ziel + '">' +
+              '<span class="st-rubrik">' + e.rubrik + '</span>' +
+              '<div class="st-titel">' + e.titel + '</div>' +
+              (e.text ? '<div class="st-text">' + e.text.slice(0, 110) + '…</div>' : '') +
+              '</a>';
+          }).join('')
+        : '<p class="suche-leer">Nichts gefunden. Fragen Sie uns direkt — wir antworten auch auf ungewöhnliche Fragen.</p>';
+    }
+
+    function auf(){ flaeche.classList.add('auf'); feld.value=''; trefferliste.innerHTML=''; feld.focus(); }
+    function zu(){ flaeche.classList.remove('auf'); }
+
+    knopf.addEventListener('click', auf);
+    document.getElementById('suche-zu').addEventListener('click', zu);
+    feld.addEventListener('input', function(){ suchen(feld.value); });
+    flaeche.addEventListener('click', function(e){ if (e.target === flaeche) zu(); });
+    trefferliste.addEventListener('click', zu);
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') zu();
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); auf(); }
+    });
+  })();
+
   // ── Seitenwechsel ──
   var seiten = document.querySelectorAll('.page');
   function zeige(name) {
@@ -688,18 +747,35 @@
   function fuelleDetail(schluessel){
     var d = DETAIL[schluessel];
     if (!d) return false;
-    document.getElementById('d-crumb').textContent = d.titel.length > 42? d.titel.slice(0,40) + '\u2026': d.titel;
+    document.getElementById('d-crumb').textContent = d.titel.length > 42 ? d.titel.slice(0,40) + '\u2026' : d.titel;
     var up = document.getElementById('d-up');
     up.textContent = d.ober;
     up.setAttribute('data-go', d.oberZiel);
     document.getElementById('d-marke').innerHTML = d.marke
-? '<span class="lg hell" style="--s:27px; --lb:#fff; --ln:var(' + d.marke[2] + '-h); --la:var(' + d.marke[2] + '-h)"><b>' +
-        d.marke[0] + '</b><span>' + d.marke[1] + '</span><em></em></span>': '';
+      ? '<span class="lg hell" style="--s:27px; --lb:#fff; --ln:var(' + d.marke[2] + '-h); --la:var(' + d.marke[2] + '-h)"><b>' +
+        d.marke[0] + '</b><span>' + d.marke[1] + '</span><em></em></span>' : '';
     document.getElementById('d-titel').textContent = d.titel;
     document.getElementById('d-intro').textContent = d.intro;
     document.getElementById('d-h2').textContent = d.h2;
     document.getElementById('d-text').textContent = d.text;
     document.getElementById('d-bild').className = 'ph ' + d.bild;
+
+    // Bild auch in den Seitenkopf legen
+    var kopf = document.getElementById('d-kopf');
+    var probe = document.createElement('div');
+    probe.className = d.bild;
+    document.body.appendChild(probe);
+    var bild = getComputedStyle(probe).backgroundImage;
+    document.body.removeChild(probe);
+    kopf.style.setProperty('--kopfbild', bild);
+    var regel = document.getElementById('d-kopf-stil');
+    if (!regel) {
+      regel = document.createElement('style');
+      regel.id = 'd-kopf-stil';
+      document.head.appendChild(regel);
+    }
+    regel.textContent = '.phead-bild::before{background-image:' + bild + '}';
+
     document.getElementById('d-punkte').innerHTML = d.punkte.map(function(x){
       return '<div class="q" style="border-top-color:var(--accent)"><h4>' + x[0] +
              '</h4><p style="color:var(--mid)">' + x[1] + '</p></div>';
@@ -707,10 +783,40 @@
     document.getElementById('d-alltag').innerHTML = d.alltag.map(function(x){
       return '<div class="card"><div class="cb"><h3>' + x[0] + '</h3><p>' + x[1] + '</p></div></div>';
     }).join('');
-    document.getElementById('d-cta').textContent =
-      'Passt ' + (d.marke? d.marke[0] + d.marke[1]: 'das') + ' zu Ihrem Betrieb?';
+
+    var name = d.marke ? d.marke[0] + d.marke[1] : d.titel;
+    document.getElementById('d-formtitel').textContent = 'Passt ' + name + ' zu Ihrem Betrieb?';
+    document.getElementById('d-vorbelegt').textContent = name;
+
+    // Verwandte Inhalte aus derselben Rubrik
+    var verwandt = Object.keys(DETAIL).filter(function(k){
+      return k !== schluessel && DETAIL[k].ober === d.ober;
+    }).slice(0, 4);
+    if (verwandt.length < 4) {
+      verwandt = verwandt.concat(Object.keys(DETAIL).filter(function(k){
+        return k !== schluessel && verwandt.indexOf(k) === -1;
+      }).slice(0, 4 - verwandt.length));
+    }
+    document.getElementById('d-verwandt').innerHTML = verwandt.map(function(k){
+      var v = DETAIL[k];
+      return '<a class="card" href="#" data-go="detail:' + k + '"><div class="ph ' + v.bild + '"></div>' +
+             '<div class="cb">' +
+             (v.marke ? '<span class="lg" style="--s:18px; --ln:var(' + v.marke[2] + '); --la:var(' + v.marke[2] + ')"><b>' +
+              v.marke[0] + '</b><span>' + v.marke[1] + '</span><em></em></span>' :
+              '<h3>' + v.titel.slice(0, 34) + '</h3>') +
+             '<p>' + v.intro.slice(0, 96) + '…</p><span class="more">Mehr erfahren →</span></div></a>';
+    }).join('');
     return true;
   }
+
+  // Sprung zum Anfrageblock auf derselben Seite
+  document.addEventListener('click', function(e){
+    var anker = e.target.closest('a[href="#d-anfrage"]');
+    if (!anker) return;
+    e.preventDefault();
+    var ziel = document.getElementById('d-anfrage');
+    if (ziel) ziel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 
   document.addEventListener('click', function(e){
     var ziel = e.target.closest('[data-go]');

@@ -8,7 +8,7 @@
 <meta property="og:title" content="samoLabs. Software für den Mittelstand">
 <meta property="og:description" content="Mehr erreichen durch Innovation und Wachstum. Systeme, die im Betrieb laufen.">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="assets/css/site.css?v=96319182">
+<link rel="stylesheet" href="assets/css/site.css?v=6d26f9d1">
 </head>
 <body>
 
@@ -307,6 +307,39 @@
   </section>
 
 
+  <section class="sec">
+    <div class="w">
+      <div class="split rv" style="grid-template-columns:1.08fr .92fr">
+        <div>
+          <h2>Für Partner und Systemhäuser</h2>
+          <p class="sub" style="margin-bottom:34px">
+            Sie betreuen dieselben Betriebe wie wir. Statt selbst zu entwickeln,
+            binden Sie unsere Systeme ein und bleiben erster Ansprechpartner.
+          </p>
+          <div class="quad">
+            <div class="q"><h4>Partnerprogramm</h4>
+              <p>Für Steuerberatung, Systemhäuser sowie Hersteller und Großhandel.</p>
+              <a class="more" href="#" data-go="partner">Mehr erfahren →</a></div>
+            <div class="q"><h4>Schnittstellen</h4>
+              <p>Anbindung an Warenwirtschaft, Zahlung, Nachrichtenversand und Auswertung.</p>
+              <a class="more" href="#" data-go="entwickler">Mehr erfahren →</a></div>
+            <div class="q"><h4>Individuelle Entwicklung</h4>
+              <p>Wenn ein Betrieb in keine Schublade passt, bauen wir das passende System.</p>
+              <a class="more" href="#" data-go="kontakt">Mehr erfahren →</a></div>
+            <div class="q"><h4>Datenübernahme</h4>
+              <p>Beim Wechsel von einem anderen System übernehmen wir Ihre Bestände.</p>
+              <a class="more" href="#" data-go="support">Mehr erfahren →</a></div>
+          </div>
+        </div>
+        <div class="imgset">
+          <span class="sq sq-1"></span>
+          <span class="sq sq-2"></span>
+          <div class="ph i-doku"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="sec sec-navy" id="laender">
     <div class="w">
       <div class="lead rv" style="margin-bottom:44px">
@@ -386,9 +419,9 @@
     <div class="w">
       <div class="split rv" style="grid-template-columns:1fr 1fr">
         <div>
-          <h2>Sie haben die gleichen Ansprüche wie wir?</h2>
+          <h2>Ihr Betrieb passt in keine Schublade?</h2>
           <p class="sub" style="margin:18px 0 26px">
-            Wenn Ihr Betrieb in keine Schublade passt, bauen wir das System, das zu Ihren
+            Dann bauen wir das System, das zu Ihren Abläufen passt. Wenn Ihr Betrieb in keine Schublade passt, bauen wir das System, das zu Ihren
             Abläufen passt, auf derselben Grundlage wie unsere Produkte, damit es nicht bei
             einem Einzelstück bleibt, das niemand mehr pflegt.
           </p>
@@ -877,12 +910,17 @@
 
 <!-- ══════════════ DETAILSEITE (Vorlage fuer alle Unterkategorien) ══════════════ -->
 <main class="page" data-page="detail" id="detail">
-  <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <a href="#" id="d-up" data-t="menu.produkte">Produkte</a> › <b id="d-crumb">—</b></div></nav>
-  <header class="phead">
+  <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <a href="#" id="d-up">Produkte</a> › <b id="d-crumb">—</b></div></nav>
+
+  <header class="phead phead-bild" id="d-kopf">
     <div class="w">
       <div id="d-marke" style="margin-bottom:14px"></div>
       <h1 id="d-titel">—</h1>
       <p id="d-intro">—</p>
+      <div class="row" style="margin-top:30px">
+        <a href="#d-anfrage" class="btn">Unverbindlich anfragen</a>
+        <a href="#" data-go="produkte" class="btn btn-w" style="background:transparent;border-color:rgba(255,255,255,.4);color:#fff">Alle Produkte</a>
+      </div>
     </div>
   </header>
 
@@ -912,14 +950,107 @@
     </div>
   </section>
 
-  <section class="cta">
+  <section class="sec sec-navy">
     <div class="w">
-      <h2 id="d-cta">Passt das zu Ihrem Betrieb?</h2>
-      <div class="row"><a href="#" data-go="kontakt" class="btn btn-w">Gespräch vereinbaren</a></div>
+      <div class="lead rv" style="margin-bottom:34px">
+        <h2>Warum samoLabs</h2>
+        <p class="sub">Drei Punkte, die für alle unsere Systeme gelten.</p>
+      </div>
+      <div class="quad rv" style="grid-template-columns:repeat(3,1fr)">
+        <div class="q"><h4>Wir kümmern uns</h4>
+          <p>Wir liefern nicht ab und verschwinden. Wenn im Tagesbetrieb etwas ausfällt, liegt die Verantwortung bei uns.</p></div>
+        <div class="q"><h4>Rechtskonform</h4>
+          <p>Zertifizierte Kassensicherung, revisionssichere Belege und saubere Exporte für die Prüfung.</p></div>
+        <div class="q"><h4>Mitwachsend</h4>
+          <p>Vom Ein-Mann-Betrieb bis zur Filialkette dieselbe Grundlage. Kein Wechsel, wenn der Betrieb wächst.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="d-anfrage">
+    <div class="w">
+      <div class="split rv" style="grid-template-columns:1.1fr .9fr;align-items:start">
+        <div>
+          <h2 id="d-formtitel">Passt das zu Ihrem Betrieb?</h2>
+          <p class="sub" style="margin:16px 0 28px">
+            Schreiben Sie uns kurz, wie Sie arbeiten. Wir melden uns mit einer
+            ehrlichen Einschätzung — auch wenn die lautet, dass es nicht passt.
+          </p>
+          <form class="form" onsubmit="return false">
+            <div><label for="d1">Vorname *</label><input id="d1" type="text" autocomplete="given-name" required></div>
+            <div><label for="d2">Nachname *</label><input id="d2" type="text" autocomplete="family-name" required></div>
+            <div><label for="d3">Unternehmen *</label><input id="d3" type="text" autocomplete="organization" required></div>
+            <div><label for="d4">Telefon</label><input id="d4" type="tel" autocomplete="tel"></div>
+            <div class="f-full"><label for="d5">E-Mail *</label><input id="d5" type="email" autocomplete="email" required></div>
+            <div><label for="d6">Betriebsgröße</label>
+              <select id="d6">
+                <option>1 bis 3 Mitarbeitende</option>
+                <option>4 bis 10 Mitarbeitende</option>
+                <option>11 bis 30 Mitarbeitende</option>
+                <option>Mehr als 30 Mitarbeitende</option>
+              </select></div>
+            <div><label for="d7">Interesse an</label>
+              <select id="d7"><option id="d-vorbelegt">—</option></select></div>
+            <div class="f-full"><label for="d8">Ihre Nachricht</label>
+              <textarea id="d8" placeholder="Wie arbeiten Sie heute, und was soll sich ändern?"></textarea></div>
+            <div class="f-full" style="font-size:13.5px;color:var(--mid)">
+              Mit dem Absenden nehmen Sie unsere <a href="datenschutz.html" style="color:var(--accent)">Datenschutzerklärung</a> zur Kenntnis.
+              Pflichtfelder sind mit * gekennzeichnet.
+            </div>
+            <div class="f-full"><button class="btn" type="submit">Anfrage senden</button></div>
+          </form>
+        </div>
+
+        <div class="d-neben">
+          <h3 style="font-size:19px;margin-bottom:14px">Lieber direkt sprechen?</h3>
+          <div style="border-top:1px solid var(--hair);padding:16px 0">
+            <div style="font-size:13px;color:var(--mid)">Telefon</div>
+            <div style="font-weight:600"><a href="tel:+4915212419807" style="color:var(--accent)">+49 1521 2419807</a></div>
+          </div>
+          <div style="border-top:1px solid var(--hair);padding:16px 0">
+            <div style="font-size:13px;color:var(--mid)">Nachricht</div>
+            <div style="font-weight:600"><a href="https://wa.me/4915212419807" target="_blank" rel="noopener" style="color:var(--accent)">Dieselbe Nummer per WhatsApp</a></div>
+          </div>
+          <div style="border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:16px 0">
+            <div style="font-size:13px;color:var(--mid)">E-Mail</div>
+            <div style="font-weight:600">info@samolabs.de</div>
+          </div>
+          <p class="sub" style="font-size:14.5px;margin-top:20px">
+            Sie sprechen mit jemandem, der das System kennt. Keine Warteschleife,
+            keine erste Ebene, die ein Formular ausfüllt.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-soft">
+    <div class="w">
+      <div class="lead rv" style="margin-bottom:30px"><h2>Das könnte auch passen</h2></div>
+      <div class="g4" id="d-verwandt"></div>
     </div>
   </section>
 </main>
 
+
+  <section class="sec sec-soft">
+    <div class="w">
+      <div class="split rv" style="grid-template-columns:.92fr 1.08fr">
+        <div class="ph i-runde" style="min-height:360px;border-radius:14px"></div>
+        <div>
+          <h2>Arbeiten bei samoLabs</h2>
+          <p class="sub" style="margin:18px 0 26px">
+            Ein kleines Team, das eigene Produkte baut und betreibt. Wer hier
+            anfängt, sieht seine Arbeit am nächsten Morgen im Einsatz — und
+            betreut sie danach weiter.
+          </p>
+          <div class="row">
+            <a href="#" data-go="karriere" class="btn">Karrieremöglichkeiten ansehen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <!-- ══════════════ PARTNER ══════════════ -->
 <main class="page" data-page="partner" id="partner">
@@ -1264,11 +1395,29 @@
         <li><a href="#" data-go="support">Datenübernahme</a></li></ul></div>
     </div>
     <div class="foot-b">
-      <span class="foot-l"><a href="impressum.html" data-t="fuss.impressum">Impressum</a><a href="datenschutz.html" data-t="fuss.datenschutz">Datenschutz</a><a href="credits.html" data-t="fuss.credits">Credits</a></span>
-      <span>© 2026 samoLabs · Jülich</span>
+      <span class="foot-anschrift">
+        samoLabs · Kölner Landstraße 36 · 52428 Jülich · Deutschland<br>
+        <a href="tel:+4915212419807">+49 1521 2419807</a> · info@samolabs.de
+      </span>
+      <span class="foot-l">
+        <a href="impressum.html" data-t="fuss.impressum">Impressum</a><a href="datenschutz.html" data-t="fuss.datenschutz">Datenschutz</a><a href="credits.html" data-t="fuss.credits">Credits</a>
+      </span>
+      <span>© 2026 samoLabs</span>
     </div>
   </div>
 </footer>
+
+<!-- ════════ SUCHE ════════ -->
+<div class="suche-flaeche" id="suche-flaeche" role="dialog" aria-label="Suche">
+  <div class="suche-kasten">
+    <div class="suche-kopf">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="suche-feld" placeholder="Wonach suchen Sie?" aria-label="Suchbegriff">
+      <button type="button" id="suche-zu" aria-label="Suche schließen">&times;</button>
+    </div>
+    <div class="suche-treffer" id="suche-treffer"></div>
+  </div>
+</div>
 
 <!-- ════════ CHAT ════════ -->
 <div class="teas" id="teas" aria-hidden="true">Jasko hier. Fragen zu Ihrem Betrieb?</div>
@@ -1301,6 +1450,6 @@
   </div>
 </div>
 
-<script src="assets/js/site.js?v=578fab29"></script>
+<script src="assets/js/site.js?v=780396e4"></script>
 </body>
 </html>

@@ -201,6 +201,45 @@
     flex-wrap:wrap;border-top:1px solid var(--hair);margin-top:38px;padding-top:26px}
   @media(max-width:700px){.beitrag-lauf .ph{height:220px}.b-anriss{font-size:17px}}
 
+
+  /* ── Seitenkopf mit Bild ── */
+  .phead-bild{position:relative;overflow:hidden;padding:76px 0 78px}
+  .phead-bild::before{content:"";position:absolute;inset:0;background-size:cover;
+    background-position:center;opacity:.26;z-index:0}
+  .phead-bild::after{content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(100deg,var(--navy) 22%,rgba(27,28,30,.72) 100%)}
+  .phead-bild .w{position:relative;z-index:2}
+  .d-neben{background:var(--soft);border-radius:8px;padding:28px 26px}
+  @media(max-width:900px){.d-neben{margin-top:26px}}
+
+
+  /* ── Suche ── */
+  .suche-knopf{background:none;border:0;color:var(--ink);cursor:pointer;padding:8px;
+    display:grid;place-items:center;border-radius:50%;transition:background .18s}
+  .suche-knopf:hover{background:var(--soft);color:var(--accent)}
+  .suche-flaeche{position:fixed;inset:0;z-index:200;background:rgba(27,28,30,.55);
+    backdrop-filter:blur(3px);display:none;padding:80px 24px}
+  .suche-flaeche.auf{display:block}
+  .suche-kasten{max-width:680px;margin:0 auto;background:#fff;border-radius:14px;
+    overflow:hidden;box-shadow:0 26px 60px rgba(27,28,30,.3)}
+  .suche-kopf{display:flex;align-items:center;gap:14px;padding:18px 22px;
+    border-bottom:1px solid var(--hair);color:var(--mid)}
+  .suche-kopf input{flex:1;border:0;outline:none;font-family:var(--body);
+    font-size:17px;color:var(--ink);background:transparent;padding:0}
+  .suche-kopf button{background:none;border:0;font-size:26px;line-height:1;
+    color:var(--mid);cursor:pointer;padding:0 4px}
+  .suche-kopf button:hover{color:var(--ink)}
+  .suche-treffer{max-height:60vh;overflow-y:auto}
+  .suche-treffer a{display:block;padding:15px 22px;border-bottom:1px solid var(--hair);text-decoration:none}
+  .suche-treffer a:hover{background:var(--soft)}
+  .suche-treffer .st-rubrik{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+  .suche-treffer .st-titel{font-family:var(--head);font-weight:700;font-size:16px;color:var(--ink);margin:3px 0 2px}
+  .suche-treffer .st-text{font-size:14px;color:var(--mid)}
+  .suche-leer{padding:30px 22px;color:var(--mid);text-align:center}
+  .foot-anschrift{font-size:13px;line-height:1.7}
+  .foot-anschrift a{color:rgba(255,255,255,.64)}
+  @media(max-width:700px){.suche-flaeche{padding:60px 14px}}
+
   /* ── Nachrichtenseite ── */
   .n-filter{display:flex;flex-wrap:wrap;gap:9px}
   .n-filter .l-chip{color:var(--ink);border-color:#C4C8C8}
