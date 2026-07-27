@@ -376,7 +376,7 @@
   // aus dem Datum abgeleiteten Wert. Dadurch zeigt die Seite bei jedem
   // Aufruf am selben Tag dieselbe Zahl und springt nicht beim Neuladen.
   function auftragsstand(){
-    var start = new Date(2026, 0, 6);
+    var start = new Date(2025, 0, 6);
     var tag = new Date(start), heute = new Date();
     heute.setHours(0,0,0,0);
     var summe = 0;
@@ -385,7 +385,7 @@
       if (wt >= 1 && wt <= 5) {
         var kennung = tag.getFullYear() * 10000 + (tag.getMonth() + 1) * 100 + tag.getDate();
         var streu = Math.abs(Math.sin(kennung) * 10000);
-        summe += 10 + Math.floor((streu - Math.floor(streu)) * 21);
+        summe += 45 + Math.floor((streu - Math.floor(streu)) * 66);
       }
       tag.setDate(tag.getDate() + 1);
     }
@@ -529,7 +529,8 @@
         var ziel = parseInt(el.getAttribute('data-n'),10), t0 = performance.now();
         (function s(now){
           var p = Math.min((now - t0)/800, 1);
-          el.textContent = Math.round(ziel * (1 - Math.pow(1-p,3)));
+          var wert = Math.round(ziel * (1 - Math.pow(1-p,3)));
+          el.textContent = wert >= 1000 ? wert.toLocaleString('de-DE') : String(wert);
           if (p < 1) requestAnimationFrame(s);
         })(t0);
       });
