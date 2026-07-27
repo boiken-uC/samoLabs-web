@@ -877,13 +877,14 @@
       if (!offen) { p.classList.add('open'); b.setAttribute('aria-expanded','true'); }
     });
     p.addEventListener('mouseenter', function(){
-      if (window.innerWidth > 1080) {
-        punkte.forEach(function(x){ x.classList.remove('open'); });
-        p.classList.add('open');
-      }
+      if (window.innerWidth <= 1080) return;
+      clearTimeout(p._zu);
+      punkte.forEach(function(x){ if (x !== p) { clearTimeout(x._zu); x.classList.remove('open'); } });
+      p.classList.add('open');
     });
     p.addEventListener('mouseleave', function(){
-      if (window.innerWidth > 1080) p.classList.remove('open');
+      if (window.innerWidth <= 1080) return;
+      p._zu = setTimeout(function(){ p.classList.remove('open'); }, 320);
     });
   });
   document.addEventListener('click', schliesseMenues);
