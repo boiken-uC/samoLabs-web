@@ -33,13 +33,6 @@
       '<span class="tag">' + p[4] + '</span><p>' + p[5] + '</p>' +
       '<span class="more">Mehr erfahren →</span></div></a>';
   }
-  var BRANCHEN = ['retail','hospitality','mobility','selfservice','fieldsales','building','engagement'];
-  document.getElementById('rail-start').innerHTML = BRANCHEN.map(function(k){
-    var d = DETAIL[k];
-    return '<a class="rc" href="#" data-go="detail:' + k + '"><div class="ph ' + d.bild + '"></div>' +
-           '<div class="rcb"><h3>' + d.titel + '</h3><p>' + d.intro + '</p>' +
-           '<span class="more">Mehr erfahren →</span></div></a>';
-  }).join('');
   document.getElementById('prod-alle').innerHTML  = PRODUKTE.map(function(x){ return produktKarte(x, true); }).join('');
 
 
@@ -333,6 +326,15 @@
               ['Schnellere Antworten','Ohne Suchen im Verlauf.'],
               ['Einfache Vertretung','Wer einspringt, sieht sofort den Stand.']] }
   };
+
+  var BRANCHEN = ['retail','hospitality','mobility','selfservice','fieldsales','building','engagement'];
+  document.getElementById('rail-start').innerHTML = BRANCHEN.map(function(k){
+    var d = DETAIL[k];
+    return '<a class="rc" href="#" data-go="detail:' + k + '"><div class="ph ' + d.bild + '"></div>' +
+           '<div class="rcb"><h3>' + d.titel + '</h3><p>' + d.intro + '</p>' +
+           '<span class="more">Mehr erfahren →</span></div></a>';
+  }).join('');
+
 
 
   // ── Beiträge für die Nachrichtenseite ───────────────────────────────
