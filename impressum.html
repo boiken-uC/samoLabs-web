@@ -1,145 +1,150 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum – samoLabs.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy:       #0F172A;
-      --navy-deep:  #020617;
-      --purple:     #818CF8;
-      --purple-2:   #6366F1;
-      --pink:       #F472B6;
-      --white:      #FFFFFF;
-      --slate-100:  #F1F5F9;
-      --slate-200:  #E2E8F0;
-      --text:       #0F172A;
-      --text-muted: #475569;
-      --font-head:  'Outfit', sans-serif;
-      --font-body:  'Inter', system-ui, sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-body);
-      color: var(--text);
-      background: var(--white);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.6;
-    }
-
-    /* Nav */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(15, 23, 42, 0.96);
-      border-bottom: 1px solid rgba(129, 140, 248, 0.12);
-      height: 68px;
-      padding: 0 6%;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo img { height: 26px; display: block; }
-    .nav-back {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
-      font-size: 14px; font-weight: 500;
-      transition: color .2s;
-    }
-    .nav-back:hover { color: var(--purple); }
-    .nav-back svg { flex-shrink: 0; }
-
-    /* Content */
-    .page-wrap {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 120px 6% 80px;
-    }
-    .page-label {
-      font-size: 12px; font-weight: 700;
-      letter-spacing: .14em; text-transform: uppercase;
-      color: var(--purple-2);
-      margin-bottom: 14px;
-      display: inline-flex; align-items: center; gap: 10px;
-    }
-    .page-label::before {
-      content: ""; display: inline-block;
-      width: 28px; height: 1px; background: var(--purple-2);
-    }
-    h1 {
-      font-family: var(--font-head);
-      font-weight: 900;
-      font-size: clamp(32px, 5vw, 52px);
-      color: var(--navy);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      margin-bottom: 48px;
-    }
-    h2 {
-      font-family: var(--font-head);
-      font-weight: 800;
-      font-size: 20px;
-      color: var(--navy);
-      letter-spacing: -0.015em;
-      margin: 40px 0 12px;
-    }
-    p {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.8;
-      margin-bottom: 12px;
-    }
-    a { color: var(--purple-2); text-decoration: none; }
-    a:hover { color: var(--purple); text-decoration: underline; }
-
-    .divider {
-      width: 40px; height: 2px;
-      background: var(--purple-2);
-      margin: 48px 0;
-      border-radius: 2px;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--navy-deep);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 40px 6%;
-    }
-    .footer-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
-    }
-    footer img { height: 22px; }
-    .footer-links { display: flex; gap: 28px; }
-    .footer-links a {
-      font-size: 13px;
-      color: rgba(255,255,255,0.4);
-      text-decoration: none;
-      transition: color .2s;
-    }
-    .footer-links a:hover { color: var(--pink); }
-    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.28); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum – samoLabs</title>
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  .recht{max-width:800px;margin:0 auto;padding:64px 28px 84px}
+  .recht h2{font-size:22px;color:var(--ink);margin:38px 0 12px}
+  .recht h2:first-of-type{margin-top:0}
+  .recht h3{font-size:17px;color:var(--ink);margin:26px 0 8px}
+  .recht p{margin:0 0 14px;color:#3D4147}
+  .recht ul{margin:0 0 16px;padding-left:22px;color:#3D4147}
+  .recht li{margin-bottom:7px}
+  .recht a{color:var(--accent);text-decoration:underline}
+  .recht strong{color:var(--ink)}
+</style>
 </head>
 <body>
 
-  <nav>
-    <a href="/" class="nav-logo">
-      <img src="./assets/samolabs-logo-dark.png" alt="samoLabs.">
+<div class="util">
+  <div class="w">
+    <span>Deutschland · Deutsch</span>
+    <span class="util-r">
+      <a href="index.html#kontakt">Partner</a>
+      <a href="index.html#kontakt">Karriere</a>
+      <a href="index.html#kontakt">Entwickler</a>
+      <a href="index.html#ueber">Über samoLabs</a>
+      <a href="index.html#neues">Pressebereich</a>
+      <a href="index.html#kontakt">Support</a>
+      <a href="index.html#kontakt">Login</a>
+    </span>
+  </div>
+</div>
+<nav class="nav">
+  <div class="w">
+    <a href="index.html#start" aria-label="samoLabs Startseite">
+      <span class="lg" style="--s:25px; --ln:var(--labs); --la:var(--labs)"><b>samo</b><span>Labs</span><em></em></span>
     </a>
-    <a href="/" class="nav-back">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
-      Zur Startseite
-    </a>
-  </nav>
 
-  <main class="page-wrap">
-    <div class="page-label">Rechtliches</div>
-    <h1>Impressum</h1>
+    <div class="menu" id="menu">
+      <div class="mi">
+        <button type="button" aria-expanded="false">Über uns</button>
+        <div class="mega">
+          <div>
+            <h5>Unternehmen</h5>
+            <ul>
+              <li><a href="index.html#ueber">Wer wir sind</a></li>
+              <li><a href="index.html#ueber">Unser Weg</a></li>
+              <li><a href="index.html#ueber">Technologiepartner</a></li>
+              <li><a href="index.html#start">Einsatzländer</a></li>
+              <li><a href="index.html#ueber">Wie wir arbeiten</a></li>
+              <li><a href="index.html#praxis">Kundenberichte</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Kontakt</h5>
+            <ul>
+              <li><a href="index.html#kontakt">Gespräch vereinbaren</a></li>
+              <li><a href="index.html#kontakt">Support</a></li>
+              <li><a href="index.html#neues">Presse und Neuigkeiten</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mi">
+        <button type="button" aria-expanded="false">Lösungen</button>
+        <div class="mega">
+          <div>
+            <h5>Nach Betrieb</h5>
+            <ul>
+              <li><a href="#" data-go="detail:werkstatt">Werkstatt und Handel</a></li>
+              <li><a href="#" data-go="detail:gastro">Gastronomie</a></li>
+              <li><a href="#" data-go="detail:logistik">Transport und Logistik</a></li>
+              <li><a href="#" data-go="detail:aussendienst">Außendienst</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Nach Aufgabe</h5>
+            <ul>
+              <li><a href="#" data-go="detail:auftrag">Auftrag und Planung</a></li>
+              <li><a href="#" data-go="detail:kasse">Kasse und Zahlung</a></li>
+              <li><a href="#" data-go="detail:kunde">Kunde und Kontakt</a></li>
+              <li><a href="#" data-go="detail:auswertung">Auswertung</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mi">
+        <button type="button" aria-expanded="false">Produkte</button>
+        <div class="mega">
+          <div>
+            <h5>Im Einsatz</h5>
+            <ul>
+              <li><a href="#" data-go="detail:rad">samoRad — Werkstatt</a></li>
+              <li><a href="#" data-go="detail:order">samoOrder — Gastronomie</a></li>
+              <li><a href="#" data-go="detail:transport">samoTransport — Fracht</a></li>
+              <li><a href="#" data-go="detail:vertrieb">samoVertrieb — Außendienst</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Ergänzend</h5>
+            <ul>
+              <li><a href="#" data-go="detail:chat">samoChat — Kundenkontakt</a></li>
+              <li><a href="#" data-go="detail:plan">samoPlan — Gebäudetechnik</a></li>
+              <li><a href="#" data-go="detail:terminal">samoTerminal — Zeiterfassung</a></li>
+              <li><a href="index.html#kontakt">Individuelle Entwicklung</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mi">
+        <button type="button" aria-expanded="false">Praxis</button>
+        <div class="mega" style="min-width:380px;grid-template-columns:1fr">
+          <div>
+            <h5>Aus dem Betrieb</h5>
+            <ul>
+              <li><a href="index.html#praxis">Alle Kundenberichte</a></li>
+              <li><a href="index.html#praxis">Tom's Bike Center</a></li>
+              <li><a href="index.html#neues">Presse und Neuigkeiten</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html#kontakt" class="navbtn">Gespräch vereinbaren</a>
+    <button class="burger" id="burger" aria-label="Menü">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="crumb"><div class="w"><a href="index.html">Start</a> &rsaquo; <b>Impressum</b></div></nav>
+
+<header class="phead">
+  <div class="w"><h1>Impressum</h1></div>
+</header>
+
+<main class="recht">
+Rechtliches
+    
 
     <h2>Angaben gemäß § 5 TMG</h2>
     <p>
@@ -154,7 +159,7 @@
       E-Mail: <a href="mailto:info@samolabs.de">info@samolabs.de</a>
     </p>
 
-    <div class="divider"></div>
+    
 
     <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
     <p>
@@ -163,7 +168,7 @@
       52428 Jülich
     </p>
 
-    <div class="divider"></div>
+    
 
     <h2>Haftungsausschluss</h2>
 
@@ -190,22 +195,63 @@
     <p>
       Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
     </p>
-  </main>
+</main>
 
-  <footer>
-    <div class="footer-inner">
-      <img src="./assets/samolabs-logo-dark.png" alt="samoLabs.">
-      <div class="footer-links">
-        <a href="./impressum.html">Impressum</a>
-        <a href="./datenschutz.html">Datenschutz</a>
-        <a href="./credits.html">Credits</a>
+<footer class="foot">
+  <div class="w">
+    <div class="foot-g">
+      <div>
+        <span class="lg hell" style="--s:23px; --lb:#fff; --ln:var(--labs); --la:var(--labs)"><b>samo</b><span>Labs</span><em></em></span>
+        <p style="margin:16px 0 0;max-width:28em">Softwareentwicklung aus Jülich. Wir bauen Software für den Mittelstand.</p>
       </div>
-      <div class="footer-copy">© <span id="fyear"></span> samoLabs</div>
+      <div><h4>Produkte</h4><ul>
+        <li><a href="#" data-go="detail:rad">samoRad</a></li>
+        <li><a href="#" data-go="detail:order">samoOrder</a></li>
+        <li><a href="#" data-go="detail:transport">samoTransport</a></li>
+        <li><a href="#" data-go="detail:vertrieb">samoVertrieb</a></li>
+        <li><a href="#" data-go="detail:chat">samoChat</a></li></ul></div>
+      <div><h4>Lösungen</h4><ul>
+        <li><a href="#" data-go="detail:werkstatt">Werkstatt und Handel</a></li>
+        <li><a href="#" data-go="detail:gastro">Gastronomie</a></li>
+        <li><a href="#" data-go="detail:logistik">Transport</a></li>
+        <li><a href="#" data-go="detail:aussendienst">Außendienst</a></li></ul></div>
+      <div><h4>Unternehmen</h4><ul>
+        <li><a href="index.html#ueber">Über uns</a></li>
+        <li><a href="index.html#praxis">Kundenberichte</a></li>
+        <li><a href="index.html#neues">Presse und Neuigkeiten</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li></ul></div>
+      <div><h4>Service</h4><ul>
+        <li><a href="index.html#kontakt">Support</a></li>
+        <li><a href="index.html#kontakt">Schulung</a></li>
+        <li><a href="index.html#kontakt">Datenübernahme</a></li></ul></div>
     </div>
-  </footer>
+    <div class="foot-b">
+      <span class="foot-l"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="credits.html">Credits</a></span>
+      <span>© 2026 samoLabs · Jülich</span>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    document.getElementById('fyear').textContent = new Date().getFullYear();
-  </script>
+<script>
+  // Nur die Menue-Aufklapper aktivieren; die Unterseiten brauchen kein Routing.
+  (function(){
+    var punkte = [].slice.call(document.querySelectorAll('.mi'));
+    function zu(){ punkte.forEach(function(p){ p.classList.remove('open'); }); }
+    punkte.forEach(function(p){
+      var b = p.querySelector('button');
+      if (!b) return;
+      b.addEventListener('click', function(e){
+        e.stopPropagation();
+        var offen = p.classList.contains('open');
+        zu(); if (!offen) p.classList.add('open');
+      });
+      p.addEventListener('mouseenter', function(){ if (window.innerWidth > 1080) { zu(); p.classList.add('open'); } });
+      p.addEventListener('mouseleave', function(){ if (window.innerWidth > 1080) p.classList.remove('open'); });
+    });
+    document.addEventListener('click', zu);
+    var burger = document.getElementById('burger'), menu = document.getElementById('menu');
+    if (burger && menu) burger.addEventListener('click', function(e){ e.stopPropagation(); menu.classList.toggle('mob'); });
+  })();
+</script>
 </body>
 </html>
