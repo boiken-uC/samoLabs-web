@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>samoLabs — Software für den Mittelstand</title>
+<title>samoLabs. Software für den Mittelstand</title>
 <meta name="description" content="Wir bauen Branchen-Software für den Mittelstand und begleiten sie im Alltag. Werkstatt, Gastronomie, Transport und Außendienst.">
-<meta property="og:title" content="samoLabs — Software für den Mittelstand">
+<meta property="og:title" content="samoLabs. Software für den Mittelstand">
 <meta property="og:description" content="Mehr erreichen durch Innovation und Wachstum. Systeme, die im Betrieb stehen.">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="assets/css/site.css">
@@ -15,7 +15,20 @@
 <!-- ════════ SERVICEZEILE ════════ -->
 <div class="util">
   <div class="w">
-    <span>Deutschland · Deutsch</span>
+    <span class="land-waehler" id="land-waehler">
+      <button class="land-knopf" type="button" id="land-knopf" aria-expanded="false" aria-haspopup="true">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg>
+        Deutschland · Deutsch
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <span class="land-liste" id="land-liste" role="menu">
+        <button type="button" class="aktiv" role="menuitem">Deutschland <small>Deutsch</small></button>
+        <button type="button" role="menuitem">Österreich <small>Deutsch</small></button>
+        <button type="button" role="menuitem">Polen <small>Polski</small></button>
+        <button type="button" role="menuitem">Bosna i Hercegovina <small>Bosanski</small></button>
+        <button type="button" role="menuitem">Suomi <small>Suomeksi</small></button>
+      </span>
+    </span>
     <span class="util-r">
       <a href="#" data-go="partner">Partner</a>
       <a href="#" data-go="karriere">Karriere</a>
@@ -92,18 +105,18 @@
           <div>
             <h5>Im Einsatz</h5>
             <ul>
-              <li><a href="#" data-go="detail:rad">samoRad — Werkstatt</a></li>
-              <li><a href="#" data-go="detail:order">samoOrder — Gastronomie</a></li>
-              <li><a href="#" data-go="detail:transport">samoTransport — Fracht</a></li>
-              <li><a href="#" data-go="detail:vertrieb">samoVertrieb — Außendienst</a></li>
+              <li><a href="#" data-go="detail:rad">samoRad. Werkstatt</a></li>
+              <li><a href="#" data-go="detail:order">samoOrder. Gastronomie</a></li>
+              <li><a href="#" data-go="detail:transport">samoTransport. Fracht</a></li>
+              <li><a href="#" data-go="detail:vertrieb">samoVertrieb. Außendienst</a></li>
             </ul>
           </div>
           <div>
             <h5>Ergänzend</h5>
             <ul>
-              <li><a href="#" data-go="detail:chat">samoChat — Kundenkontakt</a></li>
-              <li><a href="#" data-go="detail:plan">samoPlan — Gebäudetechnik</a></li>
-              <li><a href="#" data-go="detail:terminal">samoTerminal — Zeiterfassung</a></li>
+              <li><a href="#" data-go="detail:chat">samoChat. Kundenkontakt</a></li>
+              <li><a href="#" data-go="detail:plan">samoPlan. Gebäudetechnik</a></li>
+              <li><a href="#" data-go="detail:terminal">samoTerminal. Zeiterfassung</a></li>
               <li><a href="#" data-go="kontakt">Individuelle Entwicklung</a></li>
             </ul>
           </div>
@@ -144,7 +157,7 @@
         <p class="sub2" style="margin-top:16px">Bauen, betreiben, begleiten</p>
         <p>
           Kunden erwarten Termine online und Antworten sofort. Vorschriften wie die
-          Kassensicherung werden strenger. Ihre Technik muss beides mitmachen — ohne
+          Kassensicherung werden strenger. Ihre Technik muss beides mitmachen, ohne
           dass jemand nebenher drei Programme pflegt.
         </p>
         <div class="row">
@@ -179,7 +192,7 @@
       <h2 style="max-width:19ch">Ein Partner für alles, was im Betrieb zusammenlaufen muss</h2>
       <p class="sub" style="max-width:60ch;margin-top:20px">
         Die meisten Betriebe arbeiten mit drei Programmen, die nichts voneinander wissen,
-        und einem Ordner voller Zettel. Wir bauen Systeme, die zusammenhängen — weil sie
+        und einer Ablage in Papierform. Wir bauen Systeme, die zusammenhängen, weil sie
         aus einer Hand kommen und von uns betreut werden, auch nach dem ersten Monat.
       </p>
     </div>
@@ -191,7 +204,7 @@
       <div class="hrow rv">
         <div class="lead">
           <h2>Lösungen für Ihren Betrieb</h2>
-          <p class="sub">Vier Wege in unser Portfolio — je nachdem, was bei Ihnen gerade am meisten klemmt.</p>
+          <p class="sub">Vier Wege in unser Portfolio, je nachdem, wo bei Ihnen der größte Bedarf besteht.</p>
         </div>
         <a href="#" data-go="loesungen" class="btn btn-o">Alle Lösungen</a>
       </div>
@@ -231,12 +244,12 @@
         <div>
           <h2>Was in jedem unserer Systeme steckt</h2>
           <p class="sub" style="margin-bottom:34px">
-            Vier Bausteine, die jeder Betrieb braucht — und die bei uns auf demselben
+            Vier Bausteine, die jeder Betrieb braucht, und die bei uns auf demselben
             Datenbestand arbeiten, statt einzeln gepflegt zu werden.
           </p>
           <div class="quad">
             <div class="q"><h4>Auftrag und Planung</h4>
-              <p>Annahme, Terminierung, Auslastung — sichtbar, bevor ein Termin platzt.</p>
+              <p>Annahme, Terminierung, Auslastung, sichtbar, bevor ein Termin platzt.</p>
               <a class="more" href="#" data-go="loesungen">Mehr erfahren →</a></div>
             <div class="q"><h4>Kasse und Zahlung</h4>
               <p>Zertifizierte TSE-Kasse, Kartenzahlung ohne zweites Gerät, Rechnung per QR-Code.</p>
@@ -278,8 +291,8 @@
           <span class="tag" style="color:var(--mint)">Kundenbericht</span>
           <h2>Wie das neue System bei Tom's Bike Center drei Programme überflüssig machte</h2>
           <blockquote>
-            „Wir hatten vorher drei Programme und einen Ordner voll Zettel. Heute steht alles
-            an einer Stelle — und die Kunden fragen nicht mehr nach, ob ihr Rad fertig ist.
+            „Wir hatten vorher drei Programme und eine Ablage in Papierform. Heute steht alles
+            an einer Stelle, und die Kunden fragen nicht mehr nach, ob ihr Rad fertig ist.
             Das erledigt das System."
           </blockquote>
           <div style="font-size:14.5px;color:rgba(255,255,255,.66)">
@@ -298,7 +311,7 @@
       <div class="lead rv" style="margin-bottom:44px">
         <h2>Rechtskonform. Und mitgewachsen.</h2>
         <p class="sub">
-          Kassensicherung, E-Rechnung, digitale Belege — die Anforderungen ändern sich
+          Kassensicherung, E-Rechnung, digitale Belege, die Anforderungen ändern sich
           laufend und in jedem Land anders. Unsere Systeme sind darauf ausgelegt, das
           mitzumachen, ohne dass Sie das Programm wechseln müssen.
         </p>
@@ -321,17 +334,17 @@
 
       <div class="merkmale rv">
         <div class="mk"><h4>Rechtskonform</h4>
-          <p>Zertifizierte Kassensicherung, revisionssichere Belege und saubere Exporte für die Prüfung — in jedem Land nach dessen Vorgaben.</p></div>
+          <p>Zertifizierte Kassensicherung, revisionssichere Belege und saubere Exporte für die Prüfung, in jedem Land nach dessen Vorgaben.</p></div>
         <div class="mk"><h4>Skalierbar</h4>
-          <p>Vom Ein-Mann-Betrieb bis zur Filialkette dieselbe Grundlage. Wächst der Betrieb, wächst das System mit — ohne Wechsel.</p></div>
+          <p>Vom Ein-Mann-Betrieb bis zur Filialkette dieselbe Grundlage. Wächst der Betrieb, wächst das System mit, ohne Wechsel.</p></div>
         <div class="mk"><h4>Wir kümmern uns</h4>
           <p>Wir liefern nicht ab und verschwinden. Wenn morgens etwas klemmt, ist das unser Problem, nicht Ihres.</p></div>
         <div class="mk"><h4>E-Rechnung</h4>
-          <p>Elektronische Rechnungen in strukturierten Formaten empfangen und versenden — vorbereitet auf das, was Pflicht wird.</p></div>
+          <p>Elektronische Rechnungen in strukturierten Formaten empfangen und versenden, vorbereitet auf das, was Pflicht wird.</p></div>
         <div class="mk"><h4>Digitale Belege</h4>
           <p>Der Beleg geht per QR-Code oder Mail an den Kunden. Nachweisbar, auffindbar, jederzeit erneut abrufbar.</p></div>
         <div class="mk"><h4>Ohne Thermopapier</h4>
-          <p>Kein Bonpapier mit Bisphenol, keine verblassten Belege in der Schublade, keine Rolle, die im dümmsten Moment leer ist.</p></div>
+          <p>Kein Bonpapier mit Bisphenol, keine verblassten Belege in der Schublade, und keine Papierrolle, die zur Unzeit zur Neige geht.</p></div>
       </div>
     </div>
   </section>
@@ -347,7 +360,7 @@
     <div class="w">
       <div class="lead rv" style="margin-bottom:38px">
         <h2>Der Beweis liegt in den Zahlen</h2>
-        <p class="sub">Wir sind ein kleines Studio — und genau das ist für unsere Kunden der Unterschied.</p>
+        <p class="sub">Wir sind ein kleines Studio, und genau das ist für unsere Kunden der Unterschied.</p>
       </div>
       <div class="kpis rv">
         <div class="kpi"><b data-n="7">7</b><span>Systeme im Echtbetrieb</span></div>
@@ -375,7 +388,7 @@
           <h2>Sie haben die gleichen Ansprüche wie wir?</h2>
           <p class="sub" style="margin:18px 0 26px">
             Wenn Ihr Betrieb in keine Schublade passt, bauen wir das System, das zu Ihren
-            Abläufen passt — auf derselben Grundlage wie unsere Produkte, damit es nicht bei
+            Abläufen passt, auf derselben Grundlage wie unsere Produkte, damit es nicht bei
             einem Einzelstück bleibt, das niemand mehr pflegt.
           </p>
           <a href="#" data-go="kontakt" class="btn">Über Ihr Vorhaben sprechen</a>
@@ -403,7 +416,7 @@
         <div>
           <h2>Aus der Auftragsarbeit heraus gewachsen</h2>
           <p class="sub" style="margin:18px 0 20px">
-            Unsere Wurzeln liegen bei <strong>Boiken&nbsp;d.o.o.</strong> in Sarajevo — einem
+            Unsere Wurzeln liegen bei <strong>Boiken&nbsp;d.o.o.</strong> in Sarajevo, einem
             Haus für IT- und Geschäftsdienstleistungen mit einem klaren Schwerpunkt:
             <strong>dem Kontakt zwischen Unternehmen und ihren Kunden</strong>. Die Arbeit
             reichte von der Beratung über das Aufräumen von Abläufen bis zur fertigen
@@ -412,7 +425,7 @@
           </p>
           <p class="sub" style="margin-bottom:20px">
             Gebaut wurden dort unter anderem Sprachdialogsysteme für große
-            Telekommunikationsanbieter in Wien und Bukarest — Millionen Anrufer, mehrere
+            Telekommunikationsanbieter in Wien und Bukarest. Millionen Anrufer, mehrere
             Sprachen, Betrieb rund um die Uhr. Wer für solche Häuser entwickelt, lernt
             schnell, dass Software erst zählt, wenn sie auch nachts läuft.
           </p>
@@ -435,15 +448,15 @@
           <p class="sub" style="margin:18px 0 30px">
             Was in Sarajevo für einen Telekommunikationsanbieter begann, steckt heute in
             jedem unserer Produkte: Es geht immer darum, dass der Kontakt zum Kunden nicht
-            verloren geht — sondern dort landet, wo der Auftrag schon liegt.
+            verloren geht, sondern dort landet, wo der Auftrag schon liegt.
           </p>
           <div class="quad">
             <div class="q"><h4>Die Nachricht, die von selbst rausgeht</h4>
-              <p>„Ihr Rad ist fertig" — automatisch, ohne dass jemand daran denken muss.</p></div>
+              <p>„Ihr Rad ist fertig", automatisch, ohne dass jemand daran denken muss.</p></div>
             <div class="q"><h4>Die Anfrage, die zum Vorgang wird</h4>
               <p>Aus einer WhatsApp-Nachricht wird ein Ticket mit Nummer statt einer Zeile im Chatverlauf.</p></div>
             <div class="q"><h4>Die Bestellung ohne Umweg</h4>
-              <p>Der Gast scannt am Tisch, die Theke sieht es sofort — niemand muss dazwischenlaufen.</p></div>
+              <p>Der Gast scannt am Tisch, die Theke sieht es sofort, niemand muss dazwischenlaufen.</p></div>
             <div class="q"><h4>Der Anruf am richtigen Platz</h4>
               <p>Telefonie im System, damit das Gespräch dort ankommt, wo der Auftrag schon steht.</p></div>
           </div>
@@ -461,7 +474,7 @@
     <div class="w">
       <div class="lead rv" style="margin-bottom:34px">
         <h2>Unser Weg</h2>
-        <p class="sub">Von der Sprachdialogprogrammierung über den Konzernbetrieb zum eigenen Produkthaus — zehn Jahre am selben Thema.</p>
+        <p class="sub">Von der Sprachdialogprogrammierung über den Konzernbetrieb zum eigenen Produkthaus, zehn Jahre am selben Thema.</p>
       </div>
       <div class="weg rv">
         <div class="st">
@@ -472,7 +485,7 @@
         <div class="st">
           <div class="ort">2019 – 2022</div>
           <h4>Servicemanager im Zahlungsverkehr</h4>
-          <p>Drei Jahre Verantwortung für Betrieb und Service bei einem der größten europäischen Zahlungsdienstleister. Dort lernt man, was Verfügbarkeit im Ernstfall bedeutet — und nebenher entstand die Idee zum eigenen Produkt.</p>
+          <p>Drei Jahre Verantwortung für Betrieb und Service bei einem der größten europäischen Zahlungsdienstleister. Dort lernt man, was Verfügbarkeit im Ernstfall bedeutet, und nebenher entstand die Idee zum eigenen Produkt.</p>
         </div>
         <div class="st">
           <div class="ort">Januar 2022 · Sarajevo</div>
@@ -482,7 +495,7 @@
         <div class="st jetzt">
           <div class="ort">Heute · Jülich</div>
           <h4>samoLabs</h4>
-          <p>Sieben eigene Systeme im Einsatz — Werkstatt, Gastronomie, Transport, Außendienst, alle auf einer gemeinsamen Grundlage.</p>
+          <p>Sieben eigene Systeme im Einsatz. Werkstatt, Gastronomie, Transport, Außendienst, alle auf einer gemeinsamen Grundlage.</p>
         </div>
       </div>
     </div>
@@ -492,7 +505,7 @@
     <div class="w">
       <div class="lead rv" style="margin-bottom:34px">
         <h2>Mit wem wir arbeiten</h2>
-        <p class="sub">Telefonie, Nachrichtenversand, Fiskalisierung und Zahlung — dafür arbeiten wir mit etablierten Anbietern zusammen.</p>
+        <p class="sub">Telefonie, Nachrichtenversand, Fiskalisierung und Zahlung, dafür arbeiten wir mit etablierten Anbietern zusammen.</p>
       </div>
       <div class="partner rv">
         <div class="pk"><span class="pm">sipgate</span></div>
@@ -512,7 +525,7 @@
       <div class="g4 rv">
         <div class="card"><div class="cb">
           <h3>Erst zuhören</h3>
-          <p>Bevor wir etwas bauen, schauen wir uns an, wie im Betrieb tatsächlich gearbeitet wird — nicht, wie es im Organigramm steht.</p></div></div>
+          <p>Bevor wir etwas bauen, schauen wir uns an, wie im Betrieb tatsächlich gearbeitet wird, nicht, wie es im Organigramm steht.</p></div></div>
         <div class="card"><div class="cb">
           <h3>Kleine Schritte</h3>
           <p>Kein Umstieg über Nacht. Wir fangen mit dem an, was am meisten weh tut, und bauen von dort weiter.</p></div></div>
@@ -521,7 +534,7 @@
           <p>Wenn sich unsere Lösung für Ihren Betrieb nicht rechnet, sagen wir das. Ein schlechter Kunde nützt uns beiden nichts.</p></div></div>
         <div class="card"><div class="cb">
           <h3>Erreichbar bleiben</h3>
-          <p>Sie sprechen mit der Person, die das System kennt. Kein Ticketsystem, das Sie im Kreis schickt.</p></div></div>
+          <p>Sie sprechen mit der Person, die das System kennt. Kein Ticketsystem, das Sie weiterreicht.</p></div></div>
       </div>
     </div>
   </section>
@@ -533,7 +546,7 @@
         <details open><summary>Was passiert mit meinen bisherigen Daten?</summary>
           <p>Wir übernehmen Kundenstamm, Aufträge und Artikel aus Ihrem alten System, soweit sie sich exportieren lassen. Diese Übernahme ist bei uns Teil der Einrichtung und kostet nichts extra.</p></details>
         <details><summary>Wie lange dauert die Umstellung?</summary>
-          <p>Das hängt vom Umfang ab. Ein einzelner Betrieb ist meist in wenigen Tagen arbeitsfähig — wir stellen aber nie an einem Samstag alles um und lassen Sie am Montag allein.</p></details>
+          <p>Das hängt vom Umfang ab. Ein einzelner Betrieb ist meist in wenigen Tagen arbeitsfähig, wir stellen aber nie an einem Samstag alles um und lassen Sie am Montag allein.</p></details>
         <details><summary>Was, wenn wir wieder wechseln wollen?</summary>
           <p>Ihre Daten gehören Ihnen. Sie bekommen jederzeit einen vollständigen Export in einem gängigen Format, ohne dass wir Ihnen Steine in den Weg legen.</p></details>
         <details><summary>Bekommen wir Schulungen?</summary>
@@ -556,7 +569,7 @@
   <header class="phead">
     <div class="w">
       <h1>Lösungen für Ihren Betrieb</h1>
-      <p>Vier Zuschnitte für vier Arten zu arbeiten — und vier Bausteine, die in jedem davon stecken.</p>
+      <p>Vier Zuschnitte für vier Arten zu arbeiten, und vier Bausteine, die in jedem davon stecken.</p>
     </div>
   </header>
 
@@ -579,7 +592,7 @@
         <a class="card" href="#" data-go="detail:logistik">
           <div class="ph i-trans"></div>
           <div class="cb"><h3>Transport und Logistik</h3>
-            <p>Frachtaufträge finden, Touren planen, Sendungen bis zur Übergabe verfolgen. Gebaut für Strecken, die bisher kaum digitalisiert sind — und für Fahrer, die unterwegs keine Zeit für Formulare haben.</p>
+            <p>Frachtaufträge finden, Touren planen, Sendungen bis zur Übergabe verfolgen. Gebaut für Strecken, die bisher kaum digitalisiert sind, und für Fahrer, die unterwegs keine Zeit für Formulare haben.</p>
             <span class="more">samoTransport ansehen →</span></div>
         </a>
         <a class="card" href="#" data-go="detail:aussendienst">
@@ -604,7 +617,7 @@
           </p>
           <div class="quad">
             <div class="q"><h4>Auftrag und Planung</h4>
-              <p>Annahme, Terminierung, Auslastung — sichtbar, bevor ein Termin platzt.</p></div>
+              <p>Annahme, Terminierung, Auslastung, sichtbar, bevor ein Termin platzt.</p></div>
             <div class="q"><h4>Kasse und Zahlung</h4>
               <p>Zertifizierte TSE-Kasse, Kartenzahlung ohne zweites Gerät, Rechnung per QR-Code.</p></div>
             <div class="q"><h4>Kunde und Kontakt</h4>
@@ -645,7 +658,7 @@
         <div>
           <h2>Ihr Betrieb passt in keine Schublade?</h2>
           <p class="sub" style="margin:18px 0 26px">
-            Dann bauen wir das System, das zu Ihren Abläufen passt — auf derselben Grundlage
+            Dann bauen wir das System, das zu Ihren Abläufen passt, auf derselben Grundlage
             wie unsere Produkte, damit es nicht bei einem Einzelstück bleibt, das niemand
             mehr pflegt.
           </p>
@@ -663,7 +676,7 @@
   <header class="phead">
     <div class="w">
       <h1>Kundenberichte</h1>
-      <p>Betriebe, die mit unseren Systemen arbeiten — und was sich für sie geändert hat.</p>
+      <p>Betriebe, die mit unseren Systemen arbeiten, und was sich für sie geändert hat.</p>
     </div>
   </header>
 
@@ -679,8 +692,8 @@
           <span class="tag" style="color:var(--mint)">Fahrradfachhandel</span>
           <h2>Wie das neue System bei Tom's Bike Center drei Programme überflüssig machte</h2>
           <blockquote>
-            „Wir hatten vorher drei Programme und einen Ordner voll Zettel. Heute steht alles
-            an einer Stelle — und die Kunden fragen nicht mehr nach, ob ihr Rad fertig ist.
+            „Wir hatten vorher drei Programme und eine Ablage in Papierform. Heute steht alles
+            an einer Stelle, und die Kunden fragen nicht mehr nach, ob ihr Rad fertig ist.
             Das erledigt das System."
           </blockquote>
           <div style="font-size:14.5px;color:rgba(255,255,255,.66)">
@@ -719,7 +732,7 @@
   <header class="phead">
     <div class="w">
       <h1>Presse und Neuigkeiten</h1>
-      <p>Was bei uns passiert — und was Betriebe zu Kassenrecht, elektronischen Rechnungen und digitalen Abläufen wissen sollten.</p>
+      <p>Was bei uns passiert, und was Betriebe zu Kassenrecht, elektronischen Rechnungen und digitalen Abläufen wissen sollten.</p>
     </div>
   </header>
   <section class="sec">
@@ -744,7 +757,7 @@
           <p class="sub" style="margin:18px 0 26px">
             Sie schreiben über Digitalisierung im Mittelstand, über Kassenrecht oder
             elektronische Rechnungen? Wir stellen Ihnen Bildmaterial, Logos und ein
-            Firmenprofil zur Verfügung — und stehen für Auskünfte zur Verfügung.
+            Firmenprofil zur Verfügung, und stehen für Auskünfte zur Verfügung.
           </p>
           <div style="display:grid;gap:14px;max-width:30em">
             <div style="border-top:1px solid var(--hair);padding-top:14px">
@@ -817,7 +830,7 @@
               <option>Presseanfrage</option>
             </select></div>
           <div class="f-full"><label for="f7">Ihre Nachricht</label>
-            <textarea id="f7" placeholder="Beschreiben Sie kurz, was bei Ihnen gerade klemmt."></textarea></div>
+            <textarea id="f7" placeholder="Beschreiben Sie kurz, worum es bei Ihnen geht."></textarea></div>
           <div class="f-full einwilligung">
             <label style="display:flex;gap:11px;align-items:flex-start;font-weight:400;font-size:14px;color:#3D4147">
               <input type="checkbox" id="f11" style="width:auto;margin-top:3px">
@@ -835,7 +848,7 @@
           <h2 style="font-size:22px;margin-bottom:16px">Lieber direkt sprechen?</h2>
           <p class="sub" style="margin-bottom:26px">
             Rufen Sie an oder schreiben Sie uns eine Nachricht. Sie bekommen Antwort von
-            jemandem, der die Systeme kennt — nicht aus einer Warteschleife.
+            jemandem, der die Systeme kennt, ohne Warteschleife.
           </p>
           <div style="border-top:1px solid var(--hair);padding:18px 0">
             <div style="font-size:13px;color:var(--mid)">Telefon</div>
@@ -844,7 +857,7 @@
           <div style="border-top:1px solid var(--hair);padding:18px 0">
             <div style="font-size:13px;color:var(--mid)">Nachricht</div>
             <div style="font-weight:600"><a href="https://wa.me/4915212419807" target="_blank" rel="noopener" style="color:var(--accent)">Dieselbe Nummer per WhatsApp</a></div>
-            <div style="font-size:13px;color:var(--mid);margin-top:4px">Beantwortet von Jasko — unserem eigenen System im Einsatz.</div>
+            <div style="font-size:13px;color:var(--mid);margin-top:4px">Beantwortet von Jasko, unserem eigenen System im Einsatz.</div>
           </div>
           <div style="border-top:1px solid var(--hair);padding:18px 0">
             <div style="font-size:13px;color:var(--mid)">E-Mail</div>
@@ -935,7 +948,7 @@
         <a class="card" href="#" data-go="kontakt">
           <div class="ph i-n1"></div>
           <div class="cb"><h3>Systemhäuser und IT-Betreuer</h3>
-          <p>Sie kennen die Betriebe vor Ort und deren Technik. Wir liefern die Branchensoftware, Sie bleiben erster Ansprechpartner — ohne selbst zu entwickeln.</p>
+          <p>Sie kennen die Betriebe vor Ort und deren Technik. Wir liefern die Branchensoftware, Sie bleiben erster Ansprechpartner, ohne selbst zu entwickeln.</p>
           <span class="more">Mehr erfahren →</span></div></a>
         <a class="card" href="#" data-go="kontakt">
           <div class="ph i-trans"></div>
@@ -960,7 +973,7 @@
             passt, und fangen mit einem gemeinsamen Kunden an.
           </p>
           <div class="quad">
-            <div class="q"><h4>Kein Abnahmezwang</h4><p>Sie empfehlen, wenn es passt — nicht, weil ein Ziel erreicht werden muss.</p></div>
+            <div class="q"><h4>Kein Abnahmezwang</h4><p>Sie empfehlen, wenn es passt, nicht, weil ein Ziel erreicht werden muss.</p></div>
             <div class="q"><h4>Ihr Kunde bleibt Ihrer</h4><p>Wir gehen nicht an Ihnen vorbei. Der Kontakt läuft über Sie, wenn Sie das wollen.</p></div>
             <div class="q"><h4>Technische Anbindung</h4><p>Schnittstellen bauen wir dort, wo sie beiden Seiten etwas bringen.</p></div>
             <div class="q"><h4>Vergütung nach Absprache</h4><p>Je nachdem, ob Sie vermitteln, betreuen oder beides übernehmen.</p></div>
@@ -972,7 +985,7 @@
 
   <section class="cta">
     <div class="w">
-      <h2>Reden wir darüber, wo wir uns ergänzen</h2>
+      <h2>Sprechen wir darüber, wo wir uns ergänzen</h2>
       <div class="row"><a href="#" data-go="kontakt" class="btn btn-w">Gespräch vereinbaren</a></div>
     </div>
   </section>
@@ -996,16 +1009,16 @@
           <div class="ph i-team"></div>
         </div>
         <div>
-          <h2>Ehrlich gesagt: Wir sind klein</h2>
+          <h2>Wir sind bewusst klein</h2>
           <p class="sub" style="margin:18px 0 20px">
             Kein Großraumbüro, keine Abteilungen, keine Stellenanzeigen mit fünfzehn
             Anforderungen. Dafür arbeiten Sie an Software, die echte Betriebe täglich
-            benutzen — und merken sofort, ob eine Entscheidung gut war.
+            benutzen, und merken sofort, ob eine Entscheidung gut war.
           </p>
           <p class="sub">
             Wer bei uns anfängt, betreut Dinge auch, statt sie nur zu bauen. Das ist
             anstrengender und lehrreicher als jede Rolle, in der man nach dem Abliefern
-            nichts mehr hört.
+            keine Rückmeldung mehr erhält.
           </p>
         </div>
       </div>
@@ -1046,7 +1059,7 @@
   <header class="phead">
     <div class="w">
       <h1>Schnittstellen</h1>
-      <p>Unsere Systeme sollen sich in Ihre Landschaft einfügen — nicht daneben stehen. Für Anbindungen gibt es dokumentierte Wege.</p>
+      <p>Unsere Systeme sollen sich in Ihre Landschaft einfügen, nicht daneben stehen. Für Anbindungen gibt es dokumentierte Wege.</p>
     </div>
   </header>
 
@@ -1064,7 +1077,7 @@
         <div class="card"><div class="cb"><h3>Nachrichten und Telefonie</h3>
           <p>Versand und Rufnummern laufen über etablierte Anbieter. Eingehende Anfragen lassen sich als Vorgang übernehmen.</p></div></div>
         <div class="card"><div class="cb"><h3>Auswertung und Export</h3>
-          <p>Zahlen verlassen das System in gängigen Formaten — für Buchhaltung, Auswertung oder ein übergeordnetes Berichtswesen.</p></div></div>
+          <p>Zahlen verlassen das System in gängigen Formaten, für Buchhaltung, Auswertung oder ein übergeordnetes Berichtswesen.</p></div></div>
       </div>
     </div>
   </section>
@@ -1075,7 +1088,7 @@
       <div class="quad rv" style="grid-template-columns:repeat(3,1fr)">
         <div class="q"><h4>Erst das Ziel</h4><p>Was soll wohin fließen und warum. Meist zeigt sich dabei, dass weniger reicht als gedacht.</p></div>
         <div class="q"><h4>Dann ein Testzugang</h4><p>Sie bekommen eine Umgebung mit Beispieldaten, bevor etwas produktiv läuft.</p></div>
-        <div class="q"><h4>Dann der Betrieb</h4><p>Läuft die Anbindung, überwachen wir sie mit — Ausfälle sollen nicht Ihnen auffallen.</p></div>
+        <div class="q"><h4>Dann der Betrieb</h4><p>Läuft die Anbindung, überwachen wir sie mit. Ausfälle sollen nicht Ihnen auffallen.</p></div>
       </div>
     </div>
   </section>
@@ -1094,7 +1107,7 @@
   <header class="phead">
     <div class="w">
       <h1>Hilfe für Bestandskunden</h1>
-      <p>Sie sprechen mit der Person, die Ihr System kennt. Kein Ticketsystem, das Sie im Kreis schickt.</p>
+      <p>Sie sprechen mit der Person, die Ihr System kennt. Kein Ticketsystem, das Sie weiterreicht.</p>
     </div>
   </header>
 
@@ -1121,14 +1134,14 @@
     <div class="w">
       <div class="lead rv" style="margin-bottom:34px"><h2>Häufige Fälle</h2></div>
       <div class="acc rv">
-        <details open><summary>Etwas funktioniert nicht — was hilft uns weiter?</summary>
+        <details open><summary>Etwas funktioniert nicht, was hilft uns weiter?</summary>
           <p>Ein Bildschirmfoto und die Uhrzeit reichen meist. Nennen Sie außerdem, an welchem Gerät es passiert ist. Damit finden wir den Vorgang und sehen, was tatsächlich passiert ist.</p></details>
         <details><summary>Ein Mitarbeiter kommt nicht mehr hinein</summary>
-          <p>Zugänge können Sie selbst zurücksetzen, wenn Sie Verwalterrechte haben. Wenn nicht, übernehmen wir das — dauert wenige Minuten.</p></details>
+          <p>Zugänge können Sie selbst zurücksetzen, wenn Sie Verwalterrechte haben. Wenn nicht, übernehmen wir das, dauert wenige Minuten.</p></details>
         <details><summary>Wir brauchen einen zusätzlichen Zugang</summary>
           <p>Sagen Sie uns Name und Aufgabenbereich, dann richten wir ihn passend ein. Zusätzliche Nutzer wirken sich auf die monatlichen Kosten aus, das klären wir vorher.</p></details>
         <details><summary>Der Drucker druckt keine Etiketten mehr</summary>
-          <p>Meist hilft ein Neustart des Geräts. Bleibt es dabei, prüfen wir die Verbindung aus der Ferne — dafür muss niemand vor Ort sein.</p></details>
+          <p>Meist hilft ein Neustart des Geräts. Bleibt es dabei, prüfen wir die Verbindung aus der Ferne, dafür muss niemand vor Ort sein.</p></details>
         <details><summary>Wie kommen wir an unsere Daten?</summary>
           <p>Sie bekommen jederzeit einen vollständigen Export in einem gängigen Format. Ihre Daten gehören Ihnen, auch wenn Sie wechseln möchten.</p></details>
       </div>
@@ -1171,7 +1184,7 @@
           <h2>Kommen Sie nicht hinein?</h2>
           <p class="sub" style="margin:18px 0 26px">
             Die Adresse Ihres Systems steht in der Einrichtungsmail. Wenn Sie sie nicht
-            mehr finden, schicken wir sie erneut — und setzen bei Bedarf das Kennwort zurück.
+            mehr finden, schicken wir sie erneut, und setzen bei Bedarf das Kennwort zurück.
           </p>
           <div class="row">
             <a href="#" data-go="support" class="btn">Zum Support</a>
@@ -1225,7 +1238,7 @@
 </footer>
 
 <!-- ════════ CHAT ════════ -->
-<div class="teas" id="teas" aria-hidden="true">Jasko hier — Fragen zu Ihrem Betrieb?</div>
+<div class="teas" id="teas" aria-hidden="true">Jasko hier. Fragen zu Ihrem Betrieb?</div>
 <button class="fab" id="fab" aria-label="Chat öffnen" aria-expanded="false">
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -1240,7 +1253,7 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
   </div>
   <div class="clog" id="clog">
-    <div class="m mb">Guten Tag, hier ist Jasko. Ich berate Sie gern zu unseren Systemen — und wenn es passt, vereinbaren wir gleich ein Gespräch. Worum geht es bei Ihnen?</div>
+    <div class="m mb">Guten Tag, hier ist Jasko. Ich berate Sie gern zu unseren Systemen, und wenn es passt, vereinbaren wir gleich ein Gespräch. Worum geht es bei Ihnen?</div>
   </div>
   <div class="chips" id="chips">
     <button class="chip" type="button">Was kostet das?</button>
