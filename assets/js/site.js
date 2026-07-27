@@ -1138,6 +1138,21 @@
     var c = e.target.closest('.chip'); if (c) senden(c.textContent);
   });
 
+
+  // ── Hinweisleiste: einmal zeigen, Bestätigung merken ──
+  (function(){
+    var leiste = document.getElementById('hinweis-leiste');
+    if (!leiste) return;
+    var gesehen = null;
+    try { gesehen = localStorage.getItem('sl-hinweis'); } catch(e){}
+    if (gesehen) return;
+    leiste.hidden = false;
+    document.getElementById('hinweis-ok').addEventListener('click', function(){
+      leiste.hidden = true;
+      try { localStorage.setItem('sl-hinweis', '1'); } catch(e){}
+    });
+  })();
+
   // ── Wissen: Leitfäden und gefilterte Beitragsliste ──
   (function(){
     var liste = document.getElementById('w-liste');
