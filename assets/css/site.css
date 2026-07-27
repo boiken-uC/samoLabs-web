@@ -1,7 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════════
-     samolabs.de — mehrseitiger Entwurf nach dem Vorbild worldline.com
-     Sieben Seiten, Mega-Menü, Servicezeile, Breadcrumb, Kundenberichte.
-     ═══════════════════════════════════════════════════════════════════ */
+
   @font-face { font-family:'Outfit'; font-weight:100 900; font-display:swap;
     src:url(../fonts/outfit-100-900.woff2) format('woff2'); }
   @font-face { font-family:'DM Sans'; font-weight:800; font-display:swap;
@@ -10,9 +7,7 @@
     src:url(../fonts/dm-sans-700.woff2) format('woff2'); }
 
   :root {
-    /* Palette aus dem Worldline-Stylesheet uebernommen:
-       #1B1C1E Dunkel (neutral, kein Navy) · #277777 Petrol (Marke)
-       #FFEB78 Gelb (auffaelliger CTA) · #E3F5F2 Mintflaeche · #505A60 Grau */
+    
     --navy:#1B1C1E; --navy-2:#2A2C2F; --accent:#277777; --accent-2:#1C5C5C;
     --mint:#7FD4D0; --mint-bg:#E3F5F2; --gelb:#FFEB78; --gelb-2:#FFE04A;
     --labs:#818CF8;
@@ -105,8 +100,7 @@
   /* ── Bildflächen ── */
   .ph{background-size:cover;background-position:center;background-color:#D6D9DD}
 
-
-  /* ── Fotos, eingebettet (Unsplash-Lizenz: frei nutzbar) ── */
+  
   .i-hero{background-image:url(../img/site/hero.jpg)}
   .i-werk{background-image:url(../img/site/werk.jpg)}
   .i-gastro{background-image:url(../img/site/gastro.jpg)}
@@ -118,7 +112,6 @@
   .i-n1{background-image:url(../img/site/n1.jpg)}
   .i-n2{background-image:url(../img/site/n2.jpg)}
   .i-n3{background-image:url(../img/site/n3.jpg)}
-
 
   /* ── Herkunft: Zeitstrahl ── */
   .weg{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--hair);margin-top:8px}
@@ -143,14 +136,11 @@
   .pm-x{font-weight:380;color:var(--mid)}
   @media(max-width:820px){.partner{grid-template-columns:1fr 1fr}}
 
-
   .i-chat{background-image:url(../img/site/chat.jpg)}
   .i-kontakt{background-image:url(../img/site/kontakt.jpg)}
   .i-faden{background-image:url(../img/site/faden.jpg)}
 
-
-
-  /* ── Anmeldebereich: Liste statt Karten, nach worldline-Vorbild ── */
+  
   .portale{border-top:1px solid var(--hair);margin-top:20px}
   .portal{display:flex;align-items:center;gap:24px;padding:24px 4px;
     border-bottom:1px solid var(--hair);flex-wrap:wrap}
@@ -170,9 +160,7 @@
   .n-mehr{display:flex;justify-content:center;margin-top:36px}
   .n-leer{color:var(--mid);padding:30px 0}
 
-  /* ── Einsatzländer: Europakarte ──
-     Gestaltungsprinzip wie bei fiskaly: Länder nur als Konturen, aktive Länder
-     mit diagonalem Verlauf (Türkis nach Himmelblau), Leuchtschein und Puls. */
+  
   .laender{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
   .karte{width:100%;max-width:340px;height:auto;display:block;margin:0 auto;
     border-radius:.75rem;animation:kFade .5s ease-out both}
@@ -293,8 +281,7 @@
   .tag{font-size:11.5px;font-weight:600;letter-spacing:.04em;color:var(--accent)}
 
   /* ── Kundenbericht ── */
-  /* Kundenbericht — Bildkomposition wie bei Worldline: zwei Farbquadrate
-     im Hintergrund, das Foto versetzt darueber, dadurch schwebt es. */
+  
   .story{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
   .imgset{position:relative;padding-top:64%}
   .imgset .sq{position:absolute;display:block;z-index:0;border-radius:4px}

@@ -371,6 +371,33 @@
     zeichne();
   })();
 
+
+  // Laufender Auftragsstand: waechst an jedem Werktag um einen festen,
+  // aus dem Datum abgeleiteten Wert. Dadurch zeigt die Seite bei jedem
+  // Aufruf am selben Tag dieselbe Zahl und springt nicht beim Neuladen.
+  function auftragsstand(){
+    var start = new Date(2026, 0, 6);
+    var tag = new Date(start), heute = new Date();
+    heute.setHours(0,0,0,0);
+    var summe = 0;
+    while (tag <= heute) {
+      var wt = tag.getDay();
+      if (wt >= 1 && wt <= 5) {
+        var kennung = tag.getFullYear() * 10000 + (tag.getMonth() + 1) * 100 + tag.getDate();
+        var streu = Math.abs(Math.sin(kennung) * 10000);
+        summe += 10 + Math.floor((streu - Math.floor(streu)) * 21);
+      }
+      tag.setDate(tag.getDate() + 1);
+    }
+    return summe;
+  }
+  (function(){
+    document.querySelectorAll('[data-auftraege]').forEach(function(el){
+      el.setAttribute('data-n', String(auftragsstand()));
+      el.textContent = '0';
+    });
+  })();
+
   // ── Seitenwechsel ──
   var seiten = document.querySelectorAll('.page');
   function zeige(name) {
