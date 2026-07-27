@@ -33,7 +33,13 @@
       '<span class="tag">' + p[4] + '</span><p>' + p[5] + '</p>' +
       '<span class="more">Mehr erfahren →</span></div></a>';
   }
-  document.getElementById('rail-start').innerHTML = PRODUKTE.map(function(x){ return produktKarte(x, false); }).join('');
+  var BRANCHEN = ['retail','hospitality','mobility','selfservice','fieldsales','building','engagement'];
+  document.getElementById('rail-start').innerHTML = BRANCHEN.map(function(k){
+    var d = DETAIL[k];
+    return '<a class="rc" href="#" data-go="detail:' + k + '"><div class="ph ' + d.bild + '"></div>' +
+           '<div class="rcb"><h3>' + d.titel + '</h3><p>' + d.intro + '</p>' +
+           '<span class="more">Mehr erfahren →</span></div></a>';
+  }).join('');
   document.getElementById('prod-alle').innerHTML  = PRODUKTE.map(function(x){ return produktKarte(x, true); }).join('');
 
 
@@ -234,7 +240,98 @@
               ['Verlauf über Zeit','Entwicklung statt Momentaufnahme.']],
       alltag:[['Kein Aufwand zum Monatsabschluss','Die Zahlen liegen schon vor.'],
               ['Entscheidungen auf Basis','Statt Bauchgefühl ein Verlauf.'],
-              ['Weniger Rückfragen vom Steuerbüro','Weil der Export stimmt.']] }
+              ['Weniger Rückfragen vom Steuerbüro','Weil der Export stimmt.']] },
+
+    retail: { ober:'Branchen', oberZiel:'loesungen', produkt:'rad', bild:'i-werk',
+      titel:'Retail & Marketplaces',
+      intro:'Für Fachhandel und Werkstattbetriebe, die verkaufen, reparieren und online sichtbar sein wollen.',
+      h2:'Handel und Service aus einem System',
+      text:'Wer verkauft und repariert, führt zwei Geschäfte in einem Haus. Kasse, Auftrag, Lager und Marktplatz-Auftritt greifen bei uns ineinander, damit der Tresen nicht zur Schaltzentrale zwischen getrennten Programmen wird.',
+      punkte:[['Kasse und Auftrag verbunden','Was am Tresen kassiert wird, hängt am Vorgang — nicht in einer zweiten Liste.'],
+              ['Lager mit Abbuchung','Verkaufte und verbaute Teile verlassen den Bestand von selbst.'],
+              ['Sichtbar im Netz','Öffnungszeiten, Termine und Anfragen laufen über denselben Datenbestand.'],
+              ['Zertifizierte Kasse','Technische Sicherungseinrichtung nach Kassensicherungsverordnung inklusive.']],
+      alltag:[['Ein Abschluss am Abend','Kasse, Karte und Aufträge in einer Auswertung.'],
+              ['Weniger Doppelpflege','Artikel und Kunden werden einmal erfasst.'],
+              ['Kunden finden Sie online','Und buchen Termine, ohne anzurufen.']] },
+
+    hospitality: { ober:'Branchen', oberZiel:'loesungen', produkt:'order', bild:'i-p-order',
+      titel:'Hospitality & Food Service',
+      intro:'Für Bars, Cafés, Lounges und Restaurants, in denen der Weg zum Tisch der Engpass ist.',
+      h2:'Der Gast bestellt, die Theke behält den Überblick',
+      text:'In Stoßzeiten entscheidet nicht die Küche, sondern die Bestellaufnahme. Wenn Gäste selbst bestellen, verschiebt sich die Arbeit dorthin, wo sie zählt — und die Abrechnung je Tisch stimmt am Ende von selbst.',
+      punkte:[['Bestellung am Tisch','Per Code, ohne App-Installation, mit Tischnummer im System.'],
+              ['Karte in Echtzeit','Ausverkauftes verschwindet sofort an allen Tischen.'],
+              ['Theken-Terminal','Alle offenen Tische, kassieren und abschließen an einem Ort.'],
+              ['Abrechnung je Tisch','Offene Posten bleiben zugeordnet, auch beim Schichtwechsel.']],
+      alltag:[['Ruhigere Stoßzeiten','Bestellungen sammeln sich im System, nicht an der Theke.'],
+              ['Höherer Bon','Wer in Ruhe liest, bestellt eher nach.'],
+              ['Weniger Fehler','Was der Gast tippt, muss niemand entziffern.']] },
+
+    mobility: { ober:'Branchen', oberZiel:'loesungen', produkt:'transport', bild:'i-p-trans',
+      titel:'Transport & Mobility',
+      intro:'Für Speditionen und Fahrer auf Strecken, die bislang über Telefonketten organisiert werden.',
+      h2:'Ladung und Route finden zusammen',
+      text:'Zwischen Auftraggeber und Fahrer steht oft nur das Telefon. Wir bringen Fracht und Strecke in ein System: Aufträge erscheinen dort, wo die Route ohnehin verläuft, und jede Übergabe ist belegt.',
+      punkte:[['Fracht entlang der Route','Passende Aufträge für die Strecke, die ohnehin gefahren wird.'],
+              ['Tourenplanung','Reihenfolge und Fahrzeit nach echten Straßendaten.'],
+              ['Stand ohne Anruf','Der Auftraggeber sieht selbst, wo die Sendung ist.'],
+              ['Belegte Übergabe','Unterschrift, Foto und Zeitstempel im Vorgang.']],
+      alltag:[['Weniger Leerfahrten','Die Rückfahrt trägt sich mit.'],
+              ['Weniger Telefonate','Statusfragen beantwortet das System.'],
+              ['Nachweis, der hält','Auch Wochen später noch belegbar.']] },
+
+    selfservice: { ober:'Branchen', oberZiel:'loesungen', produkt:'terminal', bild:'i-n3',
+      titel:'Self-Service & Kiosk',
+      intro:'Für Abläufe, die ohne Personal funktionieren sollen: Terminals, Selbstbestellung, Zeiterfassung.',
+      h2:'Geräte, die für sich arbeiten',
+      text:'Ein Tablet am Eingang, ein Code am Tisch, eine Karte im Portemonnaie: Selbstbedienung entlastet dort, wo Personal knapp ist. Die Geräte laufen im gesperrten Modus und lassen sich nicht zweckentfremden.',
+      punkte:[['Kiosk-Modus','Das Gerät startet in die Anwendung und bleibt darin.'],
+              ['Zeiterfassung per Karte','Kommen und gehen ohne App auf dem privaten Handy.'],
+              ['Selbstbestellung','Der Gast oder Kunde erfasst selbst — fehlerfrei und sofort im System.'],
+              ['Fernwartung','Geräte werden zentral überwacht und aktualisiert.']],
+      alltag:[['Entlastung am Empfang','Routinevorgänge laufen ohne Zuruf.'],
+              ['Saubere Zeiten','Sekundengenau, nachvollziehbar für beide Seiten.'],
+              ['Keine Diskussionen','Das Terminal kennt nur seine Aufgabe.']] },
+
+    fieldsales: { ober:'Branchen', oberZiel:'loesungen', produkt:'vertrieb', bild:'i-talk',
+      titel:'Field Sales & Service',
+      intro:'Für Teams, die beim Kunden arbeiten: Besuche, Routen, Berichte und Zusagen im Griff.',
+      h2:'Die Arbeit passiert draußen — die Ordnung fährt mit',
+      text:'Wer den Tag auf der Straße verbringt, hat abends keine Kraft für Protokolle. Deshalb entstehen Planung, Route und Bericht unterwegs: diktiert statt getippt, abgelegt beim Kunden statt im Notizbuch.',
+      punkte:[['Besuchsplanung','Wer ist fällig, wer ist überfällig, was steht an.'],
+              ['Routen nach Straße','Die sinnvolle Reihenfolge, nicht die Luftlinie.'],
+              ['Bericht per Sprache','Zwei Sätze nach dem Termin, fertig abgelegt.'],
+              ['Historie je Kunde','Zusagen und offene Punkte, griffbereit vor dem Termin.']],
+      alltag:[['Ein Termin mehr am Tag','Kürzere Wege, weniger Suchen.'],
+              ['Berichte kommen an','Weil sie zwei Minuten dauern.'],
+              ['Vertretbar im Urlaub','Der Stand steht beim Kunden, nicht im Kopf.']] },
+
+    building: { ober:'Branchen', oberZiel:'loesungen', produkt:'plan', bild:'i-p-plan',
+      titel:'Building Technology',
+      intro:'Für Betriebe der technischen Gebäudeausrüstung: Aufmaß, Positionen und Projekt in einer Linie.',
+      h2:'Vom Aufmaß zur Abrechnung ohne Medienbruch',
+      text:'Zwischen Baustelle und Büro gehen Maße verloren oder werden doppelt erfasst. Bei uns entsteht das Aufmaß am Objekt, wird zur Position und landet in der Abrechnung — ohne dass jemand Zahlen überträgt.',
+      punkte:[['Aufmaß vor Ort','Mit Foto und Maß direkt am Objekt erfasst.'],
+              ['Positionen automatisch','Aus dem Aufmaß, nicht aus der Erinnerung.'],
+              ['Projektstand sichtbar','Beauftragt, in Arbeit, offen — auf einen Blick.'],
+              ['Belegte Nachträge','Gemessen statt geschätzt, deshalb unstrittig.']],
+      alltag:[['Einmal erfassen genügt','Keine Zettel, keine Übertragung.'],
+              ['Schnellere Angebote','Das Angebot folgt dem Termin am selben Tag.'],
+              ['Weniger Streit ums Maß','Weil jedes Maß ein Foto hat.']] },
+
+    engagement: { ober:'Branchen', oberZiel:'loesungen', produkt:'chat', bild:'i-chat',
+      titel:'Customer Engagement',
+      intro:'Für jeden Betrieb, bei dem Anfragen über Telefon und Nachrichten hereinkommen — und nicht verloren gehen dürfen.',
+      h2:'Kundenkontakt, der beim Auftrag landet',
+      text:'Das ist die Disziplin, aus der wir kommen: Anrufe, Nachrichten und Anfragen gehören zum Vorgang, nicht in Verläufe, die niemand wiederfindet. Aus jeder Nachricht wird ein Vorgang mit Nummer und Zuständigkeit.',
+      punkte:[['Nachricht wird Vorgang','Mit Nummer, zuweisbar, wiederauffindbar.'],
+              ['Automatische Meldungen','Die Fertigmeldung geht raus, ohne dass jemand daran denkt.'],
+              ['Telefonie im System','Das Gespräch kommt an, wo der Auftrag steht.'],
+              ['Antwortvorschläge','Das System schlägt vor, ein Mensch entscheidet.']],
+      alltag:[['Nichts geht unter','Auch die Nachricht um 22 Uhr ist am Morgen ein Vorgang.'],
+              ['Schnellere Antworten','Ohne Suchen im Verlauf.'],
+              ['Einfache Vertretung','Wer einspringt, sieht sofort den Stand.']] }
   };
 
 
