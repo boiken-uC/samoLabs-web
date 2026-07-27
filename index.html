@@ -27,17 +27,18 @@
         <button type="button" role="menuitem" data-land="pl">Polen <small>Polski</small></button>
         <button type="button" role="menuitem" data-land="ba">Bosnien und Herzegowina <small>Bosanski</small></button>
         <button type="button" role="menuitem" data-land="fi">Finnland <small>Suomi</small></button>
+        <button type="button" role="menuitem" data-land="en">International <small>English</small></button>
       </span>
     </span>
     <span class="util-r">
-      <a href="#" data-go="partner">Partner</a>
-      <a href="#" data-go="karriere">Karriere</a>
-      <a href="#" data-go="entwickler">Entwickler</a>
-      <a href="#" data-go="ueber">Über samoLabs</a>
-      <a href="#" data-go="neues">Pressebereich</a>
-      <a href="#" data-go="support">Support</a>
+      <a href="#" data-go="partner" data-t="nav.partner">Partner</a>
+      <a href="#" data-go="karriere" data-t="nav.karriere">Karriere</a>
+      <a href="#" data-go="entwickler" data-t="nav.entwickler">Entwickler</a>
+      <a href="#" data-go="ueber" data-t="nav.ueberuns">Über samoLabs</a>
+      <a href="#" data-go="neues" data-t="nav.presse">Pressebereich</a>
+      <a href="#" data-go="support" data-t="nav.support">Support</a>
       <a href="tel:+4915212419807">+49 1521 2419807</a>
-      <a href="#" data-go="login">Login</a>
+      <a href="#" data-go="login" data-t="nav.login">Login</a>
     </span>
   </div>
 </div>
@@ -51,7 +52,7 @@
 
     <div class="menu" id="menu">
       <div class="mi">
-        <button type="button" aria-expanded="false">Über uns</button>
+        <button type="button" aria-expanded="false" data-t="menu.ueber">Über uns</button>
         <div class="mega">
           <div>
             <h5>Unternehmen</h5>
@@ -67,8 +68,8 @@
           <div>
             <h5>Kontakt</h5>
             <ul>
-              <li><a href="#" data-go="kontakt">Gespräch vereinbaren</a></li>
-              <li><a href="#" data-go="support">Support</a></li>
+              <li><a href="#" data-go="kontakt" data-t="menu.gespraech">Gespräch vereinbaren</a></li>
+              <li><a href="#" data-go="support" data-t="nav.support">Support</a></li>
               <li><a href="#" data-go="neues">Presse und Neuigkeiten</a></li>
             </ul>
           </div>
@@ -76,7 +77,7 @@
       </div>
 
       <div class="mi">
-        <button type="button" aria-expanded="false">Lösungen</button>
+        <button type="button" aria-expanded="false" data-t="menu.loesungen">Lösungen</button>
         <div class="mega">
           <div>
             <h5>Nach Betrieb</h5>
@@ -100,7 +101,7 @@
       </div>
 
       <div class="mi">
-        <button type="button" aria-expanded="false">Produkte</button>
+        <button type="button" aria-expanded="false" data-t="menu.produkte">Produkte</button>
         <div class="mega">
           <div>
             <h5>Im Einsatz</h5>
@@ -124,7 +125,7 @@
       </div>
 
       <div class="mi">
-        <button type="button" aria-expanded="false">Praxis</button>
+        <button type="button" aria-expanded="false" data-t="menu.praxis">Praxis</button>
         <div class="mega" style="min-width:380px;grid-template-columns:1fr">
           <div>
             <h5>Aus dem Betrieb</h5>
@@ -138,7 +139,7 @@
       </div>
     </div>
 
-    <a href="#" data-go="kontakt" class="navbtn">Gespräch vereinbaren</a>
+    <a href="#" data-go="kontakt" class="navbtn" data-t="menu.gespraech">Gespräch vereinbaren</a>
     <button class="burger" id="burger" aria-label="Menü">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -153,8 +154,8 @@
   <header class="hero">
     <div class="hero-in">
       <div class="hero-tx">
-        <h1>Mehr erreichen durch Innovation und Wachstum</h1>
-        <p class="sub2" style="margin-top:16px">Bauen, betreiben, begleiten</p>
+        <h1 data-t="hero.titel">Mehr erreichen durch Innovation und Wachstum</h1>
+        <p class="sub2" style="margin-top:16px" data-t="hero.unter">Bauen, betreiben, begleiten</p>
         <p>
           Kunden erwarten Termine online und Antworten sofort. Vorschriften wie die
           Kassensicherung werden strenger. Ihre Technik muss beides mitmachen, ohne
@@ -163,7 +164,7 @@
         <div class="row">
           <a href="#" data-go="kontakt" class="btn">Gespräch vereinbaren
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-          <a href="#" data-go="loesungen" class="btn btn-o">Lösungen ansehen</a>
+          <a href="#" data-go="loesungen" class="btn btn-o" data-t="hero.knopf2">Lösungen ansehen</a>
         </div>
       </div>
       <div class="ph i-hero"></div>
@@ -203,7 +204,7 @@
     <div class="w">
       <div class="hrow rv">
         <div class="lead">
-          <h2>Lösungen für Ihren Betrieb</h2>
+          <h2 data-t="sek.loesungen">Lösungen für Ihren Betrieb</h2>
           <p class="sub">Vier Wege in unser Portfolio, je nachdem, wo bei Ihnen der größte Bedarf besteht.</p>
         </div>
         <a href="#" data-go="loesungen" class="btn btn-o">Alle Lösungen</a>
@@ -270,10 +271,10 @@
     <div class="w">
       <div class="hrow rv">
         <div class="lead">
-          <h2>Unsere Produkte</h2>
+          <h2 data-t="sek.produkte">Unsere Produkte</h2>
           <p class="sub">Sieben Systeme, alle im täglichen Einsatz.</p>
         </div>
-        <a href="#" data-go="produkte" class="btn btn-o">Alle Produkte</a>
+        <a href="#" data-go="produkte" class="btn btn-o" data-t="btn.alle_produkte">Alle Produkte</a>
       </div>
       <div class="rail rv" id="rail-start"></div>
     </div>
@@ -288,7 +289,7 @@
           <div class="ph i-kunde-laden"></div>
         </div>
         <div class="story-tx">
-          <span class="tag" style="color:var(--mint)">Kundenbericht</span>
+          <span class="tag" style="color:var(--mint)" data-t="sek.kundenbericht">Kundenbericht</span>
           <h2>Wie das neue System bei Tom's Bike Center drei Programme überflüssig machte</h2>
           <blockquote>
             „Wir hatten vorher drei Programme und eine Ablage in Papierform. Heute steht alles
@@ -309,7 +310,7 @@
   <section class="sec sec-navy" id="laender">
     <div class="w">
       <div class="lead rv" style="margin-bottom:44px">
-        <h2>Rechtskonform. Und mitwachsend.</h2>
+        <h2 data-t="sek.laender">Rechtskonform. Und mitwachsend.</h2>
         <p class="sub">
           Kassensicherung, E-Rechnung, digitale Belege, die Anforderungen ändern sich
           laufend und in jedem Land anders. Unsere Systeme sind darauf ausgelegt, das
@@ -352,14 +353,14 @@
   <section class="cta">
     <div class="w">
       <h2>Gestalten Sie Ihren Betrieb mit uns als Partner an Ihrer Seite</h2>
-      <div class="row"><a href="#" data-go="kontakt" class="btn btn-w">Jetzt Kontakt aufnehmen</a></div>
+      <div class="row"><a href="#" data-go="kontakt" class="btn btn-w" data-t="btn.kontakt">Jetzt Kontakt aufnehmen</a></div>
     </div>
   </section>
 
   <section class="sec">
     <div class="w">
       <div class="lead rv" style="margin-bottom:38px">
-        <h2>Der Beweis liegt in den Zahlen</h2>
+        <h2 data-t="sek.zahlen">Der Beweis liegt in den Zahlen</h2>
         <p class="sub">Wir sind ein kleines Studio, und genau das ist für unsere Kunden der Unterschied.</p>
       </div>
       <div class="kpis rv">
@@ -374,8 +375,8 @@
   <section class="sec sec-soft">
     <div class="w">
       <div class="hrow rv">
-        <div class="lead"><h2>Neueste Nachrichten</h2></div>
-        <a href="#" data-go="neues" class="btn btn-o">Alle Meldungen</a>
+        <div class="lead"><h2 data-t="sek.presse">Neueste Nachrichten</h2></div>
+        <a href="#" data-go="neues" class="btn btn-o" data-t="btn.alle_meldungen">Alle Meldungen</a>
       </div>
       <div class="g3 rv" id="news-start"></div>
     </div>
@@ -558,7 +559,7 @@
   <section class="cta">
     <div class="w">
       <h2>Lernen wir uns kennen</h2>
-      <div class="row"><a href="#" data-go="kontakt" class="btn btn-w">Gespräch vereinbaren</a></div>
+      <div class="row"><a href="#" data-go="kontakt" class="btn btn-w" data-t="menu.gespraech">Gespräch vereinbaren</a></div>
     </div>
   </section>
 </main>
@@ -568,7 +569,7 @@
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Lösungen</b></div></nav>
   <header class="phead">
     <div class="w">
-      <h1>Lösungen für Ihren Betrieb</h1>
+      <h1 data-t="sek.loesungen">Lösungen für Ihren Betrieb</h1>
       <p>Vier Zuschnitte für vier Arten zu arbeiten, und vier Bausteine, die in jedem davon stecken.</p>
     </div>
   </header>
@@ -633,7 +634,7 @@
   <section class="cta">
     <div class="w">
       <h2>Welcher Zuschnitt passt zu Ihnen?</h2>
-      <div class="row"><a href="#" data-go="kontakt" class="btn btn-w">Gespräch vereinbaren</a></div>
+      <div class="row"><a href="#" data-go="kontakt" class="btn btn-w" data-t="menu.gespraech">Gespräch vereinbaren</a></div>
     </div>
   </section>
 </main>
@@ -643,7 +644,7 @@
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Produkte</b></div></nav>
   <header class="phead">
     <div class="w">
-      <h1>Unsere Produkte</h1>
+      <h1 data-t="sek.produkte">Unsere Produkte</h1>
       <p>Sieben Systeme, alle im täglichen Einsatz.</p>
     </div>
   </header>
@@ -753,7 +754,7 @@
     <div class="w">
       <div class="split rv" style="grid-template-columns:1fr 1fr">
         <div>
-          <h2>Pressebereich</h2>
+          <h2 data-t="nav.presse">Pressebereich</h2>
           <p class="sub" style="margin:18px 0 26px">
             Sie schreiben über Digitalisierung im Mittelstand, über Kassenrecht oder
             elektronische Rechnungen? Wir stellen Ihnen Bildmaterial, Logos und ein
@@ -876,7 +877,7 @@
 
 <!-- ══════════════ DETAILSEITE (Vorlage fuer alle Unterkategorien) ══════════════ -->
 <main class="page" data-page="detail" id="detail">
-  <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <a href="#" id="d-up">Produkte</a> › <b id="d-crumb">—</b></div></nav>
+  <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <a href="#" id="d-up" data-t="menu.produkte">Produkte</a> › <b id="d-crumb">—</b></div></nav>
   <header class="phead">
     <div class="w">
       <div id="d-marke" style="margin-bottom:14px"></div>
@@ -1165,7 +1166,7 @@
         <button class="l-chip an" type="button" data-bereich="alle">Alle Zugänge</button>
         <button class="l-chip" type="button" data-bereich="betrieb">Für Betriebe</button>
         <button class="l-chip" type="button" data-bereich="team">Für Mitarbeitende</button>
-        <button class="l-chip" type="button" data-bereich="partner">Für Partner</button>
+        <button class="l-chip" type="button" data-bereich="partner" data-t="fuss.partner">Für Partner</button>
       </div>
 
       <div style="max-width:420px;margin:26px 0 8px">
@@ -1205,33 +1206,33 @@
         <span class="lg hell" style="--s:23px; --lb:#fff; --ln:var(--labs); --la:var(--labs)"><b>samo</b><span>Labs</span><em></em></span>
         <p style="margin:16px 0 0;max-width:28em">Softwareentwicklung aus Jülich. Wir bauen Software für den Mittelstand.</p>
       </div>
-      <div><h4>Produkte</h4><ul>
+      <div><h4 data-t="menu.produkte">Produkte</h4><ul>
         <li><a href="#" data-go="detail:rad">samoRad</a></li>
         <li><a href="#" data-go="detail:order">samoOrder</a></li>
         <li><a href="#" data-go="detail:transport">samoTransport</a></li>
         <li><a href="#" data-go="detail:vertrieb">samoVertrieb</a></li>
         <li><a href="#" data-go="detail:chat">samoChat</a></li></ul></div>
-      <div><h4>Lösungen</h4><ul>
+      <div><h4 data-t="menu.loesungen">Lösungen</h4><ul>
         <li><a href="#" data-go="detail:werkstatt">Werkstatt und Handel</a></li>
         <li><a href="#" data-go="detail:gastro">Gastronomie</a></li>
         <li><a href="#" data-go="detail:logistik">Transport</a></li>
         <li><a href="#" data-go="detail:aussendienst">Außendienst</a></li></ul></div>
-      <div><h4>Unternehmen</h4><ul>
-        <li><a href="#" data-go="ueber">Über uns</a></li>
+      <div><h4 data-t="fuss.unternehmen">Unternehmen</h4><ul>
+        <li><a href="#" data-go="ueber" data-t="menu.ueber">Über uns</a></li>
         <li><a href="#" data-go="praxis">Kundenberichte</a></li>
         <li><a href="#" data-go="neues">Presse und Neuigkeiten</a></li>
         <li><a href="#" data-go="kontakt">Kontakt</a></li></ul></div>
-      <div><h4>Für Partner</h4><ul>
+      <div><h4 data-t="fuss.partner">Für Partner</h4><ul>
         <li><a href="#" data-go="partner">Partner werden</a></li>
-        <li><a href="#" data-go="karriere">Karriere</a></li>
-        <li><a href="#" data-go="entwickler">Entwickler</a></li></ul></div>
-      <div><h4>Service</h4><ul>
-        <li><a href="#" data-go="support">Support</a></li>
+        <li><a href="#" data-go="karriere" data-t="nav.karriere">Karriere</a></li>
+        <li><a href="#" data-go="entwickler" data-t="nav.entwickler">Entwickler</a></li></ul></div>
+      <div><h4 data-t="fuss.service">Service</h4><ul>
+        <li><a href="#" data-go="support" data-t="nav.support">Support</a></li>
         <li><a href="#" data-go="support">Schulung</a></li>
         <li><a href="#" data-go="support">Datenübernahme</a></li></ul></div>
     </div>
     <div class="foot-b">
-      <span class="foot-l"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="credits.html">Credits</a></span>
+      <span class="foot-l"><a href="impressum.html" data-t="fuss.impressum">Impressum</a><a href="datenschutz.html" data-t="fuss.datenschutz">Datenschutz</a><a href="credits.html" data-t="fuss.credits">Credits</a></span>
       <span>© 2026 samoLabs · Jülich</span>
     </div>
   </div>
@@ -1268,6 +1269,6 @@
   </div>
 </div>
 
-<script src="assets/js/site.js?v=589427f6"></script>
+<script src="assets/js/site.js?v=49af0640"></script>
 </body>
 </html>

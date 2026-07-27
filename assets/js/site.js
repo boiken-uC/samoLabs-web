@@ -397,6 +397,178 @@
     });
   })();
 
+
+  // ── Oberflächentexte je Sprache ──
+  // Fließtexte bleiben deutsch; darauf weist der Balken unter dem Kopf hin.
+  var TEXTE = {
+  "en": {
+    "nav.partner": "Partners",
+    "nav.karriere": "Careers",
+    "nav.entwickler": "Developers",
+    "nav.ueberuns": "About samoLabs",
+    "nav.presse": "Press",
+    "nav.support": "Support",
+    "nav.login": "Log in",
+    "menu.ueber": "About us",
+    "menu.loesungen": "Solutions",
+    "menu.produkte": "Products",
+    "menu.praxis": "Case studies",
+    "menu.presse": "News",
+    "menu.gespraech": "Book a call",
+    "hero.titel": "Achieve more through innovation and growth",
+    "hero.unter": "We build it, we run it, we stay",
+    "hero.knopf1": "Book a call",
+    "hero.knopf2": "Explore solutions",
+    "sek.system": "One system instead of ten separate tools.",
+    "sek.loesungen": "Solutions for your business",
+    "sek.produkte": "Our products",
+    "sek.laender": "Compliant. And built to grow.",
+    "sek.zahlen": "The proof is in the numbers",
+    "sek.presse": "Latest news",
+    "sek.kundenbericht": "Customer story",
+    "fuss.produkte": "Products",
+    "fuss.loesungen": "Solutions",
+    "fuss.unternehmen": "Company",
+    "fuss.partner": "For partners",
+    "fuss.service": "Service",
+    "fuss.impressum": "Legal notice",
+    "fuss.datenschutz": "Privacy",
+    "fuss.credits": "Credits",
+    "btn.mehr": "Learn more",
+    "btn.kontakt": "Get in touch",
+    "btn.alle_produkte": "All products",
+    "btn.alle_meldungen": "All news"
+  },
+  "pl": {
+    "nav.partner": "Partnerzy",
+    "nav.karriere": "Kariera",
+    "nav.entwickler": "Dla programistów",
+    "nav.ueberuns": "O samoLabs",
+    "nav.presse": "Dla mediów",
+    "nav.support": "Wsparcie",
+    "nav.login": "Logowanie",
+    "menu.ueber": "O nas",
+    "menu.loesungen": "Rozwiązania",
+    "menu.produkte": "Produkty",
+    "menu.praxis": "Wdrożenia",
+    "menu.presse": "Aktualności",
+    "menu.gespraech": "Umów rozmowę",
+    "hero.titel": "Więcej możliwości dzięki innowacjom i rozwojowi",
+    "hero.unter": "Tworzymy, utrzymujemy, wspieramy",
+    "hero.knopf1": "Umów rozmowę",
+    "hero.knopf2": "Zobacz rozwiązania",
+    "sek.system": "Jeden system zamiast dziesięciu narzędzi.",
+    "sek.loesungen": "Rozwiązania dla Twojej firmy",
+    "sek.produkte": "Nasze produkty",
+    "sek.laender": "Zgodnie z prawem. I z myślą o rozwoju.",
+    "sek.zahlen": "Liczby mówią same za siebie",
+    "sek.presse": "Najnowsze wiadomości",
+    "sek.kundenbericht": "Historia klienta",
+    "fuss.produkte": "Produkty",
+    "fuss.loesungen": "Rozwiązania",
+    "fuss.unternehmen": "Firma",
+    "fuss.partner": "Dla partnerów",
+    "fuss.service": "Obsługa",
+    "fuss.impressum": "Nota prawna",
+    "fuss.datenschutz": "Ochrona danych",
+    "fuss.credits": "Źródła",
+    "btn.mehr": "Dowiedz się więcej",
+    "btn.kontakt": "Skontaktuj się z nami",
+    "btn.alle_produkte": "Wszystkie produkty",
+    "btn.alle_meldungen": "Wszystkie wiadomości"
+  },
+  "bs": {
+    "nav.partner": "Partneri",
+    "nav.karriere": "Karijera",
+    "nav.entwickler": "Za programere",
+    "nav.ueberuns": "O samoLabs",
+    "nav.presse": "Za medije",
+    "nav.support": "Podrška",
+    "nav.login": "Prijava",
+    "menu.ueber": "O nama",
+    "menu.loesungen": "Rješenja",
+    "menu.produkte": "Proizvodi",
+    "menu.praxis": "Iz prakse",
+    "menu.presse": "Novosti",
+    "menu.gespraech": "Dogovorite razgovor",
+    "hero.titel": "Više postignuća kroz inovacije i rast",
+    "hero.unter": "Gradimo, održavamo, pratimo",
+    "hero.knopf1": "Dogovorite razgovor",
+    "hero.knopf2": "Pogledajte rješenja",
+    "sek.system": "Jedan sistem umjesto deset alata.",
+    "sek.loesungen": "Rješenja za vašu firmu",
+    "sek.produkte": "Naši proizvodi",
+    "sek.laender": "U skladu s propisima. I spremno za rast.",
+    "sek.zahlen": "Brojke govore same za sebe",
+    "sek.presse": "Najnovije vijesti",
+    "sek.kundenbericht": "Priča klijenta",
+    "fuss.produkte": "Proizvodi",
+    "fuss.loesungen": "Rješenja",
+    "fuss.unternehmen": "Kompanija",
+    "fuss.partner": "Za partnere",
+    "fuss.service": "Usluge",
+    "fuss.impressum": "Impresum",
+    "fuss.datenschutz": "Zaštita podataka",
+    "fuss.credits": "Izvori",
+    "btn.mehr": "Saznajte više",
+    "btn.kontakt": "Kontaktirajte nas",
+    "btn.alle_produkte": "Svi proizvodi",
+    "btn.alle_meldungen": "Sve vijesti"
+  },
+  "fi": {
+    "nav.partner": "Kumppanit",
+    "nav.karriere": "Ura",
+    "nav.entwickler": "Kehittäjille",
+    "nav.ueberuns": "Tietoa samoLabsista",
+    "nav.presse": "Medialle",
+    "nav.support": "Tuki",
+    "nav.login": "Kirjaudu",
+    "menu.ueber": "Tietoa meistä",
+    "menu.loesungen": "Ratkaisut",
+    "menu.produkte": "Tuotteet",
+    "menu.praxis": "Käytännössä",
+    "menu.presse": "Ajankohtaista",
+    "menu.gespraech": "Varaa keskustelu",
+    "hero.titel": "Enemmän aikaan innovaatioilla ja kasvulla",
+    "hero.unter": "Rakennamme, ylläpidämme, tuemme",
+    "hero.knopf1": "Varaa keskustelu",
+    "hero.knopf2": "Tutustu ratkaisuihin",
+    "sek.system": "Yksi järjestelmä kymmenen työkalun sijaan.",
+    "sek.loesungen": "Ratkaisut yrityksellesi",
+    "sek.produkte": "Tuotteemme",
+    "sek.laender": "Säädösten mukaista. Ja kasvun mukana.",
+    "sek.zahlen": "Luvut puhuvat puolestaan",
+    "sek.presse": "Uusimmat uutiset",
+    "sek.kundenbericht": "Asiakastarina",
+    "fuss.produkte": "Tuotteet",
+    "fuss.loesungen": "Ratkaisut",
+    "fuss.unternehmen": "Yritys",
+    "fuss.partner": "Kumppaneille",
+    "fuss.service": "Palvelut",
+    "fuss.impressum": "Oikeudelliset tiedot",
+    "fuss.datenschutz": "Tietosuoja",
+    "fuss.credits": "Lähteet",
+    "btn.mehr": "Lue lisää",
+    "btn.kontakt": "Ota yhteyttä",
+    "btn.alle_produkte": "Kaikki tuotteet",
+    "btn.alle_meldungen": "Kaikki uutiset"
+  }
+};
+  var TEXTE_DE = {};
+  (function(){
+    document.querySelectorAll('[data-t]').forEach(function(el){
+      TEXTE_DE[el.getAttribute('data-t')] = el.textContent;
+    });
+  })();
+  function setzeSprache(code){
+    var wb = TEXTE[code] || TEXTE_DE;
+    document.querySelectorAll('[data-t]').forEach(function(el){
+      var s = el.getAttribute('data-t');
+      var neu = (TEXTE[code] && TEXTE[code][s]) || TEXTE_DE[s];
+      if (neu) el.textContent = neu;
+    });
+  }
+
   // ── Länderwähler ──
   var LAENDER_WAHL = {
     de: ['Deutschland', 'Deutsch', 'de'],
@@ -408,7 +580,8 @@
   var HINWEIS = {
     pl: 'Ta strona jest obecnie dostępna tylko w języku niemieckim. Chętnie odpowiemy po polsku — napisz do nas.',
     bs: 'Ova stranica trenutno je dostupna samo na njemačkom. Rado odgovaramo i na bosanskom — pišite nam.',
-    fi: 'Tämä sivusto on toistaiseksi saatavilla vain saksaksi. Vastaamme mielellämme myös englanniksi.'
+    fi: 'Tämä sivusto on toistaiseksi saatavilla vain saksaksi. Vastaamme mielellämme myös suomeksi.',
+    en: 'Detailed content is currently available in German only. Write to us in English — we answer in English.'
   };
   (function(){
     var w = document.getElementById('land-waehler');
@@ -431,6 +604,7 @@
         b.classList.toggle('aktiv', b.getAttribute('data-land') === schluessel);
       });
       document.documentElement.setAttribute('lang', l[2]);
+      setzeSprache(l[2]);
       var alterHinweis = document.getElementById('sprach-hinweis');
       if (alterHinweis) alterHinweis.remove();
       if (HINWEIS[l[2]]) {
