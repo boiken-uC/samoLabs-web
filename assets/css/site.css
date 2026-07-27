@@ -44,11 +44,11 @@
   .lg em{display:none}
 
   /* ── Servicezeile ── */
-  .util{background:var(--navy);color:rgba(255,255,255,.7);font-size:12.5px}
+  .util{background:var(--soft);color:var(--mid);font-size:12.5px;border-bottom:1px solid var(--hair)}
   .land-waehler{position:relative}
   .land-knopf{display:inline-flex;align-items:center;gap:7px;background:none;border:0;
-    color:rgba(255,255,255,.72);font-family:var(--body);font-size:12.5px;cursor:pointer;padding:0}
-  .land-knopf:hover{color:#fff}
+    color:var(--mid);font-family:var(--body);font-size:12.5px;cursor:pointer;padding:0}
+  .land-knopf:hover{color:var(--ink)}
   .land-liste{position:absolute;top:26px;left:0;z-index:120;min-width:230px;background:#fff;
     border:1px solid var(--hair);border-radius:0 0 12px 12px;box-shadow:0 14px 32px rgba(27,28,30,.18);
     padding:8px 0;display:none}
@@ -61,7 +61,7 @@
   .land-liste small{color:var(--mid);font-size:12px}
   .util .w{display:flex;justify-content:space-between;gap:20px;padding-top:8px;padding-bottom:8px}
   .util-r{display:flex;gap:22px;flex-wrap:wrap}
-  .util a:hover{color:#fff}
+  .util a:hover{color:var(--accent)}
 
   /* ── Navigation mit Mega-Menü ── */
   .nav{position:sticky;top:0;z-index:70;background:#fff;border-bottom:1px solid var(--hair)}
