@@ -317,7 +317,7 @@
       titel:'Omnichannel Customer Engagement',
       intro:'Kundenkontakt über alle Kanäle — WhatsApp, Telefon, E-Mail und Web laufen in einem Posteingang zusammen.',
       h2:'Alle Kanäle, ein Vorgang',
-      text:'Das ist die Disziplin, aus der wir kommen: Ob der Kunde anruft, eine WhatsApp schreibt, mailt oder das Formular nutzt — alles landet im selben Posteingang und wird zum Vorgang mit Nummer und Zuständigkeit. Kein Kanal führt ins Leere, kein Verlauf geht verloren.',
+      text:'Das ist die Disziplin, aus der wir kommen: Ob der Kunde anruft, eine WhatsApp schreibt, mailt oder das Formular nutzt — alles landet im selben Posteingang und wird zum Vorgang mit Nummer und Zuständigkeit. Kein Kanal führt ins Leere, kein Verlauf geht verloren. Als nächster Kanal folgt der Sprachdialog (IVR) — das Handwerk, mit dem unser Gründer angefangen hat.',
       punkte:[['Ein Posteingang für alle Kanäle','WhatsApp, Telefon, E-Mail und Web in einer Übersicht.'],
               ['Automatische Meldungen','Die Fertigmeldung geht raus, ohne dass jemand daran denkt.'],
               ['Telefonie im System','Das Gespräch kommt an, wo der Auftrag steht.'],
