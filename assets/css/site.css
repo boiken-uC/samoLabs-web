@@ -65,7 +65,8 @@
 
   /* ── Navigation mit Mega-Menü ── */
   .nav{position:sticky;top:0;z-index:70;background:#fff;border-bottom:1px solid var(--hair)}
-  .nav .w{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+  .nav .w{display:flex;align-items:center;justify-content:flex-start;gap:34px;height:76px}
+  .navbtn{margin-left:auto}
   .menu{display:flex;gap:4px;height:100%}
   .mi{position:relative;display:flex;align-items:center}
   .mi>button{font-family:var(--body);font-size:15px;font-weight:500;color:var(--navy);
@@ -91,9 +92,10 @@
   .mega a{font-size:14.5px;color:var(--navy);display:block}
   .mega a:hover{color:var(--accent)}
   .navbtn{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:600;
-    padding:13px 24px;min-height:48px;border-radius:32px;
-    background:var(--accent);color:#fff;border:1px solid var(--accent);transition:background .18s}
-  .navbtn:hover{background:var(--accent-2)}
+    padding:12px 24px;min-height:46px;border-radius:32px;
+    background:transparent;color:var(--ink);border:1px solid #C4C8C8;
+    transition:background .18s,color .18s,border-color .18s}
+  .navbtn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
   .burger{display:none;background:none;border:1px solid var(--hair);border-radius:24px;padding:10px 13px;cursor:pointer}
   @media(max-width:1080px){
     .menu{display:none} .util{display:none} .burger{display:block}
