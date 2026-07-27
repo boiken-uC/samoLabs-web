@@ -17,14 +17,14 @@
   <div class="w">
     <span>Deutschland · Deutsch</span>
     <span class="util-r">
-      <a href="#" data-go="kontakt">Partner</a>
-      <a href="#" data-go="kontakt">Karriere</a>
-      <a href="#" data-go="kontakt">Entwickler</a>
+      <a href="#" data-go="partner">Partner</a>
+      <a href="#" data-go="karriere">Karriere</a>
+      <a href="#" data-go="entwickler">Entwickler</a>
       <a href="#" data-go="ueber">Über samoLabs</a>
       <a href="#" data-go="neues">Pressebereich</a>
-      <a href="#" data-go="kontakt">Support</a>
+      <a href="#" data-go="support">Support</a>
       <a href="tel:+4915212419807">+49 1521 2419807</a>
-      <a href="#" data-go="produkte">Login</a>
+      <a href="#" data-go="login">Login</a>
     </span>
   </div>
 </div>
@@ -55,7 +55,7 @@
             <h5>Kontakt</h5>
             <ul>
               <li><a href="#" data-go="kontakt">Gespräch vereinbaren</a></li>
-              <li><a href="#" data-go="kontakt">Support</a></li>
+              <li><a href="#" data-go="support">Support</a></li>
               <li><a href="#" data-go="neues">Presse und Neuigkeiten</a></li>
             </ul>
           </div>
@@ -776,7 +776,7 @@
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Kontakt</b></div></nav>
   <header class="phead">
     <div class="w">
-      <h1>Gestalten Sie Ihren Betrieb mit uns als Partner an Ihrer Seite</h1>
+      <h1>Nehmen Sie Kontakt mit uns auf</h1>
       <p>Ein kurzes Gespräch reicht, um zu klären, ob wir zueinander passen. Ohne Präsentation, ohne Nachfassen.</p>
     </div>
   </header>
@@ -785,22 +785,53 @@
     <div class="w">
       <div class="split rv" style="grid-template-columns:1.15fr .85fr;align-items:start">
         <form class="form" onsubmit="return false">
-          <div><label for="f1">Vorname</label><input id="f1" type="text" autocomplete="given-name"></div>
-          <div><label for="f2">Nachname</label><input id="f2" type="text" autocomplete="family-name"></div>
-          <div><label for="f3">Betrieb</label><input id="f3" type="text" autocomplete="organization"></div>
+          <div><label for="f1">Vorname *</label><input id="f1" type="text" autocomplete="given-name" required></div>
+          <div><label for="f2">Nachname *</label><input id="f2" type="text" autocomplete="family-name" required></div>
+          <div><label for="f3">Unternehmen *</label><input id="f3" type="text" autocomplete="organization" required></div>
           <div><label for="f4">Telefon</label><input id="f4" type="tel" autocomplete="tel"></div>
-          <div class="f-full"><label for="f5">E-Mail</label><input id="f5" type="email" autocomplete="email"></div>
-          <div class="f-full"><label for="f6">Worum geht es?</label>
+          <div><label for="f5">E-Mail *</label><input id="f5" type="email" autocomplete="email" required></div>
+          <div><label for="f8">Land</label>
+            <select id="f8">
+              <option>Deutschland</option><option>Österreich</option>
+              <option>Polen</option><option>Bosnien und Herzegowina</option><option>Anderes Land</option>
+            </select></div>
+          <div><label for="f6">Branche</label>
             <select id="f6">
               <option>Werkstatt und Handel</option>
               <option>Gastronomie</option>
               <option>Transport und Logistik</option>
-              <option>Außendienst</option>
+              <option>Außendienst und Vertrieb</option>
+              <option>Gebäudetechnik</option>
+              <option>Andere Branche</option>
+            </select></div>
+          <div><label for="f9">Betriebsgröße</label>
+            <select id="f9">
+              <option>1 bis 3 Mitarbeitende</option>
+              <option>4 bis 10 Mitarbeitende</option>
+              <option>11 bis 30 Mitarbeitende</option>
+              <option>Mehr als 30 Mitarbeitende</option>
+            </select></div>
+          <div class="f-full"><label for="f10">Worum geht es?</label>
+            <select id="f10">
+              <option>Neues System für meinen Betrieb</option>
+              <option>Wechsel von einer anderen Software</option>
               <option>Individuelle Entwicklung</option>
+              <option>Partnerschaft</option>
               <option>Support als Bestandskunde</option>
+              <option>Presseanfrage</option>
             </select></div>
           <div class="f-full"><label for="f7">Ihre Nachricht</label>
             <textarea id="f7" placeholder="Beschreiben Sie kurz, was bei Ihnen gerade klemmt."></textarea></div>
+          <div class="f-full einwilligung">
+            <label style="display:flex;gap:11px;align-items:flex-start;font-weight:400;font-size:14px;color:#3D4147">
+              <input type="checkbox" id="f11" style="width:auto;margin-top:3px">
+              <span>Ich möchte gelegentlich über Neuerungen informiert werden. Die Einwilligung kann ich jederzeit widerrufen.</span>
+            </label>
+          </div>
+          <div class="f-full" style="font-size:13.5px;color:var(--mid)">
+            Mit dem Absenden stimmen Sie unserer <a href="datenschutz.html" style="color:var(--accent)">Datenschutzerklärung</a> zu.
+            Pflichtfelder sind mit * gekennzeichnet.
+          </div>
           <div class="f-full"><button class="btn" type="submit">Nachricht senden</button></div>
         </form>
 
@@ -879,6 +910,284 @@
   </section>
 </main>
 
+
+<!-- ══════════════ PARTNER ══════════════ -->
+<main class="page" data-page="partner">
+  <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Partner</b></div></nav>
+  <header class="phead">
+    <div class="w">
+      <h1>Gemeinsam mehr erreichen</h1>
+      <p>Wir arbeiten mit wenigen Partnern eng zusammen, statt mit vielen oberflächlich. Wenn Sie dieselben Betriebe betreuen wie wir, ergänzen wir uns.</p>
+    </div>
+  </header>
+
+  <section class="sec">
+    <div class="w">
+      <div class="hrow rv">
+        <div class="lead">
+          <h2>Für wen sich eine Partnerschaft lohnt</h2>
+          <p class="sub">Drei Wege, auf denen wir bereits zusammenarbeiten.</p>
+        </div>
+        <a href="#" data-go="kontakt" class="btn btn-o">Partner werden</a>
+      </div>
+      <div class="g3 rv">
+        <a class="card" href="#" data-go="kontakt">
+          <div class="ph i-team"></div>
+          <div class="cb"><h3>Steuerberatung und Buchhaltung</h3>
+          <p>Sie betreuen Betriebe, die ihre Kasse in Ordnung bringen müssen. Wir sorgen dafür, dass die Exporte stimmen und am Monatsende niemand nachtippt.</p>
+          <span class="more">Mehr erfahren →</span></div></a>
+        <a class="card" href="#" data-go="kontakt">
+          <div class="ph i-n1"></div>
+          <div class="cb"><h3>Systemhäuser und IT-Betreuer</h3>
+          <p>Sie kennen die Betriebe vor Ort und deren Technik. Wir liefern die Branchensoftware, Sie bleiben erster Ansprechpartner — ohne selbst zu entwickeln.</p>
+          <span class="more">Mehr erfahren →</span></div></a>
+        <a class="card" href="#" data-go="kontakt">
+          <div class="ph i-trans"></div>
+          <div class="cb"><h3>Hersteller und Großhandel</h3>
+          <p>Ihre Artikeldaten sollen in den Systemen Ihrer Händler landen, nicht als Preisliste im Anhang. Wir binden Kataloge und Bestellwege an.</p>
+          <span class="more">Mehr erfahren →</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-navy">
+    <div class="w">
+      <div class="split rv">
+        <div class="imgset">
+          <span class="sq sq-1"></span><span class="sq sq-2"></span>
+          <div class="ph i-talk"></div>
+        </div>
+        <div>
+          <h2>Wie eine Zusammenarbeit aussieht</h2>
+          <p class="sub" style="margin-bottom:34px">
+            Kein Vertragswerk, keine Mindestabnahme. Wir klären in einem Gespräch, ob es
+            passt, und fangen mit einem gemeinsamen Kunden an.
+          </p>
+          <div class="quad">
+            <div class="q"><h4>Kein Abnahmezwang</h4><p>Sie empfehlen, wenn es passt — nicht, weil ein Ziel erreicht werden muss.</p></div>
+            <div class="q"><h4>Ihr Kunde bleibt Ihrer</h4><p>Wir gehen nicht an Ihnen vorbei. Der Kontakt läuft über Sie, wenn Sie das wollen.</p></div>
+            <div class="q"><h4>Technische Anbindung</h4><p>Schnittstellen bauen wir dort, wo sie beiden Seiten etwas bringen.</p></div>
+            <div class="q"><h4>Vergütung nach Absprache</h4><p>Je nachdem, ob Sie vermitteln, betreuen oder beides übernehmen.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="w">
+      <h2>Reden wir darüber, wo wir uns ergänzen</h2>
+      <div class="row"><a href="#" data-go="kontakt" class="btn btn-w">Gespräch vereinbaren</a></div>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════════ KARRIERE ══════════════ -->
+<main class="page" data-page="karriere">
+  <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Karriere</b></div></nav>
+  <header class="phead">
+    <div class="w">
+      <h1>Sie haben die gleichen Ansprüche wie wir?</h1>
+      <p>Ein kleines Team, das eigene Produkte baut und betreibt. Wer hier anfängt, sieht seine Arbeit am nächsten Morgen im Einsatz.</p>
+    </div>
+  </header>
+
+  <section class="sec">
+    <div class="w">
+      <div class="split rv">
+        <div class="imgset">
+          <span class="sq sq-1"></span><span class="sq sq-2"></span>
+          <div class="ph i-team"></div>
+        </div>
+        <div>
+          <h2>Ehrlich gesagt: Wir sind klein</h2>
+          <p class="sub" style="margin:18px 0 20px">
+            Kein Großraumbüro, keine Abteilungen, keine Stellenanzeigen mit fünfzehn
+            Anforderungen. Dafür arbeiten Sie an Software, die echte Betriebe täglich
+            benutzen — und merken sofort, ob eine Entscheidung gut war.
+          </p>
+          <p class="sub">
+            Wer bei uns anfängt, betreut Dinge auch, statt sie nur zu bauen. Das ist
+            anstrengender und lehrreicher als jede Rolle, in der man nach dem Abliefern
+            nichts mehr hört.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-soft">
+    <div class="w">
+      <div class="hrow rv">
+        <div class="lead">
+          <h2>Womit Sie zu tun hätten</h2>
+          <p class="sub">Auch ohne ausgeschriebene Stelle sehen wir uns Initiativbewerbungen an.</p>
+        </div>
+        <a href="#" data-go="kontakt" class="btn btn-o">Initiativ bewerben</a>
+      </div>
+      <div class="g3 rv">
+        <div class="card"><div class="cb"><h3>Entwicklung</h3>
+          <p>Web und Android, Node und Kotlin. Von der Datenbank bis zur Oberfläche, ohne Übergabe an eine andere Abteilung.</p></div></div>
+        <div class="card"><div class="cb"><h3>Betrieb</h3>
+          <p>Server, Überwachung, Sicherungen. Wer dafür sorgen mag, dass nachts nichts passiert, ist hier richtig.</p></div></div>
+        <div class="card"><div class="cb"><h3>Kundenbetreuung</h3>
+          <p>Betriebe einrichten, schulen, Fragen beantworten. Technisches Verständnis hilft mehr als Verkaufstalent.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="w">
+      <h2>Schreiben Sie uns, was Sie können</h2>
+      <div class="row"><a href="#" data-go="kontakt" class="btn btn-w">Initiativ bewerben</a></div>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════════ ENTWICKLER ══════════════ -->
+<main class="page" data-page="entwickler">
+  <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Entwickler</b></div></nav>
+  <header class="phead">
+    <div class="w">
+      <h1>Schnittstellen</h1>
+      <p>Unsere Systeme sollen sich in Ihre Landschaft einfügen — nicht daneben stehen. Für Anbindungen gibt es dokumentierte Wege.</p>
+    </div>
+  </header>
+
+  <section class="sec">
+    <div class="w">
+      <div class="lead rv" style="margin-bottom:40px">
+        <h2>Was sich anbinden lässt</h2>
+        <p class="sub">Schnittstellen richten wir projektbezogen ein. Zugangsdaten und Beschreibung bekommen Sie nach Absprache.</p>
+      </div>
+      <div class="g2 rv">
+        <div class="card"><div class="cb"><h3>Warenwirtschaft</h3>
+          <p>Artikel, Bestände und Belege gleichen sich mit vorhandenen Systemen ab, damit niemand doppelt pflegt. Für ein Handelssystem läuft eine solche Kopplung bereits.</p></div></div>
+        <div class="card"><div class="cb"><h3>Zahlung und Fiskalisierung</h3>
+          <p>Kartenzahlung und zertifizierte Kassensicherung sind angebunden. Wer eigene Abläufe hat, kann sich an dieselben Wege hängen.</p></div></div>
+        <div class="card"><div class="cb"><h3>Nachrichten und Telefonie</h3>
+          <p>Versand und Rufnummern laufen über etablierte Anbieter. Eingehende Anfragen lassen sich als Vorgang übernehmen.</p></div></div>
+        <div class="card"><div class="cb"><h3>Auswertung und Export</h3>
+          <p>Zahlen verlassen das System in gängigen Formaten — für Buchhaltung, Auswertung oder ein übergeordnetes Berichtswesen.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-navy">
+    <div class="w">
+      <div class="lead rv" style="margin-bottom:30px"><h2>So fangen wir an</h2></div>
+      <div class="quad rv" style="grid-template-columns:repeat(3,1fr)">
+        <div class="q"><h4>Erst das Ziel</h4><p>Was soll wohin fließen und warum. Meist zeigt sich dabei, dass weniger reicht als gedacht.</p></div>
+        <div class="q"><h4>Dann ein Testzugang</h4><p>Sie bekommen eine Umgebung mit Beispieldaten, bevor etwas produktiv läuft.</p></div>
+        <div class="q"><h4>Dann der Betrieb</h4><p>Läuft die Anbindung, überwachen wir sie mit — Ausfälle sollen nicht Ihnen auffallen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="w">
+      <h2>Was möchten Sie anbinden?</h2>
+      <div class="row"><a href="#" data-go="kontakt" class="btn btn-w">Schnittstelle besprechen</a></div>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════════ SUPPORT ══════════════ -->
+<main class="page" data-page="support">
+  <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Support</b></div></nav>
+  <header class="phead">
+    <div class="w">
+      <h1>Hilfe für Bestandskunden</h1>
+      <p>Sie sprechen mit der Person, die Ihr System kennt. Kein Ticketsystem, das Sie im Kreis schickt.</p>
+    </div>
+  </header>
+
+  <section class="sec">
+    <div class="w">
+      <div class="g3 rv">
+        <div class="card"><div class="cb">
+          <h3>Anrufen</h3>
+          <p>Am schnellsten, wenn es dringend ist und der Betrieb steht.</p>
+          <span class="more"><a href="tel:+4915212419807">+49 1521 2419807</a></span></div></div>
+        <div class="card"><div class="cb">
+          <h3>Nachricht schreiben</h3>
+          <p>Dieselbe Nummer nimmt Nachrichten entgegen. Gut für alles, wozu ein Bildschirmfoto gehört.</p>
+          <span class="more"><a href="https://wa.me/4915212419807" target="_blank" rel="noopener">Nachricht senden</a></span></div></div>
+        <div class="card"><div class="cb">
+          <h3>E-Mail</h3>
+          <p>Für Fragen, die Zeit haben, und für alles mit Anhang.</p>
+          <span class="more">info@samolabs.de</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-soft">
+    <div class="w">
+      <div class="lead rv" style="margin-bottom:34px"><h2>Häufige Fälle</h2></div>
+      <div class="acc rv">
+        <details open><summary>Etwas funktioniert nicht — was hilft uns weiter?</summary>
+          <p>Ein Bildschirmfoto und die Uhrzeit reichen meist. Nennen Sie außerdem, an welchem Gerät es passiert ist. Damit finden wir den Vorgang und sehen, was tatsächlich passiert ist.</p></details>
+        <details><summary>Ein Mitarbeiter kommt nicht mehr hinein</summary>
+          <p>Zugänge können Sie selbst zurücksetzen, wenn Sie Verwalterrechte haben. Wenn nicht, übernehmen wir das — dauert wenige Minuten.</p></details>
+        <details><summary>Wir brauchen einen zusätzlichen Zugang</summary>
+          <p>Sagen Sie uns Name und Aufgabenbereich, dann richten wir ihn passend ein. Zusätzliche Nutzer wirken sich auf die monatlichen Kosten aus, das klären wir vorher.</p></details>
+        <details><summary>Der Drucker druckt keine Etiketten mehr</summary>
+          <p>Meist hilft ein Neustart des Geräts. Bleibt es dabei, prüfen wir die Verbindung aus der Ferne — dafür muss niemand vor Ort sein.</p></details>
+        <details><summary>Wie kommen wir an unsere Daten?</summary>
+          <p>Sie bekommen jederzeit einen vollständigen Export in einem gängigen Format. Ihre Daten gehören Ihnen, auch wenn Sie wechseln möchten.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════════ LOGIN ══════════════ -->
+<main class="page" data-page="login">
+  <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <b>Login</b></div></nav>
+  <header class="phead">
+    <div class="w">
+      <h1>Anmeldebereich</h1>
+      <p>Melden Sie sich in Ihrem samoLabs-System an.</p>
+    </div>
+  </header>
+
+  <section class="sec">
+    <div class="w">
+      <div class="n-filter rv" id="p-filter">
+        <button class="l-chip an" type="button" data-bereich="alle">Alle Zugänge</button>
+        <button class="l-chip" type="button" data-bereich="betrieb">Für Betriebe</button>
+        <button class="l-chip" type="button" data-bereich="team">Für Mitarbeitende</button>
+        <button class="l-chip" type="button" data-bereich="partner">Für Partner</button>
+      </div>
+
+      <div style="max-width:420px;margin:26px 0 8px">
+        <label for="p-suche">Zugang suchen</label>
+        <input type="search" id="p-suche" placeholder="Name des Systems eingeben …">
+      </div>
+
+      <div class="portale rv" id="p-liste"></div>
+    </div>
+  </section>
+
+  <section class="sec sec-soft">
+    <div class="w">
+      <div class="split rv" style="grid-template-columns:1fr 1fr">
+        <div>
+          <h2>Kommen Sie nicht hinein?</h2>
+          <p class="sub" style="margin:18px 0 26px">
+            Die Adresse Ihres Systems steht in der Einrichtungsmail. Wenn Sie sie nicht
+            mehr finden, schicken wir sie erneut — und setzen bei Bedarf das Kennwort zurück.
+          </p>
+          <div class="row">
+            <a href="#" data-go="support" class="btn">Zum Support</a>
+            <a href="#" data-go="kontakt" class="btn btn-o">Zugang anfragen</a>
+          </div>
+        </div>
+        <div class="ph i-n1" style="min-height:300px;border-radius:14px"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
 <!-- ════════ FOOTER ════════ -->
 <footer class="foot">
   <div class="w">
@@ -904,13 +1213,13 @@
         <li><a href="#" data-go="neues">Presse und Neuigkeiten</a></li>
         <li><a href="#" data-go="kontakt">Kontakt</a></li></ul></div>
       <div><h4>Unternehmen</h4><ul>
-        <li><a href="#" data-go="kontakt">Partner werden</a></li>
-        <li><a href="#" data-go="kontakt">Karriere</a></li>
-        <li><a href="#" data-go="kontakt">Entwickler</a></li></ul></div>
+        <li><a href="#" data-go="partner">Partner werden</a></li>
+        <li><a href="#" data-go="karriere">Karriere</a></li>
+        <li><a href="#" data-go="entwickler">Entwickler</a></li></ul></div>
       <div><h4>Service</h4><ul>
-        <li><a href="#" data-go="kontakt">Support</a></li>
-        <li><a href="#" data-go="kontakt">Schulung</a></li>
-        <li><a href="#" data-go="kontakt">Datenübernahme</a></li></ul></div>
+        <li><a href="#" data-go="support">Support</a></li>
+        <li><a href="#" data-go="support">Schulung</a></li>
+        <li><a href="#" data-go="support">Datenübernahme</a></li></ul></div>
     </div>
     <div class="foot-b">
       <span class="foot-l"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="credits.html">Credits</a></span>

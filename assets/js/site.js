@@ -329,6 +329,48 @@
     zeichne();
   })();
 
+
+  // ── Anmeldebereich: Zugaenge als durchsuchbare Liste ────────────────
+  var SCHLOSS = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+  var PORTALE = [
+    ['betrieb','Werkstatt und Handel','Auftragsannahme, Werkstattplanung, Kasse und Lager. Ihr Zugang läuft über die Adresse Ihres Betriebs.','Zum Portal'],
+    ['betrieb','Gastronomie — Theke','Übersicht aller offenen Tische, kassieren und abschließen. Anmeldung am Terminal im Betrieb.','Zum Portal'],
+    ['betrieb','Marktplatz für Werkstätten','Verwaltung Ihres Eintrags, Anfragen und Termine aus dem öffentlichen Verzeichnis.','Zum Portal'],
+    ['team','Mitarbeiter-App','Aufträge, Werkstattbank und Etikettendruck auf Tablet und Telefon. Zugang von der Betriebsleitung.','Zugang anfragen'],
+    ['team','Zeiterfassung','Kommen und gehen per Karte am Terminal. Für die Auswertung genügt ein Verwalterzugang.','Zum Portal'],
+    ['team','Außendienst','Besuchsplanung, Routen und Berichte unterwegs. Anmeldung erfolgt in der App.','Zugang anfragen'],
+    ['partner','Partnerbereich','Gemeinsame Kunden, Empfehlungen und Abrechnung. Für Steuerberatung, Systemhäuser und Handel.','Zugang anfragen'],
+    ['partner','Lizenzverwaltung','Übersicht über Ihre Standorte, Nutzer und Laufzeiten.','Zum Portal']
+  ];
+  (function(){
+    var liste = document.getElementById('p-liste');
+    if (!liste) return;
+    var bereich = 'alle', suche = '';
+    function zeichne(){
+      var treffer = PORTALE.filter(function(p){
+        var passt = (bereich === 'alle' || p[0] === bereich);
+        var text = (p[1] + ' ' + p[2]).toLowerCase();
+        return passt && (!suche || text.indexOf(suche) !== -1);
+      });
+      liste.innerHTML = treffer.length ? treffer.map(function(p){
+        return '<div class="portal"><div class="portal-tx"><h3>' + p[1] + '</h3><p>' + p[2] + '</p></div>' +
+               '<a href="#" data-go="kontakt" class="btn">' + SCHLOSS + ' ' + p[3] + '</a></div>';
+      }).join('') : '<p class="portal-leer">Kein Zugang gefunden. Der Support hilft weiter.</p>';
+    }
+    document.getElementById('p-filter').addEventListener('click', function(e){
+      var c = e.target.closest('.l-chip');
+      if (!c) return;
+      bereich = c.getAttribute('data-bereich');
+      document.querySelectorAll('#p-filter .l-chip').forEach(function(x){ x.classList.toggle('an', x === c); });
+      zeichne();
+    });
+    document.getElementById('p-suche').addEventListener('input', function(e){
+      suche = e.target.value.toLowerCase().trim();
+      zeichne();
+    });
+    zeichne();
+  })();
+
   // ── Seitenwechsel ──
   var seiten = document.querySelectorAll('.page');
   function zeige(name) {
@@ -517,15 +559,19 @@
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape' && chat.classList.contains('on')) { zu=true; setzeChat(false); fab.focus(); }
   });
-  var gezeigt=false;
-  try { gezeigt = sessionStorage.getItem('sl-chat')==='1'; } catch(e){}
-  if (!gezeigt) {
-    setTimeout(function(){ if(!zu && !chat.classList.contains('on')) teas.classList.add('on'); }, 4500);
+  // Das Fenster oeffnet sich von selbst — aber nicht bei jedem Seitenaufruf.
+  // Nach zwei Stunden gilt der Besucher wieder als neu.
+  var SPERRE_MS = 2 * 60 * 60 * 1000;
+  var zuletzt = 0;
+  try { zuletzt = parseInt(localStorage.getItem('sl-chat-zuletzt') || '0', 10) || 0; } catch(e){}
+  var jetzt = Date.now();
+  if (jetzt - zuletzt > SPERRE_MS) {
+    setTimeout(function(){ if(!zu && !chat.classList.contains('on')) teas.classList.add('on'); }, 3500);
     setTimeout(function(){
       if (zu || chat.classList.contains('on')) return;
       setzeChat(true);
-      try { sessionStorage.setItem('sl-chat','1'); } catch(e){}
-    }, 6000);
+      try { localStorage.setItem('sl-chat-zuletzt', String(Date.now())); } catch(e){}
+    }, 5000);
   }
   var R=[
     [['kost','preis','teuer','euro'],'Das hängt vom Zuschnitt ab — Anzahl Standorte, Nutzer und Module. Nennen Sie mir kurz Ihre Betriebsgröße, dann rechne ich es Ihnen aus.'],
