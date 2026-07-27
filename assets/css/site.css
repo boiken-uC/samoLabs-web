@@ -188,6 +188,19 @@
   .sprach-hinweis button:hover{color:var(--ink)}
   @media(max-width:700px){.sprach-hinweis{font-size:13.5px;padding:11px 16px;gap:12px}}
 
+
+  /* ── Einzelner Beitrag ── */
+  .beitrag-lauf{max-width:760px}
+  .beitrag-lauf .ph{height:340px;border-radius:12px;margin-bottom:32px}
+  .b-anriss{font-size:19px;line-height:1.65;color:var(--ink);font-weight:500;margin:0 0 26px}
+  #b-text p{font-size:16.5px;line-height:1.75;color:#3D4147;margin:0 0 20px}
+  #b-text h3{font-size:20px;color:var(--ink);margin:34px 0 12px}
+  #b-text ul{margin:0 0 22px;padding-left:22px;color:#3D4147}
+  #b-text li{margin-bottom:9px;font-size:16.5px;line-height:1.7}
+  .b-fuss{display:flex;justify-content:space-between;align-items:center;gap:20px;
+    flex-wrap:wrap;border-top:1px solid var(--hair);margin-top:38px;padding-top:26px}
+  @media(max-width:700px){.beitrag-lauf .ph{height:220px}.b-anriss{font-size:17px}}
+
   /* ── Nachrichtenseite ── */
   .n-filter{display:flex;flex-wrap:wrap;gap:9px}
   .n-filter .l-chip{color:var(--ink);border-color:#C4C8C8}
