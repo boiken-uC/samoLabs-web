@@ -639,6 +639,15 @@
     if (gemerkt && LAENDER_WAHL[gemerkt]) anzeigen(gemerkt);
   })();
 
+  // ── Navigation bekommt beim Scrollen einen Schatten ──
+  (function(){
+    var nav = document.querySelector('.nav');
+    if (!nav) return;
+    function pruefe(){ nav.classList.toggle('tief', window.scrollY > 12); }
+    window.addEventListener('scroll', pruefe, { passive: true });
+    pruefe();
+  })();
+
   // ── Seitenwechsel ──
   var seiten = document.querySelectorAll('.page');
   function zeige(name) {

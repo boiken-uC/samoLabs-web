@@ -518,3 +518,86 @@
   .chat { max-height: 82vh; overflow-y: auto; }
   .clog { max-height: 40vh; }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Bewegung
+   Jede Elementart kommt aus einer anderen Richtung. Das ergibt beim
+   Aufbau der Seite eine Abfolge statt eines gleichzeitigen Einblendens.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@keyframes von-oben   { from{ transform:translateY(-50px); opacity:0 } to{ transform:none; opacity:1 } }
+@keyframes von-rechts { from{ transform:translateX(60px);  opacity:0 } to{ transform:none; opacity:1 } }
+@keyframes von-links  { from{ transform:translateX(-60px); opacity:0 } to{ transform:none; opacity:1 } }
+@keyframes von-unten  { from{ transform:translateY(40px);  opacity:0 } to{ transform:none; opacity:1 } }
+@keyframes von-tief   { from{ transform:translateY(60px);  opacity:0 } to{ transform:none; opacity:1 } }
+@keyframes sanft      { from{ opacity:0 } to{ opacity:1 } }
+
+/* Beim Laden der Startseite: der Kopfbereich baut sich auf */
+.js-an .hero h1        { animation: von-oben   .7s cubic-bezier(.22,.61,.36,1) both; }
+.js-an .hero .sub2     { animation: von-rechts .7s cubic-bezier(.22,.61,.36,1) .12s both; }
+.js-an .hero-tx > p    { animation: von-rechts .7s cubic-bezier(.22,.61,.36,1) .2s both; }
+.js-an .hero .row      { animation: von-links  .7s cubic-bezier(.22,.61,.36,1) .3s both; }
+.js-an .hero .ph       { animation: sanft      .9s ease-out .15s both; }
+
+/* Beim Hereinscrollen */
+.js-an .rv               { opacity:0 }
+.js-an .rv.in            { animation: von-unten .65s cubic-bezier(.22,.61,.36,1) both; }
+.js-an .rv.in h2         { animation: von-rechts .65s cubic-bezier(.22,.61,.36,1) .05s both; }
+.js-an .rv.in blockquote { animation: von-tief   .7s  cubic-bezier(.22,.61,.36,1) .1s both; }
+
+/* Kartenreihen laufen versetzt ein, nicht gleichzeitig */
+.js-an .rv.in .card:nth-child(1),
+.js-an .rv.in .cell:nth-child(1),
+.js-an .rv.in .kpi:nth-child(1),
+.js-an .rv.in .q:nth-child(1)   { animation: von-unten .6s cubic-bezier(.22,.61,.36,1) .05s both; }
+.js-an .rv.in .card:nth-child(2),
+.js-an .rv.in .cell:nth-child(2),
+.js-an .rv.in .kpi:nth-child(2),
+.js-an .rv.in .q:nth-child(2)   { animation: von-unten .6s cubic-bezier(.22,.61,.36,1) .14s both; }
+.js-an .rv.in .card:nth-child(3),
+.js-an .rv.in .cell:nth-child(3),
+.js-an .rv.in .kpi:nth-child(3),
+.js-an .rv.in .q:nth-child(3)   { animation: von-unten .6s cubic-bezier(.22,.61,.36,1) .23s both; }
+.js-an .rv.in .card:nth-child(4),
+.js-an .rv.in .cell:nth-child(4),
+.js-an .rv.in .kpi:nth-child(4),
+.js-an .rv.in .q:nth-child(4)   { animation: von-unten .6s cubic-bezier(.22,.61,.36,1) .32s both; }
+.js-an .rv.in .card:nth-child(n+5),
+.js-an .rv.in .cell:nth-child(n+5) { animation: von-unten .6s cubic-bezier(.22,.61,.36,1) .4s both; }
+
+/* Seitenwechsel: der neue Bereich blendet auf */
+.page.on { animation: sanft .35s ease-out both; }
+
+/* Bildausschnitt zieht beim Überfahren leicht heran */
+.card, .cell, .rc { overflow: hidden; }
+.card .ph, .rc .ph { transition: transform .5s cubic-bezier(.22,.61,.36,1); }
+.card:hover .ph, .rc:hover .ph { transform: scale(1.04); }
+
+/* Kacheln heben sich beim Überfahren */
+.card, .rc, .pk, .n { transition: transform .25s ease, box-shadow .25s ease, border-color .18s; }
+.card:hover, .rc:hover, .pk:hover, .n:hover { transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(27,28,30,.09); }
+
+/* Verweispfeile rücken nach */
+.more svg, .cell-foot svg { transition: transform .2s ease; }
+.card:hover .more svg, .cell:hover .more svg, .rc:hover .more svg { transform: translateX(5px); }
+
+/* Schaltflächen reagieren spürbar */
+.btn, .navbtn { transition: background .18s, color .18s, border-color .18s, transform .12s; }
+.btn:active, .navbtn:active { transform: translateY(1px); }
+
+/* Navigation blendet beim Scrollen einen Schatten ein */
+.nav { transition: box-shadow .3s ease, background .3s ease; }
+.nav.tief { box-shadow: 0 4px 20px rgba(27,28,30,.08); }
+
+/* Wer Bewegung reduziert haben möchte, bekommt keine */
+@media (prefers-reduced-motion: reduce) {
+  .js-an .hero h1, .js-an .hero .sub2, .js-an .hero-tx > p, .js-an .hero .row,
+  .js-an .hero .ph, .js-an .rv, .js-an .rv.in, .js-an .rv.in h2,
+  .js-an .rv.in blockquote, .js-an .rv.in .card, .js-an .rv.in .cell,
+  .js-an .rv.in .kpi, .js-an .rv.in .q, .page.on {
+    animation: none !important; opacity: 1 !important; transform: none !important;
+  }
+  .card:hover .ph, .rc:hover .ph { transform: none; }
+}
