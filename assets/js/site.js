@@ -400,13 +400,13 @@
   ];
 
   var KAT_NAME = { meldung:'Aus dem Haus', produkt:'Neue Funktion', fach:'Fachbeitrag', branche:'Aus der Branche' };
+  // Dokument-Symbol vor dem Datum der Beitragskacheln
+  var DOK_SVG = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>';
   function beitragKarte(b){
     var nr = BEITRAEGE.indexOf(b);
     return '<a class="card" href="#" data-go="beitrag:' + nr + '"><div class="ph ' + b[4] + '"></div><div class="cb">' +
-      '<span class="n-kat">' + (KAT_NAME[b[1]] || '') + '</span>' +
-      '<span class="n-d">' + b[0] + '</span>' +
-      '<h3>' + b[2] + '</h3><p>' + b[3] + '</p>' +
-      '<span class="more">Weiterlesen →</span></div></a>';
+      '<span class="n-d">' + DOK_SVG + ' ' + b[0].split('.').join(' / ') + '</span>' +
+      '<h3>' + b[2] + '</h3></div></a>';
   }
 
   // Einzelnen Beitrag anzeigen
