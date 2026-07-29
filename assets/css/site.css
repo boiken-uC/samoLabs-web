@@ -6,32 +6,42 @@
     src:url(../fonts/dm-sans-800.woff2) format('woff2'); }
   @font-face { font-family:'DM Sans'; font-weight:700; font-display:swap;
     src:url(../fonts/dm-sans-700.woff2) format('woff2'); }
+  @font-face { font-family:'Inter'; font-weight:400; font-display:swap;
+    src:url(../fonts/inter-var.woff2) format('woff2'); }
+  @font-face { font-family:'Inter'; font-weight:500; font-display:swap;
+    src:url(../fonts/inter-var.woff2) format('woff2'); }
+  @font-face { font-family:'Inter'; font-weight:600; font-display:swap;
+    src:url(../fonts/inter-var.woff2) format('woff2'); }
+  @font-face { font-family:'Inter'; font-weight:700; font-display:swap;
+    src:url(../fonts/inter-var.woff2) format('woff2'); }
+  @font-face { font-family:'Inter'; font-weight:800; font-display:swap;
+    src:url(../fonts/inter-var.woff2) format('woff2'); }
 
   :root {
     
-    --navy:#1B1C1E; --navy-2:#2A2C2F; --accent:#277777; --accent-2:#1C5C5C;
-    --mint:#7FD4D0; --mint-bg:#E3F5F2; --gelb:#FFEB78; --gelb-2:#FFE04A;
+    --navy:#1B1C1E; --navy-2:#2A2C2F; --accent:#277777; --accent-2:#194B4C;
+    --mint:#46BEAA; --mint-bg:#E3F5F2; --gelb:#FFEB78; --gelb-2:#FFF5B9;
     --labs:#818CF8;
-    --ink:#1B1C1E; --mid:#505A60; --soft:#F5F6F6; --hair:#E7E9E9;
+    --ink:#1B1C1E; --mid:#505A60; --soft:#F5F5F5; --hair:#E7E9E9;
     /* Produktfarben. Die -h-Varianten sind fuer dunkle Flaechen aufgehellt,
        damit der Schriftzug dort lesbar bleibt. */
     --c-rad:#2E7D32; --c-order:#B8860B; --c-transport:#C2620A;
     --c-vertrieb:#2563EB; --c-chat:#4F57C4; --c-plan:#4F57C4; --c-term:#4F57C4;
     --c-rad-h:#63BE68; --c-order-h:#E0B040; --c-transport-h:#E8883C;
     --c-vertrieb-h:#7FA9FF; --c-chat-h:#9AA3FA; --c-plan-h:#9AA3FA; --c-term-h:#9AA3FA;
-    --head:'DM Sans',system-ui,sans-serif;
-    --body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,system-ui,sans-serif;
+    --head:'Inter',system-ui,sans-serif;
+    --body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,system-ui,sans-serif;
     --logo:'Outfit',system-ui,sans-serif;
     --mono:ui-monospace,'Cascadia Mono','Segoe UI Mono',Consolas,monospace;
-    --w:1220px;
+    --w:1224px;
   }
   *{box-sizing:border-box}
   body{margin:0;background:#fff;color:var(--ink);font-family:var(--body);font-size:16px;
     line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  h1,h2,h3,h4{font-family:var(--head);font-weight:800;letter-spacing:-.028em;line-height:1.12;margin:0;text-wrap:balance}
+  h1,h2,h3,h4{font-family:var(--head);font-weight:600;line-height:1.2;margin:0}
   a{color:inherit;text-decoration:none}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-  .w{max-width:var(--w);margin:0 auto;padding:0 28px}
+  :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  .w{max-width:var(--w);margin:0 auto;padding:0 24px}
   img{max-width:100%}
 
   /* ── Wortmarke: Versalien, erster Teil fett, zweiter dünn ── */
@@ -70,12 +80,12 @@
   .navbtn{margin-left:auto}
   .menu{display:flex;gap:4px;height:100%}
   .mi{position:relative;display:flex;align-items:center}
-  .mi>button{font-family:var(--body);font-size:15px;font-weight:500;color:var(--navy);
+  .mi>button{font-family:var(--body);font-size:16px;font-weight:600;color:var(--navy);
     background:none;border:0;border-bottom:3px solid transparent;padding:28px 14px 25px;cursor:pointer}
   .mi>button{position:relative}
-  .mi>button::after{content:"";position:absolute;left:50%;right:50%;bottom:0;height:3px;
-    background:var(--accent);transition:left .28s cubic-bezier(.22,.61,.36,1),right .28s cubic-bezier(.22,.61,.36,1)}
-  .mi>button:hover,.mi.open>button{color:var(--accent)}
+  .mi>button::after{content:"";position:absolute;left:50%;right:50%;bottom:12px;height:4px;
+    background:#2D8282;transition:left .28s cubic-bezier(.22,.61,.36,1),right .28s cubic-bezier(.22,.61,.36,1)}
+  .mi>button:hover,.mi.open>button{color:#2D8282}
   .mi>button:hover::after,.mi.open>button::after{left:14px;right:14px}
   .nav .w{position:relative}
   .mi{position:static}
@@ -111,20 +121,29 @@
   }
 
   /* ── Buttons ── */
-  .btn{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:600;
-    padding:14px 28px;min-height:50px;border-radius:32px;
-    background:var(--gelb);color:var(--ink);border:1px solid var(--gelb);
-    cursor:pointer;transition:background .18s,color .18s,border-color .18s}
-  .btn:hover{background:var(--gelb-2);border-color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-size:16px;font-weight:500;
+    padding:13px 20px;min-height:50px;border-radius:32px;
+    background:var(--accent);color:#fff;border:1px solid var(--accent);
+    cursor:pointer;transition:all .1s ease-in-out}
+  .btn:hover{background:var(--accent-2);border-color:var(--accent-2)}
+  /* Auf dunklen Flaechen bleibt Gelb die erste Wahl */
+  .sec-navy .btn:not(.btn-o):not(.btn-t),.cta .btn:not(.btn-o):not(.btn-t),
+  .phead .btn:not(.btn-o):not(.btn-t),.hero-voll .btn:not(.btn-o):not(.btn-t),
+  .hinweis-leiste .btn:not(.btn-o):not(.btn-t){
+    background:var(--gelb);color:var(--ink);border-color:var(--gelb)}
+  .sec-navy .btn:not(.btn-o):not(.btn-t):hover,.cta .btn:not(.btn-o):not(.btn-t):hover,
+  .phead .btn:not(.btn-o):not(.btn-t):hover,.hero-voll .btn:not(.btn-o):not(.btn-t):hover,
+  .hinweis-leiste .btn:not(.btn-o):not(.btn-t):hover{
+    background:var(--gelb-2);border-color:var(--gelb-2)}
   .btn-t{background:var(--accent);color:#fff;border-color:var(--accent)}
   .btn-t:hover{background:transparent;color:var(--accent);border-color:var(--accent)}
-  .btn-o{background:transparent;color:var(--ink);border-color:#C4C8C8}
+  .btn-o{background:transparent;color:var(--ink);border-color:var(--ink)}
   .btn-o:hover{background:var(--ink);border-color:var(--ink);color:#fff}
   .btn-w{background:var(--gelb);color:var(--ink);border-color:var(--gelb)}
   .btn-w:hover{background:transparent;color:var(--gelb)}
   .row{display:flex;gap:12px;flex-wrap:wrap}
   .more{font-weight:600;font-size:14.5px;color:var(--accent);display:inline-flex;align-items:center;gap:7px}
-  .more:hover{color:var(--accent-2)}
+  .more:hover{color:var(--accent-2);text-decoration:underline;text-underline-offset:2px}
 
   /* ── Bildflächen ── */
   .ph{background-size:cover;background-position:center;background-color:#D6D9DD}
@@ -411,10 +430,10 @@
   .page.on{display:block}
 
   /* ── Breadcrumb ── */
-  .crumb{background:var(--soft);border-bottom:1px solid var(--hair);font-size:13.5px;color:var(--mid)}
+  .crumb{background:transparent;border-bottom:0;font-size:14px;color:var(--mid)}
   .crumb .w{padding-top:13px;padding-bottom:13px;display:flex;gap:9px;flex-wrap:wrap}
   .crumb a:hover{color:var(--accent)}
-  .crumb b{color:var(--navy);font-weight:600}
+  .crumb b{color:var(--navy);font-weight:400}
 
   /* ── Seitenkopf Unterseiten ── */
   .phead{background:var(--navy);color:#fff;padding:64px 0 66px}
@@ -425,7 +444,7 @@
   .hero{border-bottom:1px solid var(--hair)}
   .hero-in{max-width:var(--w);margin:0 auto;display:grid;grid-template-columns:1.02fr .98fr}
   .hero-tx{padding:74px 54px 74px 28px;align-self:center}
-  .hero h1{font-size:clamp(34px,4.5vw,56px);color:var(--navy)}
+  .hero:not(.hero-voll) h1{font-size:clamp(34px,4.5vw,56px);color:var(--navy)}
   .hero .sub2{font-size:19px;color:var(--accent);font-weight:600;margin:0 0 18px}
   .hero p{font-size:18px;color:var(--mid);max-width:40ch;margin:0 0 30px}
   .hero .ph{min-height:460px;border-radius:14px;margin:24px 28px 24px 24px}
@@ -442,23 +461,24 @@
   .sec{padding:84px 0}
   .sec-soft{background:var(--soft)}
   .sec-navy{background:var(--navy);color:#fff}
-  .sec h2{font-size:clamp(27px,3.2vw,40px);color:var(--navy);margin-bottom:16px}
+  .sec h2{font-size:clamp(32px,3.9vw,48px);color:var(--navy);margin-bottom:24px}
   .sec-navy h2,.sec-navy h3,.sec-navy h4{color:#fff}
-  .sub{font-size:17px;color:var(--mid);margin:0}
+  .sub{font-size:20px;line-height:30px;color:var(--ink);margin:0}
   .sec-navy .sub{color:rgba(255,255,255,.72)}
-  .lead{max-width:54ch}
+  .lead{max-width:968px;margin-left:auto;margin-right:auto;text-align:center}
   .hrow{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:42px;flex-wrap:wrap}
+  .hrow .lead,.split .lead{margin-left:0;margin-right:0;text-align:left}
 
   /* ── Kartenraster ── */
-  .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-  .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .g2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--hair);
-    border-radius:8px;overflow:hidden}
+  .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .g2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid #89979F;
+    border-radius:14px;overflow:hidden}
   .card .ph{height:180px}
-  .cb{padding:24px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
-  .card h3{font-size:20px;color:var(--navy)}
-  .card p{margin:0;font-size:14.5px;color:var(--mid)}
+  .cb{padding:40px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .card h3{font-size:22px;color:var(--navy)}
+  .card p{margin:0;font-size:16px;line-height:26px;color:var(--ink)}
   .card .more{margin-top:auto;padding-top:8px}
   @media(max-width:1000px){.g4{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:820px){.g3{grid-template-columns:1fr}.g2{grid-template-columns:1fr}}
@@ -476,13 +496,13 @@
   @media(max-width:900px){.split{grid-template-columns:1fr;gap:32px}.quad{grid-template-columns:1fr}.split .ph{min-height:220px}}
 
   /* ── Karussell ── */
-  .rail{display:flex;gap:22px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory}
+  .rail{display:flex;gap:24px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory}
   .rail::-webkit-scrollbar{height:6px}
   .rail::-webkit-scrollbar-thumb{background:#C9CDD4}
   .rc{flex:0 0 292px;scroll-snap-align:start;border:1px solid var(--hair);background:#fff;
     display:flex;flex-direction:column;border-radius:8px;overflow:hidden}
   .rc .ph{height:148px}
-  .rcb{padding:21px 21px 24px;display:flex;flex-direction:column;gap:9px;flex:1}
+  .rcb{padding:32px 32px 30px;display:flex;flex-direction:column;gap:9px;flex:1}
   .rc p{margin:0;font-size:14.5px;color:var(--mid)}
   .rcb h3{font-size:19px;color:var(--ink);letter-spacing:-.02em}
   .tag{font-size:11.5px;font-weight:600;letter-spacing:.04em;color:var(--accent)}
@@ -491,9 +511,9 @@
   
   .story{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
   .imgset{position:relative;padding-top:64%}
-  .imgset .sq{position:absolute;display:block;z-index:0;border-radius:4px}
-  .imgset .sq-1{background:var(--accent);width:17%;padding-bottom:17%;top:0;right:5%}
-  .imgset .sq-2{background:var(--gelb);width:33%;padding-bottom:33%;bottom:0;left:0}
+  .imgset .sq{position:absolute;display:block;z-index:0;border-radius:7%}
+  .imgset .sq-1{background:var(--gelb);width:35%;padding-bottom:35%;top:0;right:0}
+  .imgset .sq-2{background:var(--mint);width:35%;padding-bottom:35%;bottom:0;left:0}
   .imgset .ph{position:absolute;top:9%;left:9%;right:0;bottom:9%;border-radius:14px;z-index:1}
   .story-tx{display:flex;flex-direction:column;gap:17px}
   .story-tx h2{font-size:clamp(23px,2.6vw,33px)}
@@ -741,17 +761,10 @@
 
 /* Bildausschnitt zieht beim Überfahren leicht heran */
 .card, .cell, .rc { overflow: hidden; }
-.card .ph, .rc .ph { transition: transform .5s cubic-bezier(.22,.61,.36,1); }
-.card:hover .ph, .rc:hover .ph { transform: scale(1.04); }
 
-/* Kacheln heben sich beim Überfahren */
-.card, .rc, .pk, .n { transition: transform .25s ease, box-shadow .25s ease, border-color .18s; }
-.card:hover, .rc:hover, .pk:hover, .n:hover { transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(27,28,30,.09); }
-
-/* Verweispfeile rücken nach */
-.more svg, .cell-foot svg { transition: transform .2s ease; }
-.card:hover .more svg, .cell:hover .more svg, .rc:hover .more svg { transform: translateX(5px); }
+/* Beim Ueberfahren wird nur der Titel unterstrichen — wie im Vorbild */
+.card:hover h3, .rc:hover h3, .n:hover h3 {
+  text-decoration: underline; text-underline-offset: 2px; color: var(--accent-2); }
 
 /* Schaltflächen reagieren spürbar */
 .btn, .navbtn { transition: background .18s, color .18s, border-color .18s, transform .12s; }
