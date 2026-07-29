@@ -111,8 +111,9 @@
   .mega ul{list-style:none;margin:0;padding:0;display:grid;gap:18px}
   .mega ul a{font-size:18px;font-weight:600;color:var(--accent);display:block}
   .mega ul a:hover{color:var(--accent-2)}
-  .mega .ml-z{display:inline-flex;align-items:center;gap:8px}
-  .mega .ml-z svg{flex:none;transition:transform .18s ease}
+  /* Pfeil sitzt an der letzten Textzeile, auch wenn der Link umbricht */
+  .mega .ml-z{display:inline-flex;align-items:flex-end;gap:8px}
+  .mega .ml-z svg{flex:none;margin-bottom:4px;transition:transform .18s ease}
   .mega ul a:hover .ml-z svg{transform:translateX(3px)}
   .mega ul a small{display:block;font-size:14px;font-weight:400;color:var(--mid);line-height:1.5;margin-top:3px}
   /* Abdunkelung des Seitenrests, solange ein Menuepunkt offen ist */
