@@ -58,7 +58,7 @@
               ['Lager, das mitdenkt','Verbautes Teil wird abgebucht und landet automatisch auf der Rechnung.']],
       alltag:[['Der Kunde ruft nicht mehr an','Die Nachricht, dass das Rad fertig ist, geht automatisch raus.'],
               ['Kein Vorgang geht mehr verloren','Jedes Rad trägt ein Etikett mit Nummer, jeder Vorgang eine Historie.'],
-              ['Der Arbeitstag endet früher','Tagesabschluss und Kassenbericht entstehen nebenbei.']] },
+              ['Der Arbeitstag endet früher','Tagesabschluss und Kassenbericht entstehen nebenbei.']]  /* tiefe:rad */, bloecke:[['Die Annahme ist der halbe Auftrag','Am Tresen entscheidet sich, wie glatt der Rest läuft. Deshalb beginnt samoRad dort: Kunde suchen oder anlegen, Rad fotografieren, Arbeiten erfassen, Etikett drucken — alles in einem Durchgang am Tablet, während der Kunde noch dasteht und Fragen beantworten kann. Was hier sauber erfasst ist, muss später niemand rekonstruieren. Die Werkstatt sieht den Auftrag sofort mit allem, was sie braucht: Foto, Fehlerbeschreibung, Zusagen, Termin.','i-annahme'],['Zahlungsabwicklung über Stripe','Kassieren Sie, wie Ihre Kunden zahlen wollen: Karte am Gerät, kontaktlos, Zahlungslink in der Rechnung. Die Abwicklung läuft über Stripe, einen der größten Zahlungsabwickler weltweit — das Geld fließt direkt auf Ihr Konto, ohne dass Sie einen eigenen Vertrag mit einer Bank verhandeln müssen. Wir richten alles ein, der Betrag kommt aus dem Vorgang, und der Tagesabschluss stimmt, weil Kasse und Kartenzahlung nie getrennt waren.','i-n1'],['Das Lager arbeitet mit, statt gepflegt zu werden','Bestände stimmen nur, wenn ihre Pflege nebenbei passiert. Wird ein Teil einem Auftrag zugeordnet, verlässt es den Bestand und steht auf der Rechnung — ein Handgriff statt drei. Unterschreitet ein Artikel seine Mindestmenge, erscheint er auf der Nachbestellliste, bevor ein Rad wegen eines Zehn-Euro-Teils eine Woche steht. Und weil Einkauf, Verbrauch und Verkauf im selben System liegen, wissen Sie am Jahresende, was das Lager wirklich kostet.','i-n3']], fragen:[['Wir arbeiten heute mit Zetteln. Wie groß ist der Umstieg wirklich?','Kleiner als befürchtet: Kundenstamm und offene Vorgänge übernehmen wir, geschult wird ein Tag vor Ort, und in der ersten Woche läuft das alte Verfahren parallel weiter. Die meisten Teams arbeiten nach wenigen Tagen selbstständig.'],['Brauchen wir neue Geräte?','Ein handelsübliches Android-Tablet für den Tresen und ein Etikettendrucker genügen für den Start. Vorhandene Rechner bleiben nutzbar, die Anwendung läuft im Browser.'],['Was passiert mit unseren Daten, wenn wir kündigen?','Sie bekommen jederzeit einen vollständigen Export in gängigen Formaten. Ihre Daten gehören Ihnen — auch beim Abschied.']]},
 
     order: { ober:'Produkte', oberZiel:'produkte', marke:['samo','Order','--c-order'], bild:'i-p-order',
       titel:'Gäste bestellen selbst, die Theke sieht es sofort',
@@ -71,7 +71,7 @@
               ['Terminal für die Theke','Alle offenen Tische, kassieren und abschließen an einem Ort.']],
       alltag:[['Weniger Wege','Das Personal läuft zum Servieren, nicht zum Aufnehmen.'],
               ['Höherer Durchschnittsbon','Wer die Karte in Ruhe liest, bestellt eher noch etwas dazu.'],
-              ['Ruhigere Stoßzeiten','Bestellungen stapeln sich im System, nicht an der Theke.']] },
+              ['Ruhigere Stoßzeiten','Bestellungen stapeln sich im System, nicht an der Theke.']]  /* tiefe:order */, bloecke:[['Die Karte lebt, die Theke behält den Überblick','Die Speisekarte ist bei samoOrder kein PDF, sondern ein lebender Bestand: Preise ändern, Artikel ausblenden, Tagesangebote einstellen — sofort sichtbar an jedem Tisch. Bestellungen laufen mit Tischnummer an der Theke auf und werden dort abgearbeitet, kassiert und abgeschlossen. Auch bei vollem Haus bleibt nachvollziehbar, welcher Tisch was bekommen hat und was noch offen ist.','i-gastro'],['Zahlungsabwicklung über Stripe','Kassieren Sie, wie Ihre Kunden zahlen wollen: Karte am Gerät, kontaktlos, Zahlungslink in der Rechnung. Die Abwicklung läuft über Stripe, einen der größten Zahlungsabwickler weltweit — das Geld fließt direkt auf Ihr Konto, ohne dass Sie einen eigenen Vertrag mit einer Bank verhandeln müssen. Wir richten alles ein, der Betrag kommt aus dem Vorgang, und der Tagesabschluss stimmt, weil Kasse und Kartenzahlung nie getrennt waren.','i-n1'],['Gebaut für den Abend mit Warteschlange','Ein Bestellsystem beweist sich nicht am Dienstagnachmittag, sondern am Samstagabend. Deshalb ist samoOrder auf Stoßzeiten ausgelegt: Bestellungen sammeln sich geordnet im System statt an der Theke, die Küche sieht die Reihenfolge, und das Personal läuft zum Servieren statt zum Aufnehmen. Fällt das Netz aus, arbeitet das Terminal weiter und gleicht ab, sobald die Verbindung zurück ist.','i-beleg']], fragen:[['Müssen unsere Gäste eine App installieren?','Nein. Der Gast scannt den Code am Tisch mit der Kamera, die Karte öffnet sich im Browser. Genau diese fehlende Hürde entscheidet, ob Gäste mitmachen.'],['Können wir bar und mit Karte gemischt kassieren?','Ja. Die Theke kassiert je Tisch bar oder mit Karte, auch geteilt. Alles landet im selben Abschluss, die Kassensicherung signiert jede Buchung.'],['Was kostet der Einstieg?','Ein Tablet für die Theke und die QR-Aufsteller — mehr Hardware braucht es nicht. Die Einrichtung übernehmen wir, die Karte pflegen Sie danach selbst.']]},
 
     transport: { ober:'Produkte', oberZiel:'produkte', marke:['samo','Transport','--c-transport'], bild:'i-p-trans',
       titel:'Fracht finden, Touren planen, Sendungen verfolgen',
@@ -84,7 +84,7 @@
               ['Übergabe dokumentiert','Empfang bestätigt mit Unterschrift und Foto, direkt im System.']],
       alltag:[['Weniger Leerfahrten','Die Rückfahrt trägt sich mit, statt leer zu bleiben.'],
               ['Weniger Rückfragen','Wo die Sendung steht, beantwortet das System selbst.'],
-              ['Sauberer Nachweis','Jede Übergabe ist belegt, auch Wochen später noch.']] },
+              ['Sauberer Nachweis','Jede Übergabe ist belegt, auch Wochen später noch.']]  /* tiefe:transport */, bloecke:[['Die Rückfahrt entscheidet die Rechnung','Eine Tour rechnet sich über beide Richtungen. samoTransport zeigt Fracht entlang der Strecke, die ohnehin gefahren wird — statt Telefonkette eine Liste passender Aufträge mit Ladung, Terminen und Übergabeorten. Wer regelmäßig fährt, baut sich feste Routen auf, auf denen das System von selbst vorschlägt, was dazu passt.','i-trans'],['Jede Übergabe hält vor Gericht','Solange alles gut geht, interessiert die Dokumentation niemanden. Wichtig wird sie, wenn Wochen später jemand behauptet, eine Ladung sei beschädigt oder nie angekommen. Deshalb gehört zu jeder Übergabe die Unterschrift des Empfängers, ein Foto der Ware und der Zeitstempel mit Ort — automatisch im Vorgang abgelegt, nicht in einer Fototasche im Handschuhfach.','i-doku']], fragen:[['Für welche Strecken lohnt sich das?','Überall dort, wo Vermittlung heute über Anrufe läuft. Gestartet sind wir zwischen Deutschland und Südosteuropa; das System selbst ist streckenneutral.'],['Was braucht der Fahrer unterwegs?','Ein Android-Telefon. Aufträge, Navigation zur Übergabe und die Empfangsbestätigung laufen darauf — ohne Papier im Führerhaus.'],['Sehen Auftraggeber unsere Preise?','Nein. Konditionen bleiben zwischen den Beteiligten des jeweiligen Auftrags; das System macht Angebote sichtbar, nicht Ihre Kalkulation.']]},
 
     vertrieb: { ober:'Produkte', oberZiel:'produkte', marke:['samo','Vertrieb','--c-vertrieb'], bild:'i-talk',
       titel:'Außendienst, der beim Kunden ist statt am Schreibtisch',
@@ -97,7 +97,7 @@
               ['Gesprächsleitfaden','Vorbereitung auf den Termin: Was lief zuletzt, was steht an.']],
       alltag:[['Mehr Termine pro Tag','Kürzere Wege bedeuten einen Kunden mehr, ohne länger zu arbeiten.'],
               ['Berichte kommen wirklich an','Weil sie zwei Minuten dauern statt zwanzig.'],
-              ['Nichts geht verloren','Jede Zusage steht beim Kunden, nicht im Notizbuch.']] },
+              ['Nichts geht verloren','Jede Zusage steht beim Kunden, nicht im Notizbuch.']]  /* tiefe:vertrieb */, bloecke:[['Der Tag plant sich nach Straße, nicht nach Luftlinie','Zwei Kunden können auf der Karte nah beieinander liegen und trotzdem vierzig Minuten auseinander. samoVertrieb rechnet mit echten Fahrzeiten und schlägt die Reihenfolge vor, die tatsächlich funktioniert. Wer fällig ist, rückt nach vorn; wer überfällig ist, fällt auf. Am Ende des Tages steht ein Termin mehr im Kalender, ohne dass jemand länger unterwegs war.','i-buero'],['Der Bericht entsteht, solange der Termin frisch ist','Nach dem Gespräch zwei Sätze ins Telefon: was besprochen wurde, was zugesagt ist, wann nachgefasst wird. Daraus wird ein strukturierter Bericht beim Kunden — nicht im Notizbuch, nicht im Kopf. Vor dem nächsten Termin liegt die ganze Historie griffbereit: letzte Themen, offene Zusagen, wunde Punkte. Vertretung wird damit vom Blindflug zum Weiterspielen.','i-laptops']], fragen:[['Funktioniert das Diktieren auch bei Dialekt und Fachbegriffen?','Ja — und was das System nicht sauber versteht, bleibt als Rohtext erhalten und lässt sich in Sekunden korrigieren. Nichts geht verloren.'],['Können wir unsere Kundenliste importieren?','Ja, aus Tabellen oder dem Export Ihres bisherigen Systems, inklusive Adressen und Ansprechpartnern. Die Zuordnung prüfen wir gemeinsam bei der Einrichtung.'],['Sieht die Leitung, wo die Mitarbeiter gerade sind?','Nein. Geplant und ausgewertet werden Besuche und Berichte, keine Bewegungsprofile. Das schützt das Vertrauen im Team — und Sie rechtlich.']]},
 
     chat: { ober:'Produkte', oberZiel:'produkte', marke:['samo','Chat','--c-chat'], bild:'i-chat',
       titel:'Aus der Nachricht wird ein Vorgang',
@@ -110,7 +110,7 @@
               ['Anbindung an den Auftrag','Die Anfrage hängt am Vorgang, nicht daneben.']],
       alltag:[['Nichts geht unter','Auch die Nachricht um 22 Uhr ist am Morgen ein Vorgang.'],
               ['Kürzere Antwortzeiten','Weil niemand erst den Verlauf durchscrollen muss.'],
-              ['Vertretung wird einfach','Wer einspringt, sieht sofort den Stand.']] },
+              ['Vertretung wird einfach','Wer einspringt, sieht sofort den Stand.']]  /* tiefe:chat */, bloecke:[['Ein Posteingang für alles, was Kunden schreiben','WhatsApp, E-Mail, Formular, bald auch der Anruf über den Sprachdialog: samoChat führt alle Kanäle in einem Posteingang zusammen. Jede Nachricht wird ein Vorgang mit Nummer und Zuständigkeit — zuweisbar, wiederauffindbar, abschließbar. Der Verlauf bleibt beim Kunden, nicht auf dem Handy eines Mitarbeiters, der gerade im Urlaub ist.','i-kontakt'],['Das System schlägt vor, ein Mensch entscheidet','Für wiederkehrende Anliegen formuliert samoChat Antwortvorschläge aus Ihren eigenen Informationen: Öffnungszeiten, Preise, Terminlagen, Auftragsstatus. Der Mitarbeiter prüft, passt an, schickt ab — oder lässt Routinefälle nach Freigabe automatisch beantworten. So sinkt die Antwortzeit, ohne dass ein Roboter Ihre Kundenbeziehung führt.','i-schulung']], fragen:[['Brauchen wir eine eigene WhatsApp-Nummer?','Ja, eine geschäftliche Nummer über die offizielle Schnittstelle — wir richten sie mit Ihnen ein. Ihre private Nummer bleibt privat.'],['Was passiert nachts und am Wochenende?','Anfragen laufen auf und werden zu Vorgängen; auf Wunsch bestätigt das System den Eingang und nennt die Geschäftszeiten. Am Morgen ist nichts verloren.'],['Können mehrere Mitarbeiter gleichzeitig antworten?','Ja. Vorgänge lassen sich zuweisen, übernehmen und übergeben — wer antwortet, ist am Vorgang sichtbar. Doppelantworten gehören damit der Vergangenheit an.']]},
 
     plan: { ober:'Produkte', oberZiel:'produkte', marke:['samo','Plan','--c-plan'], bild:'i-p-plan',
       titel:'Aufmaß und Projektplanung für die Gebäudetechnik',
@@ -123,7 +123,7 @@
               ['Übergabe an die Abrechnung','Was gemessen wurde, steht in der Rechnung.']],
       alltag:[['Keine doppelte Erfassung','Einmal aufnehmen genügt.'],
               ['Weniger Nachträge','Weil Maße belegt sind statt geschätzt.'],
-              ['Schnellere Angebote','Das Angebot folgt dem Termin am selben Tag.']] },
+              ['Schnellere Angebote','Das Angebot folgt dem Termin am selben Tag.']]  /* tiefe:plan */, bloecke:[['Vom Aufmaß zur Position ohne Zwischenschritt','Auf der Baustelle zählt, dass die Erfassung dort passiert, wo gemessen wird: Maß, Foto, Bemerkung — direkt am Objekt, dem Raum und der Position zugeordnet. Im Büro liegt das Aufmaß dann nicht als Zettel, sondern als Datensatz, aus dem Positionen und Mengen entstehen. Der klassische Fehler — falsch abgelesen, falsch übertragen — hat schlicht keinen Platz mehr, an dem er passieren könnte.','i-team'],['Nachträge, über die niemand streitet','Der teuerste Streit im Projektgeschäft ist der über Mengen. samoPlan legt zu jedem Maß das Foto und den Zeitpunkt ab; was abgerechnet wird, ist belegt statt geschätzt. Ändert sich das Projekt, entsteht der Nachtrag aus dem dokumentierten Bestand — nachvollziehbar für Sie, Ihren Auftraggeber und im Zweifel für Dritte.','i-papier']], fragen:[['Funktioniert die Erfassung auch ohne Netz im Keller?','Ja. Vor Ort wird lokal erfasst und abgeglichen, sobald wieder Verbindung besteht. Kein Maß hängt am Empfang.'],['Können wir unsere Positionsvorlagen weiterverwenden?','Ja, bestehende Leistungsverzeichnisse und Vorlagen lassen sich übernehmen und als Bausteine wiederverwenden.'],['Für welche Betriebsgröße ist das gedacht?','Vom Zwei-Mann-Betrieb bis zum Projektteam. Klein gestartet wächst das System mit — es ist dieselbe Grundlage wie bei unseren übrigen Produkten.']]},
 
     terminal: { ober:'Produkte', oberZiel:'produkte', marke:['samo','Terminal','--c-term'], bild:'i-n3',
       titel:'Zeiterfassung per Karte am Tablet',
@@ -136,9 +136,9 @@
               ['Mehrere Standorte','Ein Terminal je Eingang, eine Auswertung für alles.']],
       alltag:[['Ende der Stundenzettel','Die Erfassung passiert im Vorbeigehen.'],
               ['Weniger Streit','Die Zeiten stehen fest, nachvollziehbar für beide Seiten.'],
-              ['Kein privates Handy nötig','Das nimmt der Belegschaft eine berechtigte Sorge.']] },
+              ['Kein privates Handy nötig','Das nimmt der Belegschaft eine berechtigte Sorge.']]  /* tiefe:terminal */, bloecke:[['Ein Terminal, das nur seine Aufgabe kennt','Das Tablet am Eingang läuft im gesperrten Modus: Es startet in die Zeiterfassung und lässt sich nicht verlassen — kein Browser, keine Spiele, keine versehentlich verstellten Einstellungen. Karte auflegen, kommen oder gehen, fertig. Auch nach einem Stromausfall startet das Gerät wieder in genau diesen Zustand.','i-n3'],['Auswertung, der beide Seiten trauen','Zeiten, die sekundengenau und automatisch entstehen, ersparen die unangenehmste Diskussion im Betrieb. Mitarbeitende sehen ihre eigenen Stunden, die Leitung sieht Summen, Pausen und Überstunden — exportierbar für die Lohnabrechnung. Und weil keine App auf privaten Telefonen nötig ist, gibt es auch keine Debatte über Dienstliches auf dem eigenen Gerät.','i-runde']], fragen:[['Was kostet ein zusätzlicher Standort?','Ein weiteres Tablet und Karten für das Team — die Auswertung läuft für alle Standorte zusammen, gesteuert wird je Standort.'],['Was ist, wenn jemand seine Karte vergisst?','Die Leitung kann Zeiten nachtragen; der Nachtrag ist als solcher gekennzeichnet. So bleibt die Auswertung ehrlich.'],['Erfüllt das die Pflicht zur Arbeitszeiterfassung?','Die Erfassung ist systematisch, manipulationsgeschützt und je Person auswertbar — genau das verlangt die Rechtsprechung. Die konkrete Ausgestaltung stimmen Sie mit Ihrer Lohnstelle ab.']]},
 
-    werkstatt: { ober:'Lösungen', oberZiel:'loesungen', produkt:'rad', bild:'i-p-rad',
+    werkstatt: { /* hub:werkstatt */ ph2:'Lösungen für Ihre Werkstatt', spalten:[['Nehmen Sie Aufträge an, statt Zettel zu stapeln','Annahme am Tresen mit Foto, Etikett und Termin in einem Durchgang — während der Kunde noch dasteht. Was sauber erfasst ist, muss später niemand entziffern.'],['Kassieren Sie prüfungsfest','Die zertifizierte Kassensicherung signiert jede Buchung, der Tagesabschluss entsteht von selbst. Bar, Karte oder Zahlungslink über Stripe — alles im selben Abschluss.'],['Behalten Sie Lager und Zahlen im Blick','Teile buchen sich beim Verbau ab, die Nachbestellliste füllt sich von selbst. Mehr als 1.500 Aufträge liefen so bereits durch unsere Systeme.']], portfolio:['rad','terminal','chat'], ober:'Lösungen', oberZiel:'loesungen', produkt:'rad', bild:'i-p-rad',
       titel:'Werkstatt und Handel',
       intro:'Ein System für Annahme, Werkstatt, Kasse und Lager, statt drei Programme, die nichts voneinander wissen.',
       h2:'Gebaut für Betriebe, die reparieren',
@@ -151,7 +151,7 @@
               ['Der Tresen wird schneller','Annahme in zwei Minuten statt zehn.'],
               ['Der Arbeitstag endet früher','Der Kassenabschluss entsteht nebenbei.']] },
 
-    gastro: { ober:'Lösungen', oberZiel:'loesungen', produkt:'order', bild:'i-gastro',
+    gastro: { /* hub:gastro */ ph2:'Lösungen für Ihre Gastronomie', spalten:[['Lassen Sie Gäste bestellen, wenn sie so weit sind','Code am Tisch scannen, Karte im Browser, keine App. Das Personal serviert, statt aufzunehmen — gerade am vollen Samstagabend.'],['Kassieren Sie an einem Ort','Die Theke führt alle Tische, bar und Karte laufen im selben Abschluss zusammen. Die Kassensicherung signiert jede Buchung automatisch.'],['Ändern Sie die Karte in Minuten','Preise, Tagesangebote, Ausverkauftes: sofort an jedem Tisch aktuell. Kein Neudruck, keine Zettel über der alten Karte.']], portfolio:['order','terminal','chat'], ober:'Lösungen', oberZiel:'loesungen', produkt:'order', bild:'i-gastro',
       titel:'Gastronomie',
       intro:'Bestellung am Tisch per QR-Code, Übersicht an der Theke, Abrechnung ohne Papierablage.',
       h2:'Weniger laufen, mehr servieren',
@@ -164,7 +164,7 @@
               ['Höherer Bon','Wer in Ruhe liest, bestellt eher nach.'],
               ['Weniger Fehler','Was der Gast tippt, muss niemand verstehen.']] },
 
-    logistik: { ober:'Lösungen', oberZiel:'loesungen', produkt:'transport', bild:'i-trans',
+    logistik: { /* hub:logistik */ ph2:'Lösungen für Transport und Logistik', spalten:[['Füllen Sie die Rückfahrt','Fracht entlang der Strecke, die ohnehin gefahren wird — als Liste passender Aufträge statt einer Telefonkette. Die Tour rechnet sich über beide Richtungen.'],['Dokumentieren Sie jede Übergabe','Unterschrift des Empfängers, Foto der Ware, Zeitstempel mit Ort — automatisch im Vorgang. Wenn Wochen später jemand reklamiert, liegt alles vor.'],['Bleiben Sie erreichbar, ohne am Telefon zu hängen','Anfragen aus WhatsApp und E-Mail werden Vorgänge mit Nummer und Zuständigkeit. Nichts versandet im Postfach eines Einzelnen.']], portfolio:['transport','chat','terminal'], ober:'Lösungen', oberZiel:'loesungen', produkt:'transport', bild:'i-trans',
       titel:'Transport und Logistik',
       intro:'Frachtaufträge finden, Touren planen, Sendungen bis zur Übergabe verfolgen.',
       h2:'Für Strecken, die bisher kaum digitalisiert sind',
@@ -177,7 +177,7 @@
               ['Weniger Telefonate','Statusfragen beantwortet das System.'],
               ['Sicherer Nachweis','Auch Wochen später noch nachvollziehbar.']] },
 
-    aussendienst: { ober:'Lösungen', oberZiel:'loesungen', produkt:'vertrieb', bild:'i-talk',
+    aussendienst: { /* hub:aussendienst */ ph2:'Lösungen für Ihren Außendienst', spalten:[['Planen Sie nach echten Fahrzeiten','Die Tagesroute entsteht aus Straße und Fälligkeit, nicht aus Luftlinie. Ein Termin mehr am Tag, ohne länger unterwegs zu sein.'],['Berichten Sie, solange es frisch ist','Zwei diktierte Sätze nach dem Termin werden ein strukturierter Bericht beim Kunden. Nichts bleibt im Notizbuch oder im Kopf.'],['Bereiten Sie jeden Termin in zwei Minuten vor','Letzte Themen, offene Zusagen, wunde Punkte — die ganze Historie liegt griffbereit. Vertretung wird vom Blindflug zum Weiterspielen.']], portfolio:['vertrieb','chat','plan'], ober:'Lösungen', oberZiel:'loesungen', produkt:'vertrieb', bild:'i-talk',
       titel:'Außendienst',
       intro:'Besuche planen, Routen optimieren, Berichte diktieren statt tippen.',
       h2:'Die Arbeit passiert beim Kunden, nicht danach',
@@ -190,7 +190,7 @@
               ['Berichte kommen an','Weil sie zwei Minuten dauern.'],
               ['Zusagen gehen nicht verloren','Sie stehen beim Kunden, nicht im Notizbuch.']] },
 
-    auftrag: { ober:'Lösungen', oberZiel:'loesungen', bild:'i-hero',
+    auftrag: { /* hub:auftrag */ ph2:'Lösungen rund um den Auftrag', spalten:[['Erfassen Sie am Ort des Geschehens','Am Tresen, auf der Baustelle, im Fahrzeug — der Auftrag entsteht dort, wo er passiert, mit Foto und Zuordnung. Übertragen muss ihn niemand mehr.'],['Verfolgen Sie jeden Stand','Vom Eingang über die Bearbeitung bis zur Abholung: Jeder im Team sieht denselben Stand, der Kunde wird automatisch benachrichtigt.'],['Rechnen Sie ab, was belegt ist','Positionen entstehen aus dem Vorgang, nicht aus dem Gedächtnis. Was auf der Rechnung steht, ist dokumentiert — bis zum Foto.']], portfolio:['rad','plan','vertrieb'], ober:'Lösungen', oberZiel:'loesungen', bild:'i-hero',
       titel:'Auftrag und Planung',
       intro:'Von der Annahme bis zum Abschluss, mit einer Auslastung, die man sieht, bevor der Termin platzt.',
       h2:'Ein Auftrag, ein Weg',
@@ -203,7 +203,7 @@
               ['Kein Übertragen','Einmal erfasst genügt.'],
               ['Verlässliche Auskunft','Jeder im Team kann Auskunft geben.']] },
 
-    kasse: { ober:'Lösungen', oberZiel:'loesungen', bild:'i-n1',
+    kasse: { /* hub:kasse */ ph2:'Lösungen rund um Kasse und Zahlung', spalten:[['Kassieren Sie auf jedem Weg','Bar, Karte am Gerät, Zahlungslink in der Rechnung — die Abwicklung läuft über Stripe, das Geld fließt direkt auf Ihr Konto. Ohne eigenen Bankenvertrag.'],['Bleiben Sie prüfungsfest','Die zertifizierte technische Sicherungseinrichtung signiert jede Buchung. Die Exporte für die Prüfung liegen bereit, bevor jemand danach fragt.'],['Schließen Sie ab, ohne zu rechnen','Der Tagesabschluss entsteht aus den Buchungen — Kasse und Kartenzahlung waren nie getrennt, also muss sie auch niemand abgleichen.']], portfolio:['rad','order','terminal'], ober:'Lösungen', oberZiel:'loesungen', bild:'i-n1',
       titel:'Kasse und Zahlung',
       intro:'Zertifizierte TSE-Kasse, Kartenzahlung ohne zweites Gerät, Rechnung per QR-Code.',
       h2:'Eine Kasse, ein Tagesabschluss',
@@ -214,9 +214,9 @@
               ['Tagesabschluss automatisch','Entsteht aus den Vorgängen, nicht aus Handarbeit.']],
       alltag:[['Ein Vertrag weniger','Kein separates Terminal, kein zweiter Abschluss.'],
               ['Weniger Rückstände','Weil Zahlen so einfach ist wie Scannen.'],
-              ['Ruhe bei der Prüfung','Die Belege sind lückenlos und signiert.']] },
+              ['Ruhe bei der Prüfung','Die Belege sind lückenlos und signiert.']]  /* tiefe:kasse */, bloecke:[['Zahlungsabwicklung über Stripe','Kassieren Sie, wie Ihre Kunden zahlen wollen: Karte am Gerät, kontaktlos, Zahlungslink in der Rechnung. Die Abwicklung läuft über Stripe, einen der größten Zahlungsabwickler weltweit — das Geld fließt direkt auf Ihr Konto, ohne dass Sie einen eigenen Vertrag mit einer Bank verhandeln müssen. Wir richten alles ein, der Betrag kommt aus dem Vorgang, und der Tagesabschluss stimmt, weil Kasse und Kartenzahlung nie getrennt waren.','i-n1']]},
 
-    kunde: { ober:'Lösungen', oberZiel:'loesungen', bild:'i-kontakt',
+    kunde: { /* hub:kunde */ ph2:'Lösungen rund um Ihre Kunden', spalten:[['Antworten Sie schneller, als man erwartet','Anfragen aus allen Kanälen landen in einem Posteingang, Antwortvorschläge entstehen aus Ihren eigenen Informationen. Ein Mensch entscheidet, das System beschleunigt.'],['Kennen Sie jeden Verlauf','Der Gesprächsverlauf bleibt beim Kunden, nicht auf dem Handy eines Mitarbeiters. Wer übernimmt, liest sich in Minuten ein.'],['Melden Sie sich von selbst','Ihr Auftrag ist fertig, Ihr Termin steht, Ihre Ware ist da — Statusmeldungen gehen automatisch raus, per Nachricht oder E-Mail.']], portfolio:['chat','vertrieb','order'], ober:'Lösungen', oberZiel:'loesungen', bild:'i-kontakt',
       titel:'Kunde und Kontakt',
       intro:'Automatische Benachrichtigung, Anfragen als Vorgang, Termine online buchbar.',
       h2:'Der Kontakt landet, wo der Auftrag schon liegt',
@@ -229,7 +229,7 @@
               ['Nichts geht unter','Auch die Nachricht spätabends wird zum Vorgang.'],
               ['Vertretung ohne Einarbeitung','Der Stand ist sichtbar, nicht im Kopf eines Einzelnen.']] },
 
-    auswertung: { ober:'Lösungen', oberZiel:'loesungen', bild:'i-team',
+    auswertung: { /* hub:auswertung */ ph2:'Lösungen rund um Zahlen und Berichte', spalten:[['Sehen Sie den Tag auf einen Blick','Umsatz, offene Aufträge, Auslastung — nicht als Excel-Bastelei am Abend, sondern live aus dem laufenden Betrieb.'],['Vergleichen Sie, was zählt','Zeiträume, Standorte, Leistungen: Die Auswertung zeigt, womit Sie Geld verdienen und wo es versickert.'],['Exportieren Sie ohne Nacharbeit','Lohnliste, Kassendaten, Umsatzübersicht — die Exporte passen zu dem, was Lohnstelle und Prüfung erwarten.']], portfolio:['rad','vertrieb','terminal'], ober:'Lösungen', oberZiel:'loesungen', bild:'i-team',
       titel:'Auswertung',
       intro:'Tagesbericht ohne Nacharbeit, mehrere Standorte in einer Sicht, sauberer Export.',
       h2:'Zahlen, die nebenbei entstehen',
@@ -242,7 +242,7 @@
               ['Entscheidungen auf Basis','Statt Bauchgefühl ein Verlauf.'],
               ['Weniger Rückfragen vom Steuerbüro','Weil der Export stimmt.']] },
 
-    retail: { ober:'Branchen', oberZiel:'loesungen', produkt:'rad', bild:'i-p-rad',
+    retail: { /* hub:retail */ ph2:'Lösungen für Retail und Handel', spalten:[['Verbinden Sie Tresen, Werkstatt und Lager','Verkauf, Service und Bestand laufen in einem System — kein Abtippen zwischen Kasse und Warenwirtschaft, kein doppelter Kundenstamm.'],['Kassieren Sie, wie Ihre Kunden zahlen','Bar, kontaktlos, Zahlungslink — abgewickelt über Stripe, signiert von der Kassensicherung. Der Abschluss stimmt am ersten Tag.'],['Binden Sie Kunden über den Kauf hinaus','Servicetermine, Statusmeldungen, Historie am Kunden: Wer einmal gekauft hat, hat einen Grund wiederzukommen.']], portfolio:['rad','terminal','chat'], ober:'Branchen', oberZiel:'loesungen', produkt:'rad', bild:'i-p-rad',
       titel:'Retail & Marketplaces',
       intro:'Für Fachhandel und Werkstattbetriebe, die verkaufen, reparieren und online sichtbar sein wollen.',
       h2:'Handel und Service aus einem System',
@@ -255,7 +255,7 @@
               ['Weniger Doppelpflege','Artikel und Kunden werden einmal erfasst.'],
               ['Kunden finden Sie online','Und buchen Termine, ohne anzurufen.']] },
 
-    hospitality: { ober:'Branchen', oberZiel:'loesungen', produkt:'order', bild:'i-p-order',
+    hospitality: { /* hub:hospitality */ ph2:'Lösungen für Gastgeber', spalten:[['Verkürzen Sie den Weg zur Bestellung','Vom Platz aus bestellen, ohne zu warten und ohne App. Der Umsatz pro Tisch steigt, weil die zweite Runde nicht am Winken scheitert.'],['Entlasten Sie Ihr Team in der Stoßzeit','Bestellungen sammeln sich geordnet statt an der Theke. Das Personal serviert — die Reihenfolge hält das System.'],['Führen Sie alle Umsätze zusammen','Tische, Theke, Kartenzahlung: ein Abschluss, prüfungsfest signiert. Der Abend endet nicht mit einer Rechenstunde.']], portfolio:['order','terminal','chat'], ober:'Branchen', oberZiel:'loesungen', produkt:'order', bild:'i-p-order',
       titel:'Hospitality & Food Service',
       intro:'Für Bars, Cafés, Lounges und Restaurants, in denen der Weg zum Tisch der Engpass ist.',
       h2:'Der Gast bestellt, die Theke behält den Überblick',
@@ -268,7 +268,7 @@
               ['Höherer Bon','Wer in Ruhe liest, bestellt eher nach.'],
               ['Weniger Fehler','Was der Gast tippt, muss niemand entziffern.']] },
 
-    mobility: { ober:'Branchen', oberZiel:'loesungen', produkt:'transport', bild:'i-p-trans',
+    mobility: { /* hub:mobility */ ph2:'Lösungen für Mobilität und Transport', spalten:[['Planen Sie Touren, die sich rechnen','Echte Fahrzeiten statt Luftlinie, Fracht entlang der Strecke statt Leerkilometer. Die Marge entsteht in der Planung.'],['Belegen Sie jede Übergabe','Unterschrift, Foto, Zeitstempel — automatisch dokumentiert. Reklamationen werden Nachschlagen statt Streit.'],['Steuern Sie das Team unterwegs','Aufträge, Status und Rückfragen laufen aufs Gerät im Fahrzeug. Das Büro sieht den Stand, ohne hinterherzutelefonieren.']], portfolio:['transport','vertrieb','terminal'], ober:'Branchen', oberZiel:'loesungen', produkt:'transport', bild:'i-p-trans',
       titel:'Transport & Mobility',
       intro:'Für Speditionen und Fahrer auf Strecken, die bislang über Telefonketten organisiert werden.',
       h2:'Ladung und Route finden zusammen',
@@ -281,7 +281,7 @@
               ['Weniger Telefonate','Statusfragen beantwortet das System.'],
               ['Nachweis, der hält','Auch Wochen später noch belegbar.']] },
 
-    selfservice: { ober:'Branchen', oberZiel:'loesungen', produkt:'terminal', bild:'i-n3',
+    selfservice: { /* hub:selfservice */ ph2:'Lösungen für Selbstbedienung', spalten:[['Lassen Sie Kunden selbst starten','Bestellung per Code, Terminal am Eingang, Karte statt Schlange. Ihr Angebot funktioniert auch, wenn gerade niemand am Tresen steht.'],['Halten Sie die Geräte im Zaum','Terminals laufen im gesperrten Modus und starten nach Stromausfall wieder in genau diesen Zustand. Gewartet wird aus der Ferne.'],['Kassieren Sie ohne Personal am Gerät','Kartenzahlung direkt am Terminal, abgewickelt über Stripe, signiert von der Kassensicherung. Der Umsatz läuft in denselben Abschluss wie alles andere.']], portfolio:['order','terminal','chat'], ober:'Branchen', oberZiel:'loesungen', produkt:'terminal', bild:'i-n3',
       titel:'Self-Service & Kiosk',
       intro:'Für Abläufe, die ohne Personal funktionieren sollen: Terminals, Selbstbestellung, Zeiterfassung.',
       h2:'Geräte, die für sich arbeiten',
@@ -294,7 +294,7 @@
               ['Saubere Zeiten','Sekundengenau, nachvollziehbar für beide Seiten.'],
               ['Keine Diskussionen','Das Terminal kennt nur seine Aufgabe.']] },
 
-    fieldsales: { ober:'Branchen', oberZiel:'loesungen', produkt:'vertrieb', bild:'i-talk',
+    fieldsales: { /* hub:fieldsales */ ph2:'Lösungen für den Vertrieb im Feld', spalten:[['Machen Sie aus Fahrzeit Besuchszeit','Die Route entsteht aus Fälligkeit und Straße. Wer heute dran ist, steht vorn — wer überfällig ist, fällt auf.'],['Halten Sie fest, was besprochen wurde','Diktat nach dem Termin, strukturierter Bericht beim Kunden. Die Historie gehört dem Betrieb, nicht dem Notizbuch.'],['Fassen Sie nach, bevor es kalt wird','Zusagen werden Wiedervorlagen, Wiedervorlagen werden Termine. Kein Interessent geht verloren, weil der Zettel weg ist.']], portfolio:['vertrieb','chat','plan'], ober:'Branchen', oberZiel:'loesungen', produkt:'vertrieb', bild:'i-talk',
       titel:'Field Sales & Service',
       intro:'Für Teams, die beim Kunden arbeiten: Besuche, Routen, Berichte und Zusagen im Griff.',
       h2:'Die Arbeit passiert draußen — die Ordnung fährt mit',
@@ -307,7 +307,7 @@
               ['Berichte kommen an','Weil sie zwei Minuten dauern.'],
               ['Vertretbar im Urlaub','Der Stand steht beim Kunden, nicht im Kopf.']] },
 
-    building: { ober:'Branchen', oberZiel:'loesungen', produkt:'plan', bild:'i-p-plan',
+    building: { /* hub:building */ ph2:'Lösungen für Bau und Handwerk', spalten:[['Messen Sie einmal, nutzen Sie es überall','Aufmaß mit Foto direkt am Objekt — daraus entstehen Positionen und Mengen. Der Übertragungsfehler hat keinen Platz mehr, an dem er passieren könnte.'],['Belegen Sie Nachträge, statt zu verhandeln','Zu jedem Maß liegen Foto und Zeitpunkt im Vorgang. Was abgerechnet wird, ist dokumentiert statt geschätzt.'],['Erfassen Sie Zeiten dort, wo gearbeitet wird','Kommen und Gehen am Terminal, sekundengenau und auswertbar je Baustelle. Die Lohnabrechnung bekommt Daten statt Diskussionen.']], portfolio:['plan','terminal','chat'], ober:'Branchen', oberZiel:'loesungen', produkt:'plan', bild:'i-p-plan',
       titel:'Building Technology',
       intro:'Für Betriebe der technischen Gebäudeausrüstung: Aufmaß, Positionen und Projekt in einer Linie.',
       h2:'Vom Aufmaß zur Abrechnung ohne Medienbruch',
@@ -320,7 +320,7 @@
               ['Schnellere Angebote','Das Angebot folgt dem Termin am selben Tag.'],
               ['Weniger Streit ums Maß','Weil jedes Maß ein Foto hat.']] },
 
-    engagement: { ober:'Branchen', oberZiel:'loesungen', produkt:'chat', bild:'i-chat',
+    engagement: { /* hub:engagement */ ph2:'Lösungen für Kundenkontakt und Bindung', spalten:[['Seien Sie erreichbar, wo Ihre Kunden schreiben','WhatsApp, E-Mail, Formular — ein Posteingang, ein Verlauf je Kunde. Keine Anfrage hängt vom Diensthandy eines Einzelnen ab.'],['Antworten Sie mit System','Vorschläge aus Ihren eigenen Informationen, geprüft von einem Menschen. Routinefälle laufen nach Freigabe automatisch.'],['Machen Sie aus Anfragen Aufträge','Aus dem Gespräch wird ein Vorgang, aus dem Vorgang ein Termin oder eine Bestellung. Der Übergang passiert im selben System — ohne Medienbruch.']], portfolio:['chat','vertrieb','order'], ober:'Branchen', oberZiel:'loesungen', produkt:'chat', bild:'i-chat',
       titel:'Omnichannel Customer Engagement',
       intro:'Kundenkontakt über alle Kanäle — WhatsApp, Telefon, E-Mail und Web laufen in einem Posteingang zusammen.',
       h2:'Alle Kanäle, ein Vorgang',
@@ -900,18 +900,61 @@
       return '<div class="card"><div class="cb"><h3>' + x[0] + '</h3><p>' + x[1] + '</p></div></div>';
     }).join('');
 
+    // Nutzen-Spalten (Hub-Muster)
+    var nutzen = document.getElementById('d-nutzen');
+    if (d.spalten && d.spalten.length) {
+      document.getElementById('d-spalten').innerHTML = d.spalten.map(function(s){
+        return '<div class="q" style="border-top-color:var(--accent)"><h4>' + s[0] +
+               '</h4><p style="color:var(--mid)">' + s[1] + '</p></div>';
+      }).join('');
+      nutzen.hidden = false;
+    } else { nutzen.hidden = true; }
+
+    // Portfolio: Kacheln in die Produktebene
+    var pfEl = document.getElementById('d-portfolio');
+    if (d.portfolio && d.portfolio.length) {
+      document.getElementById('d-portfolio-h').textContent = d.ph2 || 'Unsere Lösungen dafür';
+      document.getElementById('d-portfolio-kacheln').innerHTML = d.portfolio.map(function(k){
+        for (var i = 0; i < PRODUKTE.length; i++) if (PRODUKTE[i][6] === k) return produktKarte(PRODUKTE[i], true);
+        return '';
+      }).join('');
+      pfEl.hidden = false;
+    } else { pfEl.hidden = true; }
+
+    // Themenblöcke im Wechsellayout
+    var tiefe = document.getElementById('d-tiefe');
+    if (d.bloecke && d.bloecke.length) {
+      document.getElementById('d-bloecke').innerHTML = d.bloecke.map(function(b, i){
+        var bildErst = i % 2 === 1;
+        var bild = '<div class="imgset"><span class="sq sq-1"></span><span class="sq sq-2"></span><div class="ph ' + b[2] + '"></div></div>';
+        var text = '<div><h2 style="font-size:clamp(24px,2.6vw,34px)">' + b[0] + '</h2><p class="sub" style="margin-top:16px">' + b[1] + '</p></div>';
+        return '<div class="split rv" style="margin-bottom:64px">' + (bildErst ? bild + text : text + bild) + '</div>';
+      }).join('');
+      tiefe.hidden = false;
+    } else { tiefe.hidden = true; }
+
+    // Häufige Fragen
+    var faq = document.getElementById('d-faq');
+    if (d.fragen && d.fragen.length) {
+      document.getElementById('d-fragen').innerHTML = d.fragen.map(function(f, i){
+        return '<details' + (i === 0 ? ' open' : '') + '><summary>' + f[0] + '</summary><p>' + f[1] + '</p></details>';
+      }).join('');
+      faq.hidden = false;
+    } else { faq.hidden = true; }
+
     var name = d.marke ? d.marke[0] + d.marke[1] : d.titel;
     document.getElementById('d-formtitel').textContent = 'Passt ' + name + ' zu Ihrem Betrieb?';
     document.getElementById('d-vorbelegt').textContent = name;
 
     // Verwandte Inhalte aus derselben Rubrik
+    var imPortfolio = function(k){ return d.portfolio && d.portfolio.indexOf(k) !== -1; };
     var verwandt = Object.keys(DETAIL).filter(function(k){
-      return k !== schluessel && DETAIL[k].ober === d.ober;
+      return k !== schluessel && DETAIL[k].ober === d.ober && !imPortfolio(k);
     }).slice(0, 4);
-    if (d.produkt) verwandt = [d.produkt].concat(verwandt.filter(function(k){ return k !== d.produkt; })).slice(0, 4);
+    if (d.produkt && !imPortfolio(d.produkt)) verwandt = [d.produkt].concat(verwandt.filter(function(k){ return k !== d.produkt; })).slice(0, 4);
     if (verwandt.length < 4) {
       verwandt = verwandt.concat(Object.keys(DETAIL).filter(function(k){
-        return k !== schluessel && verwandt.indexOf(k) === -1;
+        return k !== schluessel && verwandt.indexOf(k) === -1 && !imPortfolio(k);
       }).slice(0, 4 - verwandt.length));
     }
     document.getElementById('d-verwandt').innerHTML = verwandt.map(function(k){
