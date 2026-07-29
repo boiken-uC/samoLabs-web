@@ -34,6 +34,15 @@
       '<span class="more">Mehr erfahren →</span></div></a>';
   }
   document.getElementById('prod-alle').innerHTML  = PRODUKTE.map(function(x){ return produktKarte(x, true); }).join('');
+  // Startseite: dieselben Produktkacheln wie auf der Produktseite
+  var prodHeim = document.getElementById('prod-heim');
+  if (prodHeim) prodHeim.innerHTML =
+    PRODUKTE.map(function(x){ return produktKarte(x, true); }).join('') +
+    '<a class="card" href="#" data-go="modelle"><div class="cb">' +
+    '<h3>Nichts passt genau?</h3>' +
+    '<p>Dann bauen wir nach Maß — auf derselben Grundlage wie unsere Produkte, betrieben von uns.</p>' +
+    '<span class="more">Individualentwicklung →</span></div></a>';
+
   var prodStart = document.getElementById('prod-start');
   if (prodStart) prodStart.innerHTML =
     PRODUKTE.map(function(x){ return produktKarte(x, true); }).join('') +
