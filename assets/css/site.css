@@ -556,14 +556,14 @@
 
   /* ── Split ── */
   .split{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:center}
-  .split .ph{min-height:400px;border-radius:14px}
+  .split > .ph{min-height:400px;border-radius:14px}
   .quad{display:grid;grid-template-columns:1fr 1fr;gap:22px}
   .q{border-top:2px solid var(--mint);padding-top:15px}
   .q h4{font-size:17px;margin-bottom:6px}
   .q p{margin:0 0 9px;font-size:14.5px;color:var(--mid)}
   .sec-navy .q p{color:rgba(255,255,255,.7)}
   .sec-navy .more{color:var(--mint)}
-  @media(max-width:900px){.split{grid-template-columns:1fr;gap:32px}.quad{grid-template-columns:1fr}.split .ph{min-height:220px}}
+  @media(max-width:900px){.split{grid-template-columns:1fr;gap:32px}.quad{grid-template-columns:1fr}.split > .ph{min-height:220px}}
 
   /* ── Karussell ── */
   .rail{display:flex;gap:24px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory}
