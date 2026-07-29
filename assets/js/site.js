@@ -527,6 +527,26 @@
   })();
 
 
+  // ── Fallblattanzeige: Zahl als einzelne Ziffern-Kacheln rendern ──
+  // Jede Ziffer bekommt eine Kachel (.zk); Punkt und Plus stehen ohne
+  // Kachel dazwischen (.zt). Wird vom Zaehler pro Frame aufgerufen.
+  function setzeKachelZiffern(el, text){
+    var html = '', i, z;
+    for (i = 0; i < text.length; i++) {
+      z = text.charAt(i);
+      html += (z >= '0' && z <= '9')
+        ? '<span class="zk">' + z + '</span>'
+        : '<span class="zt">' + z + '</span>';
+    }
+    el.innerHTML = html;
+  }
+  // Startzustand: den vorhandenen Text sofort in Kacheln legen, damit
+  // die Anzeige auch vor bzw. ohne Zaehler-Animation Kacheln zeigt.
+  document.querySelectorAll('.zahl-kacheln').forEach(function(el){
+    setzeKachelZiffern(el, el.textContent.trim());
+  });
+
+
   // ── Oberflächentexte je Sprache ──
   // Fließtexte bleiben deutsch; darauf weist der Balken unter dem Kopf hin.
   var TEXTE = {
@@ -1019,12 +1039,20 @@
 
   // ── Mega-Menü ──
   var punkte = Array.prototype.slice.call(document.querySelectorAll('.mi'));
+  // Vorhang: dunkelt den Seitenrest ab, solange ein Menuepunkt offen ist
+  var menueVorhang = document.getElementById('menue-vorhang');
+  function vorhangSchalten(){
+    if (!menueVorhang) return;
+    var offen = punkte.some(function(p){ return p.classList.contains('open'); });
+    menueVorhang.classList.toggle('an', offen);
+  }
   function schliesseMenues(){
     punkte.forEach(function(p){
       p.classList.remove('open');
       p.querySelector('button').setAttribute('aria-expanded','false');
     });
     document.getElementById('menu').classList.remove('mob');
+    vorhangSchalten();
   }
   punkte.forEach(function(p){
     var b = p.querySelector('button');
@@ -1033,16 +1061,18 @@
       var offen = p.classList.contains('open');
       punkte.forEach(function(x){ x.classList.remove('open'); x.querySelector('button').setAttribute('aria-expanded','false'); });
       if (!offen) { p.classList.add('open'); b.setAttribute('aria-expanded','true'); }
+      vorhangSchalten();
     });
     p.addEventListener('mouseenter', function(){
       if (window.innerWidth <= 1080) return;
       clearTimeout(p._zu);
       punkte.forEach(function(x){ if (x !== p) { clearTimeout(x._zu); x.classList.remove('open'); } });
       p.classList.add('open');
+      vorhangSchalten();
     });
     p.addEventListener('mouseleave', function(){
       if (window.innerWidth <= 1080) return;
-      p._zu = setTimeout(function(){ p.classList.remove('open'); }, 320);
+      p._zu = setTimeout(function(){ p.classList.remove('open'); vorhangSchalten(); }, 320);
     });
   });
   document.addEventListener('click', schliesseMenues);
@@ -1063,7 +1093,12 @@
     var nums = sichtbar.querySelectorAll('[data-n]');
     if (reduced ||!('IntersectionObserver' in window)) {
       rv.forEach(function(e){ e.classList.add('in'); });
-      nums.forEach(function(e){ e.textContent = e.getAttribute('data-n'); });
+      nums.forEach(function(e){
+        var n = parseInt(e.getAttribute('data-n'), 10);
+        var text = n >= 1000 ? n.toLocaleString('de-DE') : e.getAttribute('data-n');
+        if (e.classList.contains('zahl-kacheln')) setzeKachelZiffern(e, text);
+        else e.textContent = text;
+      });
       return;
     }
     io = new IntersectionObserver(function(es){
@@ -1079,7 +1114,9 @@
         (function s(now){
           var p = Math.min((now - t0)/800, 1);
           var wert = Math.round(ziel * (1 - Math.pow(1-p,3)));
-          el.textContent = wert >= 1000 ? wert.toLocaleString('de-DE') : String(wert);
+          var text = wert >= 1000 ? wert.toLocaleString('de-DE') : String(wert);
+          if (el.classList.contains('zahl-kacheln')) setzeKachelZiffern(el, text);
+          else el.textContent = text;
           if (p < 1) requestAnimationFrame(s);
         })(t0);
       });
