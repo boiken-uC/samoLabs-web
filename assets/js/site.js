@@ -724,7 +724,8 @@
     at: ['Österreich', 'Deutsch', 'de'],
     pl: ['Polen', 'Polski', 'pl'],
     ba: ['Bosna i Hercegovina', 'Bosanski', 'bs'],
-    fi: ['Suomi', 'Suomeksi', 'fi']
+    fi: ['Suomi', 'Suomeksi', 'fi'],
+    en: ['International', 'English', 'en']
   };
   var HINWEIS = {
     pl: 'Ta strona jest obecnie dostępna tylko w języku niemieckim. Chętnie odpowiemy po polsku — napisz do nas.',
@@ -774,6 +775,7 @@
       k.setAttribute('aria-expanded', auf ? 'true' : 'false');
     });
     liste.addEventListener('click', function(e){
+      e.stopPropagation(); // Klick ins Panel (z. B. Suchfeld) darf es nicht schließen
       var b = e.target.closest('button');
       if (!b) return;
       anzeigen(b.getAttribute('data-land'));
@@ -1325,6 +1327,56 @@
       if (!mail) return;
       location.href = 'mailto:info@samolabs.de?subject=' + encodeURIComponent('Aufnahme in den Verteiler') +
         '&body=' + encodeURIComponent('Bitte nehmen Sie mich in den Verteiler auf.\n' + mail);
+    });
+  })();
+
+  // ── Servicezeile: Aufklapp-Menü "Über samoLabs" ──
+  (function(){
+    var menue = document.getElementById('ueber-menue');
+    if (!menue) return;
+    var knopf = document.getElementById('ueber-menue-knopf');
+    knopf.addEventListener('click', function(e){
+      e.stopPropagation();
+      var lw = document.getElementById('land-waehler');
+      if (lw) lw.classList.remove('auf');
+      var lk = document.getElementById('land-knopf');
+      if (lk) lk.setAttribute('aria-expanded', 'false');
+      var auf = menue.classList.toggle('auf');
+      knopf.setAttribute('aria-expanded', auf ? 'true' : 'false');
+    });
+    function zu(){ menue.classList.remove('auf'); knopf.setAttribute('aria-expanded', 'false'); }
+    document.addEventListener('click', zu);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') zu(); });
+  })();
+
+  // ── Länderwahl-Panel: unter dem Auslöser ausrichten, Suchfeld filtert Zeilen ──
+  (function(){
+    var liste = document.getElementById('land-liste');
+    if (!liste || !liste.classList.contains('land-flaeche')) return;
+    var knopf = document.getElementById('land-knopf');
+    var feld = document.getElementById('land-suche');
+    function filterWeg(){
+      if (feld) feld.value = '';
+      liste.querySelectorAll('button[data-land]').forEach(function(b){ b.hidden = false; });
+    }
+    if (knopf) knopf.addEventListener('click', function(){
+      var um = document.getElementById('ueber-menue');
+      if (um) um.classList.remove('auf');
+      var uk = document.getElementById('ueber-menue-knopf');
+      if (uk) uk.setAttribute('aria-expanded', 'false');
+      liste.style.top = Math.round(knopf.getBoundingClientRect().bottom + 5) + 'px';
+      filterWeg(); // Panel öffnet immer ungefiltert
+    });
+    if (!feld) return;
+    feld.addEventListener('input', function(){
+      var frage = feld.value.trim().toLowerCase();
+      liste.querySelectorAll('button[data-land]').forEach(function(b){
+        b.hidden = frage !== '' && b.textContent.toLowerCase().indexOf(frage) === -1;
+      });
+    });
+    liste.addEventListener('click', function(e){
+      if (!e.target.closest('button[data-land]')) return;
+      filterWeg();
     });
   })();
 })();
