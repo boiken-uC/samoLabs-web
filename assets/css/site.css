@@ -557,15 +557,18 @@
   @media(max-width:700px){.form{grid-template-columns:1fr}}
 
   /* ── Footer ── */
-  .foot{background:var(--navy);color:rgba(255,255,255,.64);padding:62px 0 26px;font-size:14.5px}
+  .foot{background:var(--navy);color:rgba(255,255,255,.64);padding:96px 0 26px;font-size:14.5px}
   .foot-g{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr 1fr;gap:28px;margin-bottom:46px}
-  .foot h4{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-    color:#fff;margin-bottom:15px;font-family:var(--body)}
+  .foot h4{font-size:16px;font-weight:600;color:#fff;margin-bottom:15px;font-family:var(--body)}
   .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-  .foot a:hover{color:#fff}
-  .foot-b{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;display:flex;
-    justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
-  .foot-l{display:flex;gap:19px;flex-wrap:wrap}
+  .foot a:hover{color:var(--mint)}
+  /* Unterste Zeile: zentrierter Stapel — Bildmarke, Rechtslinks, Anschrift, Copyright */
+  .foot-b{border-top:1px solid #272727;padding-top:48px;display:flex;flex-direction:column;
+    align-items:center;gap:18px;text-align:center;font-size:13px}
+  .foot-l{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+  .foot-l a{color:#fff;font-weight:700}
+  /* Eigenständige Bildmarke in der untersten Zeile: feste 55px statt em-Maß */
+  .foot-marke .bm{height:55px;margin-left:0;transform:none}
   @media(max-width:900px){.foot-g{grid-template-columns:1fr 1fr}}
 
   /* ── Chat ── */
