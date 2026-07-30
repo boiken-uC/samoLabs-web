@@ -562,6 +562,9 @@
   .q{border-top:2px solid var(--mint);padding-top:15px}
   .q h4{font-size:17px;margin-bottom:6px}
   .q p{margin:0 0 9px;font-size:14.5px;color:var(--mid)}
+  .q-ic{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;
+    border-radius:9px;background:var(--soft);color:var(--accent);margin-bottom:10px}
+  .q-ic svg{display:block}
   .sec-navy .q p{color:rgba(255,255,255,.7)}
   .sec-navy .more{color:var(--mint)}
   @media(max-width:900px){.split{grid-template-columns:1fr;gap:32px}.quad{grid-template-columns:1fr}.split > .ph{min-height:220px}}
