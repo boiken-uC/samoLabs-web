@@ -1092,11 +1092,11 @@
   var menueVorhang = document.getElementById('menue-vorhang');
   function vorhangSchalten(){
     if (!menueVorhang) return;
-    var offen = punkte.some(function(p){ return p.classList.contains('open'); });
+    var offen = (punkte || []).some(function(p){ return p.classList.contains('open'); });
     menueVorhang.classList.toggle('an', offen);
   }
   function schliesseMenues(){
-    punkte.forEach(function(p){
+    (punkte || []).forEach(function(p){
       p.classList.remove('open');
       p.querySelector('button').setAttribute('aria-expanded','false');
     });
@@ -1107,6 +1107,9 @@
     var b = p.querySelector('button');
     b.addEventListener('click', function(e){
       e.stopPropagation();
+      var ziel = b.getAttribute('data-go');
+      // Mobil: Tab führt direkt zur Übersichtsseite, statt nur das Akkordeon zu öffnen.
+      if (window.innerWidth <= 1080 && ziel) { schliesseMenues(); zeige(ziel); setzeVerlauf(ziel); return; }
       var offen = p.classList.contains('open');
       punkte.forEach(function(x){ x.classList.remove('open'); x.querySelector('button').setAttribute('aria-expanded','false'); });
       if (!offen) { p.classList.add('open'); b.setAttribute('aria-expanded','true'); }
