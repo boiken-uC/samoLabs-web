@@ -728,6 +728,10 @@
 @media (max-width: 1080px) {
   /* Aufklappmenü darf die Bildschirmbreite nie überschreiten */
   .menu.mob .mega { min-width: 0 !important; width: 100%; }
+  /* Kein horizontaler Scroll auf Mobil/Tablet: überstehende Deko/Elemente werden geklippt */
+  html, body { overflow-x: clip; }
+  /* Deko-Grafiken (z. B. Hero-Silhouette) nie über die Viewport-Breite hinaus */
+  svg[width], img { max-width: 100%; }
 }
 
 @media (max-width: 700px) {
