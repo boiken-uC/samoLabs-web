@@ -1066,9 +1066,11 @@
   });
 
   // Adresszeile auswerten, damit Verweise von den Rechtsseiten ankommen
-  function ausHash(){
+  function ausHash(vonEvent){
     var wohin = (location.hash || '').replace(/^#/, '');
-    if (!wohin) { zeige('start'); return; }   // leerer Hash (z. B. Zurueck bis zur Startseite)
+    // Start nur bei echter Rueck-Navigation (Event) neu rendern — NICHT beim initialen
+    // Aufruf, da zu diesem Zeitpunkt noch nicht alle Abhaengigkeiten initialisiert sind.
+    if (!wohin) { if (vonEvent) zeige('start'); return; }
     if (wohin.indexOf('detail:') === 0) {
       if (fuelleDetail(wohin.slice(7))) zeige('detail');
       return;
@@ -1079,8 +1081,8 @@
     }
     zeige(wohin);
   }
-  window.addEventListener('hashchange', ausHash);
-  window.addEventListener('popstate', ausHash);   // Zurueck/Vorwaerts-Navigation abfangen
+  window.addEventListener('hashchange', function(){ ausHash(true); });
+  window.addEventListener('popstate', function(){ ausHash(true); });   // Zurueck/Vorwaerts-Navigation abfangen
   ausHash();
   messe((location.hash || '').replace(/^#/, '').replace(':', '/'));
 
@@ -1122,7 +1124,12 @@
       p._zu = setTimeout(function(){ p.classList.remove('open'); vorhangSchalten(); }, 320);
     });
   });
-  document.addEventListener('click', schliesseMenues);
+  document.addEventListener('click', function(e){
+    // Klicks auf den Burger oder INNERHALB des Menüs dürfen es nicht sofort wieder
+    // schließen (sonst lässt sich das Mobil-Menü gar nicht öffnen).
+    if (e.target.closest('#burger') || e.target.closest('#menu')) return;
+    schliesseMenues();
+  });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') schliesseMenues(); });
   document.getElementById('burger').addEventListener('click', function(e){
     e.stopPropagation();

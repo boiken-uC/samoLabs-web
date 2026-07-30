@@ -732,6 +732,12 @@
   html, body { overflow-x: clip; }
   /* Deko-Grafiken (z. B. Hero-Silhouette) nie über die Viewport-Breite hinaus */
   svg[width], img { max-width: 100%; }
+  /* Schlanker Mobil-Header: nur Logo + Burger. Header-CTA liegt im Hero, Suche entfällt. */
+  .nav .navbtn, .suche-knopf { display: none; }
+  /* Firmenlinks (Login/Partner/Karriere/Schnittstellen/Support) ans Ende des Burger-Menüs */
+  .mob-nav { display: none; }
+  .menu.mob .mob-nav { display: flex; flex-direction: column; gap: 2px; margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--hair); }
+  .menu.mob .mob-nav a { padding: 13px 0; font-weight: 600; color: var(--ink); }
 }
 
 @media (max-width: 700px) {
@@ -749,8 +755,8 @@
   .hero h1 { font-size: clamp(28px, 8vw, 38px); }
   .sec { padding: 52px 0; }
 
-  /* Servicezeile umbrechen statt abschneiden */
-  .util { display: block; }
+  /* Servicezeile ist auf Mobil ausgeblendet (Firmenlinks liegen im Burger-Menü);
+     die folgenden Umbruch-Regeln greifen nur im Tablet-Bereich, in dem sie sichtbar bleibt. */
   .util .w { flex-wrap: wrap; gap: 10px 18px; padding-top: 10px; padding-bottom: 10px; }
   .util-l, .util-r { gap: 14px 18px; }
 
