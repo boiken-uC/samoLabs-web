@@ -135,17 +135,19 @@
   .mi>button:hover::after,.mi.open>button::after{left:14px;right:14px}
   .mi{position:static}
   /* Vorhang nach Vorbild: eckiges, vollbreites Panel unter der Leiste */
-  .mega{position:absolute;top:100%;left:0;right:0;background:#fff;
+  .mega{position:absolute;top:100%;left:0;right:0;background:#fff;overflow:hidden;
     border:0;border-bottom:1px solid var(--hair);border-radius:0;box-shadow:none;
     padding:0 max(24px,calc((100% - var(--w))/2 + 24px));
-    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 56px;
+    display:grid;grid-template-columns:minmax(0,.95fr) repeat(3,minmax(0,1.03fr));gap:0 56px;
     opacity:0;visibility:hidden;transform:translateY(12px);pointer-events:none;
     transition:opacity .26s ease,transform .26s ease,visibility 0s linear .26s}
   .mi.open .mega{opacity:1;visibility:visible;transform:none;pointer-events:auto;
     transition:opacity .26s ease,transform .26s ease}
-  .mega>div{padding:72px 0 64px}
-  .mega>.mega-intro{padding:72px 24px}
-  .mega-intro p{margin:0 0 26px;font-size:20px;line-height:30px;font-weight:500;color:var(--ink)}
+  .mega>div{padding:64px 0 60px}
+  .mega>.mega-intro{padding:64px 24px 60px 0}
+  .mega-intro h4{font-family:var(--head);font-size:clamp(21px,1.65vw,26px);line-height:1.35;
+    letter-spacing:-.015em;font-weight:700;color:var(--ink);margin:0 0 24px}
+  .mega-intro p{margin:0 0 22px;font-size:16px;line-height:1.55;font-weight:400;color:var(--ink)}
   .mega h5{font-size:18px;font-family:var(--head);letter-spacing:0;text-transform:none;
     color:var(--ink);margin:0 0 18px;font-weight:700}
   .mega ul{list-style:none;margin:0;padding:0;display:grid;gap:18px}
@@ -156,6 +158,16 @@
   .mega .ml-z svg{flex:none;margin-bottom:4px;transition:transform .18s ease}
   .mega ul a:hover .ml-z svg{transform:translateX(3px)}
   .mega ul a small{display:block;font-size:14px;font-weight:400;color:var(--mid);line-height:1.5;margin-top:3px}
+  @media(min-width:1081px){
+    /* Lange Gruppen laufen zweispaltig ueber zwei Rastersplaten (Vorbild Worldline) */
+    .mega-doppelt{grid-column:span 2}
+    .mega-doppelt ul{display:block;columns:2;column-gap:56px}
+    .mega-doppelt li{break-inside:avoid;margin-bottom:18px}
+    /* Getoente Flaeche hinter der letzten Gruppe bis zum rechten Bildschirmrand */
+    .mega>div:last-child:not(.mega-intro){position:relative;isolation:isolate}
+    .mega>div:last-child:not(.mega-intro)::before{content:"";position:absolute;
+      top:0;bottom:0;left:-44px;right:-100vw;background:var(--soft);z-index:-1}
+  }
   /* Abdunkelung des Seitenrests, solange ein Menuepunkt offen ist */
   .menue-vorhang{position:fixed;inset:0;z-index:60;background:#1b1c1e80;
     opacity:0;pointer-events:none;transition:opacity .26s ease}
