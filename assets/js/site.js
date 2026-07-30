@@ -123,18 +123,18 @@
               ['Vertretung wird einfach','Wer einspringt, sieht sofort den Stand.']]  /* tiefe:chat */, bloecke:[['Ein Posteingang für alles, was Kunden schreiben','WhatsApp, E-Mail, Formular, bald auch der Anruf über den Sprachdialog: samoChat führt alle Kanäle in einem Posteingang zusammen. Jede Nachricht wird ein Vorgang mit Nummer und Zuständigkeit — zuweisbar, wiederauffindbar, abschließbar. Der Verlauf bleibt beim Kunden, nicht auf dem Handy eines Mitarbeiters, der gerade im Urlaub ist.','i-kontakt'],['Das System schlägt vor, ein Mensch entscheidet','Für wiederkehrende Anliegen formuliert samoChat Antwortvorschläge aus Ihren eigenen Informationen: Öffnungszeiten, Preise, Terminlagen, Auftragsstatus. Der Mitarbeiter prüft, passt an, schickt ab — oder lässt Routinefälle nach Freigabe automatisch beantworten. So sinkt die Antwortzeit, ohne dass ein Roboter Ihre Kundenbeziehung führt. Wer den Erstkontakt ganz automatisieren will, stellt samoBot davor — den KI-Assistenten, der Routinefragen sofort beantwortet und alles Weitere mit vollem Verlauf an samoChat übergibt.','i-schulung']], fragen:[['Brauchen wir eine eigene WhatsApp-Nummer?','Ja, eine geschäftliche Nummer über die offizielle Schnittstelle — wir richten sie mit Ihnen ein. Ihre private Nummer bleibt privat.'],['Was passiert nachts und am Wochenende?','Anfragen laufen auf und werden zu Vorgängen; auf Wunsch bestätigt das System den Eingang und nennt die Geschäftszeiten. Am Morgen ist nichts verloren.'],['Können mehrere Mitarbeiter gleichzeitig antworten?','Ja. Vorgänge lassen sich zuweisen, übernehmen und übergeben — wer antwortet, ist am Vorgang sichtbar. Doppelantworten gehören damit der Vergangenheit an.']]},
 
     bot: { ober:'Produkte', oberZiel:'produkte', marke:['samo','Bot','--c-bot'], bild:'i-bot',
-      titel:'Antwortet, wenn niemand am Platz ist',
-      intro:'Ein KI-Assistent, der auf Ihrer Website und über WhatsApp rund um die Uhr antwortet — mit Ihren eigenen Informationen, nicht mit Floskeln.',
-      h2:'Der erste Kontakt, der nie Feierabend hat',
-      text:'Die meisten Anfragen sind Wiederholungen: Öffnungszeiten, Preise, „Habt ihr das da?", „Wie lange dauert das?". samoBot beantwortet sie sofort — aus Ihren eigenen Angaben, im Ton Ihres Betriebs. Was er nicht sicher weiß, gibt er an einen Menschen weiter, statt zu raten.',
+      titel:'Der erste Kontakt, der nie schließt',
+      intro:'Ein KI-Assistent, der auf Ihrer Website und über WhatsApp rund um die Uhr antwortet — auf Basis Ihrer eigenen Informationen, im Ton Ihres Unternehmens.',
+      h2:'Erreichbar, wenn Ihre Kunden fragen — nicht erst am nächsten Werktag',
+      text:'Ein Großteil aller Anfragen wiederholt sich: Öffnungszeiten, Verfügbarkeit, Preise, Bearbeitungsdauer. samoBot beantwortet diese sofort — auf Basis Ihrer eigenen Angaben und im Ton Ihres Unternehmens. Was außerhalb seines gesicherten Wissens liegt, übergibt er an einen Mitarbeiter, statt zu raten.',
       punkte:[['Rund um die Uhr erreichbar','Auch um 23 Uhr bekommt der Kunde eine Antwort, nicht erst am Montag.'],
               ['Aus Ihren eigenen Informationen','Trainiert auf Ihre Preise, Leistungen und Texte — keine erfundenen Auskünfte.'],
               ['Qualifiziert, statt nur zu plaudern','Fragt nach, was Sie wissen müssen, und macht aus dem Gespräch einen Termin oder eine Anfrage.'],
-              ['Übergibt an den Menschen','Wird es komplizierter, landet der Vorgang in samoChat — mit dem ganzen Verlauf.']],
+              ['Übergibt an den Menschen','Bei komplexeren Anliegen übergibt er den Vorgang samt Verlauf an samoChat.']],
       alltag:[['Weniger Standardfragen im Team','Ein großer Teil der Anfragen ist beantwortet, bevor jemand sie liest.'],
               ['Kein Interessent wartet','Die Sofortantwort hält den Kunden im Gespräch, statt ihn weiterziehen zu lassen.'],
               ['Ein Assistent, viele Kanäle','Website-Fenster und WhatsApp aus einer gemeinsamen Wissensbasis.']]  /* tiefe:bot */,
-      bloecke:[['Ein Assistent, den Sie mit Ihrem Wissen füttern','samoBot lernt aus dem, was Sie ohnehin haben: Website, Preisliste, Leistungsbeschreibung, häufige Fragen. Er antwortet in Ihrem Namen und in Ihrem Ton — und sagt „das kläre ich für Sie", wo er unsicher ist, statt etwas zu erfinden. Sie sehen jede Unterhaltung und schärfen nach, wo es nötig ist.','i-schulung'],['Von der Antwort zum Auftrag','Ein Bot, der nur plaudert, bringt nichts. samoBot fragt gezielt nach, bündelt die Angaben und macht daraus einen Termin, eine Bestellung oder eine Anfrage — nahtlos an samoChat übergeben, sobald ein Mensch übernehmen soll. So wird aus dem ersten Kontakt ein Vorgang, kein verlorener Chat.','i-laptops']],
+      bloecke:[['Ein Assistent, den Sie mit Ihrem Wissen füttern','samoBot lernt aus dem, was Sie ohnehin haben: Website, Preisliste, Leistungsbeschreibung, häufige Fragen. Er antwortet in Ihrem Namen und in Ihrem Ton — und sagt „das kläre ich für Sie", wo er unsicher ist, statt etwas zu erfinden. Sie sehen jede Unterhaltung und schärfen nach, wo es nötig ist.','i-schulung'],['Von der Antwort zum Auftrag','Reine Konversation schafft keinen Mehrwert. samoBot fragt gezielt nach, bündelt die relevanten Angaben und überführt sie in einen Termin, eine Bestellung oder eine qualifizierte Anfrage — bei Bedarf nahtlos an samoChat übergeben. So entsteht aus dem ersten Kontakt ein strukturierter Vorgang statt eines verlorenen Chats.','i-laptops']],
       fragen:[['Erfindet der Bot Antworten?','Nein. samoBot antwortet aus Ihren hinterlegten Informationen; bei Unsicherheit gibt er ehrlich an einen Menschen weiter, statt zu raten. Sie legen fest, was er selbst beantworten darf.'],['Wo läuft samoBot?','Als Chat-Fenster auf Ihrer Website und über WhatsApp — beide aus derselben Wissensbasis. Der Assistent auf dieser Seite ist samoBot selbst, live.'],['Was hat samoBot mit samoChat zu tun?','samoBot ist der automatische Erstkontakt, samoChat der Posteingang für Ihr Team. Der Bot beantwortet das Einfache sofort und reicht alles andere mit vollem Verlauf an samoChat weiter — Sie können mit einem starten und das andere jederzeit ergänzen.']]},
 
     plan: { ober:'Produkte', oberZiel:'produkte', marke:['samo','Plan','--c-plan'], bild:'i-p-plan',
@@ -529,20 +529,28 @@
   // aus dem Datum abgeleiteten Wert. Dadurch zeigt die Seite bei jedem
   // Aufruf am selben Tag dieselbe Zahl und springt nicht beim Neuladen.
   function auftragsstand(){
-    var start = new Date(2026, 3, 6);
+    var BASIS = 2842;                          // Grundstock "Aufträge über unsere Systeme"
+    var start = new Date(2026, 5, 1);          // Nullpunkt für den kumulierten Zuwachs
     var tag = new Date(start), heute = new Date();
-    heute.setHours(0,0,0,0);
+    heute.setHours(0, 0, 0, 0);
     var summe = 0;
-    while (tag <= heute) {
+    while (tag < heute) {                       // abgeschlossene Werktage: stabil pro Tag
       var wt = tag.getDay();
       if (wt >= 1 && wt <= 5) {
         var kennung = tag.getFullYear() * 10000 + (tag.getMonth() + 1) * 100 + tag.getDate();
         var streu = Math.abs(Math.sin(kennung) * 10000);
-        summe += 10 + Math.floor((streu - Math.floor(streu)) * 21);
+        summe += 8 + Math.floor((streu - Math.floor(streu)) * 17);   // 8–24 je Werktag
       }
       tag.setDate(tag.getDate() + 1);
     }
-    return summe;
+    // Heutiger Zuwachs NUR während der Geschäftszeiten (Mo–Sa, 08–20 Uhr), proportional.
+    var jetzt = new Date(), wtH = jetzt.getDay(), heuteZuwachs = 0;
+    if (wtH >= 1 && wtH <= 6) {
+      var min = jetzt.getHours() * 60 + jetzt.getMinutes(), auf = 480, zu = 1200;
+      if (min > auf) heuteZuwachs = Math.floor(Math.min(1, (min - auf) / (zu - auf)) * 34);
+    }
+    // Kleine Streuung pro Seitenaufruf, damit die Zahl „lebt" (nur additiv).
+    return BASIS + summe + heuteZuwachs + Math.floor(Math.random() * 4);
   }
   (function(){
     document.querySelectorAll('[data-auftraege]').forEach(function(el){
@@ -1025,19 +1033,28 @@
     if (ziel) ziel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
+  // Navigation als echten Verlaufseintrag ablegen (pushState), damit der Zurueck-
+  // Button funktioniert. Frueher wurde replaceState benutzt — dadurch gab es keinen
+  // Eintrag, zu dem "Zurueck" haette springen koennen (Bug: aus #detail:… kam man
+  // nicht mehr zurueck). Nur schreiben, wenn sich das Ziel tatsaechlich aendert.
+  function setzeVerlauf(wohin){
+    var neu = (wohin === 'start') ? location.pathname : '#' + wohin;
+    var jetzt = location.hash || location.pathname;
+    if (neu !== jetzt) history.pushState(null, '', neu);
+  }
   document.addEventListener('click', function(e){
     var ziel = e.target.closest('[data-go]');
     if (!ziel) return;
     e.preventDefault();
     var wohin = ziel.getAttribute('data-go');
     if (wohin.indexOf('detail:') === 0) {
-      if (fuelleDetail(wohin.slice(7))) { zeige('detail'); history.replaceState(null, '', '#' + wohin); messe('detail/' + wohin.slice(7)); return; }
+      if (fuelleDetail(wohin.slice(7))) { zeige('detail'); setzeVerlauf(wohin); messe('detail/' + wohin.slice(7)); return; }
     }
     if (wohin.indexOf('beitrag:') === 0) {
-      if (fuelleBeitrag(wohin.slice(8))) { zeige('beitrag'); history.replaceState(null, '', '#' + wohin); messe('beitrag/' + wohin.slice(8)); return; }
+      if (fuelleBeitrag(wohin.slice(8))) { zeige('beitrag'); setzeVerlauf(wohin); messe('beitrag/' + wohin.slice(8)); return; }
     }
     zeige(wohin);
-    history.replaceState(null, '', wohin === 'start' ? location.pathname : '#' + wohin);
+    setzeVerlauf(wohin);
     messe(wohin === 'start' ? '' : wohin);
     var abschnitt = ziel.getAttribute('data-scroll');
     if (abschnitt) setTimeout(function(){
@@ -1049,7 +1066,7 @@
   // Adresszeile auswerten, damit Verweise von den Rechtsseiten ankommen
   function ausHash(){
     var wohin = (location.hash || '').replace(/^#/, '');
-    if (!wohin) return;
+    if (!wohin) { zeige('start'); return; }   // leerer Hash (z. B. Zurueck bis zur Startseite)
     if (wohin.indexOf('detail:') === 0) {
       if (fuelleDetail(wohin.slice(7))) zeige('detail');
       return;
@@ -1061,6 +1078,7 @@
     zeige(wohin);
   }
   window.addEventListener('hashchange', ausHash);
+  window.addEventListener('popstate', ausHash);   // Zurueck/Vorwaerts-Navigation abfangen
   ausHash();
   messe((location.hash || '').replace(/^#/, '').replace(':', '/'));
 
