@@ -166,6 +166,8 @@
     transition:background .18s,color .18s,border-color .18s}
   .navbtn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
   .burger{display:none;background:none;border:1px solid var(--hair);border-radius:24px;padding:10px 13px;cursor:pointer}
+  /* Firmenlinks gehören ins Burger-Menü — im Desktop-Menü nie anzeigen */
+  .mob-nav{display:none}
   @media(max-width:1080px){
     .menu{display:none} .util{display:none} .burger{display:block}
     .menu.mob{display:block;position:absolute;top:76px;left:0;right:0;background:#fff;
@@ -738,7 +740,6 @@
   /* Schlanker Mobil-Header: nur Logo + Burger. Header-CTA liegt im Hero, Suche entfällt. */
   .nav .navbtn, .suche-knopf { display: none; }
   /* Firmenlinks (Login/Partner/Karriere/Schnittstellen/Support) ans Ende des Burger-Menüs */
-  .mob-nav { display: none; }
   .menu.mob .mob-nav { display: flex; flex-direction: column; gap: 2px; margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--hair); }
   .menu.mob .mob-nav a { padding: 13px 0; font-weight: 600; color: var(--ink); }
 }
