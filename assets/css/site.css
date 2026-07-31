@@ -27,8 +27,10 @@
        damit der Schriftzug dort lesbar bleibt. */
     --c-rad:#2E7D32; --c-order:#B8860B; --c-transport:#C2620A;
     --c-vertrieb:#2563EB; --c-chat:#4F57C4; --c-plan:#4F57C4; --c-term:#4F57C4; --c-bot:#0D9488;
+    --c-kiosk:#4338CA;
     --c-rad-h:#63BE68; --c-order-h:#E0B040; --c-transport-h:#E8883C;
     --c-vertrieb-h:#7FA9FF; --c-chat-h:#9AA3FA; --c-plan-h:#9AA3FA; --c-term-h:#9AA3FA; --c-bot-h:#5EEAD4;
+    --c-kiosk-h:#A5B4FC;
     --head:'Inter',system-ui,sans-serif;
     --body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,system-ui,sans-serif;
     --logo:'Outfit',system-ui,sans-serif;

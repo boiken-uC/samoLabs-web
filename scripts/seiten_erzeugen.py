@@ -23,7 +23,7 @@ SEITEN = {
     'loesungen':  ('loesungen.html', 'Lösungen',
                    'Software für Werkstatt und Handel, Gastronomie, Transport und Außendienst. Auftrag, Kasse, Kundenkontakt und Auswertung in einem System.'),
     'produkte':   ('produkte.html', 'Produkte',
-                   'samoRad, samoOrder, samoTransport, samoVertrieb, samoChat, samoPlan und samoTerminal — sieben Systeme im täglichen Einsatz.'),
+                   'samoRad, samoOrder, samoTransport, samoVertrieb, samoChat, samoBot, samoPlan, samoTerminal und samoKiosk — neun Systeme im täglichen Einsatz.'),
     'praxis':     ('praxis.html', 'Praxis',
                    'Wie Betriebe mit unseren Systemen arbeiten und was sich für sie geändert hat.'),
     'neues':      ('presse.html', 'Presse und Neuigkeiten',
