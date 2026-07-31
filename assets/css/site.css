@@ -582,6 +582,9 @@
   .sec-navy .q p{color:rgba(255,255,255,.7)}
   .sec-navy .more{color:var(--mint)}
   @media(max-width:900px){.split{grid-template-columns:1fr;gap:32px}.quad{grid-template-columns:1fr}.split > .ph{min-height:220px}}
+  /* Dreispaltige Quads werden im Markup per style-Attribut gesetzt; das schlaegt
+     die Medienabfrage oben. Auf schmalen Geraeten sonst abgeschnittener Text. */
+  @media(max-width:900px){.quad{grid-template-columns:1fr !important}}
 
   /* ── Karussell ── */
   .rail{display:flex;gap:24px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory}
