@@ -628,9 +628,31 @@
   @media(max-width:900px){.quad{grid-template-columns:1fr !important}}
 
   /* ── Karussell ── */
-  .rail{display:flex;gap:24px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory}
-  .rail::-webkit-scrollbar{height:6px}
-  .rail::-webkit-scrollbar-thumb{background:#C9CDD4}
+  /* Die Huelle legt sich per JS um jede .rail. Sie traegt die Pfeiltasten, damit
+     diese nicht mit dem Inhalt der Reihe wegscrollen. */
+  .rail-huelle{position:relative}
+  .rail{display:flex;gap:24px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory;
+    scrollbar-width:none;-ms-overflow-style:none}
+  /* Leiste ausgeblendet - gewischt und getastet wird weiterhin */
+  .rail::-webkit-scrollbar{width:0;height:0;display:none}
+  /* Pfeiltasten: 48er-Kreis, senkrecht mittig zu den Karten (die 14px Innenabstand
+     unter der Reihe werden mit -7px ausgeglichen), auf dem Kartenrand sitzend */
+  .rail-pfeil{position:absolute;top:calc(50% - 7px);transform:translateY(-50%);z-index:2;
+    width:48px;height:48px;padding:0;border:0;border-radius:50%;
+    background:var(--accent);color:#fff;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 2px 12px rgba(27,28,30,.18);
+    transition:background .18s, opacity .22s, visibility .22s}
+  .rail-pfeil:hover{background:var(--accent-2)}
+  .rail-pfeil svg{display:block}
+  .rail-zurueck{left:-20px}
+  .rail-weiter{right:-20px}
+  /* Am jeweiligen Ende und ohne Ueberlauf entfaellt die Taste */
+  .rail-pfeil[disabled]{opacity:0;visibility:hidden;pointer-events:none}
+  /* Solange die Reihe noch nicht eingeblendet ist, bleiben auch die Tasten weg */
+  .js-an .rail.rv:not(.in) ~ .rail-pfeil{opacity:0;visibility:hidden}
+  /* Auf Wischgeraeten fuehrt der Finger; dort keine Tasten */
+  @media (pointer: coarse){ .rail-pfeil{display:none} }
   .rc{flex:0 0 292px;scroll-snap-align:start;border:1px solid var(--hair);background:#fff;
     display:flex;flex-direction:column;border-radius:8px;overflow:hidden}
   .rc .ph{height:148px}

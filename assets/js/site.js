@@ -1689,4 +1689,68 @@
       filterWeg();
     });
   })();
+
+  // ── Pfeiltasten der Karussell-Reihen ───────────────────────────
+  // Jede .rail bekommt zwei Tasten. Die Huelle entsteht per JS, damit das Markup
+  // unberuehrt bleibt und weitere Reihen die Pfeile automatisch mitbringen.
+  (function(){
+    var PFEIL_ZURUECK = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18 9 12l6-6"/></svg>';
+    var PFEIL_WEITER  = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>';
+
+    function railTaste(klasse, beschriftung, zeichen){
+      var t = document.createElement('button');
+      t.type = 'button';
+      t.className = 'rail-pfeil ' + klasse;
+      t.setAttribute('aria-label', beschriftung);
+      t.innerHTML = zeichen;
+      return t;
+    }
+
+    function railPfeile(rail){
+      if (!rail.parentNode || rail.parentNode.classList.contains('rail-huelle')) return;
+      var huelle = document.createElement('div');
+      huelle.className = 'rail-huelle';
+      rail.parentNode.insertBefore(huelle, rail);
+      huelle.appendChild(rail); // Tasten liegen NEBEN der Reihe, sonst scrollen sie mit
+      var zurueck = railTaste('rail-zurueck', 'Eine Karte zurück', PFEIL_ZURUECK);
+      var weiter  = railTaste('rail-weiter',  'Eine Karte weiter', PFEIL_WEITER);
+      huelle.appendChild(zurueck);
+      huelle.appendChild(weiter);
+
+      // Ein Klick bewegt genau eine Kartenbreite plus Abstand
+      function schritt(){
+        var karte = rail.firstElementChild;
+        var breite = karte ? karte.getBoundingClientRect().width : rail.clientWidth * .8;
+        var stil = getComputedStyle(rail);
+        var abstand = parseFloat(stil.columnGap);
+        if (!(abstand >= 0)) abstand = parseFloat(stil.gap);
+        if (!(abstand >= 0)) abstand = 24;
+        return Math.max(1, Math.round(breite + abstand));
+      }
+      // Am Anfang, am Ende und ohne Ueberlauf wird die jeweilige Taste abgeschaltet
+      function stand(){
+        var rest = rail.scrollWidth - rail.clientWidth;
+        var ueberlauf = rest > 2;
+        zurueck.disabled = !ueberlauf || rail.scrollLeft <= 1;
+        weiter.disabled  = !ueberlauf || rail.scrollLeft >= rest - 1;
+      }
+      function fahre(richtung){
+        rail.scrollBy({ left: richtung * schritt(), behavior: reduced ? 'auto' : 'smooth' });
+      }
+      zurueck.addEventListener('click', function(){ fahre(-1); });
+      weiter.addEventListener('click', function(){ fahre(1); });
+
+      var laeuft = false;
+      rail.addEventListener('scroll', function(){
+        if (laeuft) return;
+        laeuft = true;
+        requestAnimationFrame(function(){ laeuft = false; stand(); });
+      }, { passive: true });
+      window.addEventListener('resize', stand);
+      window.addEventListener('load', stand); // nachgeladene Bilder aendern die Breite
+      stand();
+    }
+
+    document.querySelectorAll('.rail').forEach(railPfeile);
+  })();
 })();
