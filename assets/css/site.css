@@ -319,6 +319,43 @@
     flex-wrap:wrap;border-top:1px solid var(--hair);margin-top:38px;padding-top:26px}
   @media(max-width:700px){.beitrag-lauf .ph{height:220px}.b-anriss{font-size:17px}}
 
+  /* Meta-Zeile unter der Überschrift: Datum, Rubrik, Lesedauer */
+  .b-meta{display:flex;flex-wrap:wrap;align-items:center;margin:0 0 22px;
+    font-size:14px;line-height:1.6;color:var(--mid)}
+  .b-meta > * + *::before{content:"\00B7";margin:0 10px}
+  .b-meta-tag{color:var(--accent);font-weight:600}
+
+  /* Hervorgehobener Satz im Fließtext — aufrecht, nicht kursiv */
+  #b-text blockquote{margin:32px 0;padding:2px 0 2px 24px;border-left:4px solid var(--accent);
+    font-size:22px;line-height:1.45;font-weight:500;font-style:normal;color:var(--navy)}
+  #b-text blockquote p{margin:0;font-size:inherit;line-height:inherit;color:inherit}
+
+  /* Autorenkasten unter dem Artikeltext */
+  .b-autor{display:flex;align-items:flex-start;gap:20px;background:var(--soft);
+    border-radius:14px;padding:24px 26px;margin-top:42px}
+  .lg.b-autor-marke{--s:34px;flex:none;width:54px;height:54px;border-radius:50%;
+    background:#fff;border:1px solid var(--hair);align-items:center;justify-content:center}
+  .lg.b-autor-marke .bm{height:30px;margin-left:0;align-self:center;transform:none}
+  .b-autor-txt b{display:block;font-family:var(--head);font-weight:600;font-size:17px;color:var(--ink)}
+  .b-autor-rolle{display:block;font-size:14px;color:var(--mid);margin-top:2px}
+  .b-autor-txt p{margin:10px 0 14px;font-size:15px;line-height:1.7;color:#3D4147}
+  .b-autor-wege{display:flex;flex-wrap:wrap;gap:22px}
+
+  /* Schmales Abschlussband unter dem Autorenkasten */
+  .b-cta{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+    margin-top:20px;padding:18px 24px;border:1px solid var(--hair);
+    border-left:4px solid var(--accent);border-radius:12px}
+  .b-cta p{margin:0;font-family:var(--head);font-weight:600;font-size:18px;color:var(--navy)}
+
+  @media(max-width:700px){
+    .b-meta{font-size:13.5px}
+    .b-meta > * + *::before{margin:0 8px}
+    #b-text blockquote{font-size:19px;padding-left:18px;margin:26px 0}
+    .b-autor{flex-direction:column;gap:16px;padding:22px}
+    .b-cta{padding:18px 20px}
+    .b-cta p{font-size:16.5px}
+  }
+
 
   /* ── Seitenkopf mit Bild ── */
   .phead-bild{position:relative;overflow:hidden;padding:76px 0 78px}

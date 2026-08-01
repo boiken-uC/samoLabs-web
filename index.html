@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <script defer data-domain="samolabs.de" src="https://analytics.samorad.de/js/script.manual.js"></script>
 <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
-<link rel="stylesheet" href="assets/css/site.css?v=e0d8fe02">
+<link rel="stylesheet" href="assets/css/site.css?v=faa1493e">
 </head>
 <body>
 
@@ -1538,21 +1538,41 @@
   <nav class="crumb"><div class="w"><a href="#" data-go="start">Start</a> › <a href="#" data-go="neues">Presse</a> › <b id="b-crumb">—</b></div></nav>
   <header class="phead">
     <div class="w">
-      <span class="n-kat" id="b-kat" style="color:var(--mint)"></span>
+      <!-- Die Rubrik steht jetzt in der Meta-Zeile unter der Überschrift -->
       <h1 id="b-titel"></h1>
-      <p id="b-datum" style="font-size:15px;color:rgba(255,255,255,.6);margin-top:14px"></p>
+      <!-- Das Datum steht jetzt in der Meta-Zeile über dem Beitragsbild -->
     </div>
   </header>
 
   <section class="sec">
     <div class="w beitrag-lauf">
+      <!-- Meta-Zeile: Datum, Rubrik, Lesedauer — gefüllt in fuelleBeitrag() -->
+      <p class="b-meta" id="b-meta"></p>
       <div class="ph" id="b-bild"></div>
       <p class="b-anriss" id="b-anriss"></p>
       <div id="b-text"></div>
 
+      <aside class="b-autor">
+        <span class="lg b-autor-marke" style="--la:var(--labs)" aria-hidden="true"><i class="bm"><svg viewBox="0 0 26 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 29 7.6 17.6 1.8 15C4.4 10.6 7.6 9.3 10.2 9.2L10.6 8.4C10.6 4.9 15.4 4.9 15.4 8.4L15.8 9.2C18.4 9.3 21.6 10.6 24.2 15L18.4 17.6 18 29"/><path d="M13 3.6V1.2"/></svg></i></span>
+        <div class="b-autor-txt">
+          <b>Armin Imamovic</b>
+          <span class="b-autor-rolle">Gründer, samoLabs</span>
+          <p>Baut und betreibt von Jülich aus Software für den Mittelstand: Kassensysteme mit zertifizierter TSE und Individualsoftware für Werkstatt, Handel und Gastronomie. Davor hat er die Boiken&nbsp;d.o.o. in Sarajevo als geschäftsführender Gesellschafter aufgebaut.</p>
+          <div class="b-autor-wege">
+            <a href="#" data-go="kontakt" class="more">Gespräch vereinbaren</a>
+            <a href="#" data-go="wissen" class="more">Mehr aus dem Wissensbereich</a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="b-cta">
+        <p>Fragen zu Ihrem Betrieb? Sprechen Sie mit uns.</p>
+        <a href="#" data-go="kontakt" class="btn">Kontakt aufnehmen</a>
+      </div>
+
       <div class="b-fuss">
         <a href="#" data-go="neues" class="more">← Alle Beiträge</a>
-        <a href="#" data-go="kontakt" class="btn btn-o">Frage dazu stellen</a>
+        <!-- Kontakt-Verweis steht jetzt im Abschlussband darüber -->
       </div>
     </div>
   </section>
@@ -1829,6 +1849,6 @@
   </div>
 </div>
 
-<script src="assets/js/site.js?v=24b3e873"></script>
+<script src="assets/js/site.js?v=05228663"></script>
 </body>
 </html>
