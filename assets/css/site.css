@@ -430,6 +430,8 @@
 
   /* Gespiegelter Split: Bild rechts trotz gleicher Reihenfolge im Markup */
   .split-rechtsbild > .ph,.split-rechtsbild > .imgset{order:2}
+  /* Themenabschnitt ohne Bild: ruhig gesetzt, gut lesbare Zeilenlaenge */
+  .block-text{max-width:820px;margin:0 auto 64px}
 
 
   /* ── Kunden-Wortmarke ohne Logodatei ── */
