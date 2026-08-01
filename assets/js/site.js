@@ -346,7 +346,7 @@
               ['Geht das auch aus der Ferne?','Für Auffrischungen, neue Kolleginnen und Kollegen oder zusätzliche Module: ja. Die Ersteinweisung machen wir bewusst vor Ort, weil sich dort zeigt, wie Ihr Betrieb wirklich arbeitet.'],
               ['Wer schult uns — ein Trainer oder ein Entwickler?','Die Person, die das System kennt. Bei der samoLabs sind Entwicklung, Einweisung und Support nicht auf drei Abteilungen verteilt; wer Ihnen etwas erklärt, kann es auch ändern.']]},
 
-    werkstatt: { /* hub:werkstatt */ ph2:'Lösungen für Ihre Werkstatt', spalten:[['Nehmen Sie Aufträge an, statt Zettel zu stapeln','Annahme am Tresen mit Foto, Etikett und Termin in einem Durchgang — während der Kunde noch dasteht. Was sauber erfasst ist, muss später niemand entziffern.'],['Kassieren Sie prüfungsfest','Die zertifizierte Kassensicherung signiert jede Buchung, der Tagesabschluss entsteht von selbst. Bar, Karte oder Zahlungslink — alles im selben Abschluss.'],['Behalten Sie Lager und Zahlen im Blick','Teile buchen sich beim Verbau ab, die Nachbestellliste füllt sich von selbst. Mehr als 1.500 Aufträge liefen so bereits durch unsere Systeme.']], portfolio:['rad','terminal','chat'], ober:'Lösungen', oberZiel:'loesungen', produkt:'rad', bild:'i-p-rad',
+    werkstatt: { /* hub:werkstatt */ praxis:true, ph2:'Lösungen für Ihre Werkstatt', spalten:[['Nehmen Sie Aufträge an, statt Zettel zu stapeln','Annahme am Tresen mit Foto, Etikett und Termin in einem Durchgang — während der Kunde noch dasteht. Was sauber erfasst ist, muss später niemand entziffern.'],['Kassieren Sie prüfungsfest','Die zertifizierte Kassensicherung signiert jede Buchung, der Tagesabschluss entsteht von selbst. Bar, Karte oder Zahlungslink — alles im selben Abschluss.'],['Behalten Sie Lager und Zahlen im Blick','Teile buchen sich beim Verbau ab, die Nachbestellliste füllt sich von selbst. Mehr als 1.500 Aufträge liefen so bereits durch unsere Systeme.']], portfolio:['rad','terminal','chat'], ober:'Lösungen', oberZiel:'loesungen', produkt:'rad', bild:'i-p-rad',
       titel:'Werkstatt und Handel',
       intro:'Ein System für Annahme, Werkstatt, Kasse und Lager, statt drei Programme, die nichts voneinander wissen.',
       h2:'Gebaut für Betriebe, die reparieren',
@@ -422,7 +422,7 @@
               ['Wie kommen unsere Kunden ins System?','Per Import aus Tabellen oder dem Export Ihres bisherigen Systems — Adressen, Ansprechpartner, Historie. Die Zuordnung prüfen wir gemeinsam bei der Einrichtung.'],
               ['Was bringt die Kombination mit samoChat?','Anfragen, die im Büro landen, hängen am selben Kunden wie die Besuche. Der Außendienst sieht vor dem Termin auch, was der Kunde zuletzt geschrieben hat — nicht nur, was er zuletzt gesagt hat.']] },
 
-    auftrag: { /* hub:auftrag */ ph2:'Lösungen rund um den Auftrag', spalten:[['Erfassen Sie am Ort des Geschehens','Am Tresen, auf der Baustelle, im Fahrzeug — der Auftrag entsteht dort, wo er passiert, mit Foto und Zuordnung. Übertragen muss ihn niemand mehr.'],['Verfolgen Sie jeden Stand','Vom Eingang über die Bearbeitung bis zur Abholung: Jeder im Team sieht denselben Stand, der Kunde wird automatisch benachrichtigt.'],['Rechnen Sie ab, was belegt ist','Positionen entstehen aus dem Vorgang, nicht aus dem Gedächtnis. Was auf der Rechnung steht, ist dokumentiert — bis zum Foto.']], portfolio:['rad','plan','vertrieb'], ober:'Lösungen', oberZiel:'loesungen', bild:'i-hero',
+    auftrag: { /* hub:auftrag */ praxis:true, ph2:'Lösungen rund um den Auftrag', spalten:[['Erfassen Sie am Ort des Geschehens','Am Tresen, auf der Baustelle, im Fahrzeug — der Auftrag entsteht dort, wo er passiert, mit Foto und Zuordnung. Übertragen muss ihn niemand mehr.'],['Verfolgen Sie jeden Stand','Vom Eingang über die Bearbeitung bis zur Abholung: Jeder im Team sieht denselben Stand, der Kunde wird automatisch benachrichtigt.'],['Rechnen Sie ab, was belegt ist','Positionen entstehen aus dem Vorgang, nicht aus dem Gedächtnis. Was auf der Rechnung steht, ist dokumentiert — bis zum Foto.']], portfolio:['rad','plan','vertrieb'], ober:'Lösungen', oberZiel:'loesungen', bild:'i-hero',
       titel:'Auftrag und Planung',
       intro:'Von der Annahme bis zum Abschluss, mit einer Auslastung, die man sieht, bevor der Termin platzt.',
       h2:'Ein Auftrag, ein Weg',
@@ -438,7 +438,7 @@
               ['Sehen alle im Team denselben Stand?','Ja, das ist der Kern: ein Vorgang, ein Stand — für Tresen, Werkstatt und Büro. Wer etwas ändert, ändert es für alle sichtbar.'],
               ['Wie erfährt der Kunde vom Stand seines Auftrags?','Automatisch: Statusmeldungen gehen per Nachricht oder E-Mail raus, auf Wunsch mit persönlichem Link zum Auftragsstand. Das Telefon klingelt spürbar seltener.']] },
 
-    kasse: { /* hub:kasse */ ph2:'Lösungen rund um Kasse und Zahlung', spalten:[['Kassieren Sie auf jedem Weg','Bar, Karte am Gerät, Zahlungslink in der Rechnung — die Abwicklung läuft über einen etablierten Zahlungsdienstleister, das Geld fließt direkt auf Ihr Konto. Ohne eigenen Bankenvertrag.'],['Bleiben Sie prüfungsfest','Die zertifizierte technische Sicherungseinrichtung signiert jede Buchung. Die Exporte für die Prüfung liegen bereit, bevor jemand danach fragt.'],['Schließen Sie ab, ohne zu rechnen','Der Tagesabschluss entsteht aus den Buchungen — Kasse und Kartenzahlung waren nie getrennt, also muss sie auch niemand abgleichen.']], portfolio:['rad','order','terminal'], ober:'Lösungen', oberZiel:'loesungen', bild:'i-n1',
+    kasse: { /* hub:kasse */ praxis:true, ph2:'Lösungen rund um Kasse und Zahlung', spalten:[['Kassieren Sie auf jedem Weg','Bar, Karte am Gerät, Zahlungslink in der Rechnung — die Abwicklung läuft über einen etablierten Zahlungsdienstleister, das Geld fließt direkt auf Ihr Konto. Ohne eigenen Bankenvertrag.'],['Bleiben Sie prüfungsfest','Die zertifizierte technische Sicherungseinrichtung signiert jede Buchung. Die Exporte für die Prüfung liegen bereit, bevor jemand danach fragt.'],['Schließen Sie ab, ohne zu rechnen','Der Tagesabschluss entsteht aus den Buchungen — Kasse und Kartenzahlung waren nie getrennt, also muss sie auch niemand abgleichen.']], portfolio:['rad','order','terminal'], ober:'Lösungen', oberZiel:'loesungen', bild:'i-n1',
       titel:'Kasse und Zahlung',
       intro:'Zertifizierte TSE-Kasse, Kartenzahlung ohne zweites Gerät, Rechnung per QR-Code.',
       h2:'Eine Kasse, ein Tagesabschluss',
@@ -470,7 +470,7 @@
               ['Bleibt der Kontakt persönlich, wenn ein System dazwischen ist?','Er wird persönlicher: Wer antwortet, sieht den ganzen Verlauf und die offenen Vorgänge des Kunden. Das System sortiert und schlägt vor — entscheiden und formulieren bleibt Sache Ihres Teams.'],
               ['Was bringt das Kundenportal?','Der Kunde sieht über einen persönlichen Link den Stand seines Auftrags, bekommt Änderungen automatisch mit und bucht freie Termine selbst — ohne Passwort, ohne App. Weniger Anrufe, besser informierte Kunden.']] },
 
-    auswertung: { /* hub:auswertung */ ph2:'Lösungen rund um Zahlen und Berichte', spalten:[['Sehen Sie den Tag auf einen Blick','Umsatz, offene Aufträge, Auslastung — nicht als Excel-Bastelei am Abend, sondern live aus dem laufenden Betrieb.'],['Vergleichen Sie, was zählt','Zeiträume, Standorte, Leistungen: Die Auswertung zeigt, womit Sie Geld verdienen und wo es versickert.'],['Exportieren Sie ohne Nacharbeit','Lohnliste, Kassendaten, Umsatzübersicht — die Exporte passen zu dem, was Lohnstelle und Prüfung erwarten.']], portfolio:['rad','vertrieb','terminal'], ober:'Lösungen', oberZiel:'loesungen', bild:'i-team',
+    auswertung: { /* hub:auswertung */ praxis:true, ph2:'Lösungen rund um Zahlen und Berichte', spalten:[['Sehen Sie den Tag auf einen Blick','Umsatz, offene Aufträge, Auslastung — nicht als Excel-Bastelei am Abend, sondern live aus dem laufenden Betrieb.'],['Vergleichen Sie, was zählt','Zeiträume, Standorte, Leistungen: Die Auswertung zeigt, womit Sie Geld verdienen und wo es versickert.'],['Exportieren Sie ohne Nacharbeit','Lohnliste, Kassendaten, Umsatzübersicht — die Exporte passen zu dem, was Lohnstelle und Prüfung erwarten.']], portfolio:['rad','vertrieb','terminal'], ober:'Lösungen', oberZiel:'loesungen', bild:'i-team',
       titel:'Auswertung',
       intro:'Tagesbericht ohne Nacharbeit, mehrere Standorte in einer Sicht, sauberer Export.',
       h2:'Zahlen, die nebenbei entstehen',
@@ -486,7 +486,7 @@
               ['Können wir mehrere Standorte vergleichen?','Ja: je Standort einzeln und im Vergleich — Umsatz, Auslastung, Bestände. Jeder Standort arbeitet eigenständig, die Auswertung führt zusammen.'],
               ['Bekommt unsere Steuerberatung, was sie braucht?','Ja, die Exporte passen zu dem, was Lohnstelle und Prüfung erwarten — Kassendaten, Lohnliste, Umsatzübersicht. Ohne Nacharbeit und ohne Sonderformat.']] },
 
-    retail: { /* hub:retail */ ph2:'Lösungen für Retail und Handel', spalten:[['Verbinden Sie Tresen, Werkstatt und Lager','Verkauf, Service und Bestand laufen in einem System — kein Abtippen zwischen Kasse und Warenwirtschaft, kein doppelter Kundenstamm.'],['Kassieren Sie, wie Ihre Kunden zahlen','Bar, kontaktlos, Zahlungslink — abgewickelt über einen etablierten Zahlungsdienstleister, signiert von der Kassensicherung. Der Abschluss stimmt am ersten Tag.'],['Binden Sie Kunden über den Kauf hinaus','Servicetermine, Statusmeldungen, Historie am Kunden: Wer einmal gekauft hat, hat einen Grund wiederzukommen.']], portfolio:['rad','terminal','chat'], ober:'Branchen', oberZiel:'loesungen', produkt:'rad', bild:'i-p-rad',
+    retail: { /* hub:retail */ praxis:true, ph2:'Lösungen für Retail und Handel', spalten:[['Verbinden Sie Tresen, Werkstatt und Lager','Verkauf, Service und Bestand laufen in einem System — kein Abtippen zwischen Kasse und Warenwirtschaft, kein doppelter Kundenstamm.'],['Kassieren Sie, wie Ihre Kunden zahlen','Bar, kontaktlos, Zahlungslink — abgewickelt über einen etablierten Zahlungsdienstleister, signiert von der Kassensicherung. Der Abschluss stimmt am ersten Tag.'],['Binden Sie Kunden über den Kauf hinaus','Servicetermine, Statusmeldungen, Historie am Kunden: Wer einmal gekauft hat, hat einen Grund wiederzukommen.']], portfolio:['rad','terminal','chat'], ober:'Branchen', oberZiel:'loesungen', produkt:'rad', bild:'i-p-rad',
       titel:'Retail & Marketplaces',
       intro:'Für Fachhandel und Werkstattbetriebe, die verkaufen, reparieren und online sichtbar sein wollen.',
       h2:'Handel und Service aus einem System',
@@ -1218,6 +1218,10 @@
       }).join('');
       pfEl.hidden = false;
     } else { pfEl.hidden = true; }
+
+    // Aus der Praxis: der Kundenbericht steht nur auf den Hubs, zu denen er fachlich passt
+    var pxEl = document.getElementById('d-praxis');
+    if (pxEl) pxEl.hidden = !d.praxis;
 
     // Themenblöcke im Wechsellayout
     var tiefe = document.getElementById('d-tiefe');

@@ -654,6 +654,33 @@
   .sec-navy .story-tx strong{color:#fff}
   @media(max-width:900px){.story{grid-template-columns:1fr;gap:36px}}
 
+  /* ── Kundenbeleg auf den Hub-Seiten (#d-praxis) ──
+     Linke Flaeche traegt das weisse Kundenlogo auf dem Foto, rechts stehen Zitat,
+     Herkunft und Ergebniszeile. Eigene Klassen, damit .story unberuehrt bleibt. */
+  .pxbeleg{display:grid;grid-template-columns:.82fr 1.18fr;gap:48px;align-items:center}
+  .pxbeleg-marke{position:relative;display:flex;align-items:center;justify-content:center;
+    min-height:300px;padding:44px;border-radius:14px;overflow:hidden;background-color:var(--accent-2)}
+  .pxbeleg-marke::before{content:"";position:absolute;inset:0;
+    background:linear-gradient(135deg,rgba(25,75,76,.62),rgba(27,28,30,.88))}
+  .pxbeleg-logo{position:relative;z-index:1;height:56px;width:auto;opacity:.94}
+  .pxbeleg-tx{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+  .pxbeleg-tx h2{font-size:clamp(23px,2.4vw,30px);margin-bottom:0}
+  .pxbeleg-tx blockquote{font-size:19px;line-height:1.6}
+  .pxbeleg-quelle{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.66)}
+  .pxbeleg-quelle strong{color:#fff}
+  .pxbeleg-erg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;width:100%;
+    border-top:1px solid rgba(255,255,255,.16);padding-top:20px}
+  .pxbeleg-erg b{display:block;font-family:var(--head);font-weight:800;font-size:30px;
+    letter-spacing:-.03em;line-height:1;color:var(--mint)}
+  .pxbeleg-erg span{display:block;margin-top:8px;font-size:13.5px;line-height:1.35;
+    color:rgba(255,255,255,.7)}
+  @media(max-width:900px){.pxbeleg{grid-template-columns:1fr;gap:30px}
+    .pxbeleg-marke{min-height:190px;padding:32px}
+    .pxbeleg-logo{height:44px}
+    .pxbeleg-tx blockquote{font-size:17px}
+    .pxbeleg-erg{grid-template-columns:1fr 1fr;gap:18px}}
+  @media(max-width:480px){.pxbeleg-erg{grid-template-columns:1fr;gap:14px}}
+
   /* ── CTA ── */
   .cta{text-align:center;padding:78px 0;background:var(--navy);color:#fff}
   .cta h2{font-size:clamp(27px,3.3vw,42px);max-width:23ch;margin:0 auto 24px;color:#fff}
