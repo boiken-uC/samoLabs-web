@@ -1210,7 +1210,7 @@
       document.getElementById('d-bloecke').innerHTML = d.bloecke.map(function(b, i){
         var bildErst = i % 2 === 1;
         var bild = '<div class="imgset"><span class="sq sq-1"></span><span class="sq sq-2"></span><div class="ph ' + b[2] + '"></div></div>';
-        var text = '<div><h2 style="font-size:clamp(24px,2.6vw,34px)">' + b[0] + '</h2><p class="sub" style="margin-top:16px">' + b[1] + '</p></div>';
+        var text = '<div><h2 style="font-size:clamp(21px,2.1vw,27px)">' + b[0] + '</h2><p class="sub" style="margin-top:16px">' + b[1] + '</p></div>';
         return '<div class="split rv" style="margin-bottom:64px">' + (bildErst ? bild + text : text + bild) + '</div>';
       }).join('');
       tiefe.hidden = false;
