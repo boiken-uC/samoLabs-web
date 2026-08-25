@@ -1,2 +1,6 @@
 .DS_Store
 Thumbs.db
+
+# Screenshots der Pruefläufe. Sie entstehen bei jedem Lauf neu.
+/_rt*.png
+/_vk-front.png

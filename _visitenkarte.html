@@ -1,0 +1,55 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'Outfit';font-weight:100 900;font-display:swap;src:url(assets/fonts/outfit-100-900.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-weight:400 700;font-display:swap;src:url(assets/fonts/inter-var.woff2) format('woff2')}
+:root{--labs:#818CF8;--ink:#1B1C1E;--mid:#5A636A;--creme:#FAFAF8}
+*{margin:0;padding:0;box-sizing:border-box}
+@page{size:91mm 61mm;margin:0}
+html,body{background:#c9ccd2}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+.karte{width:91mm;height:61mm;position:relative;overflow:hidden;background:#fff;page-break-after:always}
+
+/* ── Vorderseite: Worldline-Konzern-Raster ── */
+.front{background:var(--creme)}
+.front.pad{position:absolute;top:9mm;left:9.5mm;right:9.5mm;bottom:8.5mm;display:flex;flex-direction:column;justify-content:space-between}
+.kopf{display:flex;justify-content:space-between;align-items:flex-start;gap:5mm}
+/* Name einzeilig wie auf der Vorlage. Bricht sonst um, sobald die Anschrift breiter wird. */
+.claim.z1{font-size:3.9mm;font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:.004em;white-space:nowrap}
+.kontakt{text-align:right;font-size:2.55mm;line-height:1.62;color:var(--ink);font-weight:400;white-space:nowrap}
+.kontakt.web{color:var(--labs);font-weight:600}
+.kontakt.mut{color:var(--mid)}
+/* Logo unten rechts */
+.marke{align-self:flex-end;font-family:'Outfit';text-transform:uppercase;letter-spacing:.014em;display:inline-flex;align-items:baseline;line-height:1;font-size:5.2mm}
+.marke b{font-weight:800;color:var(--ink)}
+.marke span{font-weight:400;color:var(--labs)}
+.marke.bm{height:.8em;margin-left:.2em;display:inline-block}
+.marke.bm svg{height:100%;width:auto;display:block}
+
+/* ── Rückseite (unveraendert) ── */
+.back{background:var(--labs)}
+.back.mark{position:absolute;top:47%;left:50%;transform:translate(-50%,-50%);height:29mm}
+.back.mark svg{height:100%;width:auto;display:block}
+.back.wm{position:absolute;left:0;right:0;bottom:8.5mm;text-align:center;font-family:'Outfit';text-transform:uppercase;letter-spacing:.18em;font-size:3mm;color:#fff;font-weight:500}
+</style></head><body>
+
+<div class="karte front"><div class="pad">
+  <div class="kopf">
+    <div class="claim">
+      <div class="z1">Armin Imamovic</div>
+    </div>
+    <div class="kontakt">
+      <div>T +49 1521 2419807</div>
+      <div>info@samolabs.de</div>
+      <div class="mut">Kölner Landstraße 36 · 52428 Jülich</div>
+      <div class="web">samolabs.de</div>
+    </div>
+  </div>
+  <div class="marke"><b>samo</b><span>Labs</span><i class="bm"><svg viewBox="0 0 26 32" fill="none" stroke="#818CF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 29 7.6 17.6 1.8 15C4.4 10.6 7.6 9.3 10.2 9.2L10.6 8.4C10.6 4.9 15.4 4.9 15.4 8.4L15.8 9.2C18.4 9.3 21.6 10.6 24.2 15L18.4 17.6 18 29"/><path d="M13 3.6V1.2"/></svg></i></div>
+</div></div>
+
+<div class="karte back">
+  <div class="mark"><svg viewBox="0 0 26 32" fill="none" stroke="#ffffff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 29 7.6 17.6 1.8 15C4.4 10.6 7.6 9.3 10.2 9.2L10.6 8.4C10.6 4.9 15.4 4.9 15.4 8.4L15.8 9.2C18.4 9.3 21.6 10.6 24.2 15L18.4 17.6 18 29"/><path d="M13 3.6V1.2"/></svg></div>
+  <div class="wm">samoLabs</div>
+</div>
+
+</body></html>
