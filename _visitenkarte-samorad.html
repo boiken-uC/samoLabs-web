@@ -1,0 +1,77 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<!--
+  samoRad-Visitenkarte.
+
+  Liegt bewusst NEBEN der samoLabs-Karte und nicht unter samoRad/marketing: Die
+  Karten sollen ein Satz sein. Eine Quelle, ein Bauskript, eine Vermessung. Sonst
+  laufen die beiden Entwuerfe nach dem ersten Nachtrag auseinander, und genau das
+  ist mit den alten Versuchen passiert.
+
+  Gebaut wird mit  samoLabs/marketing/visitenkarten/bau.js
+
+  Vorderseite: die OFFIZIELLE Logodatei als Bild, nicht als Text nachgebaut.
+  Rueckseite: weisser Schriftzug auf der Hausfarbe. Dafuer gibt es keine
+  Logodatei — beide Vorlagen fuehren RAD in Gruen, das verschwindet auf gruenem
+  Grund. Einfarbig weiss auf der Markenfarbe ist die uebliche Zweitfassung und
+  dasselbe, was die samoLabs-Karte auf ihrer Rueckseite tut.
+-->
+<style>
+@font-face{font-family:'Outfit';font-weight:100 900;font-display:swap;src:url(assets/fonts/outfit-100-900.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-weight:400 700;font-display:swap;src:url(assets/fonts/inter-var.woff2) format('woff2')}
+:root{--rad:#2E7D32;--ink:#1B1C1E;--mid:#5A636A;--creme:#FAFAF8}
+*{margin:0;padding:0;box-sizing:border-box}
+@page{size:91mm 61mm;margin:0}
+html,body{background:#c9ccd2}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+.karte{width:91mm;height:61mm;position:relative;overflow:hidden;background:#fff;page-break-after:always}
+
+/* ── Vorderseite: gleiches Raster wie die samoLabs-Karte ── */
+.front{background:var(--creme)}
+.front .pad{position:absolute;top:9mm;left:9.5mm;right:9.5mm;bottom:8.5mm;display:flex;flex-direction:column;justify-content:space-between}
+.kopf{display:flex;justify-content:space-between;align-items:flex-start;gap:5mm}
+/* Name einzeilig. Bricht sonst um, sobald die Anschrift breiter wird. */
+.claim .z1{font-size:3.9mm;font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:.004em;white-space:nowrap}
+.kontakt{text-align:right;font-size:2.55mm;line-height:1.62;color:var(--ink);font-weight:400;white-space:nowrap}
+.kontakt .web{color:var(--rad);font-weight:600}
+.kontakt .mut{color:var(--mid)}
+/* Logo unten rechts, Hoehe so gewaehlt, dass die Versalhoehe der samoLabs-Karte entspricht */
+.marke{align-self:flex-end;width:27.5mm;display:block}
+.marke img{width:100%;height:auto;display:block}
+
+/* ── Rueckseite ── */
+.back{background:var(--rad)}
+.back .mitte{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.4mm;padding:0 8mm}
+.back .wm{font-family:'Outfit';text-transform:uppercase;letter-spacing:.012em;font-size:8.4mm;line-height:1;color:#fff}
+.back .wm b{font-weight:800}
+.back .wm span{font-weight:400;opacity:.82}
+.back .satz{font-size:2.6mm;line-height:1.5;color:#fff;opacity:.88;text-align:center;font-weight:400}
+/* Kein text-transform: in Versalien wird aus samoLabs ein SAMOLABS, und die
+   Schreibweise der Marke ist Teil der Marke. */
+.back .haus{position:absolute;left:0;right:0;bottom:7mm;text-align:center;font-family:'Outfit';letter-spacing:.06em;font-size:2.4mm;color:#fff;opacity:.72;font-weight:500}
+</style></head><body>
+
+<div class="karte front"><div class="pad">
+  <div class="kopf">
+    <div class="claim">
+      <div class="z1">Armin Imamovic</div>
+    </div>
+    <div class="kontakt">
+      <div>T +49 1521 2419807</div>
+      <div>armin@samorad.de</div>
+      <div class="mut">Kölner Landstraße 36</div>
+      <div class="mut">52428 Jülich</div>
+      <div class="web">samorad.de</div>
+    </div>
+  </div>
+  <div class="marke"><img src="assets/samoRad-logo.svg" alt="samoRad"></div>
+</div></div>
+
+<div class="karte back">
+  <div class="mitte">
+    <div class="wm"><b>samo</b><span>Rad</span></div>
+    <div class="satz">Werkstattsoftware für den Fahrradfachhandel</div>
+  </div>
+  <div class="haus">eine Marke der samoLabs</div>
+</div>
+
+</body></html>

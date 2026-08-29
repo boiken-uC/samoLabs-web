@@ -11,25 +11,25 @@ body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
 
 /* ── Vorderseite: Worldline-Konzern-Raster ── */
 .front{background:var(--creme)}
-.front.pad{position:absolute;top:9mm;left:9.5mm;right:9.5mm;bottom:8.5mm;display:flex;flex-direction:column;justify-content:space-between}
+.front .pad{position:absolute;top:9mm;left:9.5mm;right:9.5mm;bottom:8.5mm;display:flex;flex-direction:column;justify-content:space-between}
 .kopf{display:flex;justify-content:space-between;align-items:flex-start;gap:5mm}
 /* Name einzeilig wie auf der Vorlage. Bricht sonst um, sobald die Anschrift breiter wird. */
-.claim.z1{font-size:3.9mm;font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:.004em;white-space:nowrap}
+.claim .z1{font-size:3.9mm;font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:.004em;white-space:nowrap}
 .kontakt{text-align:right;font-size:2.55mm;line-height:1.62;color:var(--ink);font-weight:400;white-space:nowrap}
-.kontakt.web{color:var(--labs);font-weight:600}
-.kontakt.mut{color:var(--mid)}
+.kontakt .web{color:var(--labs);font-weight:600}
+.kontakt .mut{color:var(--mid)}
 /* Logo unten rechts */
 .marke{align-self:flex-end;font-family:'Outfit';text-transform:uppercase;letter-spacing:.014em;display:inline-flex;align-items:baseline;line-height:1;font-size:5.2mm}
 .marke b{font-weight:800;color:var(--ink)}
 .marke span{font-weight:400;color:var(--labs)}
-.marke.bm{height:.8em;margin-left:.2em;display:inline-block}
-.marke.bm svg{height:100%;width:auto;display:block}
+.marke .bm{height:.8em;margin-left:.2em;display:inline-block}
+.marke .bm svg{height:100%;width:auto;display:block}
 
 /* ── Rückseite (unveraendert) ── */
 .back{background:var(--labs)}
-.back.mark{position:absolute;top:47%;left:50%;transform:translate(-50%,-50%);height:29mm}
-.back.mark svg{height:100%;width:auto;display:block}
-.back.wm{position:absolute;left:0;right:0;bottom:8.5mm;text-align:center;font-family:'Outfit';text-transform:uppercase;letter-spacing:.18em;font-size:3mm;color:#fff;font-weight:500}
+.back .mark{position:absolute;top:47%;left:50%;transform:translate(-50%,-50%);height:29mm}
+.back .mark svg{height:100%;width:auto;display:block}
+.back .wm{position:absolute;left:0;right:0;bottom:8.5mm;text-align:center;font-family:'Outfit';text-transform:uppercase;letter-spacing:.18em;font-size:3mm;color:#fff;font-weight:500}
 </style></head><body>
 
 <div class="karte front"><div class="pad">
@@ -39,8 +39,12 @@ body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
     </div>
     <div class="kontakt">
       <div>T +49 1521 2419807</div>
-      <div>info@samolabs.de</div>
-      <div class="mut">Kölner Landstraße 36 · 52428 Jülich</div>
+      <div>armin@samolabs.de</div>
+      <!-- Anschrift auf ZWEI Zeilen. Einzeilig mit nowrap sprengte sie die 72 mm
+           Satzbreite: Name 31,2 mm + Zeile 43,7 mm + 5 mm Abstand liefen bis
+           89,4 mm, also 1,4 mm jenseits der Schnittkante (Befund 27.08.2026). -->
+      <div class="mut">Kölner Landstraße 36</div>
+      <div class="mut">52428 Jülich</div>
       <div class="web">samolabs.de</div>
     </div>
   </div>
