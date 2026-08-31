@@ -10,10 +10,11 @@
   Gebaut wird mit  samoLabs/marketing/visitenkarten/bau.js
 
   Vorderseite: die OFFIZIELLE Logodatei als Bild, nicht als Text nachgebaut.
-  Rueckseite: weisser Schriftzug auf der Hausfarbe. Dafuer gibt es keine
-  Logodatei — beide Vorlagen fuehren RAD in Gruen, das verschwindet auf gruenem
-  Grund. Einfarbig weiss auf der Markenfarbe ist die uebliche Zweitfassung und
-  dasselbe, was die samoLabs-Karte auf ihrer Rueckseite tut.
+  Rueckseite: ebenfalls Logodateien, aber die einfarbig weisse Zweitfassung.
+  Die farbigen Vorlagen gehen auf gruenem Grund nicht: samoRad fuehrt „RAD" in
+  genau diesem Gruen, samoLabs fuehrt „LABS" und den Sebilj in Indigo. Die
+  weissen Fassungen werden aus den Originalen abgeleitet, nicht gezeichnet
+  (marketing/visitenkarten/weiss-variante.js tauscht nur die Farbwerte).
 -->
 <style>
 @font-face{font-family:'Outfit';font-weight:100 900;font-display:swap;src:url(assets/fonts/outfit-100-900.woff2) format('woff2')}
@@ -40,14 +41,22 @@ body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
 
 /* ── Rueckseite ── */
 .back{background:var(--rad)}
-.back .mitte{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.4mm;padding:0 8mm}
-.back .wm{font-family:'Outfit';text-transform:uppercase;letter-spacing:.012em;font-size:8.4mm;line-height:1;color:#fff}
-.back .wm b{font-weight:800}
-.back .wm span{font-weight:400;opacity:.82}
+.back .mitte{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.6mm;padding:0 8mm}
+/* Beide Schriftzuege sind LOGODATEIEN, kein Nachbau: die einfarbig weisse
+   Zweitfassung, abgeleitet in marketing/visitenkarten/weiss-variante.js. */
+.back .wm{width:40mm;display:block}
+.back .wm img{width:100%;height:auto;display:block}
 .back .satz{font-size:2.6mm;line-height:1.5;color:#fff;opacity:.88;text-align:center;font-weight:400}
-/* Kein text-transform: in Versalien wird aus samoLabs ein SAMOLABS, und die
-   Schreibweise der Marke ist Teil der Marke. */
-.back .haus{position:absolute;left:0;right:0;bottom:7mm;text-align:center;font-family:'Outfit';letter-spacing:.06em;font-size:2.4mm;color:#fff;opacity:.72;font-weight:500}
+/* Die Herkunftszeile traegt das samoLabs-Logo samt Sebilj, nicht bloss den
+   getippten Namen. „eine Marke der" bleibt gesetzter Text und steht klein
+   davor, damit das Logo die Zeile fuehrt und nicht der Satz. */
+.back .haus{position:absolute;left:0;right:0;bottom:6.4mm;display:flex;align-items:center;justify-content:center;gap:1.8mm}
+.back .haus .txt{font-family:'Outfit';letter-spacing:.05em;font-size:2.3mm;line-height:1;color:#fff;opacity:.7;font-weight:500}
+/* 20 mm, nicht kleiner: Der Sebilj ist eine Strichzeichnung. Bei 18 mm faellt
+   die Linie auf 0,136 mm und liegt damit unter dem, was ein Offsetdruck
+   sicher haelt (rund 0,15 mm). Bei 20 mm sind es 0,151 mm. */
+.back .haus .lg{width:20mm;display:block;opacity:.92}
+.back .haus .lg img{width:100%;height:auto;display:block}
 </style></head><body>
 
 <div class="karte front"><div class="pad">
@@ -68,10 +77,13 @@ body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
 
 <div class="karte back">
   <div class="mitte">
-    <div class="wm"><b>samo</b><span>Rad</span></div>
+    <div class="wm"><img src="assets/samoRad-logo-weiss.svg" alt="samoRad"></div>
     <div class="satz">Werkstattsoftware für den Fahrradfachhandel</div>
   </div>
-  <div class="haus">eine Marke der samoLabs</div>
+  <div class="haus">
+    <span class="txt">eine Marke der</span>
+    <span class="lg"><img src="assets/samoLabs-logo-weiss.svg" alt="samoLabs"></span>
+  </div>
 </div>
 
 </body></html>

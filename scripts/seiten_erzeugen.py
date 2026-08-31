@@ -23,13 +23,13 @@ SEITEN = {
     'loesungen':  ('loesungen.html', 'Lösungen',
                    'Software für Werkstatt und Handel, Gastronomie, Transport und Außendienst. Auftrag, Kasse, Kundenkontakt und Auswertung in einem System.'),
     'produkte':   ('produkte.html', 'Produkte',
-                   'samoRad, samoOrder, samoTransport, samoVertrieb, samoChat, samoBot, samoPlan, samoTerminal und samoKiosk — neun Systeme im täglichen Einsatz.'),
+                   'samoRad, samoOrder, samoTransport, samoVertrieb, samoChat, samoBot, samoPlan, samoTerminal und samoKiosk. Neun Systeme im täglichen Einsatz.'),
     'praxis':     ('praxis.html', 'Praxis',
                    'Wie Betriebe mit unseren Systemen arbeiten und was sich für sie geändert hat.'),
     'neues':      ('presse.html', 'Presse und Neuigkeiten',
                    'Fachbeiträge zu Kassensicherung, elektronischer Rechnung und Digitalisierung im Mittelstand, dazu Meldungen aus dem Haus.'),
     'kontakt':    ('kontakt.html', 'Kontakt',
-                   'Sprechen Sie mit uns über Ihre Abläufe. Telefon, Nachricht oder Formular — Sie erreichen unmittelbar einen Ansprechpartner.'),
+                   'Sprechen Sie mit uns über Ihre Abläufe. Telefon, Nachricht oder Formular. Sie erreichen unmittelbar einen Ansprechpartner.'),
     'partner':    ('partner.html', 'Partner',
                    'Zusammenarbeit mit Steuerberatung, Systemhäusern sowie Herstellern und Großhandel.'),
     'karriere':   ('karriere.html', 'Karriere',
@@ -39,9 +39,11 @@ SEITEN = {
     'support':    ('support.html', 'Support',
                    'Hilfe für Bestandskunden: Telefon, Nachricht, E-Mail und Antworten auf häufige Fälle.'),
     'modelle':    ('geschaeftsmodelle.html', 'Geschäftsmodelle',
-                   'Produkt im Abo, Individualentwicklung oder Partnermodell — drei Wege, mit samoLabs zu arbeiten.'),
+                   'Produkt im Abo, Individualentwicklung oder Partnermodell. Drei Wege, mit samoLabs zu arbeiten.'),
     'wissen':     ('wissen.html', 'Wissen',
-                   'Leitfäden zu Kassensicherung, E-Rechnung und digitalen Belegen — verständlich erklärt für Betriebe im Mittelstand.'),
+                   'Leitfäden zu Kassensicherung, E-Rechnung und digitalen Belegen. Verständlich erklärt für Betriebe im Mittelstand.'),
+    'wartung':    ('it-wartung.html', 'IT-Systemwartung',
+                   'Betreuung und Wartung von IT-Systemen für kleine und mittlere Betriebe: Arbeitsplätze, Server, Netzwerk, Sicherung und Microsoft 365. Im Wartungsvertrag mit monatlichem Kontingent und vereinbarter Reaktionszeit.'),
     'login':      ('anmelden.html', 'Anmeldebereich',
                    'Zugänge zu den samoLabs-Systemen für Betriebe, Mitarbeitende und Partner.'),
 }
@@ -53,10 +55,10 @@ def kopf(titel, beschreibung, datei, bereich):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{titel} — samoLabs</title>
+<title>{titel} · samoLabs</title>
 <meta name="description" content="{beschreibung}">
 <link rel="canonical" href="{basis}/{datei}">
-<meta property="og:title" content="{titel} — samoLabs">
+<meta property="og:title" content="{titel} · samoLabs">
 <meta property="og:description" content="{beschreibung}">
 <meta property="og:url" content="{basis}/{datei}">
 <meta property="og:type" content="website">

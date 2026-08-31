@@ -1097,7 +1097,8 @@
       [['Über uns','ueber'],['Lösungen','loesungen'],['Produkte','produkte'],
        ['Praxis','praxis'],['Presse und Neuigkeiten','neues'],['Kontakt','kontakt'],
        ['Partner','partner'],['Karriere','karriere'],['Schnittstellen','entwickler'],
-       ['Support','support'],['Anmeldebereich','login']].forEach(function(s){
+       ['Support','support'],['Anmeldebereich','login'],
+       ['IT-Systemwartung','wartung']].forEach(function(s){
         alles.push({ rubrik: 'Seite', titel: s[0], text: '', ziel: s[1] });
       });
       return alles;
