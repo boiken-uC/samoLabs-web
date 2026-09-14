@@ -13,7 +13,7 @@ import hashlib, io, os, re, sys
 sys.stdout.reconfigure(encoding='utf-8')
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 
-DATEIEN = ['index.html', 'impressum.html', 'datenschutz.html', 'credits.html']
+DATEIEN = ['index.html', 'impressum.html', 'datenschutz.html', 'credits.html', 'agb/index.html']
 
 
 def kennung(pfad):
@@ -31,9 +31,9 @@ def main():
             continue
         s = io.open(datei, encoding='utf-8').read()
         vorher = s
-        s = re.sub(r'(href="assets/css/site\.css)(\?v=[a-f0-9]+)?"',
+        s = re.sub(r'(href="/?assets/css/site\.css)(\?v=[a-f0-9]+)?"',
                    r'\1?v=%s"' % k_css, s)
-        s = re.sub(r'(src="assets/js/site\.js)(\?v=[a-f0-9]+)?"',
+        s = re.sub(r'(src="/?assets/js/site\.js)(\?v=[a-f0-9]+)?"',
                    r'\1?v=%s"' % k_js, s)
         if s != vorher:
             io.open(datei, 'w', encoding='utf-8').write(s)
