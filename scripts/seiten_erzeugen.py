@@ -42,8 +42,6 @@ SEITEN = {
                    'Produkt im Abo, Individualentwicklung oder Partnermodell. Drei Wege, mit samoLabs zu arbeiten.'),
     'wissen':     ('wissen.html', 'Wissen',
                    'Leitfäden zu Kassensicherung, E-Rechnung und digitalen Belegen. Verständlich erklärt für Betriebe im Mittelstand.'),
-    'wartung':    ('it-wartung.html', 'IT-Systemwartung',
-                   'Betreuung und Wartung von IT-Systemen für kleine und mittlere Betriebe: Arbeitsplätze, Server, Netzwerk, Sicherung und Microsoft 365. Im Wartungsvertrag mit monatlichem Kontingent und vereinbarter Reaktionszeit.'),
     'login':      ('anmelden.html', 'Anmeldebereich',
                    'Zugänge zu den samoLabs-Systemen für Betriebe, Mitarbeitende und Partner.'),
 }
