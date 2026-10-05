@@ -61,6 +61,13 @@ def kopf(titel, beschreibung, datei, bereich):
 <meta property="og:url" content="{basis}/{datei}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://samolabs.de/assets/img/og-samolabs.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="samoLabs, Software für den Mittelstand">
+<meta property="og:site_name" content="samoLabs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://samolabs.de/assets/img/og-samolabs.png">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
