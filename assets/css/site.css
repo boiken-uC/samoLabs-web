@@ -258,8 +258,10 @@
   .i-n3{background-image:url(../img/site/n3.jpg)}
 
   /* ── Herkunft: Zeitstrahl ── */
-  .weg{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--hair);margin-top:8px}
-  .weg .st{padding:24px 24px 0 0;position:relative}
+  /* Die Linie haengt an jeder Station, nicht am Raster: sonst laeuft sie nur ueber
+     der ersten Reihe, und ab der zweiten Reihe schweben die Punkte frei (16.10.2026). */
+  .weg{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:8px}
+  .weg .st{padding:24px 24px 0 0;position:relative;border-top:2px solid var(--hair)}
   .weg .st::before{content:"";position:absolute;top:-8px;left:0;width:13px;height:13px;
     border-radius:50%;background:var(--accent);border:3px solid #fff;box-shadow:0 0 0 2px var(--accent)}
   .weg .st.jetzt::before{background:var(--gelb);box-shadow:0 0 0 2px var(--gelb)}
@@ -267,8 +269,15 @@
   .weg p{margin:0;font-size:14.5px;color:var(--mid)}
   .weg .ort{font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
     color:var(--accent);margin-bottom:6px}
-  @media(max-width:900px){.weg{grid-template-columns:1fr 1fr}}
-  @media(max-width:560px){.weg{grid-template-columns:1fr}}
+  @media(max-width:900px){.weg{grid-template-columns:1fr 1fr;row-gap:34px}}
+  /* Einspaltig wird der Zeitstrahl senkrecht: Linie links, Punkt auf der Linie
+     neben der Jahreszahl, die Linie endet am letzten Punkt. */
+  @media(max-width:560px){
+    .weg{grid-template-columns:1fr;row-gap:0;margin-left:6px}
+    .weg .st{border-top:0;border-left:2px solid var(--hair);padding:0 0 30px 24px}
+    .weg .st:last-child{border-left-color:transparent;padding-bottom:0}
+    .weg .st::before{top:2px;left:-7.5px}
+  }
 
   /* ── Partnerleiste: reine Marken ── */
   .partner{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -667,6 +676,11 @@
   /* ── Kundenbericht ── */
   
   .story{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+  /* Über uns: Tafel zum offenen Projekt samoEKO, Wortmarke als Datei laut Markenregel */
+  .eko-tafel{background:var(--navy-2);border-radius:14px;padding:44px 40px;display:flex;flex-direction:column;align-items:flex-start;gap:22px}
+  .eko-tafel img{display:block;width:260px;max-width:100%;height:auto}
+  .eko-tafel p{margin:0;font-size:15.5px;color:rgba(255,255,255,.7)}
+  @media(max-width:560px){.eko-tafel{padding:30px 24px}}
   .imgset{position:relative;padding-top:64%}
   .imgset .sq{position:absolute;display:block;z-index:0;border-radius:7%}
   .imgset .sq-1{background:var(--gelb);width:35%;padding-bottom:35%;top:0;right:0}
@@ -900,7 +914,9 @@
 @media (max-width: 480px) {
   .kpis { grid-template-columns: 1fr; }
   .weg { grid-template-columns: 1fr; }
-  .partner { grid-template-columns: 1fr; }
+  /* !important: "Individualsoftware im Einsatz" setzt zwei Spalten per style-Attribut,
+     ohne Vorrang lief die zweite Karte am Handy aus dem Bild (16.10.2026). */
+  .partner { grid-template-columns: 1fr !important; }
 
   /* Schaltflächen füllen die Breite, damit sie sicher zu treffen sind */
   .btn, .btn-o, .btn-w, .btn-t { width: 100%; justify-content: center; }
