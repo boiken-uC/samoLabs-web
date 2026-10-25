@@ -406,7 +406,7 @@
       senden.disabled = false; senden.textContent = 'Termin verbindlich buchen';
       if (x.r.status === 409) { fehler.textContent = 'Dieser Termin wurde gerade vergeben. Bitte wählen Sie einen anderen.'; fehler.hidden = false; gewaehlt = null; lade(); return; }
       if (x.r.status === 429) { fehler.textContent = 'Zu viele Versuche. Bitte versuchen Sie es später noch einmal oder rufen Sie uns an.'; fehler.hidden = false; return; }
-      fehler.textContent = x.d.fehler || x.d.message || 'Die Buchung hat nicht geklappt. Bitte prüfen Sie Ihre Angaben.'; fehler.hidden = false;
+      fehler.textContent = x.d.error || x.d.fehler || x.d.message || 'Die Buchung hat nicht geklappt. Bitte prüfen Sie Ihre Angaben.'; fehler.hidden = false;
     }).catch(function(){
       senden.disabled = false; senden.textContent = 'Termin verbindlich buchen';
       fehler.textContent = 'Keine Verbindung. Bitte versuchen Sie es noch einmal oder rufen Sie uns an.'; fehler.hidden = false;
