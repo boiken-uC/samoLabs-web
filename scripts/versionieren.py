@@ -13,7 +13,7 @@ import hashlib, io, os, re, sys
 sys.stdout.reconfigure(encoding='utf-8')
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 
-DATEIEN = ['index.html', 'impressum.html', 'datenschutz.html', 'credits.html', 'agb/index.html']
+DATEIEN = ['index.html', 'impressum.html', 'datenschutz.html', 'credits.html', 'termin.html', 'agb/index.html']
 
 
 def kennung(pfad):
