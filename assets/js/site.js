@@ -11,6 +11,41 @@
     }, 1400);
   }
 
+  // ── Intern behalten (05.11.2026) ──
+  // samoVertrieb, samoPlan und samoTerminal werden nicht mehr beworben. Ihre Inhalte
+  // (Produktseiten, Branchenseiten, Beiträge) bleiben unten im Quelltext stehen,
+  // erscheinen aber in keiner Liste, keinem Menü, keinem Portfolio und keiner Suche.
+  // Ein direkter Aufruf der Adresse zeigt die Seite weiter, mit noindex im Kopf.
+  // Wieder einblenden: Eintrag hier streichen.
+  var INTERN = ['vertrieb', 'plan', 'terminal', 'aussendienst', 'fieldsales', 'building'];
+  var INTERN_BEITRAEGE = [
+    'Berichte diktieren statt tippen',
+    'Zeiterfassung ohne privates Handy',
+    'Gesprächsleitfaden für den Außendienst',
+    'Kiosk-Modus für Terminals',
+    'Handwerk und Bürokratie',
+    'Außendienst: Der Bericht, der nie geschrieben wird',
+    'Aufmaß vor Ort statt Übertragung im Büro'
+  ];
+  function sichtbar(k){ return INTERN.indexOf(k) === -1; }
+  function beitragSichtbar(b){ return INTERN_BEITRAEGE.indexOf(b[2]) === -1; }
+  // Beim Aufruf einer intern behaltenen Seite sagt ein noindex im Kopf, dass sie
+  // nicht in den Index gehört. Auf allen anderen Seiten wird es wieder entfernt.
+  function robotsMeta(intern){
+    var m = document.querySelector('meta[name="robots"][data-intern]');
+    if (intern) {
+      if (!m) {
+        m = document.createElement('meta');
+        m.name = 'robots';
+        m.setAttribute('data-intern', '1');
+        document.head.appendChild(m);
+      }
+      m.content = 'noindex, nofollow';
+    } else if (m) {
+      m.parentNode.removeChild(m);
+    }
+  }
+
   // ── Produkte und Meldungen einmal definieren, mehrfach ausgeben ──
   var PRODUKTE = [
     ['samo','Rad','--c-rad','i-p-rad','Fahrradfachhandel','Annahme, Werkstatt, Kasse, Lager und Einkauf in einem System, mit eigener App für Tresen und Werkstattbank.','rad'],
@@ -23,7 +58,7 @@
     ['samo','Plan','--c-plan','i-p-plan','Gebäudetechnik','Aufmaß und Projektplanung für Betriebe der technischen Gebäudeausrüstung.','plan'],
     ['samo','Terminal','--c-term','i-n3','Zeiterfassung','Kommen und gehen per NFC-Karte am Tablet, ohne Stempeluhr und ohne Zettel.','terminal'],
     ['samo','Kiosk','--c-kiosk','i-n1','Digitale Werbeflächen','Werbung, Angebote und Speisekarten auf den eigenen Displays. Zentral im Browser gepflegt statt am Gerät.','kiosk']
-  ];
+  ].filter(function(p){ return sichtbar(p[6]); });
 
   function marke(a, b, farbe, groesse) {
     return '<span class="lg" style="--s:' + groesse + 'px; --ln:var(' + farbe + '); --la:var(' + farbe + ')">' +
@@ -334,9 +369,9 @@
       bloecke:[
         ['Einmal gepflegt, auf allen Bildschirmen zu sehen','Der Aufwand an einer Werbefläche steckt selten im Gestalten, sondern im Verteilen: Datei auf den Stick, Stick zum Gerät, Gerät neu starten, und das je Bildschirm einmal. samoKiosk dreht das um. Bilder und PDF-Seiten liegen im Portal, dort entstehen Reihenfolge und Standzeit, dort wird ein Inhalt still gestellt, wenn die Aktion vorbei ist. Alle Displays des Betriebs spielen denselben Ablauf und übernehmen Änderungen im laufenden Betrieb, ohne dass jemand vor Ort sein muss.','i-laptops'],
         ['Ein Display, das sich selbst meldet','Ein neues Gerät wird aufgestellt, eingeschaltet und zeigt einen sechsstelligen Code. Dieser Code wird einmal im Portal eingetragen. Danach gehört das Display zu Ihrem Betrieb und spielt Ihren Ablauf. Ab da meldet es sich regelmäßig von selbst: Sie sehen, welches Gerät online ist und wann es sich zuletzt gemeldet hat, und lassen es bei Bedarf aus dem Portal neu laden. Fällt die Verbindung aus, läuft der Ablauf aus dem Zwischenspeicher weiter und gleicht ab, sobald das Netz zurück ist. Der Gast merkt davon nichts.','i-gastro'],
-        ['Geräte, die aus einer Hand kommen','Ein Bildschirm, der unbeaufsichtigt im Verkaufsraum hängt, muss zwei Dinge können: laufen und nichts anderes zulassen. Deshalb liefern wir die Tablets vorbereitet aus, im gesperrten Kiosk-Modus: nur der Ablauf, kein Browser, keine andere Anwendung, keine erreichbaren Einstellungen. Verwaltet werden sie über dieselbe Geräteverwaltung, mit der wir auch die Kassen- und Zeiterfassungsgeräte unserer Kunden betreuen. Ein Ansprechpartner für Software, Gerät und Betrieb. In Entwicklung ist die nächste Ausbaustufe, in der derselbe Bildschirm zum Bestellterminal wird und die Bestellung in samoOrder weiterläuft; verfügbar ist sie noch nicht.','i-n3'],
+        ['Geräte, die aus einer Hand kommen','Ein Bildschirm, der unbeaufsichtigt im Verkaufsraum hängt, muss zwei Dinge können: laufen und nichts anderes zulassen. Deshalb liefern wir die Tablets vorbereitet aus, im gesperrten Kiosk-Modus: nur der Ablauf, kein Browser, keine andere Anwendung, keine erreichbaren Einstellungen. Verwaltet werden sie über dieselbe Geräteverwaltung, mit der wir auch die Kassengeräte unserer Kunden betreuen. Ein Ansprechpartner für Software, Gerät und Betrieb. In Entwicklung ist die nächste Ausbaustufe, in der derselbe Bildschirm zum Bestellterminal wird und die Bestellung in samoOrder weiterläuft; verfügbar ist sie noch nicht.','i-n3'],
         ['Die Werbefläche rechnet sich nach innen','Ein Bildschirm im Verkaufsraum verkauft nicht nur. Er erspart Wege. Die Speisekarte über der Theke, die Preisliste am Empfang, der Hinweis auf die Aktionswoche: alles Stellen, an denen heute laminierte Zettel hängen, die jemand drucken, tauschen und entsorgen muss. samoKiosk macht daraus eine Pflegeaufgabe von Minuten, und der Betrieb sieht überall gleich aktuell aus, auch wenn es hektisch wird.','i-tisch'],
-        ['Klein anfangen, an der Theke','Der Einstieg ist bewusst unspektakulär: ein Tablet an der Theke, gekoppelt in einer Minute, dahinter das Portal. Wer mehr Flächen will, koppelt mehr Geräte. Die Pflege bleibt dieselbe. Und weil die Geräte aus derselben Betreuung kommen wie unsere Kassen- und Zeiterfassungssysteme, gibt es für alles einen Ansprechpartner statt dreier Zuständigkeiten.','i-n1']
+        ['Klein anfangen, an der Theke','Der Einstieg ist bewusst unspektakulär: ein Tablet an der Theke, gekoppelt in einer Minute, dahinter das Portal. Wer mehr Flächen will, koppelt mehr Geräte. Die Pflege bleibt dieselbe. Und weil die Geräte aus derselben Betreuung kommen wie unsere Kassensysteme, gibt es für alles einen Ansprechpartner statt dreier Zuständigkeiten.','i-n1']
       ],
       fragen:[
         ['Brauchen wir dafür neue Fernseher?','Nein. samoKiosk spielt auf Tablets, die wir eingerichtet und gesperrt ausliefern, für Theke, Eingang oder Schaufenster. Größere Flächen sind möglich; welches Gerät dafür taugt, klären wir vorher gemeinsam, statt es pauschal zuzusagen.'],
@@ -399,11 +434,11 @@
               ['Höherer Bon','Wer in Ruhe liest, bestellt eher nach.'],
               ['Weniger Fehler','Was der Gast tippt, muss niemand verstehen.']],
       bloecke:[['Der Samstagabend ist der Härtetest','Ein Gastro-System beweist sich nicht am Dienstagnachmittag. Es beweist sich, wenn die Terrasse voll ist, zwei Aushilfen neu sind und die Küche am Limit läuft. Genau dafür ist die Kombination gebaut: Gäste bestellen selbst, die Theke behält jeden Tisch im Blick, die Kasse signiert nebenbei. Das Personal läuft zum Servieren. Der Engpass Bestellaufnahme ist weg.','i-gastro'],
-               ['Personal ist knapp. Wege sind teuer','Die schwierigste Stelle in der Gastronomie ist heute nicht die Miete, sondern der Dienstplan. Wenn Gäste am Tisch bestellen, ersetzt das keine Servicekraft. Es macht die vorhandenen wirksamer: weniger Aufnahmewege, weniger Missverständnisse, mehr Zeit am Gast. Und die Zeiterfassung am Eingang macht aus dem Dienstplan-Gefühl belastbare Stunden.','i-tisch']],
+               ['Personal ist knapp. Wege sind teuer','Die schwierigste Stelle in der Gastronomie ist heute nicht die Miete, sondern der Dienstplan. Wenn Gäste am Tisch bestellen, ersetzt das keine Servicekraft. Es macht die vorhandenen wirksamer: weniger Aufnahmewege, weniger Missverständnisse, mehr Zeit am Gast.','i-tisch']],
       fragen:[['Passt das für ein Café mit zwölf Tischen?','Ja, gerade dort. Ein Tablet an der Theke, QR-Bögen auf die Tische, fertig. Das System ist auf kleine Betriebe ausgelegt, nicht von der Systemgastronomie heruntergeschnitten.'],
               ['Was sagen die Gäste dazu?','Kein App-Zwang, keine Registrierung, nur Kamera und Karte im Browser. Wer lieber beim Personal bestellt, bestellt beim Personal; beides landet im selben Vorgang.'],
               ['Sind wir damit kassenrechtlich sauber?','Ja. Jede Buchung signiert die zertifizierte TSE, die Abläufe sind GoBD-konform, die Exporte für die Prüfung liegen bereit. Bestellung und Kasse kommen aus einer Hand.'],
-              ['Können wir mit der Bestellung starten und später erweitern?','Ja. Jedes Modul steht für sich, alles läuft auf derselben Grundlage. Viele starten mit samoOrder und nehmen samoTerminal oder samoKiosk dazu, wenn der Betrieb es hergibt.']] },
+              ['Können wir mit der Bestellung starten und später erweitern?','Ja. Jedes Modul steht für sich, alles läuft auf derselben Grundlage. Viele starten mit samoOrder und nehmen samoKiosk dazu, wenn der Betrieb es hergibt.']] },
 
     logistik: { /* hub:logistik */ ph2:'Lösungen für Transport und Logistik', spalten:[['Füllen Sie die Rückfahrt','Fracht entlang der Strecke, die ohnehin gefahren wird, als Liste passender Aufträge statt einer Telefonkette. Die Tour rechnet sich über beide Richtungen.'],['Dokumentieren Sie jede Übergabe','Unterschrift des Empfängers, Foto der Ware, Zeitstempel mit Ort. Automatisch im Vorgang. Wenn Wochen später jemand reklamiert, liegt alles vor.'],['Bleiben Sie erreichbar, ohne am Telefon zu hängen','Anfragen aus WhatsApp und E-Mail werden Vorgänge mit Nummer und Zuständigkeit. Nichts versandet im Postfach eines Einzelnen.']], portfolio:['transport','chat','terminal'], ober:'Lösungen', oberZiel:'loesungen', produkt:'transport', bild:'i-trans',
       titel:'Transport und Logistik',
@@ -548,15 +583,13 @@
 
     selfservice: { /* hub:selfservice */ ph2:'Lösungen für Selbstbedienung', spalten:[['Lassen Sie Kunden selbst starten','Bestellung per Code, Terminal am Eingang, Karte statt Schlange. Ihr Angebot funktioniert auch, wenn gerade niemand am Tresen steht.'],['Halten Sie die Geräte im Zaum','Terminals laufen im gesperrten Modus und starten nach Stromausfall wieder in genau diesen Zustand. Gewartet wird aus der Ferne.'],['Kassieren Sie ohne Personal am Gerät','Kartenzahlung direkt am Terminal, abgewickelt über einen etablierten Zahlungsdienstleister, signiert von der Kassensicherung. Der Umsatz läuft in denselben Abschluss wie alles andere.']], portfolio:['order','terminal','chat'], ober:'Branchen', oberZiel:'loesungen', produkt:'terminal', bild:'i-n3',
       titel:'Self-Service & Kiosk',
-      intro:'Für Abläufe, die ohne Personal funktionieren sollen: Terminals, Selbstbestellung, Zeiterfassung.',
+      intro:'Für Abläufe, die ohne Personal funktionieren sollen: Terminals und Selbstbestellung.',
       h2:'Geräte, die für sich arbeiten',
-      text:'Ein Tablet am Eingang, ein Code am Tisch, eine Karte im Portemonnaie: Selbstbedienung entlastet dort, wo Personal knapp ist. Die Geräte laufen im gesperrten Modus und lassen sich nicht zweckentfremden.',
+      text:'Ein Tablet am Eingang, ein Code am Tisch: Selbstbedienung entlastet dort, wo Personal knapp ist. Die Geräte laufen im gesperrten Modus und lassen sich nicht zweckentfremden.',
       punkte:[['Kiosk-Modus','Das Gerät startet in die Anwendung und bleibt darin.'],
-              ['Zeiterfassung per Karte','Kommen und gehen ohne App auf dem privaten Handy.'],
               ['Selbstbestellung','Der Gast oder Kunde erfasst selbst. Fehlerfrei und sofort im System.'],
               ['Fernwartung','Geräte werden zentral überwacht und aktualisiert.']],
       alltag:[['Entlastung am Empfang','Routinevorgänge laufen ohne Zuruf.'],
-              ['Saubere Zeiten','Sekundengenau, nachvollziehbar für beide Seiten.'],
               ['Keine Diskussionen','Das Terminal kennt nur seine Aufgabe.']] },
 
     fieldsales: { /* hub:fieldsales */ ph2:'Lösungen für den Vertrieb im Feld', spalten:[['Machen Sie aus Fahrzeit Besuchszeit','Die Route entsteht aus Fälligkeit und Straße. Wer heute dran ist, steht vorn. Wer überfällig ist, fällt auf.'],['Halten Sie fest, was besprochen wurde','Diktat nach dem Termin, strukturierter Bericht beim Kunden. Die Historie gehört dem Betrieb, nicht dem Notizbuch.'],['Fassen Sie nach, bevor es kalt wird','Zusagen werden Wiedervorlagen, Wiedervorlagen werden Termine. Kein Interessent geht verloren, weil der Zettel weg ist.']], portfolio:['vertrieb','chat','plan'], ober:'Branchen', oberZiel:'loesungen', produkt:'vertrieb', bild:'i-talk',
@@ -599,7 +632,7 @@
               ['Einfache Vertretung','Wer einspringt, sieht sofort den Stand.']] }
   };
 
-  var BRANCHEN = ['retail','hospitality','mobility','selfservice','fieldsales','building','engagement'];
+  var BRANCHEN = ['retail','hospitality','mobility','selfservice','fieldsales','building','engagement'].filter(sichtbar);
   document.getElementById('rail-start').innerHTML = BRANCHEN.map(function(k){
     var d = DETAIL[k];
     return '<a class="rc" href="#" data-go="detail:' + k + '"><div class="ph ' + d.bild + '"></div>' +
@@ -671,6 +704,10 @@
     ['08.08.2024','meldung','samoLabs nimmt Arbeit an eigenen Produkten auf','Aus der Auftragsentwicklung heraus entstehen die ersten eigenen Systeme für den Mittelstand.','i-hero','<p>Nach Jahren in der Auftragsentwicklung entstehen die ersten eigenen Systeme. Der Anlass ist einfach: Dieselben Probleme tauchen in unterschiedlichen Betrieben immer wieder auf.</p> <h3>Der Unterschied</h3> <p>Auftragsarbeit endet mit der Übergabe. Ein eigenes Produkt bleibt in der Verantwortung. Es wird betrieben, gepflegt und weiterentwickelt, solange Kunden damit arbeiten.</p> <p>Das verändert die Art zu bauen. Was man selbst betreibt, baut man robuster.</p>']
   ];
 
+  // Die Nummer eines Beitrags in Adressen (#beitrag:12) bleibt die Stelle in BEITRAEGE.
+  // Listen, Suche und "weitere Beiträge" nehmen nur die öffentliche Auswahl.
+  var BEITRAEGE_OEFFENTLICH = BEITRAEGE.filter(beitragSichtbar);
+
   var KAT_NAME = { meldung:'Aus dem Haus', produkt:'Neue Funktion', fach:'Fachbeitrag', branche:'Aus der Branche' };
   // Dokument-Symbol vor dem Datum der Beitragskacheln
   var DOK_SVG = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>';
@@ -691,6 +728,7 @@
   function fuelleBeitrag(nr){
     var b = BEITRAEGE[parseInt(nr, 10)];
     if (!b) return false;
+    robotsMeta(!beitragSichtbar(b));
     document.getElementById('b-crumb').textContent = b[2].length > 40 ? b[2].slice(0, 38) + '\u2026' : b[2];
     // Kicker ueber der Ueberschrift entfaellt; die Rubrik steht in der Meta-Zeile
     var kicker = document.getElementById('b-kat');
@@ -709,16 +747,16 @@
     document.getElementById('b-text').innerHTML = (b[5] || '')
       || '<p>Dieser Beitrag wird derzeit ausgearbeitet. Sprechen Sie uns an, wenn Sie zu diesem Thema Fragen haben.</p>';
     // Drei weitere Beiträge derselben Kategorie
-    var weitere = BEITRAEGE.filter(function(x){ return x !== b && x[1] === b[1]; }).slice(0, 3);
+    var weitere = BEITRAEGE_OEFFENTLICH.filter(function(x){ return x !== b && x[1] === b[1]; }).slice(0, 3);
     if (weitere.length < 3) {
-      weitere = weitere.concat(BEITRAEGE.filter(function(x){ return x !== b && weitere.indexOf(x) === -1; }).slice(0, 3 - weitere.length));
+      weitere = weitere.concat(BEITRAEGE_OEFFENTLICH.filter(function(x){ return x !== b && weitere.indexOf(x) === -1; }).slice(0, 3 - weitere.length));
     }
     document.getElementById('b-weitere').innerHTML = weitere.map(beitragKarte).join('');
     return true;
   }
   // Startseite: die drei jüngsten Beiträge
   document.getElementById('news-start').innerHTML =
-    BEITRAEGE.slice(0, 3).map(beitragKarte).join('');
+    BEITRAEGE_OEFFENTLICH.slice(0, 3).map(beitragKarte).join('');
 
   // Nachrichtenseite: Filter und schrittweises Nachladen
   (function(){
@@ -727,7 +765,7 @@
     var kat = 'alle', gezeigt = 9;
     var knopf = document.getElementById('n-mehr');
     function zeichne(){
-      var liste = BEITRAEGE.filter(function(b){ return kat === 'alle' || b[1] === kat; });
+      var liste = BEITRAEGE_OEFFENTLICH.filter(function(b){ return kat === 'alle' || b[1] === kat; });
       ziel.innerHTML = liste.length
 ? liste.slice(0, gezeigt).map(beitragKarte).join('')
 : '<p class="n-leer">Zu diesem Bereich gibt es noch keine Beiträge.</p>';
@@ -752,8 +790,6 @@
     ['betrieb','Gastronomie. Theke','Übersicht aller offenen Tische, kassieren und abschließen. Anmeldung am Terminal im Betrieb.','Zum Portal'],
     ['betrieb','Marktplatz für Werkstätten','Verwaltung Ihres Eintrags, Anfragen und Termine aus dem öffentlichen Verzeichnis.','Zum Portal'],
     ['team','Mitarbeiter-App','Aufträge, Werkstattbank und Etikettendruck auf Tablet und Telefon. Zugang von der Betriebsleitung.','Zugang anfragen'],
-    ['team','Zeiterfassung','Kommen und gehen per Karte am Terminal. Für die Auswertung genügt ein Verwalterzugang.','Zum Portal'],
-    ['team','Außendienst','Besuchsplanung, Routen und Berichte unterwegs. Anmeldung erfolgt in der App.','Zugang anfragen'],
     ['partner','Partnerbereich','Gemeinsame Kunden, Empfehlungen und Abrechnung. Für Steuerberatung, Systemhäuser und Handel.','Zugang anfragen'],
     ['partner','Lizenzverwaltung','Übersicht über Ihre Standorte, Nutzer und Laufzeiten.','Zum Portal']
   ];
@@ -1108,11 +1144,12 @@
 
     function bestand(){
       var alles = [];
-      Object.keys(DETAIL).forEach(function(k){
+      Object.keys(DETAIL).filter(sichtbar).forEach(function(k){
         var d = DETAIL[k];
         alles.push({ rubrik: d.ober, titel: d.titel, text: d.intro, ziel: 'detail:' + k });
       });
       BEITRAEGE.forEach(function(b, i){
+        if (!beitragSichtbar(b)) return;
         alles.push({ rubrik: KAT_NAME[b[1]] || 'Beitrag', titel: b[2], text: b[3], ziel: 'beitrag:' + i });
       });
       [['Über uns','ueber'],['Lösungen','loesungen'],['Produkte','produkte'],
@@ -1177,6 +1214,7 @@
       if (an) treffer = true;
     });
     if (!treffer) return;
+    if (name !== 'detail' && name !== 'beitrag') robotsMeta(false);
     window.scrollTo({ top: 0, behavior: reduced? 'auto': 'smooth' });
     schliesseMenues();
     beobachte();
@@ -1184,6 +1222,7 @@
   function fuelleDetail(schluessel){
     var d = DETAIL[schluessel];
     if (!d) return false;
+    robotsMeta(!sichtbar(schluessel));
     document.getElementById('d-crumb').textContent = d.titel.length > 42 ? d.titel.slice(0,40) + '\u2026' : d.titel;
     var up = document.getElementById('d-up');
     up.textContent = d.ober;
@@ -1235,9 +1274,10 @@
 
     // Portfolio: Kacheln in die Produktebene
     var pfEl = document.getElementById('d-portfolio');
-    if (d.portfolio && d.portfolio.length) {
+    var portfolio = (d.portfolio || []).filter(sichtbar);
+    if (portfolio.length) {
       document.getElementById('d-portfolio-h').textContent = d.ph2 || 'Unsere Lösungen dafür';
-      document.getElementById('d-portfolio-kacheln').innerHTML = d.portfolio.map(function(k){
+      document.getElementById('d-portfolio-kacheln').innerHTML = portfolio.map(function(k){
         for (var i = 0; i < PRODUKTE.length; i++) if (PRODUKTE[i][6] === k) return produktKarte(PRODUKTE[i], true);
         return '';
       }).join('');
@@ -1279,18 +1319,18 @@
     // Verwandte Inhalte aus derselben Rubrik
     var imPortfolio = function(k){ return d.portfolio && d.portfolio.indexOf(k) !== -1; };
     var verwandt = Object.keys(DETAIL).filter(function(k){
-      return k !== schluessel && DETAIL[k].ober === d.ober && !imPortfolio(k);
+      return k !== schluessel && sichtbar(k) && DETAIL[k].ober === d.ober && !imPortfolio(k);
     }).slice(0, 4);
-    if (d.produkt && !imPortfolio(d.produkt)) verwandt = [d.produkt].concat(verwandt.filter(function(k){ return k !== d.produkt; })).slice(0, 4);
+    if (d.produkt && sichtbar(d.produkt) && !imPortfolio(d.produkt)) verwandt = [d.produkt].concat(verwandt.filter(function(k){ return k !== d.produkt; })).slice(0, 4);
     if (verwandt.length < 4) {
       verwandt = verwandt.concat(Object.keys(DETAIL).filter(function(k){
-        return k !== schluessel && verwandt.indexOf(k) === -1 && !imPortfolio(k);
+        return k !== schluessel && sichtbar(k) && verwandt.indexOf(k) === -1 && !imPortfolio(k);
       }).slice(0, 4 - verwandt.length));
     }
     // Optional: eigene Reihenfolge je Eintrag (verwandt:[...]). Die genannten
     // Schluessel stehen vorn, der Rest fuellt die Kachelreihe wie bisher auf.
     if (d.verwandt && d.verwandt.length) {
-      verwandt = d.verwandt.concat(verwandt.filter(function(k){
+      verwandt = d.verwandt.filter(sichtbar).concat(verwandt.filter(function(k){
         return d.verwandt.indexOf(k) === -1;
       })).slice(0, 4);
     }
@@ -1602,7 +1642,7 @@
     var kat = 'alle', gezeigt = 9;
     var knopf = document.getElementById('w-mehr');
     function zeichneW(){
-      var treffer = BEITRAEGE.filter(function(b){ return b[1] !== 'meldung' && (kat === 'alle' || b[1] === kat); });
+      var treffer = BEITRAEGE_OEFFENTLICH.filter(function(b){ return b[1] !== 'meldung' && (kat === 'alle' || b[1] === kat); });
       liste.innerHTML = treffer.slice(0, gezeigt).map(beitragKarte).join('');
       knopf.style.display = treffer.length > gezeigt ? '' : 'none';
     }
